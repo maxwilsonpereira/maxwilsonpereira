@@ -6,17 +6,23 @@
     <title>Max Wilson Pereira</title>
 
     <style>
-      body {
+      /* Reset básico */
+      * {
+        box-sizing: border-box;
         margin: 0;
         padding: 0;
         font-family: 'Helvetica Neue', sans-serif;
-        background: #ffffff;
-        color: #111;
+      }
+
+      body {
+        background: #1a1a1a; /* Dark background */
+        color: #eee; /* Light text */
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
         min-height: 100vh;
+        padding: 20px;
       }
 
       .profile-img {
@@ -25,19 +31,20 @@
         height: 120px;
         border-radius: 50%;
         object-fit: cover;
-        border: 3px solid #ff4c4c;
+        border: 3px solid #1e90ff; /* Blue border */
       }
 
       h1 {
         margin: 20px 0 10px;
-        font-size: 1.8rem;
+        font-size: 2rem;
         font-weight: 700;
+        color: #fff;
       }
 
       p {
         margin: 0 20px 30px;
         font-size: 1rem;
-        color: #555;
+        color: #ccc;
         line-height: 1.4;
       }
 
@@ -50,38 +57,48 @@
       .link-button a {
         display: block;
         text-decoration: none;
-        background: #ff4c4c;
+        background: #1e90ff; /* Blue button */
         color: #fff;
         padding: 15px 0;
         border-radius: 8px;
         font-size: 1.1rem;
         font-weight: 600;
-        transition: background 0.3s ease;
+        transition:
+          background 0.3s ease,
+          transform 0.2s;
       }
 
       .link-button a:hover {
-        background: #e04343;
+        background: #187bcd; /* Darker blue on hover */
+        transform: scale(1.03);
       }
 
-      @media (min-width: 480px) {
+      @media (max-width: 480px) {
         h1 {
-          font-size: 2rem;
+          font-size: 1.6rem;
         }
         p {
-          font-size: 1.1rem;
+          font-size: 0.95rem;
+        }
+        .link-button a {
+          font-size: 1rem;
         }
       }
     </style>
   </head>
   <body>
-    <img src="YOUR_IMAGE_URL" alt="Max Wilson Pereira" class="profile-img" />
+    <img
+      src="assets\max_gigga.jpg"
+      alt="Max Wilson Pereira"
+      class="profile-img"
+    />
 
     <h1>Max Wilson Pereira</h1>
-    <p>Canto lírico, paixão e música para tocar o seu coração ❤️</p>
+    <p>Canto, paixão e entretenimento para tocar o seu coração ❤️</p>
 
     <div class="link-button">
       <a href="https://apoia.se/maxwilsonpereira" target="_blank">
-        Apoie minha jornada
+        Apoie Minha Jornada
       </a>
     </div>
 
