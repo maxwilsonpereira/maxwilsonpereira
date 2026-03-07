@@ -1,6 +1,124 @@
 <!doctype html>
-<html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Max Wilson Pereira - Landing Page</title>
+    <style>
+      /* Reset básico */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
+      }
+
+      body {
+        background: #f5f5f5;
+        color: #222;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        min-height: 100vh;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 2em;
+        margin-bottom: 30px;
+        color: #111;
+      }
+
+      .product {
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 400px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.2s;
+      }
+
+      .product:hover {
+        transform: translateY(-3px);
+      }
+
+      .product p {
+        margin-bottom: 15px;
+        font-size: 1em;
+        line-height: 1.4;
+        color: #333;
+      }
+
+      .product button {
+        background: #ff4c4c;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 12px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        transition:
+          background 0.3s,
+          transform 0.2s;
+      }
+
+      .product button:hover {
+        background: #e04343;
+        transform: scale(1.05);
+      }
+
+      a.button-link {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 1.5em;
+        }
+        .product {
+          width: 90%;
+          padding: 15px;
+        }
+        .product button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
   <body>
-    <h1>HELLO WORLD</h1>
+    <h1>Bem-vindo(a) à minha arte!</h1>
+
+    <div class="product">
+      <p>
+        <strong>Apoie minha jornada de artista e criador digital</strong>, de
+        forma carinhosa e próxima. Cada gesto faz toda a diferença! ❤️
+      </p>
+      <a
+        class="button-link"
+        href="https://apoia.se/maxwilsonpereira"
+        target="_blank"
+      >
+        <button title="Clique aqui">Apoiar no Apoia.se</button>
+      </a>
+    </div>
+
+    <div class="product">
+      <p>
+        <strong>Adquira meu álbum SO IN LOVE + 11 BÔNUS</strong> (23 músicas,
+        incluindo “Nessun dorma”) e mergulhe na emoção do meu canto lírico.
+      </p>
+      <a
+        class="button-link"
+        href="https://maxwilsonpereira.hotmart.host/max-wilson-pereira-so-in-love-03d7467a-d750-40dd-8138-d69e1fcf0670"
+        target="_blank"
+      >
+        <button title="Clique aqui">Comprar Álbum</button>
+      </a>
+    </div>
   </body>
 </html>
