@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Comprar Soul in Love via PIX</title>
     <style>
-      /* Estilo semelhante ao index.html */
       * {
         box-sizing: border-box;
         margin: 0;
@@ -22,6 +21,7 @@
         text-align: center;
         min-height: 100vh;
         padding: 20px;
+        position: relative;
       }
 
       .profile-img {
@@ -74,6 +74,28 @@
         border-radius: 8px;
       }
 
+      /* Botão flutuante no topo esquerdo */
+      .back-button {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
+        text-decoration: none;
+        background: #1e90ff;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition:
+          background 0.3s ease,
+          transform 0.2s;
+        cursor: pointer; /* cursor de click */
+      }
+
+      .back-button:hover {
+        background: #187bcd;
+      }
+
       @media (max-width: 480px) {
         h1 {
           font-size: 1.6rem;
@@ -85,17 +107,26 @@
         li {
           font-size: 0.95rem;
         }
+        .back-button {
+          font-size: 0.95rem;
+          padding: 8px 15px;
+        }
       }
     </style>
   </head>
 
   <body>
+    <!-- Botão flutuante para Home -->
+    <a class="back-button" href="http://maxwilsonpereira.com.br/">← Voltar</a>
+
     <img
       src="assets/max_gigga.jpg"
       alt="Max Wilson Pereira"
       class="profile-img"
     />
+
     <h1>Álbum SO IN LOVE + Bônus</h1>
+
     <p>
       <b>SO IN LOVE</b> é um álbum especial do tenor brasileiro
       <span class="highlight">Max Wilson Pereira</span> que reúne emoção,
