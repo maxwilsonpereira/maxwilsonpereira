@@ -48,6 +48,16 @@
   padding: 0;
 }
 
+/* Web Components — participate in parent layout without creating an extra box */
+max-badge,
+max-tagline,
+max-site-name,
+max-profile-img,
+max-link-list,
+max-back-button {
+  display: contents;
+}
+
 body {
   font-family:
     "Plus Jakarta Sans",
@@ -262,6 +272,7 @@ h2.accent {
   z-index: 1000;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   padding: 10px 18px;
   background: var(--bg-card);
@@ -280,6 +291,12 @@ h2.accent {
   background: var(--bg-card-hover);
   border-color: rgba(225, 48, 108, 0.4);
   transform: translateX(-2px);
+}
+
+.back-arrow {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 
 /* Content sections (subpages) — card for readability over hero image */
