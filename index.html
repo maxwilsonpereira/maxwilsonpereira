@@ -3,9 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Max Wilson Pereira</title>
+    <title>Max Wilson Pereira | Tenor & Artista</title>
 
-    <!-- Force browser to always load latest version -->
     <meta
       http-equiv="Cache-Control"
       content="no-cache, no-store, must-revalidate"
@@ -13,122 +12,47 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
 
-    <style>
-      /* Reset básico */
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font-family: 'Helvetica Neue', sans-serif;
-      }
-
-      body {
-        background: #1a1a1a; /* Dark background */
-        color: #eee; /* Light text */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        min-height: 100vh;
-        padding: 20px;
-      }
-
-      .profile-img {
-        margin-top: 40px;
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 3px solid #1e90ff; /* Blue border */
-      }
-
-      h1 {
-        margin: 20px 0 10px;
-        font-size: 2rem;
-        font-weight: 700;
-        color: #fff;
-      }
-
-      p {
-        margin: 0 20px 30px;
-        font-size: 1rem;
-        color: #ccc;
-        line-height: 1.4;
-      }
-
-      .link-button {
-        width: 90%;
-        max-width: 380px;
-        margin: 10px 0;
-      }
-
-      .link-button a {
-        display: block;
-        text-decoration: none;
-        background: #1e90ff; /* Blue button */
-        color: #fff;
-        padding: 15px 4px;
-        border-radius: 8px;
-        font-size: 1.1rem;
-        font-weight: 600;
-        transition:
-          background 0.3s ease,
-          transform 0.2s;
-      }
-
-      .link-button a:hover {
-        background: #187bcd; /* Darker blue on hover */
-      }
-
-      @media (max-width: 480px) {
-        h1 {
-          font-size: 1.6rem;
-        }
-        p {
-          font-size: 0.95rem;
-        }
-        .link-button a {
-          font-size: 1rem;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
 
-  <body>
-    <!-- Profile image -->
-    <img
-      src="assets/max_gigga.jpg"
-      alt="Max Wilson Pereira"
-      class="profile-img"
-    />
+  <body class="page-home">
+    <div class="hero-bg"></div>
+    <main class="page-container">
+      <section class="profile-section">
+        <span class="badge">Tenor • Ópera & Entretenimento</span>
+        <img
+          src="assets/max-gigga.jpg"
+          alt="Max Wilson Pereira"
+          class="profile-img"
+        />
+        <h1>Max Wilson Pereira</h1>
+        <p class="tagline">
+          Canto, paixão e entretenimento para alegrar o seu dia e tocar o seu
+          coração
+        </p>
+      </section>
 
-    <!-- Name and tagline -->
-    <h1>Max Wilson Pereira</h1>
-    <p><b>Canto, paixão e entretenimento para tocar o seu coração</b> ❤️❤️❤️</p>
-
-    <!-- Link buttons -->
-
-    <div class="link-button">
-      <a href="apoio-pix.html" target="_blank"> Apoie Minha Jornada (PIX) </a>
-    </div>
-
-    <div class="link-button">
-      <a href="https://apoia.se/maxwilsonpereira?v=1.0.1" target="_blank">
-        Apoie Minha Jornada (APOIE.se)
-      </a>
-    </div>
-
-    <div class="link-button">
-      <a href="pix.html" target="_blank"> Álbum SO IN LOVE + Bônus (PIX) </a>
-    </div>
-
-    <div class="link-button">
-      <a
-        href="https://maxwilsonpereira.hotmart.host/max-wilson-pereira-so-in-love-03d7467a-d750-40dd-8138-d69e1fcf0670?v=1.0.1"
-        target="_blank"
-      >
-        Álbum SO IN LOVE + Bônus (HOTMART)
-      </a>
-    </div>
+      <nav class="link-list">
+        <div class="link-button">
+          <a href="pages/apoio-pix.html">Apoie Minha Jornada (PIX)</a>
+        </div>
+        <div class="link-button">
+          <a href="https://apoia.se/maxwilsonpereira?v=1.0.1" target="_blank">
+            Apoie Minha Jornada (APOIE.se)
+          </a>
+        </div>
+        <div class="link-button">
+          <a href="pages/so-in-love-pix.html">Álbum SO IN LOVE + Bônus (PIX)</a>
+        </div>
+        <div class="link-button">
+          <a
+            href="https://maxwilsonpereira.hotmart.host/max-wilson-pereira-so-in-love-03d7467a-d750-40dd-8138-d69e1fcf0670?v=1.0.1"
+            target="_blank"
+          >
+            Álbum SO IN LOVE + Bônus (HOTMART)
+          </a>
+        </div>
+      </nav>
+    </main>
   </body>
 </html>
