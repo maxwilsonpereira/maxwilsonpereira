@@ -5,8 +5,12 @@
  */
 
 function getBasePath() {
-  return window.location.pathname.includes('/pages/') ? '../' : '';
+  const path = window.location.pathname;
+  if (path === '/' || path === '/index.html') return '';
+  return '../';
 }
+
+const ALBUM_DOWNLOAD_URL = 'https://limewire.com/d/HUpNX#ftFcLUcvby';
 
 /* ─── max-badge ────────────────────────────────────────────────────────────── */
 class MaxBadge extends HTMLElement {
@@ -72,6 +76,50 @@ class MaxLinkList extends HTMLElement {
 }
 customElements.define('max-link-list', MaxLinkList);
 
+/* ─── max-pix-continue-form ───────────────────────────────────────────────── */
+class MaxPixContinueForm extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `
+      <div class="pix-continue-form">
+        <label class="input-label" for="pix-nome">
+          Digite aqui o nome usado no PIX
+        </label>
+        <input
+          id="pix-nome"
+          class="pix-input"
+          type="text"
+          placeholder="Digite aqui o nome usado no PIX"
+          autocomplete="name"
+        />
+        <button class="primary-button" type="button" disabled>
+          CONTINUAR
+        </button>
+      </div>
+    `;
+
+    const input = this.querySelector('.pix-input');
+    const button = this.querySelector('.primary-button');
+
+    if (!input || !button) return;
+
+    const validate = () => {
+      const sanitizedName = input.value.trim();
+      button.disabled = sanitizedName.length < 3;
+    };
+
+    input.addEventListener('input', validate);
+
+    button.addEventListener('click', () => {
+      const sanitizedName = input.value.trim();
+      if (sanitizedName.length < 3) return;
+
+      const params = new URLSearchParams({ nome: sanitizedName });
+      window.location.href = `/pages/so-in-love-download.html?${params.toString()}`;
+    });
+  }
+}
+customElements.define('max-pix-continue-form', MaxPixContinueForm);
+
 /* ─── max-tagline ─────────────────────────────────────────────────────────── */
 class MaxTagline extends HTMLElement {
   connectedCallback() {
@@ -90,6 +138,59 @@ class MaxSiteName extends HTMLElement {
   }
 }
 customElements.define('max-site-name', MaxSiteName);
+
+/* ─── download-page ───────────────────────────────────────────────────────── */
+class DownloadPage extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `
+      <p>
+        Se você efetuou o PIX, muito obrigado, do fundo do meu coração.<br /><br />
+        Você está apoiando minha jornada como criador digital e isso significa
+        muito para mim.
+      </p>
+      <p>
+        Quero te dizer algo com toda sinceridade: eu não vou conferir se você
+        realmente fez o PIX.
+      </p>
+      <p>
+        Eu escolho confiar em você, que me acompanha e apoia minha jornada com
+        carinho. Se ainda não fez o pagamento, peço com carinho que só faça o
+        download depois de ter efetuado o pagamento.
+      </p>
+      <a
+        class="primary-button download-button"
+        href="${ALBUM_DOWNLOAD_URL}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Baixar o álbum
+      </a>
+      <p>
+        Se você quiser me ajudar ainda mais, vou ficar muito feliz se escolher
+        uma das músicas e compartilhar um story no Instagram me marcando.
+      </p>
+      <p>Você pode escrever algo simples como:</p>
+      <p>
+        "Comprei o álbum SO IN LOVE do @maxwilsonpereira e estou adorando! 🎶"
+      </p>
+      <p>Isso ajuda muito mais pessoas a descobrirem minha música.</p>
+      <p>
+        Se você tiver qualquer problema com o download, envie um e-mail para:
+      </p>
+      <p><strong>maxwilsonpereira@gmail.com</strong></p>
+      <p>Assunto do e-mail (em letras maiúsculas):</p>
+      <p><strong>PROBLEMA BAIXANDO ALBUM</strong></p>
+      <p>
+        Assim consigo encontrar sua mensagem mais rapidamente e ajudar você.
+      </p>
+      <p>
+        Muito obrigado pelo apoio!<br />
+        Cada compra ajuda diretamente na minha jornada artística.
+      </p>
+    `;
+  }
+}
+customElements.define('download-page', DownloadPage);
 
 /* ─── max-seo-meta ────────────────────────────────────────────────────────── */
 class MaxSeoMeta extends HTMLElement {
