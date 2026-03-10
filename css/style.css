@@ -54,9 +54,7 @@ max-tagline,
 max-site-name,
 max-profile-img,
 max-link-list,
-max-back-button,
-max-pix-continue-form,
-download-page {
+max-back-button {
   display: contents;
 }
 
