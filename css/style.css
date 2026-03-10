@@ -3,7 +3,7 @@
    Inspired by Linktree • Social media palette
    ============================================ */
 
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
   /* Social palette */
@@ -60,7 +60,7 @@ max-back-button {
 
 body {
   font-family:
-    "Plus Jakarta Sans",
+    'Plus Jakarta Sans',
     -apple-system,
     BlinkMacSystemFont,
     sans-serif;
@@ -80,7 +80,7 @@ body {
 .hero-bg {
   position: fixed;
   inset: 0;
-  background-image: url("../assets/vintage-microphone.jpg");
+  background-image: url('../assets/vintage-microphone.jpg');
   background-size: cover;
   background-position: center;
   z-index: 0;
@@ -88,7 +88,7 @@ body {
 
 /* Dark overlay — semi-transparent so hero image shows through */
 body::before {
-  content: "";
+  content: '';
   position: fixed;
   inset: 0;
   background:
@@ -107,14 +107,14 @@ body::before {
       rgba(64, 93, 230, 0.15) 0%,
       transparent 40%
     ),
-    rgba(10, 10, 11, 0.75);
+    rgba(10, 10, 11, 0.7); /* Hero image "opacity", change the last field */
   z-index: 1;
   pointer-events: none;
 }
 
 /* Subtle noise texture */
 body::after {
-  content: "";
+  content: '';
   position: fixed;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
@@ -192,6 +192,7 @@ h2 {
 }
 
 h2.accent {
+  font-weight: 800; /* makes the gradient bold */
   background: var(--accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -238,7 +239,7 @@ h2.accent {
 }
 
 .link-button a::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   background: var(--accent-gradient);
@@ -407,7 +408,7 @@ ul li:last-child {
 }
 
 ul li::before {
-  content: "♫";
+  content: '♫';
   margin-right: 12px;
   opacity: 0.6;
   font-size: 0.85rem;
