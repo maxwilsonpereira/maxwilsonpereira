@@ -105,15 +105,15 @@ const MWP_CONFIG = {
       text: 'Apoie Minha Jornada (PIX)',
       external: false,
     },
-    {
-      href: 'https://apoia.se/maxwilsonpereira?v=1.0.1',
-      text: 'Apoie Minha Jornada (APOIE.se)',
-      external: true,
-    },
-    {
-      href: 'https://maxwilsonpereira.hotmart.host/max-wilson-pereira-so-in-love-03d7467a-d750-40dd-8138-d69e1fcf0670?v=1.0.1',
-      text: 'Álbum SO IN LOVE + Bônus (HOTMART)',
-      external: true,
-    },
+    // {
+    //   href: 'https://apoia.se/maxwilsonpereira?v=1.0.1',
+    //   text: 'Apoie Minha Jornada (APOIE.se)',
+    //   external: true,
+    // },
+    // {
+    //   href: 'https://maxwilsonpereira.hotmart.host/max-wilson-pereira-so-in-love-03d7467a-d750-40dd-8138-d69e1fcf0670?v=1.0.1',
+    //   text: 'Álbum SO IN LOVE + Bônus (HOTMART)',
+    //   external: true,
+    // },
   ],
 };
