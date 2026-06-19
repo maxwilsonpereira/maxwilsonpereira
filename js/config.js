@@ -81,14 +81,29 @@ const MWP_CONFIG = {
       title: 'Baixar Álbum SO IN LOVE | Max Wilson Pereira',
       description:
         'Página de download do álbum digital SO IN LOVE de Max Wilson Pereira.',
-      path: '/pages/so-in-love-download.html',
+      path: '/pages/albums/so-in-love.html',
       ogDescription:
         'Baixe o álbum SO IN LOVE e obrigado por apoiar a jornada artística de Max Wilson Pereira.',
       jsonLd: {
         '@type': 'WebPage',
         name: 'Baixar Álbum SO IN LOVE | Max Wilson Pereira',
         description: 'Página de download do álbum digital SO IN LOVE.',
-        url: 'https://maxwilsonpereira.com.br/pages/so-in-love-download.html',
+        url: 'https://maxwilsonpereira.com.br/pages/albums/so-in-love.html',
+        mainEntity: { '@type': 'Person', name: 'Max Wilson Pereira' },
+      },
+    },
+    quattroSonyDownload: {
+      title: 'Baixar Album QUATTRO | Max Wilson Pereira',
+      description:
+        'Pagina de download do album digital QUATTRO de Max Wilson Pereira.',
+      path: '/pages/albums/quattro-sony.html',
+      ogDescription:
+        'Baixe o album QUATTRO e obrigado por apoiar a jornada artistica de Max Wilson Pereira.',
+      jsonLd: {
+        '@type': 'WebPage',
+        name: 'Baixar Album QUATTRO | Max Wilson Pereira',
+        description: 'Pagina de download do album digital QUATTRO.',
+        url: 'https://maxwilsonpereira.com.br/pages/albums/quattro-sony.html',
         mainEntity: { '@type': 'Person', name: 'Max Wilson Pereira' },
       },
     },
@@ -97,12 +112,12 @@ const MWP_CONFIG = {
   links: [
     {
       href: 'pages/so-in-love-pix.html',
-      text: 'Álbum SO IN LOVE + Bônus (PIX)',
+      text: 'Álbum SO IN LOVE + Bônus',
       external: false,
     },
     {
       href: 'pages/apoio-pix.html',
-      text: 'Apoie Minha Jornada (PIX)',
+      text: 'Apoie Minha Jornada',
       external: false,
     },
     // {

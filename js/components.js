@@ -93,8 +93,47 @@ function initPixContinueForm() {
     const sanitizedName = input.value.trim();
     if (sanitizedName.length < 3) return;
 
-    const params = new URLSearchParams({ nome: sanitizedName });
-    window.location.href = `/pages/so-in-love-download.html?${params.toString()}`;
+    window.location.href = '/pages/albums/so-in-love.html';
+  });
+}
+
+/* Reusable modal behavior */
+function initModals() {
+  const modals = [...document.querySelectorAll('.modal')];
+
+  if (!modals.length) return;
+
+  const updateBodyLock = () => {
+    const hasOpenModal = modals.some((modal) => modal.open);
+    document.body.classList.toggle('modal-open', hasOpenModal);
+  };
+
+  modals.forEach((modal) => {
+    const closeButtons = modal.querySelectorAll('[data-modal-close]');
+
+    closeButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        modal.close();
+      });
+    });
+
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        modal.close();
+      }
+    });
+
+    modal.addEventListener('close', updateBodyLock);
+
+    if (modal.hasAttribute('data-open-on-load')) {
+      if (typeof modal.showModal === 'function') {
+        modal.showModal();
+      } else {
+        modal.setAttribute('open', '');
+      }
+
+      updateBodyLock();
+    }
   });
 }
 
@@ -176,3 +215,4 @@ class MaxSeoMeta extends HTMLElement {
 customElements.define('max-seo-meta', MaxSeoMeta);
 
 initPixContinueForm();
+initModals();
