@@ -35,17 +35,14 @@
           />
         </div>
         <div class="album-hero-copy">
-          <max-badge text="Álbum digital liberado"></max-badge>
+          <max-badge text="Álbum digital"></max-badge>
           <p class="album-kicker">Max Wilson Pereira</p>
           <h1>QUATTRO</h1>
           <p>
             Ouça online, baixe faixa por faixa ou salve o álbum completo em um
             arquivo único.
           </p>
-          <button
-            class="primary-button album-download-all"
-            type="button"
-          >
+          <button class="primary-button album-download-all" type="button">
             Baixar todas as músicas
           </button>
         </div>
@@ -352,7 +349,8 @@
             const downloadLink = document.createElement('a');
 
             downloadLink.href = trackDownload.href;
-            downloadLink.download = trackDownload.getAttribute('download') || '';
+            downloadLink.download =
+              trackDownload.getAttribute('download') || '';
             document.body.appendChild(downloadLink);
             downloadLink.click();
             downloadLink.remove();
