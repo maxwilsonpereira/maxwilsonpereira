@@ -56,6 +56,7 @@ max-profile-img,
 max-link-list,
 max-site-nav,
 max-social-follow,
+max-site-footer,
 max-back-button,
 max-seo-meta {
   display: contents;
@@ -444,6 +445,18 @@ body::after {
 .social-link-facebook:hover,
 .social-link-facebook:focus-visible {
   color: #7fb1ff;
+}
+
+.site-footer {
+  position: relative;
+  z-index: 10;
+  width: min(100% - 32px, 1120px);
+  margin: -34px auto 28px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
 }
 
 /* Profile section — card for readability over hero image */
@@ -1358,7 +1371,11 @@ ul li::before {
   margin-bottom: 8px;
 }
 
-/* Subpage layout — content aligned with home, back button floats above */
+/* Subpage layout — content clears the shared fixed navigation */
+.page-sub .page-container {
+  margin-top: 82px;
+}
+
 .page-sub .content-section {
   margin-top: 8px;
 }
@@ -1404,6 +1421,10 @@ ul li::before {
     border-radius: var(--radius-full);
     font-size: 0.73rem;
     white-space: nowrap;
+  }
+
+  .page-sub .page-container {
+    margin-top: 96px;
   }
 
   .home-hero {

@@ -7,7 +7,17 @@
 function getBasePath() {
   const path = window.location.pathname;
   if (path === '/' || path === '/index.html') return '';
-  return '../';
+  const pathParts = path.split('/').filter(Boolean);
+  const directories = pathParts.slice(0, -1);
+  return '../'.repeat(directories.length);
+}
+
+function getPageHref(href) {
+  if (!href || href.startsWith('/') || href.startsWith('#') || /^https?:\/\//.test(href)) {
+    return href;
+  }
+
+  return `${getBasePath()}${href}`;
 }
 
 /* ─── max-badge ────────────────────────────────────────────────────────────── */
@@ -45,7 +55,7 @@ class MaxSiteNav extends HTMLElement {
     const items = links
       .map(
         (link) => `
-          <a class="site-nav-link" href="${link.href}" ${link.external ? 'target="_blank" rel="noopener noreferrer"' : ''}>
+          <a class="site-nav-link" href="${getPageHref(link.href)}" ${link.external ? 'target="_blank" rel="noopener noreferrer"' : ''}>
             ${link.text}
           </a>
         `,
@@ -54,7 +64,7 @@ class MaxSiteNav extends HTMLElement {
 
     this.innerHTML = `
       <header class="site-header">
-        <a class="site-brand" href="/" aria-label="${siteName} - Home">
+        <a class="site-brand" href="${getPageHref('index.html')}" aria-label="${siteName} - Home">
           <span>${siteName}</span>
         </a>
 
@@ -113,7 +123,7 @@ class MaxLinkList extends HTMLElement {
       .map(
         (link) => `
         <div class="link-button">
-          <a href="${link.href}" ${link.external ? 'target="_blank" rel="noopener noreferrer"' : ''}>${link.text}</a>
+          <a href="${getPageHref(link.href)}" ${link.external ? 'target="_blank" rel="noopener noreferrer"' : ''}>${link.text}</a>
         </div>
       `,
       )
@@ -175,6 +185,14 @@ class MaxSocialFollow extends HTMLElement {
   }
 }
 customElements.define('max-social-follow', MaxSocialFollow);
+
+class MaxSiteFooter extends HTMLElement {
+  connectedCallback() {
+    const siteName = MWP_CONFIG?.siteName || 'Max Wilson Pereira';
+    this.innerHTML = `<footer class="site-footer">© 2026 ${siteName}</footer>`;
+  }
+}
+customElements.define('max-site-footer', MaxSiteFooter);
 
 /* ─── PIX continue form behavior ──────────────────────────────────────────── */
 function initPixContinueForm() {
