@@ -1334,6 +1334,18 @@ h2.accent {
   padding: 20px;
 }
 
+.album-international-note {
+  padding: 22px 24px;
+}
+
+.album-international-note h2 {
+  margin: 6px 0 10px;
+}
+
+.album-international-note p:last-child {
+  margin-bottom: 0;
+}
+
 .album-section-heading {
   display: flex;
   align-items: flex-end;
@@ -1399,6 +1411,14 @@ h2.accent {
   color: #1db954;
 }
 
+.track-item.is-disabled {
+  opacity: 0.58;
+}
+
+.track-item.is-disabled:hover {
+  background: transparent;
+}
+
 .track-number {
   color: var(--text-muted);
   font-size: 0.9rem;
@@ -1431,6 +1451,7 @@ h2.accent {
 }
 
 .track-action {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1466,6 +1487,47 @@ h2.accent {
   transform: translateY(-1px);
 }
 
+.track-action:disabled,
+.track-action[aria-disabled="true"] {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+.track-action:disabled::after,
+.track-action[aria-disabled="true"]::after {
+  content: attr(title);
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 8px);
+  z-index: 5;
+  width: max-content;
+  max-width: min(240px, 70vw);
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  background: rgba(12, 12, 14, 0.96);
+  color: #ffffff;
+  font-size: 0.74rem;
+  font-weight: 700;
+  line-height: 1.35;
+  opacity: 0;
+  pointer-events: none;
+  text-align: center;
+  transform: translateY(4px);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+  white-space: normal;
+}
+
+.track-action:disabled:hover::after,
+.track-action[aria-disabled="true"]:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .track-action:focus-visible {
   color: #ffffff;
 }
@@ -1480,6 +1542,12 @@ h2.accent {
 .content-section .play-track:hover,
 .content-section .play-track:focus-visible {
   color: #07140b;
+}
+
+.content-section .play-track:disabled {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
 }
 
 .album-note-section {

@@ -513,10 +513,54 @@ function translatePhrase(text, language = getCurrentLanguage()) {
 function getLanguageHref(language) {
   const url = new URL(window.location.href);
   url.searchParams.set('lang', language);
+  if (isSoInLoveAlbumPagePath(url.pathname) && language === 'pt') {
+    url.pathname = new URL(
+      `${getBasePath()}${MWP_SO_IN_LOVE_PIX_PAGE_PATH}`,
+      window.location.href,
+    ).pathname;
+    url.searchParams.delete('lang');
+  }
+  if (isSoInLovePixPagePath(url.pathname) && language !== 'pt') {
+    url.pathname = new URL(
+      `${getBasePath()}${MWP_SO_IN_LOVE_ALBUM_PAGE_PATH}`,
+      window.location.href,
+    ).pathname;
+  }
   return `${url.pathname}${url.search}${url.hash}`;
 }
 
 const MWP_SUPPORT_PAGE_PATH = 'pages/apoio-pix.html';
+const MWP_SO_IN_LOVE_PIX_PAGE_PATH = 'pages/so-in-love-pix.html';
+const MWP_SO_IN_LOVE_ALBUM_PAGE_PATH = 'pages/albums/so-in-love.html';
+
+function isSoInLovePixPagePath(path) {
+  const normalizedPath = normalizePath(path);
+  return (
+    normalizedPath === MWP_SO_IN_LOVE_PIX_PAGE_PATH ||
+    normalizedPath === `${MWP_SO_IN_LOVE_PIX_PAGE_PATH}m`
+  );
+}
+
+function isSoInLoveAlbumPagePath(path) {
+  const normalizedPath = normalizePath(path);
+  return (
+    normalizedPath === MWP_SO_IN_LOVE_ALBUM_PAGE_PATH ||
+    normalizedPath === `${MWP_SO_IN_LOVE_ALBUM_PAGE_PATH}m`
+  );
+}
+
+function redirectInternationalAlbumPurchase() {
+  if (getCurrentLanguage() === 'pt' || !isSoInLovePixPagePath(window.location.pathname)) {
+    return;
+  }
+
+  const url = new URL(window.location.href);
+  url.pathname = new URL(
+    `${getBasePath()}${MWP_SO_IN_LOVE_ALBUM_PAGE_PATH}`,
+    window.location.href,
+  ).pathname;
+  window.location.replace(`${url.pathname}${url.search}${url.hash}`);
+}
 
 function isSupportPagePath(path) {
   const normalizedPath = normalizePath(path);
@@ -554,7 +598,7 @@ function renderLanguageSwitcher() {
     .filter((language) => language.code !== currentLanguage)
     .map(
       (language) => `
-        <a class="language-switch-link" href="${getLanguageHref(language.code)}" lang="${language.htmlLang}" hreflang="${language.htmlLang}" aria-label="${translatePhrase('Mudar idioma para', currentLanguage)} ${language.name}" title="${language.name}">
+        <a class="language-switch-link" href="${getLanguageHref(language.code)}" data-language="${language.code}" lang="${language.htmlLang}" hreflang="${language.htmlLang}" aria-label="${translatePhrase('Mudar idioma para', currentLanguage)} ${language.name}" title="${language.name}">
           <span class="language-switch-flag language-switch-flag-${language.code}" aria-hidden="true"></span>
         </a>
       `,
@@ -621,8 +665,12 @@ function getPageHref(href) {
     return href;
   }
 
-  const pageHref = `${getBasePath()}${href}`;
   const language = getCurrentLanguage();
+  const targetHref =
+    language !== 'pt' && isSoInLovePixPagePath(href)
+      ? MWP_SO_IN_LOVE_ALBUM_PAGE_PATH
+      : href;
+  const pageHref = `${getBasePath()}${targetHref}`;
   if (language === 'pt') return pageHref;
 
   const url = new URL(pageHref, window.location.href);
@@ -762,6 +810,16 @@ class MaxSiteNav extends HTMLElement {
     const toggle = this.querySelector('.site-nav-toggle');
     const nav = this.querySelector('.site-nav');
 
+    this.querySelectorAll('.language-switch-link[data-language]').forEach((link) => {
+      link.addEventListener('click', () => {
+        try {
+          localStorage.setItem('mwp-language', link.dataset.language);
+        } catch (error) {
+          // The URL still carries the selected language when storage is unavailable.
+        }
+      });
+    });
+
     toggle?.addEventListener('click', () => {
       const isOpen = nav?.classList.toggle('is-open') || false;
       toggle.setAttribute('aria-expanded', String(isOpen));
@@ -895,6 +953,12 @@ function initPixContinueForm() {
 
 /* Reusable modal behavior */
 function initModals() {
+  if (getCurrentLanguage() !== 'pt') {
+    document
+      .querySelectorAll('.album-support-modal[data-open-on-load]')
+      .forEach((modal) => modal.removeAttribute('data-open-on-load'));
+  }
+
   const modals = [...document.querySelectorAll('.modal')];
 
   if (!modals.length) return;
@@ -1014,6 +1078,7 @@ class MaxSeoMeta extends HTMLElement {
 }
 customElements.define('max-seo-meta', MaxSeoMeta);
 
+redirectInternationalAlbumPurchase();
 applyStaticTranslations();
 initPixContinueForm();
 initModals();

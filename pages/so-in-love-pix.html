@@ -12,6 +12,28 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
 
+    <script>
+      (() => {
+        const params = new URLSearchParams(window.location.search);
+        let language = params.get('lang');
+
+        try {
+          language = language || localStorage.getItem('mwp-language');
+        } catch (error) {
+          // Keep the normal Portuguese purchase page if storage is unavailable.
+        }
+
+        if (language === 'en' || language === 'de') {
+          const url = new URL(window.location.href);
+          url.pathname = url.pathname.replace(
+            /\/pages\/so-in-love-pix\.html$/u,
+            '/pages/albums/so-in-love.html',
+          );
+          window.location.replace(`${url.pathname}${url.search}${url.hash}`);
+        }
+      })();
+    </script>
+
     <link rel="stylesheet" href="../css/style.css" />
   </head>
 

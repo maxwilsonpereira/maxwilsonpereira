@@ -118,6 +118,20 @@
         </div>
       </section>
 
+      <section
+        class="content-section album-international-note"
+        data-international-only
+        hidden
+      >
+        <p class="album-eyebrow" data-gift-note-kicker>Gift selection</p>
+        <h2 data-gift-note-title>A note for listeners outside Brazil</h2>
+        <p data-gift-note-body>
+          This album can only be purchased in Brazil, but I am very glad to
+          offer some of the songs to you as a gift. I hope these tracks bring
+          you joy, and thank you for listening from afar.
+        </p>
+      </section>
+
       <section class="content-section album-player-section">
         <div class="album-section-heading">
           <div>
@@ -725,11 +739,87 @@
       const downloadAllButton = document.querySelector('.album-download-all');
       const playButtons = [...document.querySelectorAll('.play-track')];
       const t = (text) => window.MWP_I18N?.translatePhrase(text) || text;
-      const trackDownloads = [
+      let trackDownloads = [
         ...document.querySelectorAll('.track-item a[download]'),
       ];
+      const currentLanguage =
+        window.MWP_I18N?.getCurrentLanguage?.() || 'pt';
+      const isInternationalAlbum = currentLanguage !== 'pt';
+
+      function applyInternationalAlbumMode() {
+        if (!isInternationalAlbum) return;
+
+        const note = document.querySelector('[data-international-only]');
+        const noteCopy = {
+          en: {
+            kicker: 'Gift selection',
+            title: 'A note for listeners outside Brazil',
+            body:
+              'This album can only be purchased in Brazil, but I am very glad to offer some of the songs to you as a gift. I hope these tracks bring you joy, and thank you for listening from afar.',
+            downloadAll: 'Download gift songs',
+            unavailable: 'Unavailable outside Brazil',
+          },
+          de: {
+            kicker: 'Geschenkauswahl',
+            title: 'Ein Hinweis fuer Hoerer ausserhalb Brasiliens',
+            body:
+              'Dieses Album kann nur in Brasilien gekauft werden, aber ich freue mich sehr, Ihnen einige der Lieder als Geschenk zu geben. Ich hoffe, diese Titel machen Ihnen Freude, und danke Ihnen fuers Zuhoeren aus der Ferne.',
+            downloadAll: 'Geschenkte Lieder herunterladen',
+            unavailable: 'Ausserhalb Brasiliens nicht verfuegbar',
+          },
+        };
+        const copy = noteCopy[currentLanguage] || noteCopy.en;
+
+        if (note) {
+          note.hidden = false;
+          note.querySelector('[data-gift-note-kicker]').textContent =
+            copy.kicker;
+          note.querySelector('[data-gift-note-title]').textContent =
+            copy.title;
+          note.querySelector('[data-gift-note-body]').textContent = copy.body;
+        }
+
+        downloadAllButton.textContent = copy.downloadAll;
+        downloadAllButton.disabled = true;
+        downloadAllButton.title = copy.unavailable;
+        downloadAllButton.setAttribute('aria-label', copy.unavailable);
+
+        document
+          .querySelectorAll('.album-player-section')
+          .forEach((section, sectionIndex) => {
+            const enabledLimit = sectionIndex === 0 ? 5 : 4;
+            section.querySelectorAll('.track-item').forEach((item, index) => {
+              if (index < enabledLimit) return;
+
+              item.classList.add('is-disabled');
+              item
+                .querySelectorAll('.play-track')
+                .forEach((button) => {
+                  button.disabled = true;
+                  button.title = copy.unavailable;
+                });
+              item
+                .querySelectorAll('a[download]')
+                .forEach((link) => {
+                  link.removeAttribute('href');
+                  link.removeAttribute('download');
+                  link.setAttribute('aria-disabled', 'true');
+                  link.setAttribute('tabindex', '-1');
+                  link.title = copy.unavailable;
+                });
+            });
+          });
+
+        trackDownloads = [
+          ...document.querySelectorAll('.track-item:not(.is-disabled) a[download]'),
+        ];
+      }
+
+      applyInternationalAlbumMode();
 
       downloadAllButton.addEventListener('click', () => {
+        if (isInternationalAlbum) return;
+
         const originalText = downloadAllButton.textContent;
 
         downloadAllButton.disabled = true;
