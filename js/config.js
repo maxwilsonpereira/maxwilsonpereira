@@ -14,7 +14,7 @@ const MWP_CONFIG = {
 
   profileImage: 'max-gigga.jpg',
 
-  ogImage: 'https://maxwilsonpereira.com.br/assets/max-gigga.jpg',
+  ogImage: 'https://maxwilsonpereira.com.br/assets/favicon-img.jpg',
 
   socialLinks: [
     'https://www.youtube.com/maxwilsonpereira',
@@ -35,7 +35,7 @@ const MWP_CONFIG = {
         url: 'https://maxwilsonpereira.com.br',
         description:
           'Tenor brasileiro. Ópera, pop, paródias e apresentações ao vivo nas ruas.',
-        image: 'https://maxwilsonpereira.com.br/assets/max-gigga.jpg',
+        image: 'https://maxwilsonpereira.com.br/assets/favicon-img.jpg',
         jobTitle: 'Tenor',
         knowsAbout: [
           'Ópera',
