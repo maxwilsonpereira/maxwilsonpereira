@@ -45,6 +45,28 @@ const MWP_CONFIG = {
         ],
       },
     },
+    biografia: {
+      title: 'Biografia | Max Wilson Pereira',
+      description:
+        'Conheça a trajetória de Max Wilson Pereira, tenor brasileiro radicado em Viena, da formação lírica aos palcos, televisão e redes sociais.',
+      path: '/pages/biografia.html',
+      ogDescription:
+        'A história de Max Wilson Pereira: tenor brasileiro, artista de crossover, criador digital e intérprete que une ópera, pop, humor e emoção.',
+      jsonLd: {
+        '@type': 'ProfilePage',
+        name: 'Biografia | Max Wilson Pereira',
+        description:
+          'Biografia de Max Wilson Pereira, tenor brasileiro radicado em Viena.',
+        url: 'https://maxwilsonpereira.com.br/pages/biografia.html',
+        mainEntity: {
+          '@type': 'Person',
+          name: 'Max Wilson Pereira',
+          jobTitle: 'Tenor',
+          birthPlace: 'São Paulo, Brasil',
+          homeLocation: 'Viena, Áustria',
+        },
+      },
+    },
     apoioPix: {
       title: 'Apoie Minha Jornada | Max Wilson Pereira',
       description:
@@ -111,13 +133,18 @@ const MWP_CONFIG = {
 
   links: [
     {
+      href: 'pages/biografia.html',
+      text: 'BIOGRAFIA',
+      external: false,
+    },
+    {
       href: 'pages/so-in-love-pix.html',
-      text: 'Álbum SO IN LOVE + Bônus',
+      text: 'ÁLBUM SO IN LOVE + BÔNUS',
       external: false,
     },
     {
       href: 'pages/apoio-pix.html',
-      text: 'Apoie Minha Jornada',
+      text: 'APOIE MINHA JORNADA',
       external: false,
     },
     // {
