@@ -220,6 +220,58 @@ const MWP_TEXT_TRANSLATIONS = {
       'A live concert by Max Wilson Pereira with great melodies from Broadway, musicals, opera, popular classics, and crossover in an intimate atmosphere.',
     'Uma noite íntima com voz, piano, convidados especiais, grandes melodias, teatro musical, ópera e crossover clássico.':
       'An intimate evening with voice, piano, special guests, great melodies, musical theater, opera, and classical crossover.',
+    'Max Wilson Pereira em imagem de divulgação do concerto':
+      'Max Wilson Pereira in a concert publicity image',
+    'Concerto ao vivo': 'Live concert',
+    Concerto: 'Concert',
+    'Uma noite emocionante com grandes melodias, entre o teatro musical, a ópera e o crossover clássico.':
+      'A moving evening with great melodies, between musical theater, opera, and classical crossover.',
+    'Quero assistir': 'I want to attend',
+    'Sobre o concerto': 'About the concert',
+    'Uma experiência próxima, elegante e emocionante':
+      'A close, elegant, and moving experience',
+    'Este concerto nasce do desejo de cantar repertórios que atravessam gerações e continuam encontrando novos sentidos quando são vividos ao vivo. Ao lado de um pianista, com a presença de uma soprano convidada e, muito provavelmente, também de um violinista, a noite propõe um encontro íntimo entre voz, palavra e melodia.':
+      'This concert is born from the desire to sing repertoire that crosses generations and continues finding new meaning when experienced live. Alongside a pianist, with a guest soprano and, very likely, a violinist as well, the evening offers an intimate encounter between voice, word, and melody.',
+    'O público ouvirá canções eternas da Broadway, dos musicais, da ópera e de clássicos populares interpretadas com acompanhamento ao piano, convidados especiais e uma atmosfera de teatro próximo. Mais do que uma sequência de músicas, o concerto procura contar pequenas histórias: amores possíveis, despedidas, sonhos, lembranças e momentos em que uma melodia parece dizer aquilo que as palavras sozinhas não alcançam.':
+      'The audience will hear timeless songs from Broadway, musicals, opera, and popular classics, performed with piano accompaniment, special guests, and the atmosphere of intimate theater. More than a sequence of songs, the concert seeks to tell small stories: possible loves, farewells, dreams, memories, and moments when a melody seems to say what words alone cannot reach.',
+    'Uma nova jornada': 'A new journey',
+    'O início de uma nova fase artística': 'The beginning of a new artistic phase',
+    'Este projeto marca o começo de uma nova fase na minha carreira. Depois de tantos caminhos entre ópera, televisão, gravações, redes sociais e repertório crossover, sinto que este concerto reúne de forma muito verdadeira aquilo que mais me move: cantar com emoção, contar histórias e estar perto do público.':
+      'This project marks the beginning of a new phase in my career. After so many paths through opera, television, recordings, social media, and crossover repertoire, I feel this concert brings together, in a very truthful way, what moves me most: singing with emotion, telling stories, and being close to the audience.',
+    'As primeiras apresentações acontecerão na':
+      'The first performances will take place in',
+    Áustria: 'Austria',
+    ', país que há muitos anos faz parte da minha vida musical. No fim do ano, em':
+      ', a country that has been part of my musical life for many years. At the end of the year, in',
+    dezembro: 'December',
+    ', o concerto também será apresentado no':
+      ', the concert will also be presented in',
+    Brasil: 'Brazil',
+    ', em um retorno muito especial a esse repertório diante do meu público brasileiro.':
+      ', in a very special return to this repertoire before my Brazilian audience.',
+    'Minha esperança é que, a partir de':
+      'My hope is that, starting in',
+    ', este projeto cresça e se transforme em uma turnê pelo Brasil, levando essas canções a plateias de diferentes cidades. Ainda é um caminho sendo construído, mas ele nasce com sinceridade, cuidado e muita vontade de compartilhar beleza.':
+      ', this project will grow and become a tour through Brazil, bringing these songs to audiences in different cities. It is still a path being built, but it begins with sincerity, care, and a deep desire to share beauty.',
+    Ensaio: 'Rehearsal',
+    'Preparando o concerto ao piano': 'Preparing the concert at the piano',
+    'Este vídeo mostra um momento simples de ensaio ao piano, preparando uma das canções que farão parte do concerto.':
+      'This video shows a simple rehearsal moment at the piano, preparing one of the songs that will be part of the concert.',
+    'Max Wilson Pereira ensaiando ao piano para o concerto':
+      'Max Wilson Pereira rehearsing at the piano for the concert',
+    Repertório: 'Repertoire',
+    'Melodias que permanecem': 'Melodies that endure',
+    'O repertório pode variar a cada apresentação, preservando a liberdade do momento e o encontro com cada plateia. Entre as obras previstas estão:':
+      'The repertoire may vary with each performance, preserving the freedom of the moment and the encounter with each audience. Among the planned works are:',
+    'clássico popular': 'popular classic',
+    Duetos: 'Duets',
+    'Muitas outras canções bonitas também poderão fazer parte de cada apresentação.':
+      'Many other beautiful songs may also be part of each performance.',
+    Convite: 'Invitation',
+    'Viva este concerto ao vivo': 'Experience this concert live',
+    'Algumas músicas revelam sua força de modo especial quando acontecem no mesmo instante em que respiramos juntos: artista, convidados e plateia. Este concerto é um convite para esse encontro.':
+      'Some songs reveal their power in a special way when they happen in the same instant that we breathe together: artist, guests, and audience. This concert is an invitation to that encounter.',
+    'Informações em breve': 'Information coming soon',
     'Apoie a jornada artística do tenor Max Wilson Pereira via PIX. Qualquer valor é recebido de coração e reinvestido na carreira e no canto lírico.':
       'Support the artistic journey of tenor Max Wilson Pereira via PIX. Any amount is received from the heart and reinvested in his career and classical singing.',
     'Apoie o tenor Max Wilson Pereira via PIX. Seu apoio ajuda a levar o canto lírico e a cultura a mais pessoas.':
@@ -438,6 +490,58 @@ const MWP_TEXT_TRANSLATIONS = {
       'Live-Konzert von Max Wilson Pereira mit großen Melodien aus Broadway, Musicals, Oper, beliebten Klassikern und Crossover in intimer Atmosphäre.',
     'Uma noite íntima com voz, piano, convidados especiais, grandes melodias, teatro musical, ópera e crossover clássico.':
       'Ein intimer Abend mit Stimme, Klavier, besonderen Gästen, großen Melodien, Musicaltheater, Oper und klassischem Crossover.',
+    'Max Wilson Pereira em imagem de divulgação do concerto':
+      'Max Wilson Pereira auf einem Konzert-Pressebild',
+    'Concerto ao vivo': 'Live-Konzert',
+    Concerto: 'Konzert',
+    'Uma noite emocionante com grandes melodias, entre o teatro musical, a ópera e o crossover clássico.':
+      'Ein bewegender Abend mit großen Melodien zwischen Musicaltheater, Oper und klassischem Crossover.',
+    'Quero assistir': 'Ich möchte dabei sein',
+    'Sobre o concerto': 'Über das Konzert',
+    'Uma experiência próxima, elegante e emocionante':
+      'Ein nahes, elegantes und bewegendes Erlebnis',
+    'Este concerto nasce do desejo de cantar repertórios que atravessam gerações e continuam encontrando novos sentidos quando são vividos ao vivo. Ao lado de um pianista, com a presença de uma soprano convidada e, muito provavelmente, também de um violinista, a noite propõe um encontro íntimo entre voz, palavra e melodia.':
+      'Dieses Konzert entsteht aus dem Wunsch, Repertoire zu singen, das Generationen verbindet und live immer wieder neue Bedeutungen findet. An der Seite eines Pianisten, mit einer Gastsopranistin und sehr wahrscheinlich auch einem Violinisten, bietet der Abend eine intime Begegnung zwischen Stimme, Wort und Melodie.',
+    'O público ouvirá canções eternas da Broadway, dos musicais, da ópera e de clássicos populares interpretadas com acompanhamento ao piano, convidados especiais e uma atmosfera de teatro próximo. Mais do que uma sequência de músicas, o concerto procura contar pequenas histórias: amores possíveis, despedidas, sonhos, lembranças e momentos em que uma melodia parece dizer aquilo que as palavras sozinhas não alcançam.':
+      'Das Publikum hört zeitlose Lieder vom Broadway, aus Musicals, Oper und beliebten Klassikern, interpretiert mit Klavierbegleitung, besonderen Gästen und der Atmosphäre eines nahen Theaters. Mehr als eine Abfolge von Liedern möchte das Konzert kleine Geschichten erzählen: mögliche Lieben, Abschiede, Träume, Erinnerungen und Momente, in denen eine Melodie zu sagen scheint, was Worte allein nicht erreichen.',
+    'Uma nova jornada': 'Eine neue Reise',
+    'O início de uma nova fase artística': 'Der Beginn einer neuen künstlerischen Phase',
+    'Este projeto marca o começo de uma nova fase na minha carreira. Depois de tantos caminhos entre ópera, televisão, gravações, redes sociais e repertório crossover, sinto que este concerto reúne de forma muito verdadeira aquilo que mais me move: cantar com emoção, contar histórias e estar perto do público.':
+      'Dieses Projekt markiert den Beginn einer neuen Phase meiner Karriere. Nach so vielen Wegen zwischen Oper, Fernsehen, Aufnahmen, sozialen Medien und Crossover-Repertoire habe ich das Gefühl, dass dieses Konzert auf sehr ehrliche Weise zusammenführt, was mich am meisten bewegt: mit Emotion zu singen, Geschichten zu erzählen und dem Publikum nahe zu sein.',
+    'As primeiras apresentações acontecerão na':
+      'Die ersten Aufführungen finden in',
+    Áustria: 'Österreich',
+    ', país que há muitos anos faz parte da minha vida musical. No fim do ano, em':
+      ' statt, einem Land, das seit vielen Jahren Teil meines musikalischen Lebens ist. Am Ende des Jahres, im',
+    dezembro: 'Dezember',
+    ', o concerto também será apresentado no':
+      ', wird das Konzert auch in',
+    Brasil: 'Brasilien',
+    ', em um retorno muito especial a esse repertório diante do meu público brasileiro.':
+      ' präsentiert, als eine sehr besondere Rückkehr zu diesem Repertoire vor meinem brasilianischen Publikum.',
+    'Minha esperança é que, a partir de':
+      'Meine Hoffnung ist, dass dieses Projekt ab',
+    ', este projeto cresça e se transforme em uma turnê pelo Brasil, levando essas canções a plateias de diferentes cidades. Ainda é um caminho sendo construído, mas ele nasce com sinceridade, cuidado e muita vontade de compartilhar beleza.':
+      ' wächst und zu einer Tournee durch Brasilien wird, die diese Lieder zu Publikum in verschiedenen Städten bringt. Es ist noch ein Weg im Aufbau, aber er beginnt mit Aufrichtigkeit, Sorgfalt und dem großen Wunsch, Schönheit zu teilen.',
+    Ensaio: 'Probe',
+    'Preparando o concerto ao piano': 'Das Konzert am Klavier vorbereiten',
+    'Este vídeo mostra um momento simples de ensaio ao piano, preparando uma das canções que farão parte do concerto.':
+      'Dieses Video zeigt einen einfachen Probemoment am Klavier, bei dem eines der Lieder vorbereitet wird, die Teil des Konzerts sein werden.',
+    'Max Wilson Pereira ensaiando ao piano para o concerto':
+      'Max Wilson Pereira probt am Klavier für das Konzert',
+    Repertório: 'Repertoire',
+    'Melodias que permanecem': 'Melodien, die bleiben',
+    'O repertório pode variar a cada apresentação, preservando a liberdade do momento e o encontro com cada plateia. Entre as obras previstas estão:':
+      'Das Repertoire kann bei jeder Aufführung variieren und bewahrt so die Freiheit des Moments und die Begegnung mit jedem Publikum. Zu den vorgesehenen Werken gehören:',
+    'clássico popular': 'beliebter Klassiker',
+    Duetos: 'Duette',
+    'Muitas outras canções bonitas também poderão fazer parte de cada apresentação.':
+      'Viele weitere schöne Lieder können ebenfalls Teil jeder Aufführung sein.',
+    Convite: 'Einladung',
+    'Viva este concerto ao vivo': 'Erleben Sie dieses Konzert live',
+    'Algumas músicas revelam sua força de modo especial quando acontecem no mesmo instante em que respiramos juntos: artista, convidados e plateia. Este concerto é um convite para esse encontro.':
+      'Manche Lieder entfalten ihre Kraft auf besondere Weise, wenn sie in demselben Augenblick geschehen, in dem wir gemeinsam atmen: Künstler, Gäste und Publikum. Dieses Konzert ist eine Einladung zu dieser Begegnung.',
+    'Informações em breve': 'Informationen folgen in Kürze',
     'Apoie a jornada artística do tenor Max Wilson Pereira via PIX. Qualquer valor é recebido de coração e reinvestido na carreira e no canto lírico.':
       'Unterstützen Sie die künstlerische Reise des Tenors Max Wilson Pereira per PIX. Jeder Betrag wird von Herzen angenommen und in seine Karriere und den klassischen Gesang reinvestiert.',
     'Apoie o tenor Max Wilson Pereira via PIX. Seu apoio ajuda a levar o canto lírico e a cultura a mais pessoas.':
