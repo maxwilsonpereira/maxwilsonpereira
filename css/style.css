@@ -89,6 +89,11 @@ body.modal-open {
   text-align: left;
 }
 
+.page-home .hero-bg {
+  background-image: url("../assets/hebe-camargo.jpg");
+  background-position: 54% center;
+}
+
 /* Hero image — back layer, always visible through overlay */
 .hero-bg {
   position: fixed;
@@ -268,20 +273,53 @@ body::after {
 }
 
 .home-hero {
+  position: relative;
   display: grid;
-  align-items: center;
-  min-height: 100vh;
-  width: min(100% - 32px, 1120px);
+  align-items: end;
+  width: 100vw;
+  min-height: clamp(620px, 92vh, 860px);
   margin: 0 auto;
-  padding: 112px 0 40px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-glass);
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.42);
+}
+
+.home-hero-img,
+.home-hero-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.home-hero-img {
+  object-fit: cover;
+  object-position: 54% center;
+  filter: saturate(1.04) contrast(1.04);
+}
+
+.home-hero-overlay {
+  background:
+    linear-gradient(180deg, rgba(5, 5, 7, 0.08) 0%, rgba(5, 5, 7, 0.56) 82%),
+    linear-gradient(90deg, rgba(5, 5, 7, 0.58) 0%, rgba(5, 5, 7, 0.16) 62%, transparent 100%),
+    radial-gradient(
+      circle at 22% 82%,
+      rgba(225, 48, 108, 0.18),
+      transparent 34%
+    );
 }
 
 .home-hero-copy {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
-  max-width: 660px;
+  width: min(100% - 32px, 1120px);
+  max-width: none;
+  margin: 0 auto;
+  padding: 0 0 54px;
 }
 
 .home-hero h1 {
@@ -300,10 +338,6 @@ body::after {
   line-height: 1.65;
 }
 
-.home-hero-media {
-  display: none;
-}
-
 .hero-link-list {
   max-width: 460px;
   margin-top: 10px;
@@ -313,7 +347,7 @@ body::after {
   position: relative;
   z-index: 10;
   width: min(100% - 32px, 1120px);
-  margin: -10px auto 64px;
+  margin: 24px auto 64px;
 }
 
 .social-follow-inner {
@@ -332,18 +366,15 @@ body::after {
 .social-follow-kicker {
   margin: 0 0 10px;
   color: var(--instagram-pink);
-  font-size: clamp(0.9rem, 2.4vw, 1.05rem);
+  font-size: clamp(1.05rem, 3vw, 1.28rem);
   font-weight: 800;
   letter-spacing: 0.08em;
+  line-height: 1.2;
   text-transform: uppercase;
 }
 
 .social-follow h2 {
   margin: 0;
-  color: var(--text-primary);
-  font-size: clamp(1.55rem, 5.8vw, 2.55rem);
-  font-weight: 800;
-  line-height: 1.1;
 }
 
 .social-links {
@@ -1376,71 +1407,12 @@ ul li::before {
   }
 
   .home-hero {
-    grid-template-columns: minmax(0, 1.12fr) minmax(280px, 0.88fr);
-    gap: 48px;
-    padding-top: 120px;
+    min-height: clamp(640px, 92vh, 880px);
   }
 
-  .home-hero-media {
-    position: relative;
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    min-height: 520px;
-  }
-
-  .home-portrait-frame {
-    position: relative;
-    width: min(78%, 360px);
-    aspect-ratio: 4 / 5;
-    padding: 12px;
-    background:
-      linear-gradient(160deg, rgba(255, 255, 255, 0.16), transparent 48%),
-      rgba(12, 12, 14, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: var(--radius-lg);
-    box-shadow:
-      0 28px 80px rgba(0, 0, 0, 0.48),
-      var(--shadow-glow);
-    transform: rotate(2deg);
-  }
-
-  .home-portrait-frame .profile-img {
-    width: 100%;
-    height: 100%;
-    border-radius: calc(var(--radius-lg) - 8px);
-    border: 0;
-    box-shadow: none;
-  }
-
-  .home-note {
-    position: absolute;
-    right: 0;
-    bottom: 52px;
-    display: grid;
-    gap: 4px;
-    max-width: 230px;
-    padding: 16px 18px;
-    color: var(--text-primary);
-    background: rgba(12, 12, 14, 0.82);
-    border: 1px solid var(--border-glass);
-    border-radius: var(--radius-md);
-    box-shadow: 0 18px 46px rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-  }
-
-  .home-note span {
-    color: var(--instagram-pink);
-    font-size: 0.76rem;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  .home-note strong {
-    font-size: 1rem;
-    line-height: 1.35;
+  .home-hero-copy {
+    width: min(100% - 48px, 1120px);
+    padding-bottom: 66px;
   }
 
   .hero-link-list {
@@ -1495,8 +1467,16 @@ ul li::before {
   }
 
   .home-hero {
+    min-height: 640px;
+  }
+
+  .home-hero-img {
+    object-position: 58% center;
+  }
+
+  .home-hero-copy {
     width: calc(100% - 32px);
-    padding-top: 104px;
+    padding-bottom: 38px;
   }
 
   .social-follow {

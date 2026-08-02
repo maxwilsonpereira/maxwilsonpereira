@@ -165,8 +165,7 @@ class MaxSocialFollow extends HTMLElement {
     this.innerHTML = `
       <section class="social-follow" aria-labelledby="social-follow-title">
         <div class="social-follow-inner">
-          <p class="social-follow-kicker">Redes sociais</p>
-          <h2 id="social-follow-title">Siga Max Wilson Pereira</h2>
+          <h2 id="social-follow-title" class="social-follow-kicker">Siga nas redes sociais</h2>
           <nav class="social-links" aria-label="Redes sociais de Max Wilson Pereira">
             ${items}
           </nav>
