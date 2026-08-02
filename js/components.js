@@ -1060,10 +1060,20 @@ class MaxSeoMeta extends HTMLElement {
     const ogDescription = translatePhrase(config.ogDescription || config.description);
     const locale = MWP_LANGUAGES[getCurrentLanguage()].htmlLang.replace('-', '_');
 
+    const getSelector = (tag, attrs) => {
+      if (tag === 'meta' && attrs.name) return `meta[name="${attrs.name}"]`;
+      if (tag === 'meta' && attrs.property) return `meta[property="${attrs.property}"]`;
+      if (tag === 'link' && attrs.rel) return `link[rel="${attrs.rel}"]`;
+      return '';
+    };
+
     const inject = (tag, attrs) => {
-      const el = document.createElement(tag);
+      const selector = getSelector(tag, attrs);
+      const el = selector
+        ? document.head.querySelector(selector) || document.createElement(tag)
+        : document.createElement(tag);
       Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
-      document.head.appendChild(el);
+      if (!el.parentNode) document.head.appendChild(el);
     };
 
     document.title = title;
