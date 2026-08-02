@@ -724,6 +724,7 @@
       const audioPlayers = [...document.querySelectorAll('.album-audio')];
       const downloadAllButton = document.querySelector('.album-download-all');
       const playButtons = [...document.querySelectorAll('.play-track')];
+      const t = (text) => window.MWP_I18N?.translatePhrase(text) || text;
       const trackDownloads = [
         ...document.querySelectorAll('.track-item a[download]'),
       ];
@@ -732,7 +733,7 @@
         const originalText = downloadAllButton.textContent;
 
         downloadAllButton.disabled = true;
-        downloadAllButton.textContent = 'Preparando downloads...';
+        downloadAllButton.textContent = t('Preparando downloads...');
 
         trackDownloads.forEach((trackDownload, index) => {
           setTimeout(() => {
@@ -765,7 +766,7 @@
 
           if (isCurrent && !audio.paused) {
             audio.pause();
-            button.textContent = 'Play';
+            button.textContent = t('Play');
             currentItem.classList.remove('is-playing');
             return;
           }
@@ -773,7 +774,7 @@
           audioPlayers.forEach((player) => player.pause());
 
           playButtons.forEach((item) => {
-            item.textContent = 'Play';
+            item.textContent = t('Play');
             item.closest('.track-item').classList.remove('is-playing');
           });
 
@@ -782,7 +783,7 @@
           }
 
           audio.play();
-          button.textContent = 'Pausar';
+          button.textContent = t('Pausar');
           currentItem.classList.add('is-playing');
         });
       });
@@ -790,7 +791,7 @@
       audioPlayers.forEach((audio) => {
         audio.addEventListener('ended', () => {
           playButtons.forEach((button) => {
-            button.textContent = 'Play';
+            button.textContent = t('Play');
             button.closest('.track-item').classList.remove('is-playing');
           });
         });

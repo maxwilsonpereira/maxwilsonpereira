@@ -115,16 +115,16 @@ const MWP_CONFIG = {
       },
     },
     quattroSonyDownload: {
-      title: 'Baixar Album QUATTRO | Max Wilson Pereira',
+      title: 'Baixar Álbum QUATTRO | Max Wilson Pereira',
       description:
-        'Pagina de download do album digital QUATTRO de Max Wilson Pereira.',
+        'Página de download do álbum digital QUATTRO de Max Wilson Pereira.',
       path: '/pages/albums/quattro-sony.html',
       ogDescription:
-        'Baixe o album QUATTRO e obrigado por apoiar a jornada artistica de Max Wilson Pereira.',
+        'Baixe o álbum QUATTRO e obrigado por apoiar a jornada artística de Max Wilson Pereira.',
       jsonLd: {
         '@type': 'WebPage',
-        name: 'Baixar Album QUATTRO | Max Wilson Pereira',
-        description: 'Pagina de download do album digital QUATTRO.',
+        name: 'Baixar Álbum QUATTRO | Max Wilson Pereira',
+        description: 'Página de download do álbum digital QUATTRO.',
         url: 'https://maxwilsonpereira.com.br/pages/albums/quattro-sony.html',
         mainEntity: { '@type': 'Person', name: 'Max Wilson Pereira' },
       },
@@ -147,15 +147,5 @@ const MWP_CONFIG = {
       text: 'APOIO',
       external: false,
     },
-    // {
-    //   href: 'https://apoia.se/maxwilsonpereira?v=1.0.1',
-    //   text: 'Apoie Minha Jornada (APOIE.se)',
-    //   external: true,
-    // },
-    // {
-    //   href: 'https://maxwilsonpereira.hotmart.host/max-wilson-pereira-so-in-love-03d7467a-d750-40dd-8138-d69e1fcf0670?v=1.0.1',
-    //   text: 'Álbum SO IN LOVE + Bônus (HOTMART)',
-    //   external: true,
-    // },
   ],
 };
