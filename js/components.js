@@ -194,6 +194,27 @@ class MaxSiteFooter extends HTMLElement {
 }
 customElements.define('max-site-footer', MaxSiteFooter);
 
+class MaxVideoEmbed extends HTMLElement {
+  connectedCallback() {
+    const videoId = this.getAttribute('video-id');
+    const title = this.getAttribute('title') || 'Vídeo de Max Wilson Pereira';
+
+    if (!videoId) return;
+
+    this.innerHTML = `
+      <figure class="video-embed" aria-label="${title}">
+        <iframe
+          src="https://www.youtube.com/embed/${videoId}"
+          title="${title}"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </figure>
+    `;
+  }
+}
+customElements.define('max-video-embed', MaxVideoEmbed);
+
 /* ─── PIX continue form behavior ──────────────────────────────────────────── */
 function initPixContinueForm() {
   const input = document.querySelector('.pix-continue-form .pix-input');
