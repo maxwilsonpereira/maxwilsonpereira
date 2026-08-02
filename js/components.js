@@ -44,6 +44,7 @@ const MWP_TEXT_TRANSLATIONS = {
       'Singing, passion, and entertainment to brighten your day and touch your heart',
     HOME: 'HOME',
     BIOGRAFIA: 'BIOGRAPHY',
+    CONCERTO: 'CONCERT',
     ÁLBUM: 'ALBUM',
     APOIO: 'SUPPORT',
     'Abrir menu': 'Open menu',
@@ -201,6 +202,7 @@ const MWP_TEXT_TRANSLATIONS = {
     'Faixas Bônus': 'Bonus Tracks',
     'Max Wilson Pereira | Tenor & Artista': 'Max Wilson Pereira | Tenor & Artist',
     'Biografia | Max Wilson Pereira': 'Biography | Max Wilson Pereira',
+    'Concerto | Max Wilson Pereira': 'Concert | Max Wilson Pereira',
     'Apoie Minha Jornada | Max Wilson Pereira': 'Support My Journey | Max Wilson Pereira',
     'Álbum SO IN LOVE | Max Wilson Pereira': 'SO IN LOVE Album | Max Wilson Pereira',
     'Baixar Álbum SO IN LOVE | Max Wilson Pereira': 'Download SO IN LOVE Album | Max Wilson Pereira',
@@ -214,6 +216,10 @@ const MWP_TEXT_TRANSLATIONS = {
       'Discover the journey of Max Wilson Pereira, a Brazilian tenor based in Vienna, from classical training to stages, television, and social media.',
     'A história de Max Wilson Pereira: tenor brasileiro, artista de crossover, criador digital e intérprete que une ópera, pop, humor e emoção.':
       'The story of Max Wilson Pereira: Brazilian tenor, crossover artist, digital creator, and performer blending opera, pop, humor, and emotion.',
+    'Concerto ao vivo de Max Wilson Pereira com grandes melodias da Broadway, musicais, ópera, clássicos populares e crossover em atmosfera íntima.':
+      'A live concert by Max Wilson Pereira with great melodies from Broadway, musicals, opera, popular classics, and crossover in an intimate atmosphere.',
+    'Uma noite íntima com voz, piano, convidados especiais, grandes melodias, teatro musical, ópera e crossover clássico.':
+      'An intimate evening with voice, piano, special guests, great melodies, musical theater, opera, and classical crossover.',
     'Apoie a jornada artística do tenor Max Wilson Pereira via PIX. Qualquer valor é recebido de coração e reinvestido na carreira e no canto lírico.':
       'Support the artistic journey of tenor Max Wilson Pereira via PIX. Any amount is received from the heart and reinvested in his career and classical singing.',
     'Apoie o tenor Max Wilson Pereira via PIX. Seu apoio ajuda a levar o canto lírico e a cultura a mais pessoas.':
@@ -256,6 +262,7 @@ const MWP_TEXT_TRANSLATIONS = {
       'Gesang, Leidenschaft und Unterhaltung, um Ihren Tag zu erhellen und Ihr Herz zu berühren',
     HOME: 'HOME',
     BIOGRAFIA: 'BIOGRAFIE',
+    CONCERTO: 'KONZERT',
     ÁLBUM: 'ALBUM',
     APOIO: 'UNTERSTÜTZUNG',
     'Abrir menu': 'Menü öffnen',
@@ -413,6 +420,7 @@ const MWP_TEXT_TRANSLATIONS = {
     'Faixas Bônus': 'Bonustracks',
     'Max Wilson Pereira | Tenor & Artista': 'Max Wilson Pereira | Tenor & Künstler',
     'Biografia | Max Wilson Pereira': 'Biografie | Max Wilson Pereira',
+    'Concerto | Max Wilson Pereira': 'Konzert | Max Wilson Pereira',
     'Apoie Minha Jornada | Max Wilson Pereira': 'Unterstützen Sie Meine Reise | Max Wilson Pereira',
     'Álbum SO IN LOVE | Max Wilson Pereira': 'Album SO IN LOVE | Max Wilson Pereira',
     'Baixar Álbum SO IN LOVE | Max Wilson Pereira': 'Album SO IN LOVE herunterladen | Max Wilson Pereira',
@@ -426,6 +434,10 @@ const MWP_TEXT_TRANSLATIONS = {
       'Entdecken Sie den Weg von Max Wilson Pereira, einem brasilianischen Tenor mit Wohnsitz in Wien, von der klassischen Ausbildung bis zu Bühnen, Fernsehen und sozialen Medien.',
     'A história de Max Wilson Pereira: tenor brasileiro, artista de crossover, criador digital e intérprete que une ópera, pop, humor e emoção.':
       'Die Geschichte von Max Wilson Pereira: brasilianischer Tenor, Crossover-Künstler, digitaler Creator und Interpret, der Oper, Pop, Humor und Emotion verbindet.',
+    'Concerto ao vivo de Max Wilson Pereira com grandes melodias da Broadway, musicais, ópera, clássicos populares e crossover em atmosfera íntima.':
+      'Live-Konzert von Max Wilson Pereira mit großen Melodien aus Broadway, Musicals, Oper, beliebten Klassikern und Crossover in intimer Atmosphäre.',
+    'Uma noite íntima com voz, piano, convidados especiais, grandes melodias, teatro musical, ópera e crossover clássico.':
+      'Ein intimer Abend mit Stimme, Klavier, besonderen Gästen, großen Melodien, Musicaltheater, Oper und klassischem Crossover.',
     'Apoie a jornada artística do tenor Max Wilson Pereira via PIX. Qualquer valor é recebido de coração e reinvestido na carreira e no canto lírico.':
       'Unterstützen Sie die künstlerische Reise des Tenors Max Wilson Pereira per PIX. Jeder Betrag wird von Herzen angenommen und in seine Karriere und den klassischen Gesang reinvestiert.',
     'Apoie o tenor Max Wilson Pereira via PIX. Seu apoio ajuda a levar o canto lírico e a cultura a mais pessoas.':
@@ -997,6 +1009,22 @@ function initModals() {
   });
 }
 
+function initSmoothAnchorLinks() {
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const hash = link.getAttribute('href');
+      if (!hash || hash === '#') return;
+
+      const target = document.querySelector(hash);
+      if (!target) return;
+
+      event.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.pushState(null, '', hash);
+    });
+  });
+}
+
 /* ─── max-tagline ─────────────────────────────────────────────────────────── */
 class MaxTagline extends HTMLElement {
   connectedCallback() {
@@ -1082,3 +1110,4 @@ redirectInternationalAlbumPurchase();
 applyStaticTranslations();
 initPixContinueForm();
 initModals();
+initSmoothAnchorLinks();

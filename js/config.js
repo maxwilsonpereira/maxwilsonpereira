@@ -67,6 +67,26 @@ const MWP_CONFIG = {
         },
       },
     },
+    concerto: {
+      title: 'Concerto | Max Wilson Pereira',
+      description:
+        'Concerto ao vivo de Max Wilson Pereira com grandes melodias da Broadway, musicais, ópera, clássicos populares e crossover em atmosfera íntima.',
+      path: '/pages/concerto.html',
+      ogDescription:
+        'Uma noite íntima com voz, piano, convidados especiais, grandes melodias, teatro musical, ópera e crossover clássico.',
+      jsonLd: {
+        '@type': 'WebPage',
+        name: 'Concerto | Max Wilson Pereira',
+        description:
+          'Concerto íntimo de Max Wilson Pereira com repertório de Broadway, musicais, ópera, clássicos populares e crossover.',
+        url: 'https://maxwilsonpereira.com.br/pages/concerto.html',
+        mainEntity: {
+          '@type': 'Person',
+          name: 'Max Wilson Pereira',
+          jobTitle: 'Tenor',
+        },
+      },
+    },
     apoioPix: {
       title: 'Apoie Minha Jornada | Max Wilson Pereira',
       description:
@@ -135,6 +155,11 @@ const MWP_CONFIG = {
     {
       href: 'pages/biografia.html',
       text: 'BIOGRAFIA',
+      external: false,
+    },
+    {
+      href: 'pages/concerto.html',
+      text: 'CONCERTO',
       external: false,
     },
     {
