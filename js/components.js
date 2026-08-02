@@ -75,7 +75,8 @@ const MWP_TEXT_TRANSLATIONS = {
     'Palcos, Ópera e Televisão': 'Stages, Opera, and Television',
     'Na Áustria, Max participou de concertos, óperas e operetas, destacando-se em papéis como Nemorino, em':
       'In Austria, Max performed in concerts, operas, and operettas, standing out in roles such as Nemorino in',
-    ', de Donizetti, e Herzog von Urbino, em': 'by Donizetti, and Herzog von Urbino in',
+    ', de Donizetti, e Herzog von Urbino, em':
+      'by Donizetti, and Herzog von Urbino in',
     ', de Johann Strauss. Em 2007, cantou no Gran Concerto Lírico di Ferragosto, interpretando árias italianas diante de um público exigente.':
       'by Johann Strauss. In 2007, he sang at the Gran Concerto Lírico di Ferragosto, performing Italian arias for a discerning audience.',
     'Entre os momentos importantes de sua trajetória internacional, foi convidado a cantar na Rússia em duas ocasiões. Uma dessas apresentações aconteceu no':
@@ -97,7 +98,8 @@ const MWP_TEXT_TRANSLATIONS = {
       'at Palácio das Artes, and work as a vocal coach on',
     ', auxiliando Jonatas Faro no quadro Artista Completão.':
       ', assisting Jonatas Faro in the Artista Completão segment.',
-    'Crossover, Humor e Público Digital': 'Crossover, Humor, and Digital Audience',
+    'Crossover, Humor e Público Digital':
+      'Crossover, Humor, and Digital Audience',
     'Nos últimos anos, Max passou a levar sua voz para um público ainda maior nas redes sociais. Misturando técnica lírica, música pop, paródias criativas e performances de rua, criou uma linguagem própria: sofisticada sem ser distante, divertida sem perder a emoção, popular sem abandonar a excelência vocal.':
       'In recent years, Max has brought his voice to an even wider audience on social media. Blending classical technique, pop music, creative parodies, and street performances, he created a language of his own: sophisticated without being distant, fun without losing emotion, popular without abandoning vocal excellence.',
     'Seus vídeos já ultrapassaram a marca de 1 milhão de visualizações, e sua comunidade digital reúne mais de 200 mil seguidores no Instagram e milhares de inscritos no YouTube. Com carisma, humor e uma voz de formação clássica, Max aproxima a ópera de quem talvez nunca tivesse imaginado se emocionar com ela.':
@@ -108,7 +110,8 @@ const MWP_TEXT_TRANSLATIONS = {
     'Seu trabalho nas redes nasce do desejo de mostrar que a voz lírica não precisa viver distante das pessoas. Em performances emocionantes, paródias musicais, interações com desconhecidos e vídeos bem-humorados, Max leva a ópera para novos contextos, despertando curiosidade, risadas e reações espontâneas. É nesse encontro entre excelência artística e comunicação direta que ele segue criando novos caminhos para compartilhar sua arte com quem já o acompanha e com quem ainda vai descobri-lo.':
       'His work online comes from the desire to show that the lyrical voice does not need to live far from people. Through moving performances, musical parodies, interactions with strangers, and humorous videos, Max takes opera into new contexts, sparking curiosity, laughter, and spontaneous reactions. In this meeting between artistic excellence and direct communication, he continues creating new ways to share his art with those who already follow him and those who are still discovering him.',
     'Apoie Minha Jornada': 'Support My Journey',
-    'Se você está aqui, tudo indica que você': 'If you are here, it probably means that you',
+    'Se você está aqui, tudo indica que você':
+      'If you are here, it probably means that you',
     'admira o meu trabalho': 'admire my work',
     e: 'and',
     'tem carinho por mim e pela minha carreira': 'care about me and my career',
@@ -129,7 +132,8 @@ const MWP_TEXT_TRANSLATIONS = {
     'gesto de carinho e apoio real': 'gesture of affection and real support',
     'à minha jornada como artista. Se você acredita no meu trabalho, este é o lugar certo. Ficarei eternamente grato.':
       'for my journey as an artist. If you believe in my work, this is the right place. I will be forever grateful.',
-    'O apoio recebido será, em grande parte,': 'The support received will largely be',
+    'O apoio recebido será, em grande parte,':
+      'The support received will largely be',
     'reinvestido na minha carreira': 'reinvested in my career',
     ', para levar minha arte e o canto lírico cada vez mais longe.':
       ', so I can take my art and classical singing farther and farther.',
@@ -149,14 +153,16 @@ const MWP_TEXT_TRANSLATIONS = {
     'para:': 'to:',
     'Depois de fazer o PIX, digite abaixo o nome que aparece no pagamento (nome do titular da conta que fez o PIX) e clique no botão para continuar.':
       'After making the PIX payment, type below the name that appears on the payment (the account holder’s name) and click the button to continue.',
-    'Digite aqui o nome usado no PIX': 'Type the name used for the PIX payment here',
+    'Digite aqui o nome usado no PIX':
+      'Type the name used for the PIX payment here',
     CONTINUAR: 'CONTINUE',
     Repertório: 'Repertoire',
     'Músicas eternas, entre elas:': 'Timeless songs, including:',
     'Bônus Exclusivo': 'Exclusive Bonus',
     'Além do álbum, você recebe clássicos cantados com toda a alma:':
       'In addition to the album, you receive classics sung with all my soul:',
-    'Volta ao Meu Mundo (música inédita)': 'Volta ao Meu Mundo (unreleased song)',
+    'Volta ao Meu Mundo (música inédita)':
+      'Volta ao Meu Mundo (unreleased song)',
     'Primadonna (música inédita)': 'Primadonna (unreleased song)',
     'Obrigado pelo seu apoio': 'Thank you for your support',
     'Se você efetuou o': 'If you made the',
@@ -179,7 +185,8 @@ const MWP_TEXT_TRANSLATIONS = {
       'I will be very happy if you choose one of the songs and',
     'compartilhar um story no Instagram me marcando':
       'share an Instagram story tagging me',
-    'Você pode escrever algo simples como:': 'You can write something simple like:',
+    'Você pode escrever algo simples como:':
+      'You can write something simple like:',
     '"Comprei o álbum SO IN LOVE do @maxwilsonpereira e estou adorando! 🎶"':
       '"I bought the SO IN LOVE album by @maxwilsonpereira and I am loving it! 🎶"',
     '"Estou ouvindo SO IN LOVE do tenor @maxwilsonpereira e estou adorando! 🎶"':
@@ -200,17 +207,23 @@ const MWP_TEXT_TRANSLATIONS = {
     Pausar: 'Pause',
     'Preparando downloads...': 'Preparing downloads...',
     'Faixas Bônus': 'Bonus Tracks',
-    'Max Wilson Pereira | Tenor & Artista': 'Max Wilson Pereira | Tenor & Artist',
+    'Max Wilson Pereira | Tenor & Artista':
+      'Max Wilson Pereira | Tenor & Artist',
     'Biografia | Max Wilson Pereira': 'Biography | Max Wilson Pereira',
     'Concerto | Max Wilson Pereira': 'Concert | Max Wilson Pereira',
-    'Apoie Minha Jornada | Max Wilson Pereira': 'Support My Journey | Max Wilson Pereira',
-    'Álbum SO IN LOVE | Max Wilson Pereira': 'SO IN LOVE Album | Max Wilson Pereira',
-    'Baixar Álbum SO IN LOVE | Max Wilson Pereira': 'Download SO IN LOVE Album | Max Wilson Pereira',
-    'Baixar Álbum QUATTRO | Max Wilson Pereira': 'Download QUATTRO Album | Max Wilson Pereira',
-    'Baixar Album QUATTRO | Max Wilson Pereira': 'Download QUATTRO Album | Max Wilson Pereira',
+    'Apoie Minha Jornada | Max Wilson Pereira':
+      'Support My Journey | Max Wilson Pereira',
+    'Álbum SO IN LOVE | Max Wilson Pereira':
+      'SO IN LOVE Album | Max Wilson Pereira',
+    'Baixar Álbum SO IN LOVE | Max Wilson Pereira':
+      'Download SO IN LOVE Album | Max Wilson Pereira',
+    'Baixar Álbum QUATTRO | Max Wilson Pereira':
+      'Download QUATTRO Album | Max Wilson Pereira',
+    'Baixar Album QUATTRO | Max Wilson Pereira':
+      'Download QUATTRO Album | Max Wilson Pereira',
     'Max Wilson Pereira — tenor brasileiro. Ópera, pop, paródias e apresentações nas ruas. Canto lírico e entretenimento para tocar o seu coração.':
       'Max Wilson Pereira — Brazilian tenor. Opera, pop, parodies, and street performances. Classical singing and entertainment to touch your heart.',
-    'Tenor brasileiro. Ópera, pop, paródias e apresentações ao vivo. Apoie e conheça o álbum SO IN LOVE.':
+    'Tenor brasileiro. Ópera, pop, paródias e apresentações ao vivo. Conheça o álbum SO IN LOVE.':
       'Brazilian tenor. Opera, pop, parodies, and live performances. Support him and discover the SO IN LOVE album.',
     'Conheça a trajetória de Max Wilson Pereira, tenor brasileiro radicado em Viena, da formação lírica aos palcos, televisão e redes sociais.':
       'Discover the journey of Max Wilson Pereira, a Brazilian tenor based in Vienna, from classical training to stages, television, and social media.',
@@ -235,7 +248,8 @@ const MWP_TEXT_TRANSLATIONS = {
     'O público ouvirá canções eternas da Broadway, dos musicais, da ópera e de clássicos populares interpretadas com acompanhamento ao piano, convidados especiais e uma atmosfera de teatro próximo. Mais do que uma sequência de músicas, o concerto procura contar pequenas histórias: amores possíveis, despedidas, sonhos, lembranças e momentos em que uma melodia parece dizer aquilo que as palavras sozinhas não alcançam.':
       'The audience will hear timeless songs from Broadway, musicals, opera, and popular classics, performed with piano accompaniment, special guests, and the atmosphere of intimate theater. More than a sequence of songs, the concert seeks to tell small stories: possible loves, farewells, dreams, memories, and moments when a melody seems to say what words alone cannot reach.',
     'Uma nova jornada': 'A new journey',
-    'O início de uma nova fase artística': 'The beginning of a new artistic phase',
+    'O início de uma nova fase artística':
+      'The beginning of a new artistic phase',
     'Este projeto marca o começo de uma nova fase na minha carreira. Depois de tantos caminhos entre ópera, televisão, gravações, redes sociais e repertório crossover, sinto que este concerto reúne de forma muito verdadeira aquilo que mais me move: cantar com emoção, contar histórias e estar perto do público.':
       'This project marks the beginning of a new phase in my career. After so many paths through opera, television, recordings, social media, and crossover repertoire, I feel this concert brings together, in a very truthful way, what moves me most: singing with emotion, telling stories, and being close to the audience.',
     'As primeiras apresentações acontecerão na':
@@ -249,8 +263,7 @@ const MWP_TEXT_TRANSLATIONS = {
     Brasil: 'Brazil',
     ', em um retorno muito especial a esse repertório diante do meu público brasileiro.':
       ', in a very special return to this repertoire before my Brazilian audience.',
-    'Minha esperança é que, a partir de':
-      'My hope is that, starting in',
+    'Minha esperança é que, a partir de': 'My hope is that, starting in',
     ', este projeto cresça e se transforme em uma turnê pelo Brasil, levando essas canções a plateias de diferentes cidades. Ainda é um caminho sendo construído, mas ele nasce com sinceridade, cuidado e muita vontade de compartilhar beleza.':
       ', this project will grow and become a tour through Brazil, bringing these songs to audiences in different cities. It is still a path being built, but it begins with sincerity, care, and a deep desire to share beauty.',
     Ensaio: 'Rehearsal',
@@ -321,7 +334,8 @@ const MWP_TEXT_TRANSLATIONS = {
     'Fechar menu': 'Menü schließen',
     'Navegação principal': 'Hauptnavigation',
     'Redes sociais': 'Soziale Netzwerke',
-    'Redes sociais de Max Wilson Pereira': 'Soziale Netzwerke von Max Wilson Pereira',
+    'Redes sociais de Max Wilson Pereira':
+      'Soziale Netzwerke von Max Wilson Pereira',
     'Links principais': 'Hauptlinks',
     'Siga nas redes sociais': 'Folgen Sie mir in den sozialen Netzwerken',
     Voltar: 'Zurück',
@@ -345,7 +359,8 @@ const MWP_TEXT_TRANSLATIONS = {
     'Palcos, Ópera e Televisão': 'Bühnen, Oper und Fernsehen',
     'Na Áustria, Max participou de concertos, óperas e operetas, destacando-se em papéis como Nemorino, em':
       'In Österreich wirkte Max bei Konzerten, Opern und Operetten mit und überzeugte in Rollen wie Nemorino in',
-    ', de Donizetti, e Herzog von Urbino, em': 'von Donizetti und Herzog von Urbino in',
+    ', de Donizetti, e Herzog von Urbino, em':
+      'von Donizetti und Herzog von Urbino in',
     ', de Johann Strauss. Em 2007, cantou no Gran Concerto Lírico di Ferragosto, interpretando árias italianas diante de um público exigente.':
       'von Johann Strauss. 2007 sang er beim Gran Concerto Lírico di Ferragosto und interpretierte italienische Arien vor einem anspruchsvollen Publikum.',
     'Entre os momentos importantes de sua trajetória internacional, foi convidado a cantar na Rússia em duas ocasiões. Uma dessas apresentações aconteceu no':
@@ -359,7 +374,8 @@ const MWP_TEXT_TRANSLATIONS = {
     'no Credicard Hall, em São Paulo, e também apareceu na novela':
       'in der Credicard Hall in São Paulo und erschien auch in der Telenovela',
     ', em uma cena de': 'in einer Szene aus',
-    'ao lado de Alessandra Maestrini.': 'an der Seite von Alessandra Maestrini.',
+    'ao lado de Alessandra Maestrini.':
+      'an der Seite von Alessandra Maestrini.',
     'Sua trajetória inclui ainda trabalhos com nomes como Bibi Ferreira, participação na minissérie':
       'Zu seinem Werdegang gehören außerdem Arbeiten mit Namen wie Bibi Ferreira, eine Mitwirkung in der Miniserie',
     ', estreia mundial da ópera': ', die Uraufführung der Oper',
@@ -367,7 +383,8 @@ const MWP_TEXT_TRANSLATIONS = {
       'im Palácio das Artes sowie seine Tätigkeit als Vocal Coach bei',
     ', auxiliando Jonatas Faro no quadro Artista Completão.':
       ', wo er Jonatas Faro im Format Artista Completão unterstützte.',
-    'Crossover, Humor e Público Digital': 'Crossover, Humor und Digitales Publikum',
+    'Crossover, Humor e Público Digital':
+      'Crossover, Humor und Digitales Publikum',
     'Nos últimos anos, Max passou a levar sua voz para um público ainda maior nas redes sociais. Misturando técnica lírica, música pop, paródias criativas e performances de rua, criou uma linguagem própria: sofisticada sem ser distante, divertida sem perder a emoção, popular sem abandonar a excelência vocal.':
       'In den letzten Jahren brachte Max seine Stimme über soziale Medien zu einem noch größeren Publikum. Indem er klassische Technik, Popmusik, kreative Parodien und Straßenperformances verbindet, entwickelte er eine eigene Sprache: anspruchsvoll, ohne distanziert zu sein, unterhaltsam, ohne die Emotion zu verlieren, populär, ohne stimmliche Exzellenz aufzugeben.',
     'Seus vídeos já ultrapassaram a marca de 1 milhão de visualizações, e sua comunidade digital reúne mais de 200 mil seguidores no Instagram e milhares de inscritos no YouTube. Com carisma, humor e uma voz de formação clássica, Max aproxima a ópera de quem talvez nunca tivesse imaginado se emocionar com ela.':
@@ -378,10 +395,12 @@ const MWP_TEXT_TRANSLATIONS = {
     'Seu trabalho nas redes nasce do desejo de mostrar que a voz lírica não precisa viver distante das pessoas. Em performances emocionantes, paródias musicais, interações com desconhecidos e vídeos bem-humorados, Max leva a ópera para novos contextos, despertando curiosidade, risadas e reações espontâneas. É nesse encontro entre excelência artística e comunicação direta que ele segue criando novos caminhos para compartilhar sua arte com quem já o acompanha e com quem ainda vai descobri-lo.':
       'Seine Arbeit in den sozialen Netzwerken entsteht aus dem Wunsch zu zeigen, dass die lyrische Stimme nicht fern von den Menschen leben muss. In bewegenden Performances, musikalischen Parodien, Begegnungen mit Fremden und humorvollen Videos bringt Max die Oper in neue Zusammenhänge und weckt Neugier, Lachen und spontane Reaktionen. In dieser Begegnung zwischen künstlerischer Exzellenz und direkter Kommunikation schafft er weiterhin neue Wege, seine Kunst mit denen zu teilen, die ihn bereits begleiten, und mit denen, die ihn noch entdecken werden.',
     'Apoie Minha Jornada': 'Unterstützen Sie Meine Reise',
-    'Se você está aqui, tudo indica que você': 'Wenn Sie hier sind, bedeutet das wahrscheinlich, dass Sie',
+    'Se você está aqui, tudo indica que você':
+      'Wenn Sie hier sind, bedeutet das wahrscheinlich, dass Sie',
     'admira o meu trabalho': 'meine Arbeit schätzen',
     e: 'und',
-    'tem carinho por mim e pela minha carreira': 'mir und meiner Karriere wohlgesonnen sind',
+    'tem carinho por mim e pela minha carreira':
+      'mir und meiner Karriere wohlgesonnen sind',
     '. Isso, por si só, já me enche de alegria. ❤️❤️❤️':
       '. Das allein erfüllt mich schon mit Freude. ❤️❤️❤️',
     'PIX para Apoio': 'PIX zur Unterstützung',
@@ -396,10 +415,12 @@ const MWP_TEXT_TRANSLATIONS = {
     'sua ajuda é fundamental': 'ist Ihre Hilfe grundlegend',
     '.': '.',
     'Este espaço representa um': 'Dieser Bereich steht für eine',
-    'gesto de carinho e apoio real': 'Geste der Zuneigung und echten Unterstützung',
+    'gesto de carinho e apoio real':
+      'Geste der Zuneigung und echten Unterstützung',
     'à minha jornada como artista. Se você acredita no meu trabalho, este é o lugar certo. Ficarei eternamente grato.':
       'für meine Reise als Künstler. Wenn Sie an meine Arbeit glauben, sind Sie hier genau richtig. Ich werde ewig dankbar sein.',
-    'O apoio recebido será, em grande parte,': 'Die erhaltene Unterstützung wird größtenteils',
+    'O apoio recebido será, em grande parte,':
+      'Die erhaltene Unterstützung wird größtenteils',
     'reinvestido na minha carreira': 'in meine Karriere reinvestiert',
     ', para levar minha arte e o canto lírico cada vez mais longe.':
       ', damit ich meine Kunst und den klassischen Gesang immer weiter tragen kann.',
@@ -419,14 +440,16 @@ const MWP_TEXT_TRANSLATIONS = {
     'para:': 'an:',
     'Depois de fazer o PIX, digite abaixo o nome que aparece no pagamento (nome do titular da conta que fez o PIX) e clique no botão para continuar.':
       'Geben Sie nach der PIX-Zahlung unten den Namen ein, der bei der Zahlung erscheint (Name des Kontoinhabers), und klicken Sie auf die Schaltfläche, um fortzufahren.',
-    'Digite aqui o nome usado no PIX': 'Geben Sie hier den für PIX verwendeten Namen ein',
+    'Digite aqui o nome usado no PIX':
+      'Geben Sie hier den für PIX verwendeten Namen ein',
     CONTINUAR: 'WEITER',
     Repertório: 'Repertoire',
     'Músicas eternas, entre elas:': 'Zeitlose Lieder, darunter:',
     'Bônus Exclusivo': 'Exklusiver Bonus',
     'Além do álbum, você recebe clássicos cantados com toda a alma:':
       'Zusätzlich zum Album erhalten Sie Klassiker, die mit ganzer Seele gesungen wurden:',
-    'Volta ao Meu Mundo (música inédita)': 'Volta ao Meu Mundo (unveröffentlichtes Lied)',
+    'Volta ao Meu Mundo (música inédita)':
+      'Volta ao Meu Mundo (unveröffentlichtes Lied)',
     'Primadonna (música inédita)': 'Primadonna (unveröffentlichtes Lied)',
     'Obrigado pelo seu apoio': 'Danke für Ihre Unterstützung',
     'Se você efetuou o': 'Wenn Sie die',
@@ -449,7 +472,8 @@ const MWP_TEXT_TRANSLATIONS = {
       'Ich würde mich sehr freuen, wenn Sie eines der Lieder auswählen und',
     'compartilhar um story no Instagram me marcando':
       'eine Instagram-Story teilen und mich markieren',
-    'Você pode escrever algo simples como:': 'Sie können etwas Einfaches schreiben wie:',
+    'Você pode escrever algo simples como:':
+      'Sie können etwas Einfaches schreiben wie:',
     '"Comprei o álbum SO IN LOVE do @maxwilsonpereira e estou adorando! 🎶"':
       '"Ich habe das Album SO IN LOVE von @maxwilsonpereira gekauft und liebe es! 🎶"',
     '"Estou ouvindo SO IN LOVE do tenor @maxwilsonpereira e estou adorando! 🎶"':
@@ -470,17 +494,23 @@ const MWP_TEXT_TRANSLATIONS = {
     Pausar: 'Pause',
     'Preparando downloads...': 'Downloads werden vorbereitet...',
     'Faixas Bônus': 'Bonustracks',
-    'Max Wilson Pereira | Tenor & Artista': 'Max Wilson Pereira | Tenor & Künstler',
+    'Max Wilson Pereira | Tenor & Artista':
+      'Max Wilson Pereira | Tenor & Künstler',
     'Biografia | Max Wilson Pereira': 'Biografie | Max Wilson Pereira',
     'Concerto | Max Wilson Pereira': 'Konzert | Max Wilson Pereira',
-    'Apoie Minha Jornada | Max Wilson Pereira': 'Unterstützen Sie Meine Reise | Max Wilson Pereira',
-    'Álbum SO IN LOVE | Max Wilson Pereira': 'Album SO IN LOVE | Max Wilson Pereira',
-    'Baixar Álbum SO IN LOVE | Max Wilson Pereira': 'Album SO IN LOVE herunterladen | Max Wilson Pereira',
-    'Baixar Álbum QUATTRO | Max Wilson Pereira': 'Album QUATTRO herunterladen | Max Wilson Pereira',
-    'Baixar Album QUATTRO | Max Wilson Pereira': 'Album QUATTRO herunterladen | Max Wilson Pereira',
+    'Apoie Minha Jornada | Max Wilson Pereira':
+      'Unterstützen Sie Meine Reise | Max Wilson Pereira',
+    'Álbum SO IN LOVE | Max Wilson Pereira':
+      'Album SO IN LOVE | Max Wilson Pereira',
+    'Baixar Álbum SO IN LOVE | Max Wilson Pereira':
+      'Album SO IN LOVE herunterladen | Max Wilson Pereira',
+    'Baixar Álbum QUATTRO | Max Wilson Pereira':
+      'Album QUATTRO herunterladen | Max Wilson Pereira',
+    'Baixar Album QUATTRO | Max Wilson Pereira':
+      'Album QUATTRO herunterladen | Max Wilson Pereira',
     'Max Wilson Pereira — tenor brasileiro. Ópera, pop, paródias e apresentações nas ruas. Canto lírico e entretenimento para tocar o seu coração.':
       'Max Wilson Pereira — brasilianischer Tenor. Oper, Pop, Parodien und Straßenauftritte. Klassischer Gesang und Unterhaltung, die Ihr Herz berühren.',
-    'Tenor brasileiro. Ópera, pop, paródias e apresentações ao vivo. Apoie e conheça o álbum SO IN LOVE.':
+    'Tenor brasileiro. Ópera, pop, paródias e apresentações ao vivo. Conheça o álbum SO IN LOVE.':
       'Brasilianischer Tenor. Oper, Pop, Parodien und Live-Auftritte. Unterstützen Sie ihn und entdecken Sie das Album SO IN LOVE.',
     'Conheça a trajetória de Max Wilson Pereira, tenor brasileiro radicado em Viena, da formação lírica aos palcos, televisão e redes sociais.':
       'Entdecken Sie den Weg von Max Wilson Pereira, einem brasilianischen Tenor mit Wohnsitz in Wien, von der klassischen Ausbildung bis zu Bühnen, Fernsehen und sozialen Medien.',
@@ -505,7 +535,8 @@ const MWP_TEXT_TRANSLATIONS = {
     'O público ouvirá canções eternas da Broadway, dos musicais, da ópera e de clássicos populares interpretadas com acompanhamento ao piano, convidados especiais e uma atmosfera de teatro próximo. Mais do que uma sequência de músicas, o concerto procura contar pequenas histórias: amores possíveis, despedidas, sonhos, lembranças e momentos em que uma melodia parece dizer aquilo que as palavras sozinhas não alcançam.':
       'Das Publikum hört zeitlose Lieder vom Broadway, aus Musicals, Oper und beliebten Klassikern, interpretiert mit Klavierbegleitung, besonderen Gästen und der Atmosphäre eines nahen Theaters. Mehr als eine Abfolge von Liedern möchte das Konzert kleine Geschichten erzählen: mögliche Lieben, Abschiede, Träume, Erinnerungen und Momente, in denen eine Melodie zu sagen scheint, was Worte allein nicht erreichen.',
     'Uma nova jornada': 'Eine neue Reise',
-    'O início de uma nova fase artística': 'Der Beginn einer neuen künstlerischen Phase',
+    'O início de uma nova fase artística':
+      'Der Beginn einer neuen künstlerischen Phase',
     'Este projeto marca o começo de uma nova fase na minha carreira. Depois de tantos caminhos entre ópera, televisão, gravações, redes sociais e repertório crossover, sinto que este concerto reúne de forma muito verdadeira aquilo que mais me move: cantar com emoção, contar histórias e estar perto do público.':
       'Dieses Projekt markiert den Beginn einer neuen Phase meiner Karriere. Nach so vielen Wegen zwischen Oper, Fernsehen, Aufnahmen, sozialen Medien und Crossover-Repertoire habe ich das Gefühl, dass dieses Konzert auf sehr ehrliche Weise zusammenführt, was mich am meisten bewegt: mit Emotion zu singen, Geschichten zu erzählen und dem Publikum nahe zu sein.',
     'As primeiras apresentações acontecerão na':
@@ -514,8 +545,7 @@ const MWP_TEXT_TRANSLATIONS = {
     ', país que há muitos anos faz parte da minha vida musical. No fim do ano, em':
       ' statt, einem Land, das seit vielen Jahren Teil meines musikalischen Lebens ist. Am Ende des Jahres, im',
     dezembro: 'Dezember',
-    ', o concerto também será apresentado no':
-      ', wird das Konzert auch in',
+    ', o concerto também será apresentado no': ', wird das Konzert auch in',
     Brasil: 'Brasilien',
     ', em um retorno muito especial a esse repertório diante do meu público brasileiro.':
       ' präsentiert, als eine sehr besondere Rückkehr zu diesem Repertoire vor meinem brasilianischen Publikum.',
@@ -666,7 +696,10 @@ function isSoInLoveAlbumPagePath(path) {
 }
 
 function redirectInternationalAlbumPurchase() {
-  if (getCurrentLanguage() === 'pt' || !isSoInLovePixPagePath(window.location.pathname)) {
+  if (
+    getCurrentLanguage() === 'pt' ||
+    !isSoInLovePixPagePath(window.location.pathname)
+  ) {
     return;
   }
 
@@ -691,11 +724,16 @@ function isSupportPage() {
 }
 
 function isSupportLink(link) {
-  if (!link?.href || link.href.startsWith('#') || /^https?:\/\//.test(link.href)) {
+  if (
+    !link?.href ||
+    link.href.startsWith('#') ||
+    /^https?:\/\//.test(link.href)
+  ) {
     return false;
   }
 
-  const linkPath = new URL(getPageHref(link.href), window.location.href).pathname;
+  const linkPath = new URL(getPageHref(link.href), window.location.href)
+    .pathname;
   return isSupportPagePath(linkPath);
 }
 
@@ -742,12 +780,35 @@ function translateAttribute(element, attr, language) {
   let translated = translatePhrase(value, language);
   if (translated === value) {
     translated = value
-      .replace(/^Tocar (.+)$/u, (_, title) => `${language === 'de' ? 'Abspielen' : 'Play'} ${title}`)
-      .replace(/^Baixar (.+)$/u, (_, title) => `${language === 'de' ? 'Herunterladen' : 'Download'} ${title}`)
-      .replace(/^Capas do álbum (.+)$/u, (_, title) => `${language === 'de' ? 'Albumcover von' : 'Album covers for'} ${title}`)
-      .replace(/^Capa do álbum (.+)$/u, (_, title) => `${language === 'de' ? 'Vorderseite des Albums' : 'Front cover of'} ${title}`)
-      .replace(/^Contracapa do álbum (.+)$/u, (_, title) => `${language === 'de' ? 'Rückseite des Albums' : 'Back cover of'} ${title}`)
-      .replace(/^Seguir Max Wilson Pereira no (.+)$/u, (_, social) => `${language === 'de' ? 'Max Wilson Pereira folgen auf' : 'Follow Max Wilson Pereira on'} ${social}`);
+      .replace(
+        /^Tocar (.+)$/u,
+        (_, title) => `${language === 'de' ? 'Abspielen' : 'Play'} ${title}`,
+      )
+      .replace(
+        /^Baixar (.+)$/u,
+        (_, title) =>
+          `${language === 'de' ? 'Herunterladen' : 'Download'} ${title}`,
+      )
+      .replace(
+        /^Capas do álbum (.+)$/u,
+        (_, title) =>
+          `${language === 'de' ? 'Albumcover von' : 'Album covers for'} ${title}`,
+      )
+      .replace(
+        /^Capa do álbum (.+)$/u,
+        (_, title) =>
+          `${language === 'de' ? 'Vorderseite des Albums' : 'Front cover of'} ${title}`,
+      )
+      .replace(
+        /^Contracapa do álbum (.+)$/u,
+        (_, title) =>
+          `${language === 'de' ? 'Rückseite des Albums' : 'Back cover of'} ${title}`,
+      )
+      .replace(
+        /^Seguir Max Wilson Pereira no (.+)$/u,
+        (_, social) =>
+          `${language === 'de' ? 'Max Wilson Pereira folgen auf' : 'Follow Max Wilson Pereira on'} ${social}`,
+      );
   }
 
   if (translated !== value) element.setAttribute(attr, translated);
@@ -763,11 +824,14 @@ function applyStaticTranslations() {
   while (walker.nextNode()) textNodes.push(walker.currentNode);
   textNodes.forEach((node) => translateTextNode(node, language));
 
-  document.querySelectorAll('[alt], [aria-label], [title], [placeholder]').forEach((element) => {
-    ['alt', 'aria-label', 'title', 'placeholder'].forEach((attr) => {
-      if (element.hasAttribute(attr)) translateAttribute(element, attr, language);
+  document
+    .querySelectorAll('[alt], [aria-label], [title], [placeholder]')
+    .forEach((element) => {
+      ['alt', 'aria-label', 'title', 'placeholder'].forEach((attr) => {
+        if (element.hasAttribute(attr))
+          translateAttribute(element, attr, language);
+      });
     });
-  });
 }
 
 window.MWP_I18N = {
@@ -777,7 +841,12 @@ window.MWP_I18N = {
 };
 
 function getPageHref(href) {
-  if (!href || href.startsWith('/') || href.startsWith('#') || /^https?:\/\//.test(href)) {
+  if (
+    !href ||
+    href.startsWith('/') ||
+    href.startsWith('#') ||
+    /^https?:\/\//.test(href)
+  ) {
     return href;
   }
 
@@ -926,20 +995,25 @@ class MaxSiteNav extends HTMLElement {
     const toggle = this.querySelector('.site-nav-toggle');
     const nav = this.querySelector('.site-nav');
 
-    this.querySelectorAll('.language-switch-link[data-language]').forEach((link) => {
-      link.addEventListener('click', () => {
-        try {
-          localStorage.setItem('mwp-language', link.dataset.language);
-        } catch (error) {
-          // The URL still carries the selected language when storage is unavailable.
-        }
-      });
-    });
+    this.querySelectorAll('.language-switch-link[data-language]').forEach(
+      (link) => {
+        link.addEventListener('click', () => {
+          try {
+            localStorage.setItem('mwp-language', link.dataset.language);
+          } catch (error) {
+            // The URL still carries the selected language when storage is unavailable.
+          }
+        });
+      },
+    );
 
     toggle?.addEventListener('click', () => {
       const isOpen = nav?.classList.toggle('is-open') || false;
       toggle.setAttribute('aria-expanded', String(isOpen));
-      toggle.setAttribute('aria-label', translatePhrase(isOpen ? 'Fechar menu' : 'Abrir menu'));
+      toggle.setAttribute(
+        'aria-label',
+        translatePhrase(isOpen ? 'Fechar menu' : 'Abrir menu'),
+      );
     });
   }
 }
@@ -971,7 +1045,8 @@ class MaxLinkList extends HTMLElement {
   connectedCallback() {
     const links = getVisibleNavigationLinks(MWP_CONFIG?.links || []);
     const variant = this.getAttribute('variant');
-    const navClass = variant === 'hero' ? 'link-list hero-link-list' : 'link-list';
+    const navClass =
+      variant === 'hero' ? 'link-list hero-link-list' : 'link-list';
     const items = links
       .map(
         (link) => `
@@ -1027,7 +1102,9 @@ customElements.define('max-site-footer', MaxSiteFooter);
 class MaxVideoEmbed extends HTMLElement {
   connectedCallback() {
     const videoId = this.getAttribute('video-id');
-    const title = translatePhrase(this.getAttribute('title') || 'Vídeo de Max Wilson Pereira');
+    const title = translatePhrase(
+      this.getAttribute('title') || 'Vídeo de Max Wilson Pereira',
+    );
 
     if (!videoId) return;
 
@@ -1161,12 +1238,18 @@ class MaxSeoMeta extends HTMLElement {
     const siteName = MWP_CONFIG?.siteName || 'Max Wilson Pereira';
     const title = translatePhrase(config.title);
     const description = translatePhrase(config.description);
-    const ogDescription = translatePhrase(config.ogDescription || config.description);
-    const locale = MWP_LANGUAGES[getCurrentLanguage()].htmlLang.replace('-', '_');
+    const ogDescription = translatePhrase(
+      config.ogDescription || config.description,
+    );
+    const locale = MWP_LANGUAGES[getCurrentLanguage()].htmlLang.replace(
+      '-',
+      '_',
+    );
 
     const getSelector = (tag, attrs) => {
       if (tag === 'meta' && attrs.name) return `meta[name="${attrs.name}"]`;
-      if (tag === 'meta' && attrs.property) return `meta[property="${attrs.property}"]`;
+      if (tag === 'meta' && attrs.property)
+        return `meta[property="${attrs.property}"]`;
       if (tag === 'link' && attrs.rel) return `link[rel="${attrs.rel}"]`;
       return '';
     };

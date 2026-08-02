@@ -28,7 +28,7 @@ const MWP_CONFIG = {
         'Max Wilson Pereira — tenor brasileiro. Ópera, pop, paródias e apresentações nas ruas. Canto lírico e entretenimento para tocar o seu coração.',
       path: '/',
       ogDescription:
-        'Tenor brasileiro. Ópera, pop, paródias e apresentações ao vivo. Apoie e conheça o álbum SO IN LOVE.',
+        'Tenor brasileiro. Ópera, pop, paródias e apresentações ao vivo. Conheça o álbum SO IN LOVE.',
       jsonLd: {
         '@type': 'Person',
         name: 'Max Wilson Pereira',
