@@ -516,8 +516,40 @@ function getLanguageHref(language) {
   return `${url.pathname}${url.search}${url.hash}`;
 }
 
+const MWP_SUPPORT_PAGE_PATH = 'pages/apoio-pix.html';
+
+function isSupportPagePath(path) {
+  const normalizedPath = normalizePath(path);
+  return (
+    normalizedPath === MWP_SUPPORT_PAGE_PATH ||
+    normalizedPath === `${MWP_SUPPORT_PAGE_PATH}m`
+  );
+}
+
+function isSupportPage() {
+  return isSupportPagePath(window.location.pathname);
+}
+
+function isSupportLink(link) {
+  if (!link?.href || link.href.startsWith('#') || /^https?:\/\//.test(link.href)) {
+    return false;
+  }
+
+  const linkPath = new URL(getPageHref(link.href), window.location.href).pathname;
+  return isSupportPagePath(linkPath);
+}
+
+function getVisibleNavigationLinks(links) {
+  if (getCurrentLanguage() === 'pt') return links;
+  return links.filter((link) => !isSupportLink(link));
+}
+
 function renderLanguageSwitcher() {
   const currentLanguage = getCurrentLanguage();
+  if (isSupportPage()) {
+    return `<div class="language-switcher" aria-label="${translatePhrase('Escolher idioma', currentLanguage)}" aria-hidden="true"></div>`;
+  }
+
   const buttons = Object.values(MWP_LANGUAGES)
     .filter((language) => language.code !== currentLanguage)
     .map(
@@ -686,7 +718,7 @@ class MaxSiteNav extends HTMLElement {
     const brandSecondary = brandParts.length > 1 ? brandParts.pop() : '';
     const brandPrimary = brandParts.join(' ') || siteName;
     const navId = `site-nav-${Math.random().toString(36).slice(2)}`;
-    const items = links
+    const items = getVisibleNavigationLinks(links)
       .map(
         (link) => `
           <a class="site-nav-link ${isCurrentPage(link.href) ? 'is-active' : ''}" href="${getPageHref(link.href)}" ${link.external ? 'target="_blank" rel="noopener noreferrer"' : ''}>
@@ -763,7 +795,7 @@ customElements.define('max-profile-img', MaxProfileImg);
 /* ─── max-link-list ───────────────────────────────────────────────────────── */
 class MaxLinkList extends HTMLElement {
   connectedCallback() {
-    const links = MWP_CONFIG?.links || [];
+    const links = getVisibleNavigationLinks(MWP_CONFIG?.links || []);
     const variant = this.getAttribute('variant');
     const navClass = variant === 'hero' ? 'link-list hero-link-list' : 'link-list';
     const items = links

@@ -346,6 +346,9 @@ body::after {
 .language-switcher {
   display: inline-flex;
   align-items: center;
+  justify-content: flex-end;
+  flex: 0 0 64px;
+  width: 64px;
   gap: 8px;
 }
 
