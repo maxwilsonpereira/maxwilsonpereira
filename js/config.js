@@ -139,12 +139,12 @@ const MWP_CONFIG = {
     },
     {
       href: 'pages/so-in-love-pix.html',
-      text: 'ÁLBUM SO IN LOVE',
+      text: 'ÁLBUM',
       external: false,
     },
     {
       href: 'pages/apoio-pix.html',
-      text: 'APOIE MINHA JORNADA',
+      text: 'APOIO',
       external: false,
     },
     // {
