@@ -39,7 +39,7 @@ const MWP_TEXT_TRANSLATIONS = {
     'Tenor • Artista': 'Tenor • Artist',
     'Tenor brasileiro': 'Brazilian Tenor',
     'Álbum digital': 'Digital album',
-    'Álbum digital liberado': 'Digital album unlocked',
+    'Álbum digital liberado': 'Digital album',
     'Canto, paixão e entretenimento para alegrar o seu dia e tocar o seu coração':
       'Singing, passion, and entertainment to brighten your day and touch your heart',
     HOME: 'HOME',
@@ -251,7 +251,7 @@ const MWP_TEXT_TRANSLATIONS = {
     'Tenor • Artista': 'Tenor • Künstler',
     'Tenor brasileiro': 'Brasilianischer Tenor',
     'Álbum digital': 'Digitales Album',
-    'Álbum digital liberado': 'Digitales Album freigeschaltet',
+    'Álbum digital liberado': 'Digitales Album',
     'Canto, paixão e entretenimento para alegrar o seu dia e tocar o seu coração':
       'Gesang, Leidenschaft und Unterhaltung, um Ihren Tag zu erhellen und Ihr Herz zu berühren',
     HOME: 'HOME',

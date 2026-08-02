@@ -1894,8 +1894,9 @@ ul li::before {
   }
 
   .site-header {
-    top: 12px;
-    width: calc(100% - 24px);
+    top: 0;
+    right: 0;
+    width: 100%;
   }
 
   .site-brand {
