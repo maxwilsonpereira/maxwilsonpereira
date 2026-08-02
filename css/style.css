@@ -1572,7 +1572,9 @@ h2.accent {
   width: 100vw;
   min-height: clamp(520px, 78vh, 760px);
   margin-top: -24px;
+  margin-right: calc(50% - 50vw);
   margin-bottom: 10px;
+  margin-left: calc(50% - 50vw);
   overflow: hidden;
   text-align: left;
   border-bottom: 1px solid var(--border-glass);
@@ -1929,6 +1931,11 @@ ul li::before {
   margin-top: 8px;
 }
 
+.page-sub .biography-page,
+.page-sub .concerto-page {
+  margin-top: 0;
+}
+
 /* Responsive */
 @media (min-width: 760px) {
   .site-header {
@@ -2026,6 +2033,11 @@ ul li::before {
 
   .page-sub .page-container {
     margin-top: 96px;
+  }
+
+  .page-sub .biography-page,
+  .page-sub .concerto-page {
+    margin-top: 0;
   }
 
   .home-hero {
