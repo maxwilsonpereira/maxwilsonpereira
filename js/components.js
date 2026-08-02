@@ -104,6 +104,9 @@ class MaxSiteNav extends HTMLElement {
       ...(MWP_CONFIG?.links || []),
     ];
     const siteName = MWP_CONFIG?.siteName || 'Max Wilson Pereira';
+    const brandParts = siteName.trim().split(/\s+/);
+    const brandSecondary = brandParts.length > 1 ? brandParts.pop() : '';
+    const brandPrimary = brandParts.join(' ') || siteName;
     const navId = `site-nav-${Math.random().toString(36).slice(2)}`;
     const items = links
       .map(
@@ -118,7 +121,10 @@ class MaxSiteNav extends HTMLElement {
     this.innerHTML = `
       <header class="site-header">
         <a class="site-brand" href="${getPageHref('index.html')}" aria-label="${siteName} - Home">
-          <span>${siteName}</span>
+          <span class="site-brand-wordmark" aria-hidden="true">
+            <span class="site-brand-primary">${brandPrimary}</span>
+            ${brandSecondary ? `<span class="site-brand-secondary">${brandSecondary}</span>` : ''}
+          </span>
         </a>
 
         <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="${navId}" aria-label="Abrir menu">

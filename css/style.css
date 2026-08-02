@@ -3,7 +3,7 @@
    Inspired by Linktree • Social media palette
    ============================================ */
 
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
 
 :root {
   /* Social palette */
@@ -180,16 +180,42 @@ body::after {
   align-items: center;
   min-width: 0;
   color: var(--text-primary);
-  font-size: 0.98rem;
-  font-weight: 800;
-  line-height: 1.1;
   text-decoration: none;
 }
 
-.site-brand span {
+.site-brand-wordmark {
+  display: grid;
+  gap: 1px;
+  justify-items: start;
+  min-width: 0;
+  line-height: 0.9;
+  text-align: left;
+}
+
+.site-brand-primary,
+.site-brand-secondary {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.site-brand-primary {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.site-brand-secondary {
+  color: rgba(255, 255, 255, 0.72);
+  font-family:
+    "Plus Jakarta Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-size: 0.52rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 
 .site-nav-toggle {
@@ -1512,8 +1538,12 @@ ul li::before {
     padding: 0 32px;
   }
 
-  .site-brand {
-    font-size: 1.05rem;
+  .site-brand-primary {
+    font-size: 1.48rem;
+  }
+
+  .site-brand-secondary {
+    font-size: 0.58rem;
   }
 
   .site-nav-toggle {
@@ -1639,6 +1669,19 @@ ul li::before {
   .site-header {
     top: 12px;
     width: calc(100% - 24px);
+  }
+
+  .site-brand {
+    max-width: calc(100vw - 96px);
+  }
+
+  .site-brand-primary {
+    font-size: 1.12rem;
+  }
+
+  .site-brand-secondary {
+    font-size: 0.48rem;
+    letter-spacing: 0.16em;
   }
 
   .home-hero {
