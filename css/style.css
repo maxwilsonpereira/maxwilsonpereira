@@ -383,10 +383,7 @@ body::after {
 }
 
 .language-switch-flag-pt {
-  background:
-    radial-gradient(circle at 50% 50%, #1f4aa8 0 18%, transparent 19%),
-    linear-gradient(45deg, transparent 27%, #f6d74a 28% 72%, transparent 73%),
-    #129447;
+  background: url("../assets/flags/brazil.svg") center / cover no-repeat;
 }
 
 .language-switch-flag-en {
