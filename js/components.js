@@ -212,16 +212,30 @@ const MWP_TEXT_TRANSLATIONS = {
     'Isso ajuda': 'This helps',
     'muito mais pessoas': 'many more people',
     'a descobrirem minha música.': 'discover my music.',
-    'Ouça online, baixe faixa por faixa ou salve o álbum completo em um arquivo único.':
-      'Listen online, download track by track, or save the full album as one complete set.',
+    'Projeto de 2011 da Sony Music Entertainment Brasil com o Grupo Quattro, revisitando grandes canções internacionais em formato crossover vocal.':
+      'A 2011 Sony Music Entertainment Brasil project with Grupo Quattro, revisiting major international songs in a vocal crossover format.',
+    'Álbum lançado pela gravadora Biscoito Fino, reunindo repertório clássico e popular em formato crossover vocal.':
+      'An album released by the Biscoito Fino record label, bringing classical and popular repertoire together in a vocal crossover format.',
+    'Lançado pela gravadora Biscoito Fino em 2017, Con Amore reúne o Tenori Amici em repertório clássico e popular com espírito crossover.':
+      'Released by the Biscoito Fino record label in 2017, Con Amore brings Tenori Amici together in classical and popular repertoire with a crossover spirit.',
+    'O álbum completo está disponível no Spotify.':
+      'The full album is available on Spotify.',
+    'Ouvir no Spotify': 'Listen on Spotify',
+    'Ouvir o álbum QUATTRO completo no Spotify':
+      'Listen to the full QUATTRO album on Spotify',
+    'Ouvir Tenori Amici no Spotify': 'Listen to Tenori Amici on Spotify',
     'Baixar todas as músicas': 'Download all songs',
     '13 faixas': '13 tracks',
     '11 faixas': '11 tracks',
+    '11 amostras': '11 samples',
     'Suas músicas': 'Your songs',
+    Amostras: 'Samples',
+    'Prévia MP3': 'MP3 preview',
     'Seu navegador não suporta reprodução de áudio.':
       'Your browser does not support audio playback.',
     Baixar: 'Download',
     Play: 'Play',
+    'Ouvir amostra': 'Play sample',
     Pausar: 'Pause',
     'Preparando downloads...': 'Preparing downloads...',
     'Faixas Bônus': 'Bonus Tracks',
@@ -240,6 +254,10 @@ const MWP_TEXT_TRANSLATIONS = {
       'Download QUATTRO Album | Max Wilson Pereira',
     'Baixar Album QUATTRO | Max Wilson Pereira':
       'Download QUATTRO Album | Max Wilson Pereira',
+    'Amostras do Álbum QUATTRO | Max Wilson Pereira':
+      'QUATTRO Album Samples | Max Wilson Pereira',
+    'Amostras do Álbum Tenori Amici | Max Wilson Pereira':
+      'Tenori Amici Album Samples | Max Wilson Pereira',
     'Max Wilson Pereira — tenor brasileiro. Ópera, pop, paródias e apresentações nas ruas. Canto lírico e entretenimento para tocar o seu coração.':
       'Max Wilson Pereira — Brazilian tenor. Opera, pop, parodies, and street performances. Classical singing and entertainment to touch your heart.',
     'Tenor brasileiro. Ópera, pop, paródias e apresentações ao vivo. Conheça o álbum SO IN LOVE.':
@@ -322,10 +340,14 @@ const MWP_TEXT_TRANSLATIONS = {
       'Download page for Max Wilson Pereira’s SO IN LOVE digital album.',
     'Baixe o álbum SO IN LOVE e obrigado por apoiar a jornada artística de Max Wilson Pereira.':
       'Download the SO IN LOVE album, and thank you for supporting Max Wilson Pereira’s artistic journey.',
-    'Página de download do álbum digital QUATTRO de Max Wilson Pereira.':
-      'Download page for Max Wilson Pereira’s QUATTRO digital album.',
-    'Baixe o álbum QUATTRO e obrigado por apoiar a jornada artística de Max Wilson Pereira.':
-      'Download the QUATTRO album, and thank you for supporting Max Wilson Pereira’s artistic journey.',
+    'Ouça amostras do álbum QUATTRO e acesse o álbum completo no Spotify.':
+      'Listen to QUATTRO album samples and access the full album on Spotify.',
+    'Ouça amostras de QUATTRO, projeto de 2011 da Sony Music Entertainment Brasil, e acesse o álbum completo no Spotify.':
+      'Listen to QUATTRO samples, a 2011 Sony Music Entertainment Brasil project, and access the full album on Spotify.',
+    'Ouça amostras do álbum Tenori Amici - Con Amore, lançado pela Biscoito Fino, e acesse o álbum completo no Spotify.':
+      'Listen to samples from the Tenori Amici - Con Amore album, released by Biscoito Fino, and access the full album on Spotify.',
+    'Ouça amostras de Tenori Amici - Con Amore, álbum lançado pela Biscoito Fino, e acesse o álbum completo no Spotify.':
+      'Listen to Tenori Amici - Con Amore samples, an album released by Biscoito Fino, and access the full album on Spotify.',
   },
   de: {
     'Escolher idioma': 'Sprache auswählen',
@@ -524,16 +546,30 @@ const MWP_TEXT_TRANSLATIONS = {
     'Isso ajuda': 'Das hilft',
     'muito mais pessoas': 'viel mehr Menschen',
     'a descobrirem minha música.': 'meine Musik zu entdecken.',
-    'Ouça online, baixe faixa por faixa ou salve o álbum completo em um arquivo único.':
-      'Hören Sie online, laden Sie einzelne Titel herunter oder speichern Sie das komplette Album als ein Paket.',
+    'Projeto de 2011 da Sony Music Entertainment Brasil com o Grupo Quattro, revisitando grandes canções internacionais em formato crossover vocal.':
+      'Ein Projekt von Sony Music Entertainment Brasil aus dem Jahr 2011 mit Grupo Quattro, das große internationale Songs im Vocal-Crossover-Format neu interpretiert.',
+    'Álbum lançado pela gravadora Biscoito Fino, reunindo repertório clássico e popular em formato crossover vocal.':
+      'Ein Album des Labels Biscoito Fino, das klassisches und populäres Repertoire im Vocal-Crossover-Format verbindet.',
+    'Lançado pela gravadora Biscoito Fino em 2017, Con Amore reúne o Tenori Amici em repertório clássico e popular com espírito crossover.':
+      'Con Amore wurde 2017 beim Label Biscoito Fino veröffentlicht und vereint Tenori Amici mit klassischem und populärem Repertoire im Crossover-Geist.',
+    'O álbum completo está disponível no Spotify.':
+      'Das komplette Album ist auf Spotify verfügbar.',
+    'Ouvir no Spotify': 'Auf Spotify anhören',
+    'Ouvir o álbum QUATTRO completo no Spotify':
+      'Das komplette Album QUATTRO auf Spotify anhören',
+    'Ouvir Tenori Amici no Spotify': 'Tenori Amici auf Spotify anhören',
     'Baixar todas as músicas': 'Alle Lieder herunterladen',
     '13 faixas': '13 Titel',
     '11 faixas': '11 Titel',
+    '11 amostras': '11 Hörproben',
     'Suas músicas': 'Ihre Musik',
+    Amostras: 'Hörproben',
+    'Prévia MP3': 'MP3-Vorschau',
     'Seu navegador não suporta reprodução de áudio.':
       'Ihr Browser unterstützt keine Audiowiedergabe.',
     Baixar: 'Herunterladen',
     Play: 'Abspielen',
+    'Ouvir amostra': 'Hörprobe abspielen',
     Pausar: 'Pause',
     'Preparando downloads...': 'Downloads werden vorbereitet...',
     'Faixas Bônus': 'Bonustracks',
@@ -552,6 +588,10 @@ const MWP_TEXT_TRANSLATIONS = {
       'Album QUATTRO herunterladen | Max Wilson Pereira',
     'Baixar Album QUATTRO | Max Wilson Pereira':
       'Album QUATTRO herunterladen | Max Wilson Pereira',
+    'Amostras do Álbum QUATTRO | Max Wilson Pereira':
+      'Hörproben aus dem Album QUATTRO | Max Wilson Pereira',
+    'Amostras do Álbum Tenori Amici | Max Wilson Pereira':
+      'Hörproben aus dem Album Tenori Amici | Max Wilson Pereira',
     'Max Wilson Pereira — tenor brasileiro. Ópera, pop, paródias e apresentações nas ruas. Canto lírico e entretenimento para tocar o seu coração.':
       'Max Wilson Pereira — brasilianischer Tenor. Oper, Pop, Parodien und Straßenauftritte. Klassischer Gesang und Unterhaltung, die Ihr Herz berühren.',
     'Tenor brasileiro. Ópera, pop, paródias e apresentações ao vivo. Conheça o álbum SO IN LOVE.':
@@ -634,10 +674,14 @@ const MWP_TEXT_TRANSLATIONS = {
       'Download-Seite für das digitale Album SO IN LOVE von Max Wilson Pereira.',
     'Baixe o álbum SO IN LOVE e obrigado por apoiar a jornada artística de Max Wilson Pereira.':
       'Laden Sie das Album SO IN LOVE herunter, und vielen Dank für die Unterstützung der künstlerischen Reise von Max Wilson Pereira.',
-    'Página de download do álbum digital QUATTRO de Max Wilson Pereira.':
-      'Download-Seite für das digitale Album QUATTRO von Max Wilson Pereira.',
-    'Baixe o álbum QUATTRO e obrigado por apoiar a jornada artística de Max Wilson Pereira.':
-      'Laden Sie das Album QUATTRO herunter, und vielen Dank für die Unterstützung der künstlerischen Reise von Max Wilson Pereira.',
+    'Ouça amostras do álbum QUATTRO e acesse o álbum completo no Spotify.':
+      'Hören Sie Hörproben aus dem Album QUATTRO und öffnen Sie das komplette Album auf Spotify.',
+    'Ouça amostras de QUATTRO, projeto de 2011 da Sony Music Entertainment Brasil, e acesse o álbum completo no Spotify.':
+      'Hören Sie Hörproben aus QUATTRO, einem Projekt von Sony Music Entertainment Brasil aus dem Jahr 2011, und öffnen Sie das komplette Album auf Spotify.',
+    'Ouça amostras do álbum Tenori Amici - Con Amore, lançado pela Biscoito Fino, e acesse o álbum completo no Spotify.':
+      'Hören Sie Hörproben aus dem Album Tenori Amici - Con Amore, veröffentlicht bei Biscoito Fino, und öffnen Sie das komplette Album auf Spotify.',
+    'Ouça amostras de Tenori Amici - Con Amore, álbum lançado pela Biscoito Fino, e acesse o álbum completo no Spotify.':
+      'Hören Sie Hörproben aus Tenori Amici - Con Amore, einem bei Biscoito Fino veröffentlichten Album, und öffnen Sie das komplette Album auf Spotify.',
   },
 };
 

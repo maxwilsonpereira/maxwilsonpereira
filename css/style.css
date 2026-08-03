@@ -1329,6 +1329,58 @@ h2.accent {
   line-height: 1.65;
 }
 
+.album-streaming-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.album-hero-copy .album-streaming-cta p {
+  margin: 0;
+  font-size: 0.94rem;
+}
+
+.spotify-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 10px 16px;
+  border: 1px solid rgba(29, 185, 84, 0.52);
+  border-radius: var(--radius-full);
+  background: #1db954;
+  color: #07140b;
+  font-size: 0.88rem;
+  font-weight: 900;
+  text-decoration: none;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.spotify-button:visited {
+  color: #07140b;
+}
+
+.spotify-button:hover {
+  box-shadow: 0 12px 32px rgba(29, 185, 84, 0.24);
+  transform: translateY(-1px);
+}
+
+.spotify-button:focus-visible {
+  outline: 3px solid rgba(29, 185, 84, 0.42);
+  outline-offset: 3px;
+}
+
+.spotify-button-icon {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+}
+
 .album-download-all {
   width: auto;
   min-width: 230px;
@@ -2283,6 +2335,10 @@ ul li::before {
   .album-hero-copy {
     align-items: stretch;
     text-align: left;
+  }
+
+  .spotify-button {
+    width: 100%;
   }
 
   .album-hero-copy h1 {

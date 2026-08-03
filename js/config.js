@@ -151,17 +151,34 @@ const MWP_CONFIG = {
       },
     },
     quattroSonyDownload: {
-      title: 'Baixar Álbum QUATTRO | Max Wilson Pereira',
+      title: 'Amostras do Álbum QUATTRO | Max Wilson Pereira',
       description:
-        'Página de download do álbum digital QUATTRO de Max Wilson Pereira.',
+        'Ouça amostras do álbum QUATTRO e acesse o álbum completo no Spotify.',
       path: '/pages/albums/quattro-sony.html',
       ogDescription:
-        'Baixe o álbum QUATTRO e obrigado por apoiar a jornada artística de Max Wilson Pereira.',
+        'Ouça amostras de QUATTRO, projeto de 2011 da Sony Music Entertainment Brasil, e acesse o álbum completo no Spotify.',
       jsonLd: {
         '@type': 'WebPage',
-        name: 'Baixar Álbum QUATTRO | Max Wilson Pereira',
-        description: 'Página de download do álbum digital QUATTRO.',
+        name: 'Amostras do Álbum QUATTRO | Max Wilson Pereira',
+        description:
+          'Ouça amostras do álbum QUATTRO e acesse o álbum completo no Spotify.',
         url: 'https://maxwilsonpereira.com.br/pages/albums/quattro-sony.html',
+        mainEntity: { '@type': 'Person', name: 'Max Wilson Pereira' },
+      },
+    },
+    tenoriAmiciSamples: {
+      title: 'Amostras do Álbum Tenori Amici | Max Wilson Pereira',
+      description:
+        'Ouça amostras do álbum Tenori Amici - Con Amore, lançado pela Biscoito Fino, e acesse o álbum completo no Spotify.',
+      path: '/pages/albums/tenori-amici.html',
+      ogDescription:
+        'Ouça amostras de Tenori Amici - Con Amore, álbum lançado pela Biscoito Fino, e acesse o álbum completo no Spotify.',
+      jsonLd: {
+        '@type': 'WebPage',
+        name: 'Amostras do Álbum Tenori Amici | Max Wilson Pereira',
+        description:
+          'Ouça amostras do álbum Tenori Amici - Con Amore, lançado pela Biscoito Fino, e acesse o álbum completo no Spotify.',
+        url: 'https://maxwilsonpereira.com.br/pages/albums/tenori-amici.html',
         mainEntity: { '@type': 'Person', name: 'Max Wilson Pereira' },
       },
     },

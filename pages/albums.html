@@ -124,12 +124,13 @@
             <p class="album-kicker">Max Wilson Pereira</p>
             <h2>Tenori Amici</h2>
             <p>
-              Um encontro de vozes, amizade e repertório lírico em uma gravação
-              especial.
+              Álbum lançado pela gravadora Biscoito Fino, reunindo repertório
+              clássico e popular em formato crossover vocal.
             </p>
             <button
               class="primary-button album-download-all"
               type="button"
+              data-album-link="tenori-amici"
               aria-label="Botão do álbum Tenori Amici"
             >
               Ir para o álbum
@@ -155,12 +156,14 @@
             <p class="album-kicker">Max Wilson Pereira</p>
             <h2>QUATTRO</h2>
             <p>
-              Projeto crossover gravado com o grupo Quattro, unindo grandes
-              canções internacionais e intensidade vocal.
+              Projeto da Sony Music Entertainment Brasil lançado em 2011, com o
+              Grupo Quattro revisitando grandes canções internacionais em
+              formato crossover vocal.
             </p>
             <button
               class="primary-button album-download-all"
               type="button"
+              data-album-link="quattro-sony"
               aria-label="Botão do álbum QUATTRO"
             >
               Ir para o álbum
@@ -186,6 +189,18 @@
           }
 
           window.location.href = `albums/so-in-love.html?lang=${language}`;
+        });
+
+      document
+        .querySelector('[data-album-link="quattro-sony"]')
+        ?.addEventListener('click', () => {
+          window.location.href = 'albums/quattro-sony.html';
+        });
+
+      document
+        .querySelector('[data-album-link="tenori-amici"]')
+        ?.addEventListener('click', () => {
+          window.location.href = 'albums/tenori-amici.html';
         });
     </script>
   </body>
