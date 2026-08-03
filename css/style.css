@@ -3,8 +3,6 @@
    Inspired by Linktree • Social media palette
    ============================================ */
 
-@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Italiana&display=swap");
-
 :root {
   /* Social palette */
   --instagram-pink: #e1306c;
@@ -1328,6 +1326,7 @@ h2.accent {
 }
 
 .album-cover {
+  height: auto;
   position: absolute;
   width: min(78%, 285px);
   aspect-ratio: 1 / 1;
@@ -2671,6 +2670,7 @@ ul li::before {
   --duration-stage: 760ms;
 
   /* Compatibility aliases for the existing subpages. */
+  --accent-primary: var(--color-brass);
   --bg-dark: var(--color-ink);
   --bg-card: rgba(255, 253, 248, 0.06);
   --bg-card-hover: rgba(255, 253, 248, 0.1);
@@ -3521,6 +3521,7 @@ input:focus-visible {
 }
 
 .home-album img {
+  height: auto;
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;

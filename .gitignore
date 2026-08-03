@@ -1,5 +1,5 @@
 _MAX_ABOUT
-.tmp-chrome-debug/
+.tmp-chrome-*/
 
 # Local Codex / Impeccable tooling
 .agents/

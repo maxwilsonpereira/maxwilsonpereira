@@ -22,3 +22,10 @@
 - Use semantic HTML where possible.
 - Keep accessibility in mind: labels, alt text, focus states, contrast.
 - Update and improve SEO whenever necessary and possible, including localized SEO metadata where relevant.
+
+## Localization and SEO Workflow
+
+- Portuguese files at the project root and under `pages/` are the editable source pages.
+- English and German public pages under `en/` and `de/` are generated files; do not edit them directly.
+- After changing public-page content, metadata, images, or local links, run `node scripts/generate-localized-pages.mjs` and then `node scripts/validate-site.mjs`.
+- Keep canonical URLs, reciprocal `hreflang` declarations, JSON-LD, and `sitemap.xml` aligned with the generated routes.

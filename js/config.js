@@ -14,7 +14,7 @@ const MWP_CONFIG = {
 
   profileImage: 'max-gigga.jpg',
 
-  ogImage: 'https://maxwilsonpereira.com.br/assets/favicon-img.jpg',
+  ogImage: 'https://maxwilsonpereira.com.br/assets/optimized/og-max-wilson.jpg',
 
   socialLinks: [
     'https://www.youtube.com/maxwilsonpereira',
@@ -23,19 +23,19 @@ const MWP_CONFIG = {
 
   seo: {
     home: {
-      title: 'Max Wilson Pereira | Tenor & Artista',
+      title: 'Max Wilson Pereira | Tenor Brasileiro em Viena',
       description:
-        'Max Wilson Pereira — tenor brasileiro. Ópera, pop, paródias e apresentações nas ruas. Canto lírico e entretenimento para tocar o seu coração.',
+        'Conheça Max Wilson Pereira, tenor brasileiro radicado em Viena, com uma trajetória entre ópera, crossover clássico, televisão, concertos e música gravada.',
       path: '/',
       ogDescription:
-        'Tenor brasileiro. Ópera, pop, paródias e apresentações ao vivo. Conheça o álbum SO IN LOVE.',
+        'Tenor brasileiro em Viena. Ópera, crossover clássico, concertos e música gravada em uma trajetória guiada pela emoção da voz.',
       jsonLd: {
         '@type': 'Person',
         name: 'Max Wilson Pereira',
         url: 'https://maxwilsonpereira.com.br',
         description:
-          'Tenor brasileiro. Ópera, pop, paródias e apresentações ao vivo nas ruas.',
-        image: 'https://maxwilsonpereira.com.br/assets/favicon-img.jpg',
+          'Tenor brasileiro radicado em Viena, com trajetória em ópera, crossover clássico, televisão, concertos e música gravada.',
+        image: 'https://maxwilsonpereira.com.br/assets/max-gigga.jpg',
         jobTitle: 'Tenor',
         knowsAbout: [
           'Ópera',
@@ -68,15 +68,15 @@ const MWP_CONFIG = {
       },
     },
     concerto: {
-      title: 'Concerto | Max Wilson Pereira',
+      title: 'Concerto de Ópera e Crossover | Max Wilson Pereira',
       description:
-        'Concerto ao vivo de Max Wilson Pereira com grandes melodias da Broadway, musicais, ópera, clássicos populares e crossover em atmosfera íntima.',
+        'Descubra o concerto de Max Wilson Pereira: uma experiência íntima entre ópera, teatro musical, grandes melodias e crossover clássico, com voz e piano.',
       path: '/pages/concerto.html',
       ogDescription:
         'Uma noite íntima com voz, piano, convidados especiais, grandes melodias, teatro musical, ópera e crossover clássico.',
       jsonLd: {
         '@type': 'WebPage',
-        name: 'Concerto | Max Wilson Pereira',
+        name: 'Concerto de Ópera e Crossover | Max Wilson Pereira',
         description:
           'Concerto íntimo de Max Wilson Pereira com repertório de Broadway, musicais, ópera, clássicos populares e crossover.',
         url: 'https://maxwilsonpereira.com.br/pages/concerto.html',
@@ -120,15 +120,15 @@ const MWP_CONFIG = {
       },
     },
     albums: {
-      title: 'Álbuns | Max Wilson Pereira',
+      title: 'Álbuns e Música | Max Wilson Pereira',
       description:
-        'Conheça os álbuns de Max Wilson Pereira, incluindo SO IN LOVE, Tenori Amici e QUATTRO.',
+        'Ouça os álbuns de Max Wilson Pereira: SO IN LOVE, Tenori Amici e QUATTRO, entre repertório lírico, romantismo e crossover clássico.',
       path: '/pages/albums.html',
       ogDescription:
         'Álbuns de Max Wilson Pereira: repertórios românticos, crossover clássico e gravações especiais.',
       jsonLd: {
         '@type': 'CollectionPage',
-        name: 'Álbuns | Max Wilson Pereira',
+        name: 'Álbuns e Música | Max Wilson Pereira',
         description:
           'Coleção de álbuns de Max Wilson Pereira, tenor brasileiro.',
         url: 'https://maxwilsonpereira.com.br/pages/albums.html',

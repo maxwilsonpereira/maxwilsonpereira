@@ -218,7 +218,7 @@ Stage easing is `cubic-bezier(0.16, 1, 0.3, 1)` with 180ms state transitions and
 
 Reduced-motion preference removes hero entrance animation, reveal transitions, image zooms, and album lift transitions. Keyboard focus uses a 2px aged-brass outline with a 4px offset on links, buttons, and inputs. Buttons provide at least 3.25rem height, the menu toggle is 2.75rem square, and social icon controls are 2.5rem square on mobile.
 
-Portuguese is the source language. Client-side translation updates visible text, alternative text, labels, titles, placeholders, document language, and localized SEO for English and German. Language links carry `lang` and `hreflang`, preserve the selected language in the URL and local storage, and unavailable support routes are omitted outside Portuguese. Layouts must tolerate all three languages without clipping or collapsing the established hierarchy.
+Portuguese is the source language. Public English and German pages are generated as crawlable `/en/` and `/de/` routes with self-canonical metadata, reciprocal `hreflang`, localized JSON-LD, and statically translated primary content. Client-side translation remains as progressive enhancement for shared components and legacy download flows. Language links use real localized routes, preserve the selection in local storage, and omit unavailable support routes outside Portuguese. Layouts must tolerate all three languages without clipping or collapsing the established hierarchy.
 
 ## Do's and Don'ts
 

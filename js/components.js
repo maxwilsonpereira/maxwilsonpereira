@@ -7,6 +7,7 @@
 function getBasePath() {
   const path = window.location.pathname;
   if (path === '/' || path === '/index.html') return '';
+  if (/^\/(?:en|de)\/?$/u.test(path)) return '../';
   const pathParts = path.split('/').filter(Boolean);
   const directories = pathParts.slice(0, -1);
   return '../'.repeat(directories.length);
@@ -51,6 +52,12 @@ const MWP_TEXT_TRANSLATIONS = {
     'Capas do álbum Tenori Amici': 'Album covers for Tenori Amici',
     'Capa do álbum Tenori Amici': 'Front cover of Tenori Amici',
     'Contracapa do álbum Tenori Amici': 'Back cover of Tenori Amici',
+    'Capas do álbum SO IN LOVE': 'SO IN LOVE album covers',
+    'Capa do álbum SO IN LOVE': 'SO IN LOVE front cover',
+    'Contracapa do álbum SO IN LOVE': 'SO IN LOVE back cover',
+    'Capas do álbum QUATTRO': 'QUATTRO album covers',
+    'Capa do álbum QUATTRO': 'QUATTRO front cover',
+    'Contracapa do álbum QUATTRO': 'QUATTRO back cover',
     'Clássicos românticos, cinema, teatro musical e faixas bônus em uma seleção íntima e emocionante.':
       'Romantic classics, cinema, musical theater, and bonus tracks in an intimate and moving selection.',
     'Um encontro de vozes, amizade e repertório lírico em uma gravação especial.':
@@ -247,15 +254,17 @@ const MWP_TEXT_TRANSLATIONS = {
     Pausar: 'Pause',
     'Preparando downloads...': 'Preparing downloads...',
     'Faixas Bônus': 'Bonus Tracks',
-    'Max Wilson Pereira | Tenor & Artista':
-      'Max Wilson Pereira | Tenor & Artist',
+    'Max Wilson Pereira | Tenor Brasileiro em Viena':
+      'Max Wilson Pereira | Brazilian Tenor in Vienna',
     'Biografia | Max Wilson Pereira': 'Biography | Max Wilson Pereira',
-    'Concerto | Max Wilson Pereira': 'Concert | Max Wilson Pereira',
+    'Concerto de Ópera e Crossover | Max Wilson Pereira':
+      'Opera &amp; Classical Crossover Concert | Max Wilson Pereira',
     'Apoie Minha Jornada | Max Wilson Pereira':
       'Support My Journey | Max Wilson Pereira',
     'Álbum SO IN LOVE | Max Wilson Pereira':
       'SO IN LOVE Album | Max Wilson Pereira',
-    'Álbuns | Max Wilson Pereira': 'Albums | Max Wilson Pereira',
+    'Álbuns e Música | Max Wilson Pereira':
+      'Albums &amp; Music | Max Wilson Pereira',
     'Baixar Álbum SO IN LOVE | Max Wilson Pereira':
       'Download SO IN LOVE Album | Max Wilson Pereira',
     'Baixar Álbum QUATTRO | Max Wilson Pereira':
@@ -266,12 +275,12 @@ const MWP_TEXT_TRANSLATIONS = {
       'QUATTRO Album Samples | Max Wilson Pereira',
     'Amostras do Álbum Tenori Amici | Max Wilson Pereira':
       'Tenori Amici Album Samples | Max Wilson Pereira',
-    'Max Wilson Pereira — tenor brasileiro. Ópera, pop, paródias e apresentações nas ruas. Canto lírico e entretenimento para tocar o seu coração.':
-      'Max Wilson Pereira — Brazilian tenor. Opera, pop, parodies, and street performances. Classical singing and entertainment to touch your heart.',
-    'Tenor brasileiro. Ópera, pop, paródias e apresentações ao vivo. Conheça o álbum SO IN LOVE.':
-      'Brazilian tenor. Opera, pop, parodies, and live performances. Support him and discover the SO IN LOVE album.',
-    'Conheça os álbuns de Max Wilson Pereira, incluindo SO IN LOVE, Tenori Amici e QUATTRO.':
-      'Discover Max Wilson Pereira’s albums, including SO IN LOVE, Tenori Amici, and QUATTRO.',
+    'Conheça Max Wilson Pereira, tenor brasileiro radicado em Viena, com uma trajetória entre ópera, crossover clássico, televisão, concertos e música gravada.':
+      'Meet Max Wilson Pereira, a Brazilian tenor based in Vienna whose career spans opera, classical crossover, television, concerts, and recorded music.',
+    'Tenor brasileiro em Viena. Ópera, crossover clássico, concertos e música gravada em uma trajetória guiada pela emoção da voz.':
+      'Brazilian tenor in Vienna. Opera, classical crossover, concerts, and recorded music in a career guided by the emotion of the voice.',
+    'Ouça os álbuns de Max Wilson Pereira: SO IN LOVE, Tenori Amici e QUATTRO, entre repertório lírico, romantismo e crossover clássico.':
+      'Listen to Max Wilson Pereira’s albums: SO IN LOVE, Tenori Amici, and QUATTRO, spanning lyrical repertoire, romance, and classical crossover.',
     'Álbuns de Max Wilson Pereira: repertórios românticos, crossover clássico e gravações especiais.':
       'Albums by Max Wilson Pereira: romantic repertoire, classical crossover, and special recordings.',
     'Coleção de álbuns de Max Wilson Pereira, tenor brasileiro.':
@@ -280,8 +289,8 @@ const MWP_TEXT_TRANSLATIONS = {
       'Discover the journey of Max Wilson Pereira, a Brazilian tenor based in Vienna, from classical training to stages, television, and social media.',
     'A história de Max Wilson Pereira: tenor brasileiro, artista de crossover, criador digital e intérprete que une ópera, pop, humor e emoção.':
       'The story of Max Wilson Pereira: Brazilian tenor, crossover artist, digital creator, and performer blending opera, pop, humor, and emotion.',
-    'Concerto ao vivo de Max Wilson Pereira com grandes melodias da Broadway, musicais, ópera, clássicos populares e crossover em atmosfera íntima.':
-      'A live concert by Max Wilson Pereira with great melodies from Broadway, musicals, opera, popular classics, and crossover in an intimate atmosphere.',
+    'Descubra o concerto de Max Wilson Pereira: uma experiência íntima entre ópera, teatro musical, grandes melodias e crossover clássico, com voz e piano.':
+      'Discover Max Wilson Pereira’s concert: an intimate experience of opera, musical theatre, great melodies, and classical crossover, with voice and piano.',
     'Uma noite íntima com voz, piano, convidados especiais, grandes melodias, teatro musical, ópera e crossover clássico.':
       'An intimate evening with voice, piano, special guests, great melodies, musical theater, opera, and classical crossover.',
     'Max Wilson Pereira em imagem de divulgação do concerto':
@@ -380,7 +389,7 @@ const MWP_TEXT_TRANSLATIONS = {
       'Max Wilson Pereira in period costume',
     'Viena, 2025': 'Vienna, 2025',
     'Leia a biografia': 'Read the biography',
-    'Música gravada': 'Recorded music',
+    'Álbuns': 'Albums',
     'Três momentos de uma trajetória entre romantismo, repertório lírico e crossover.':
       'Three moments from a journey through romance, lyrical repertoire, and crossover.',
     'Explore os álbuns': 'Explore the albums',
@@ -418,6 +427,12 @@ const MWP_TEXT_TRANSLATIONS = {
     'Capas do álbum Tenori Amici': 'Albumcover von Tenori Amici',
     'Capa do álbum Tenori Amici': 'Vorderseite des Albums Tenori Amici',
     'Contracapa do álbum Tenori Amici': 'Rückseite des Albums Tenori Amici',
+    'Capas do álbum SO IN LOVE': 'Albumcover von SO IN LOVE',
+    'Capa do álbum SO IN LOVE': 'Vorderseite des Albums SO IN LOVE',
+    'Contracapa do álbum SO IN LOVE': 'Rückseite des Albums SO IN LOVE',
+    'Capas do álbum QUATTRO': 'Albumcover von QUATTRO',
+    'Capa do álbum QUATTRO': 'Vorderseite des Albums QUATTRO',
+    'Contracapa do álbum QUATTRO': 'Rückseite des Albums QUATTRO',
     'Clássicos românticos, cinema, teatro musical e faixas bônus em uma seleção íntima e emocionante.':
       'Romantische Klassiker, Film, Musicaltheater und Bonustracks in einer intimen und bewegenden Auswahl.',
     'Um encontro de vozes, amizade e repertório lírico em uma gravação especial.':
@@ -618,15 +633,17 @@ const MWP_TEXT_TRANSLATIONS = {
     Pausar: 'Pause',
     'Preparando downloads...': 'Downloads werden vorbereitet...',
     'Faixas Bônus': 'Bonustracks',
-    'Max Wilson Pereira | Tenor & Artista':
-      'Max Wilson Pereira | Tenor & Künstler',
+    'Max Wilson Pereira | Tenor Brasileiro em Viena':
+      'Max Wilson Pereira | Brasilianischer Tenor in Wien',
     'Biografia | Max Wilson Pereira': 'Biografie | Max Wilson Pereira',
-    'Concerto | Max Wilson Pereira': 'Konzert | Max Wilson Pereira',
+    'Concerto de Ópera e Crossover | Max Wilson Pereira':
+      'Opern- und Crossover-Konzert | Max Wilson Pereira',
     'Apoie Minha Jornada | Max Wilson Pereira':
       'Unterstützen Sie Meine Reise | Max Wilson Pereira',
     'Álbum SO IN LOVE | Max Wilson Pereira':
       'Album SO IN LOVE | Max Wilson Pereira',
-    'Álbuns | Max Wilson Pereira': 'Alben | Max Wilson Pereira',
+    'Álbuns e Música | Max Wilson Pereira':
+      'Alben &amp; Musik | Max Wilson Pereira',
     'Baixar Álbum SO IN LOVE | Max Wilson Pereira':
       'Album SO IN LOVE herunterladen | Max Wilson Pereira',
     'Baixar Álbum QUATTRO | Max Wilson Pereira':
@@ -637,22 +654,22 @@ const MWP_TEXT_TRANSLATIONS = {
       'Hörproben aus dem Album QUATTRO | Max Wilson Pereira',
     'Amostras do Álbum Tenori Amici | Max Wilson Pereira':
       'Hörproben aus dem Album Tenori Amici | Max Wilson Pereira',
-    'Max Wilson Pereira — tenor brasileiro. Ópera, pop, paródias e apresentações nas ruas. Canto lírico e entretenimento para tocar o seu coração.':
-      'Max Wilson Pereira — brasilianischer Tenor. Oper, Pop, Parodien und Straßenauftritte. Klassischer Gesang und Unterhaltung, die Ihr Herz berühren.',
-    'Tenor brasileiro. Ópera, pop, paródias e apresentações ao vivo. Conheça o álbum SO IN LOVE.':
-      'Brasilianischer Tenor. Oper, Pop, Parodien und Live-Auftritte. Unterstützen Sie ihn und entdecken Sie das Album SO IN LOVE.',
-    'Conheça os álbuns de Max Wilson Pereira, incluindo SO IN LOVE, Tenori Amici e QUATTRO.':
-      'Entdecken Sie die Alben von Max Wilson Pereira, darunter SO IN LOVE, Tenori Amici und QUATTRO.',
+    'Conheça Max Wilson Pereira, tenor brasileiro radicado em Viena, com uma trajetória entre ópera, crossover clássico, televisão, concertos e música gravada.':
+      'Lernen Sie Max Wilson Pereira kennen: brasilianischer Tenor in Wien mit einer Laufbahn in Oper, klassischem Crossover, Fernsehen, Konzerten und Tonaufnahmen.',
+    'Tenor brasileiro em Viena. Ópera, crossover clássico, concertos e música gravada em uma trajetória guiada pela emoção da voz.':
+      'Brasilianischer Tenor in Wien. Oper, klassischer Crossover, Konzerte und Tonaufnahmen – eine Laufbahn, die von der Kraft der Stimme geprägt ist.',
+    'Ouça os álbuns de Max Wilson Pereira: SO IN LOVE, Tenori Amici e QUATTRO, entre repertório lírico, romantismo e crossover clássico.':
+      'Hören Sie die Alben von Max Wilson Pereira: SO IN LOVE, Tenori Amici und QUATTRO zwischen lyrischem Repertoire, Romantik und klassischem Crossover.',
     'Álbuns de Max Wilson Pereira: repertórios românticos, crossover clássico e gravações especiais.':
       'Alben von Max Wilson Pereira: romantisches Repertoire, klassischer Crossover und besondere Aufnahmen.',
     'Coleção de álbuns de Max Wilson Pereira, tenor brasileiro.':
       'Albumkollektion von Max Wilson Pereira, brasilianischer Tenor.',
     'Conheça a trajetória de Max Wilson Pereira, tenor brasileiro radicado em Viena, da formação lírica aos palcos, televisão e redes sociais.':
-      'Entdecken Sie den Weg von Max Wilson Pereira, einem brasilianischen Tenor mit Wohnsitz in Wien, von der klassischen Ausbildung bis zu Bühnen, Fernsehen und sozialen Medien.',
+      'Entdecken Sie Max Wilson Pereiras Weg als brasilianischer Tenor in Wien – von der klassischen Ausbildung zu Bühne, Fernsehen und sozialen Medien.',
     'A história de Max Wilson Pereira: tenor brasileiro, artista de crossover, criador digital e intérprete que une ópera, pop, humor e emoção.':
       'Die Geschichte von Max Wilson Pereira: brasilianischer Tenor, Crossover-Künstler, digitaler Creator und Interpret, der Oper, Pop, Humor und Emotion verbindet.',
-    'Concerto ao vivo de Max Wilson Pereira com grandes melodias da Broadway, musicais, ópera, clássicos populares e crossover em atmosfera íntima.':
-      'Live-Konzert von Max Wilson Pereira mit großen Melodien aus Broadway, Musicals, Oper, beliebten Klassikern und Crossover in intimer Atmosphäre.',
+    'Descubra o concerto de Max Wilson Pereira: uma experiência íntima entre ópera, teatro musical, grandes melodias e crossover clássico, com voz e piano.':
+      'Erleben Sie Max Wilson Pereira im Konzert: Oper, Musicaltheater, große Melodien und klassischer Crossover in intimer Atmosphäre mit Stimme und Klavier.',
     'Uma noite íntima com voz, piano, convidados especiais, grandes melodias, teatro musical, ópera e crossover clássico.':
       'Ein intimer Abend mit Stimme, Klavier, besonderen Gästen, großen Melodien, Musicaltheater, Oper und klassischem Crossover.',
     'Max Wilson Pereira em imagem de divulgação do concerto':
@@ -751,7 +768,7 @@ const MWP_TEXT_TRANSLATIONS = {
       'Max Wilson Pereira in historischem Kostüm',
     'Viena, 2025': 'Wien, 2025',
     'Leia a biografia': 'Biografie lesen',
-    'Música gravada': 'Aufgenommene Musik',
+    'Álbuns': 'Alben',
     'Três momentos de uma trajetória entre romantismo, repertório lírico e crossover.':
       'Drei Momente einer Reise durch Romantik, lyrisches Repertoire und Crossover.',
     'Explore os álbuns': 'Alben entdecken',
@@ -760,6 +777,16 @@ const MWP_TEXT_TRANSLATIONS = {
 };
 
 function getCurrentLanguage() {
+  const pathLanguage = getLanguageFromPath(window.location.pathname);
+  if (pathLanguage) {
+    try {
+      localStorage.setItem('mwp-language', pathLanguage);
+    } catch {
+      // The localized URL remains authoritative when storage is unavailable.
+    }
+    return pathLanguage;
+  }
+
   const params = new URLSearchParams(window.location.search);
   const requested = params.get('lang');
   if (MWP_LANGUAGES[requested]) {
@@ -769,6 +796,16 @@ function getCurrentLanguage() {
       // Continue with the URL language when storage is unavailable.
     }
     return requested;
+  }
+
+  const currentRoute = normalizePath(window.location.pathname);
+  if (MWP_LOCALIZED_PAGE_PATHS.has(currentRoute)) {
+    try {
+      localStorage.setItem('mwp-language', 'pt');
+    } catch {
+      // The Portuguese public URL remains authoritative without storage.
+    }
+    return 'pt';
   }
 
   let stored = null;
@@ -825,21 +862,20 @@ function translatePhrase(text, language = getCurrentLanguage()) {
 }
 
 function getLanguageHref(language) {
+  const route = normalizePath(window.location.pathname);
+  const hash = window.location.hash || '';
+
+  if (isSoInLoveAlbumPagePath(route) || isSoInLovePixPagePath(route)) {
+    if (language === 'pt') return `/${MWP_SO_IN_LOVE_PIX_PAGE_PATH}${hash}`;
+    return `/${MWP_SO_IN_LOVE_ALBUM_PAGE_PATH}?lang=${language}${hash}`;
+  }
+
+  if (MWP_LOCALIZED_PAGE_PATHS.has(route)) {
+    return `${getLocalizedRoute(route, language)}${hash}`;
+  }
+
   const url = new URL(window.location.href);
   url.searchParams.set('lang', language);
-  if (isSoInLoveAlbumPagePath(url.pathname) && language === 'pt') {
-    url.pathname = new URL(
-      `${getBasePath()}${MWP_SO_IN_LOVE_PIX_PAGE_PATH}`,
-      window.location.href,
-    ).pathname;
-    url.searchParams.delete('lang');
-  }
-  if (isSoInLovePixPagePath(url.pathname) && language !== 'pt') {
-    url.pathname = new URL(
-      `${getBasePath()}${MWP_SO_IN_LOVE_ALBUM_PAGE_PATH}`,
-      window.location.href,
-    ).pathname;
-  }
   return `${url.pathname}${url.search}${url.hash}`;
 }
 
@@ -847,6 +883,28 @@ const MWP_SUPPORT_PAGE_PATH = 'pages/apoio-pix.html';
 const MWP_SO_IN_LOVE_PIX_PAGE_PATH = 'pages/albums/so-in-love-pix.html';
 const MWP_SO_IN_LOVE_ALBUM_PAGE_PATH = 'pages/albums/so-in-love.html';
 const MWP_ALBUMS_PAGE_PATH = 'pages/albums.html';
+const MWP_LOCALIZED_PAGE_PATHS = new Set([
+  'index.html',
+  'pages/biografia.html',
+  'pages/concerto.html',
+  'pages/albums.html',
+  'pages/albums/tenori-amici.html',
+  'pages/albums/quattro-sony.html',
+]);
+
+function getLanguageFromPath(path) {
+  const firstSegment = path.split('/').filter(Boolean)[0];
+  return firstSegment === 'en' || firstSegment === 'de'
+    ? firstSegment
+    : null;
+}
+
+function getLocalizedRoute(route, language) {
+  const normalizedRoute = normalizePath(route);
+  const suffix = normalizedRoute === 'index.html' ? '' : normalizedRoute;
+  if (language === 'pt') return suffix ? `/${suffix}` : '/';
+  return suffix ? `/${language}/${suffix}` : `/${language}/`;
+}
 
 function isSoInLovePixPagePath(path) {
   const normalizedPath = normalizePath(path);
@@ -1005,6 +1063,7 @@ function applyStaticTranslations() {
 
 window.MWP_I18N = {
   getCurrentLanguage,
+  getPageHref,
   translatePhrase,
   applyStaticTranslations,
 };
@@ -1024,16 +1083,27 @@ function getPageHref(href) {
     language !== 'pt' && isSoInLovePixPagePath(href)
       ? MWP_SO_IN_LOVE_ALBUM_PAGE_PATH
       : href;
-  const pageHref = `${getBasePath()}${targetHref}`;
-  if (language === 'pt') return pageHref;
+  const normalizedTarget = normalizePath(targetHref);
 
-  const url = new URL(pageHref, window.location.href);
-  url.searchParams.set('lang', language);
-  return `${url.pathname}${url.search}${url.hash}`;
+  if (
+    language !== 'pt' &&
+    normalizedTarget === MWP_SO_IN_LOVE_ALBUM_PAGE_PATH
+  ) {
+    return `/${MWP_SO_IN_LOVE_ALBUM_PAGE_PATH}?lang=${language}`;
+  }
+
+  if (MWP_LOCALIZED_PAGE_PATHS.has(normalizedTarget)) {
+    return getLocalizedRoute(normalizedTarget, language);
+  }
+
+  return `/${normalizedTarget}`;
 }
 
 function normalizePath(path) {
-  const cleaned = path.replace(/\/index\.html$/, '/').replace(/^\//, '');
+  const cleaned = path
+    .replace(/^\/(?:en|de)(?=\/)/, '')
+    .replace(/\/index\.html$/, '/')
+    .replace(/^\//, '');
   return cleaned || 'index.html';
 }
 
@@ -1378,6 +1448,8 @@ class MaxVideoEmbed extends HTMLElement {
         <iframe
           src="https://www.youtube.com/embed/${videoId}"
           title="${title}"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
         ></iframe>
@@ -1490,84 +1562,6 @@ class MaxSiteName extends HTMLElement {
   }
 }
 customElements.define('max-site-name', MaxSiteName);
-
-/* ─── max-seo-meta ────────────────────────────────────────────────────────── */
-class MaxSeoMeta extends HTMLElement {
-  connectedCallback() {
-    const page = this.getAttribute('page') || 'home';
-    const config = MWP_CONFIG?.seo?.[page] || MWP_CONFIG?.seo?.home;
-    if (!config) return;
-
-    const url = MWP_CONFIG?.siteUrl || 'https://maxwilsonpereira.com.br';
-    const fullUrl = config.path === '/' ? `${url}/` : `${url}${config.path}`;
-    const image = MWP_CONFIG?.ogImage || `${url}/assets/max-gigga.jpg`;
-    const siteName = MWP_CONFIG?.siteName || 'Max Wilson Pereira';
-    const title = translatePhrase(config.title);
-    const description = translatePhrase(config.description);
-    const ogDescription = translatePhrase(
-      config.ogDescription || config.description,
-    );
-    const locale = MWP_LANGUAGES[getCurrentLanguage()].htmlLang.replace(
-      '-',
-      '_',
-    );
-
-    const getSelector = (tag, attrs) => {
-      if (tag === 'meta' && attrs.name) return `meta[name="${attrs.name}"]`;
-      if (tag === 'meta' && attrs.property)
-        return `meta[property="${attrs.property}"]`;
-      if (tag === 'link' && attrs.rel) return `link[rel="${attrs.rel}"]`;
-      return '';
-    };
-
-    const inject = (tag, attrs) => {
-      const selector = getSelector(tag, attrs);
-      const el = selector
-        ? document.head.querySelector(selector) || document.createElement(tag)
-        : document.createElement(tag);
-      Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
-      if (!el.parentNode) document.head.appendChild(el);
-    };
-
-    document.title = title;
-
-    inject('meta', { name: 'description', content: description });
-    inject('link', { rel: 'canonical', href: fullUrl });
-
-    inject('meta', { property: 'og:type', content: 'website' });
-    inject('meta', { property: 'og:url', content: fullUrl });
-    inject('meta', { property: 'og:title', content: title });
-    inject('meta', {
-      property: 'og:description',
-      content: ogDescription,
-    });
-    inject('meta', { property: 'og:image', content: image });
-    inject('meta', { property: 'og:locale', content: locale });
-    inject('meta', { property: 'og:site_name', content: siteName });
-
-    inject('meta', { name: 'twitter:card', content: 'summary_large_image' });
-    inject('meta', { name: 'twitter:title', content: title });
-    inject('meta', {
-      name: 'twitter:description',
-      content: ogDescription,
-    });
-    inject('meta', { name: 'twitter:image', content: image });
-
-    let jsonLd = { '@context': 'https://schema.org', ...config.jsonLd };
-    if (
-      config.jsonLd?.['@type'] === 'Person' &&
-      MWP_CONFIG?.socialLinks?.length
-    ) {
-      jsonLd = { ...jsonLd, sameAs: MWP_CONFIG.socialLinks };
-    }
-
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.textContent = JSON.stringify(jsonLd);
-    document.head.appendChild(script);
-  }
-}
-customElements.define('max-seo-meta', MaxSeoMeta);
 
 redirectInternationalAlbumPurchase();
 applyStaticTranslations();
