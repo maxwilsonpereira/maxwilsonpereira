@@ -391,6 +391,8 @@ const MWP_TEXT_TRANSLATIONS = {
     'Max Wilson Pereira em figurino de época':
       'Max Wilson Pereira in period costume',
     'Viena, 2025': 'Vienna, 2025',
+    'Fedra e Hipólito, Palácio das Artes': 'Fedra e Hipólito, Palácio das Artes',
+    'DVD Hebe Camargo, Credicard Hall': 'DVD Hebe Camargo, Credicard Hall',
     'Leia a biografia': 'Read the biography',
     'Álbuns': 'Albums',
     'Três momentos de uma trajetória entre romantismo, repertório lírico e crossover.':
@@ -773,6 +775,8 @@ const MWP_TEXT_TRANSLATIONS = {
     'Max Wilson Pereira em figurino de época':
       'Max Wilson Pereira in historischem Kostüm',
     'Viena, 2025': 'Wien, 2025',
+    'Fedra e Hipólito, Palácio das Artes': 'Fedra e Hipólito, Palácio das Artes',
+    'DVD Hebe Camargo, Credicard Hall': 'DVD Hebe Camargo, Credicard Hall',
     'Leia a biografia': 'Biografie lesen',
     'Álbuns': 'Alben',
     'Três momentos de uma trajetória entre romantismo, repertório lírico e crossover.':

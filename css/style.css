@@ -2884,7 +2884,7 @@ input:focus-visible {
 }
 
 .site-brand-primary {
-  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  font-size: clamp(1.5rem, 2.6vw, 2.02rem);
 }
 
 .site-brand-secondary {
@@ -3691,6 +3691,12 @@ max-microphone-interlude {
   color: var(--color-brass);
 }
 
+/* Biography highlights share the brass emphasis used by chapter titles. */
+.page-sub .biography-intro.content-section p > .biography-intro-name,
+.page-sub .biography-highlight span {
+  color: var(--color-brass);
+}
+
 @media (min-width: 48rem) {
   .page-sub .concerto-rehearsal {
     grid-template-columns: minmax(0, 40rem) minmax(16rem, 20rem);
@@ -3972,6 +3978,14 @@ max-microphone-interlude {
   line-height: 1.75;
 }
 
+.home-welcome-text {
+  padding-top: clamp(2rem, 3.25vw, 3rem);
+}
+
+.home-welcome-text p:first-child {
+  margin-top: 0;
+}
+
 .home-welcome-copy .button {
   margin-top: 2rem;
 }
@@ -4232,7 +4246,7 @@ max-microphone-interlude {
   }
 
   .home-career-gallery {
-    grid-template-columns: 1.45fr 0.8fr 0.8fr;
+    grid-template-columns: 1.2fr 1fr;
     grid-template-rows: minmax(18rem, 30vw);
   }
 
@@ -4257,8 +4271,8 @@ max-microphone-interlude {
 @media (min-width: 60rem) {
   .site-header-inner {
     display: grid;
-    grid-template-columns: minmax(12rem, auto) minmax(0, 1fr) auto;
-    gap: 2rem;
+    grid-template-columns: minmax(0, 30fr) minmax(0, 45fr) minmax(0, 25fr);
+    gap: 1.25rem;
   }
 
   .site-nav-toggle,
@@ -4287,7 +4301,7 @@ max-microphone-interlude {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: clamp(1rem, 2vw, 2rem);
+    gap: clamp(0.7rem, 1.25vw, 1.4rem);
   }
 
   .site-nav-link {
@@ -4295,15 +4309,15 @@ max-microphone-interlude {
     padding: 0;
     border: 0;
     font-family: var(--font-body);
-    font-size: 0.68rem;
+    font-size: 0.96rem;
     font-weight: 700;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
   }
 
   .site-nav-link::after {
     right: 0;
-    bottom: 1.15rem;
+    bottom: 1.4rem;
     left: 0;
     display: block;
     height: 1px;
@@ -4355,6 +4369,12 @@ max-microphone-interlude {
   }
 }
 
+@media (min-width: 60rem) and (max-width: 68.74rem) {
+  .site-nav-link {
+    font-size: 0.74rem;
+  }
+}
+
 @media (max-width: 47.99rem) {
   :root {
     --header-height: 4.25rem;
@@ -4369,7 +4389,7 @@ max-microphone-interlude {
   }
 
   .site-brand-primary {
-    font-size: 1.05rem;
+    font-size: 1.37rem;
   }
 
   .site-brand-secondary {
@@ -4423,10 +4443,6 @@ max-microphone-interlude {
 
   .home-career-image-wide {
     min-height: 18rem;
-  }
-
-  .home-career-image-portrait {
-    min-height: 32rem;
   }
 
   .home-music {

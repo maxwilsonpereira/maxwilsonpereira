@@ -294,7 +294,7 @@ async function loadTranslations() {
   );
   const startMarker = 'const MWP_TEXT_TRANSLATIONS = ';
   const start = componentSource.indexOf(startMarker);
-  const end = componentSource.indexOf('\n\nfunction getCurrentLanguage', start);
+  const end = componentSource.indexOf('\nfunction getCurrentLanguage', start);
   if (start < 0 || end < 0) throw new Error('Translation dictionary not found.');
 
   const expression = componentSource
