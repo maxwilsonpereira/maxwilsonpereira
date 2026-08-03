@@ -1374,14 +1374,14 @@ h2.accent {
 .album-hero-copy h1 {
   font-size: 4.8rem;
   line-height: 0.95;
-  letter-spacing: 0;
+  letter-spacing: var(--title-letter-spacing);
 }
 
 .album-hero-copy h2 {
   margin: 0;
   font-size: 4.2rem;
   line-height: 0.95;
-  letter-spacing: 0;
+  letter-spacing: var(--title-letter-spacing);
 }
 
 .album-hero-copy p:not(.album-kicker) {
@@ -1813,7 +1813,7 @@ h2.accent {
   max-width: 720px;
   font-size: clamp(3rem, 8vw, 6.6rem);
   line-height: 0.95;
-  letter-spacing: 0;
+  letter-spacing: var(--title-letter-spacing);
 }
 
 .biography-hero-copy p,
@@ -2648,6 +2648,7 @@ ul li::before {
   --color-line-light: rgba(48, 46, 43, 0.2);
   --font-display: "Italiana", "Times New Roman", serif;
   --font-body: "Albert Sans", Arial, sans-serif;
+  --title-letter-spacing: 0.045em;
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -2711,11 +2712,12 @@ body.site-menu-open {
 h1,
 h2,
 h3,
+h4,
 .site-brand-primary,
 .site-footer-name {
   font-family: var(--font-display);
   font-weight: 400;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--title-letter-spacing);
 }
 
 a,
@@ -2976,7 +2978,7 @@ input:focus-visible {
   font-family: var(--font-display);
   font-size: clamp(2.25rem, 10vw, 4.5rem);
   font-weight: 400;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--title-letter-spacing);
   text-transform: none;
 }
 
@@ -3192,7 +3194,7 @@ body.page-sub {
   color: var(--color-ink);
   font-family: var(--font-display);
   font-weight: 400;
-  letter-spacing: -0.03em;
+  letter-spacing: var(--title-letter-spacing);
 }
 
 .page-sub .content-section h1,
@@ -3449,6 +3451,7 @@ max-microphone-interlude {
   color: var(--color-paper);
   font-family: var(--font-display);
   font-size: clamp(2.1rem, 5vw, 4.4rem);
+  letter-spacing: var(--title-letter-spacing);
   line-height: 0.98;
 }
 
@@ -3575,7 +3578,7 @@ max-microphone-interlude {
   font-family: var(--font-display);
   font-size: clamp(2.3rem, 6vw, 4.25rem);
   font-weight: 400;
-  letter-spacing: -0.035em;
+  letter-spacing: var(--title-letter-spacing);
   line-height: 0.94;
 }
 
@@ -3690,6 +3693,9 @@ max-microphone-interlude {
 .page-sub .biography-copy.content-section h2.accent {
   color: var(--color-brass);
   font-weight: 700;
+  font-size: 1.625rem;
+  letter-spacing: var(--title-letter-spacing);
+  line-height: 1.08;
 }
 
 /* Biography highlights share the brass emphasis used by chapter titles. */
@@ -3794,7 +3800,7 @@ max-microphone-interlude {
   font-family: var(--font-display);
   font-size: clamp(3.8rem, 9vw, 6rem);
   font-weight: 400;
-  letter-spacing: -0.035em;
+  letter-spacing: var(--title-letter-spacing);
   line-height: 0.88;
   text-wrap: balance;
 }
@@ -3913,7 +3919,7 @@ max-microphone-interlude {
   font-family: var(--font-display);
   font-size: clamp(2.7rem, 6vw, 5.4rem);
   font-weight: 400;
-  letter-spacing: -0.035em;
+  letter-spacing: var(--title-letter-spacing);
   line-height: 0.98;
   text-wrap: balance;
 }
@@ -4175,7 +4181,7 @@ max-microphone-interlude {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 6vw, 5rem);
   font-weight: 400;
-  letter-spacing: -0.035em;
+  letter-spacing: var(--title-letter-spacing);
   line-height: 1;
   text-transform: none;
 }
