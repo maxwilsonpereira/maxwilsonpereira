@@ -1364,7 +1364,7 @@ function getPageHref(href) {
 
 function normalizePath(path) {
   const cleaned = path
-    .replace(/^\/(?:en|de)(?=\/)/, '')
+    .replace(/^\/(?:en|de|es)(?=\/)/, '')
     .replace(/\/index\.html$/, '/')
     .replace(/^\//, '');
   return cleaned || 'index.html';
