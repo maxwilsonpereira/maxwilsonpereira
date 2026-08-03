@@ -1,2 +1,8 @@
 _MAX_ABOUT
 .tmp-chrome-debug/
+
+# Local Codex / Impeccable tooling
+.agents/
+.codex/
+.impeccable/config.local.json
+.impeccable/sketches/
