@@ -3699,7 +3699,7 @@ max-microphone-interlude {
 /* Separate biography chapters clearly from the preceding reading passage or film. */
 .page-sub .biography-copy.content-section p + h2.accent,
 .page-sub .biography-copy.content-section max-video-embed + h2.accent {
-  margin-top: var(--space-7);
+  margin-top: 3.9rem;
 }
 
 /* Biography highlights share the brass emphasis used by chapter titles. */
