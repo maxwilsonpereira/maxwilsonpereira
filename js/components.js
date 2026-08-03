@@ -374,7 +374,7 @@ const MWP_TEXT_TRANSLATIONS = {
     Explore: 'Explore',
     'Max Wilson Pereira cantando com uma orquestra em Cachoeiro de Itapemirim':
       'Max Wilson Pereira singing with an orchestra in Cachoeiro de Itapemirim',
-    'Cachoeiro de Itapemirim, 2010': 'Cachoeiro de Itapemirim, 2010',
+    'Orquestra Mariuccia Iacovino': 'Orquestra Mariuccia Iacovino',
     'Uma noite emocionante com grandes melodias, entre o teatro musical, a ópera e o crossover clássico.':
       'An emotional evening of great melodies spanning musical theater, opera, and classical crossover.',
     'Um encontro íntimo entre voz, palavra e melodia, com repertórios que atravessam gerações e continuam encontrando novos sentidos ao vivo.':
@@ -758,7 +758,7 @@ const MWP_TEXT_TRANSLATIONS = {
     Explore: 'Entdecken',
     'Max Wilson Pereira cantando com uma orquestra em Cachoeiro de Itapemirim':
       'Max Wilson Pereira singt mit einem Orchester in Cachoeiro de Itapemirim',
-    'Cachoeiro de Itapemirim, 2010': 'Cachoeiro de Itapemirim, 2010',
+    'Orquestra Mariuccia Iacovino': 'Orquestra Mariuccia Iacovino',
     'Uma noite emocionante com grandes melodias, entre o teatro musical, a ópera e o crossover clássico.':
       'Ein bewegender Abend mit großen Melodien aus Musiktheater, Oper und klassischem Crossover.',
     'Um encontro íntimo entre voz, palavra e melodia, com repertórios que atravessam gerações e continuam encontrando novos sentidos ao vivo.':
