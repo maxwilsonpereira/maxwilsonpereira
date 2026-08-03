@@ -2267,6 +2267,11 @@ ul li::before {
 }
 
 @media (max-width: 759px) {
+  /* Avoid animating the desktop navigation into its closed burger-menu state. */
+  .site-nav:not(.is-open) {
+    transition: none;
+  }
+
   .site-header-actions {
     margin-right: 14px;
   }
@@ -3080,10 +3085,6 @@ input:focus-visible {
   margin: 0 auto;
 }
 
-.site-footer-identity {
-  max-width: 32rem;
-}
-
 .site-footer-name {
   color: var(--color-brass);
   font-size: clamp(2rem, 5vw, 3.6rem);
@@ -3693,6 +3694,12 @@ max-microphone-interlude {
   font-size: 1.625rem;
   letter-spacing: var(--title-letter-spacing);
   line-height: 1.08;
+}
+
+/* Separate biography chapters clearly from the preceding reading passage or film. */
+.page-sub .biography-copy.content-section p + h2.accent,
+.page-sub .biography-copy.content-section max-video-embed + h2.accent {
+  margin-top: var(--space-7);
 }
 
 /* Biography highlights share the brass emphasis used by chapter titles. */
