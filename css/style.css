@@ -3086,7 +3086,7 @@ input:focus-visible {
 }
 
 .site-footer-name {
-  color: var(--color-paper);
+  color: var(--color-brass);
   font-size: clamp(2rem, 5vw, 3.6rem);
   line-height: 1;
   text-decoration: none;
@@ -3689,6 +3689,7 @@ max-microphone-interlude {
 /* Biography chapter headings retain their brass editorial accent on every field. */
 .page-sub .biography-copy.content-section h2.accent {
   color: var(--color-brass);
+  font-weight: 700;
 }
 
 /* Biography highlights share the brass emphasis used by chapter titles. */
