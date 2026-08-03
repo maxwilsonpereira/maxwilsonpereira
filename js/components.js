@@ -356,6 +356,35 @@ const MWP_TEXT_TRANSLATIONS = {
       'Listen to samples from the Tenori Amici - Con Amore album, released by Biscoito Fino, and access the full album on Spotify.',
     'Ouça amostras de Tenori Amici - Con Amore, álbum lançado pela Biscoito Fino, e acesse o álbum completo no Spotify.':
       'Listen to Tenori Amici - Con Amore samples, an album released by Biscoito Fino, and access the full album on Spotify.',
+    'Conheça o concerto': 'Discover the concert',
+    'Ouça minha música': 'Listen to my music',
+    'Ir para o destaque do concerto': 'Go to the concert feature',
+    Explore: 'Explore',
+    'Max Wilson Pereira cantando com uma orquestra em Cachoeiro de Itapemirim':
+      'Max Wilson Pereira singing with an orchestra in Cachoeiro de Itapemirim',
+    'Cachoeiro de Itapemirim, 2010': 'Cachoeiro de Itapemirim, 2010',
+    'Uma noite emocionante com grandes melodias, entre o teatro musical, a ópera e o crossover clássico.':
+      'An emotional evening of great melodies spanning musical theater, opera, and classical crossover.',
+    'Um encontro íntimo entre voz, palavra e melodia, com repertórios que atravessam gerações e continuam encontrando novos sentidos ao vivo.':
+      'An intimate encounter between voice, word, and melody, with repertoire that crosses generations and finds new meaning live.',
+    'Conheça minha trajetória': 'Discover my journey',
+    'Uma trajetória entre palcos e encontros':
+      'A journey through stages and encounters',
+    'Ópera, televisão, crossover e redes sociais, levando a força do canto lírico para cada vez mais pessoas.':
+      'Opera, television, crossover, and social media, bringing the power of classical singing to more and more people.',
+    'Cena da ópera Fedra e Hipólito em um palco de grandes dimensões':
+      'Scene from the opera Fedra e Hipólito on a grand stage',
+    'Max Wilson Pereira e Hebe Camargo durante apresentação no Credicard Hall':
+      'Max Wilson Pereira and Hebe Camargo performing at Credicard Hall',
+    'Max Wilson Pereira em figurino de época':
+      'Max Wilson Pereira in period costume',
+    'Viena, 2025': 'Vienna, 2025',
+    'Leia a biografia': 'Read the biography',
+    'Música gravada': 'Recorded music',
+    'Três momentos de uma trajetória entre romantismo, repertório lírico e crossover.':
+      'Three moments from a journey through romance, lyrical repertoire, and crossover.',
+    'Explore os álbuns': 'Explore the albums',
+    'Viena • Brasil': 'Vienna • Brazil',
   },
   de: {
     'Escolher idioma': 'Sprache auswählen',
@@ -698,6 +727,35 @@ const MWP_TEXT_TRANSLATIONS = {
       'Hören Sie Hörproben aus dem Album Tenori Amici - Con Amore, veröffentlicht bei Biscoito Fino, und öffnen Sie das komplette Album auf Spotify.',
     'Ouça amostras de Tenori Amici - Con Amore, álbum lançado pela Biscoito Fino, e acesse o álbum completo no Spotify.':
       'Hören Sie Hörproben aus Tenori Amici - Con Amore, einem bei Biscoito Fino veröffentlichten Album, und öffnen Sie das komplette Album auf Spotify.',
+    'Conheça o concerto': 'Das Konzert entdecken',
+    'Ouça minha música': 'Meine Musik hören',
+    'Ir para o destaque do concerto': 'Zum Konzertbereich',
+    Explore: 'Entdecken',
+    'Max Wilson Pereira cantando com uma orquestra em Cachoeiro de Itapemirim':
+      'Max Wilson Pereira singt mit einem Orchester in Cachoeiro de Itapemirim',
+    'Cachoeiro de Itapemirim, 2010': 'Cachoeiro de Itapemirim, 2010',
+    'Uma noite emocionante com grandes melodias, entre o teatro musical, a ópera e o crossover clássico.':
+      'Ein bewegender Abend mit großen Melodien aus Musiktheater, Oper und klassischem Crossover.',
+    'Um encontro íntimo entre voz, palavra e melodia, com repertórios que atravessam gerações e continuam encontrando novos sentidos ao vivo.':
+      'Eine intime Begegnung von Stimme, Wort und Melodie mit einem Repertoire, das Generationen verbindet und live neue Bedeutung gewinnt.',
+    'Conheça minha trajetória': 'Meinen Weg entdecken',
+    'Uma trajetória entre palcos e encontros':
+      'Ein Weg durch Bühnen und Begegnungen',
+    'Ópera, televisão, crossover e redes sociais, levando a força do canto lírico para cada vez mais pessoas.':
+      'Oper, Fernsehen, Crossover und soziale Medien bringen die Kraft des klassischen Gesangs zu immer mehr Menschen.',
+    'Cena da ópera Fedra e Hipólito em um palco de grandes dimensões':
+      'Szene aus der Oper Fedra e Hipólito auf einer großen Bühne',
+    'Max Wilson Pereira e Hebe Camargo durante apresentação no Credicard Hall':
+      'Max Wilson Pereira und Hebe Camargo bei einem Auftritt in der Credicard Hall',
+    'Max Wilson Pereira em figurino de época':
+      'Max Wilson Pereira in historischem Kostüm',
+    'Viena, 2025': 'Wien, 2025',
+    'Leia a biografia': 'Biografie lesen',
+    'Música gravada': 'Aufgenommene Musik',
+    'Três momentos de uma trajetória entre romantismo, repertório lírico e crossover.':
+      'Drei Momente einer Reise durch Romantik, lyrisches Repertoire und Crossover.',
+    'Explore os álbuns': 'Alben entdecken',
+    'Viena • Brasil': 'Wien • Brasilien',
   },
 };
 
@@ -1084,32 +1142,37 @@ class MaxSiteNav extends HTMLElement {
 
     this.innerHTML = `
       <header class="site-header">
-        <a class="site-brand" href="${getPageHref('index.html')}" aria-label="${siteName} - Home">
-          <span class="site-brand-wordmark" aria-hidden="true">
-            <span class="site-brand-primary">${brandPrimary}</span>
-            ${brandSecondary ? `<span class="site-brand-secondary">${brandSecondary}</span>` : ''}
-          </span>
-        </a>
+        <div class="site-header-inner">
+          <a class="site-brand" href="${getPageHref('index.html')}" aria-label="${siteName} - Home">
+            <span class="site-brand-wordmark" aria-hidden="true">
+              <span class="site-brand-primary">${brandPrimary}</span>
+              ${brandSecondary ? `<span class="site-brand-secondary">${brandSecondary}</span>` : ''}
+            </span>
+          </a>
 
-        <div class="site-header-actions">
-          ${renderLanguageSwitcher()}
-          <div class="site-nav-socials" aria-label="${translatePhrase('Redes sociais')}">
-            ${renderSocialIconLinks('site-nav-social-link')}
+          <nav class="site-nav" id="${navId}" aria-label="${translatePhrase('Navegação principal')}">
+            <div class="site-nav-links">${items}</div>
+            <div class="site-nav-mobile-meta">
+              <div class="site-nav-mobile-languages">${renderLanguageSwitcher()}</div>
+              <div class="site-nav-mobile-socials" aria-label="${translatePhrase('Redes sociais')}">
+                ${renderSocialIconLinks('site-nav-social-link')}
+              </div>
+            </div>
+          </nav>
+
+          <div class="site-header-actions">
+            ${renderLanguageSwitcher()}
+            <div class="site-nav-socials" aria-label="${translatePhrase('Redes sociais')}">
+              ${renderSocialIconLinks('site-nav-social-link')}
+            </div>
           </div>
+
+          <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="${navId}" aria-label="${translatePhrase('Abrir menu')}">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
-
-        <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="${navId}" aria-label="${translatePhrase('Abrir menu')}">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <nav class="site-nav" id="${navId}" aria-label="${translatePhrase('Navegação principal')}">
-          ${items}
-          <div class="site-nav-mobile-socials" aria-label="${translatePhrase('Redes sociais')}">
-            ${renderSocialIconLinks('site-nav-social-link')}
-          </div>
-        </nav>
       </header>
     `;
 
@@ -1128,14 +1191,68 @@ class MaxSiteNav extends HTMLElement {
       },
     );
 
+    const closeMenu = () => {
+      nav?.classList.remove('is-open');
+      document.body.classList.remove('site-menu-open');
+      toggle?.setAttribute('aria-expanded', 'false');
+      toggle?.setAttribute('aria-label', translatePhrase('Abrir menu'));
+    };
+
     toggle?.addEventListener('click', () => {
       const isOpen = nav?.classList.toggle('is-open') || false;
+      document.body.classList.toggle('site-menu-open', isOpen);
       toggle.setAttribute('aria-expanded', String(isOpen));
       toggle.setAttribute(
         'aria-label',
         translatePhrase(isOpen ? 'Fechar menu' : 'Abrir menu'),
       );
+      if (isOpen) {
+        requestAnimationFrame(() => nav?.querySelector('a')?.focus());
+      }
     });
+
+    nav?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (!nav?.classList.contains('is-open')) return;
+
+      if (event.key === 'Escape') {
+        closeMenu();
+        toggle?.focus();
+        return;
+      }
+
+      if (event.key === 'Tab') {
+        const focusable = [
+          ...nav.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'),
+          toggle,
+        ].filter(Boolean);
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (!focusable.includes(document.activeElement)) {
+          event.preventDefault();
+          first?.focus();
+        } else if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first?.focus();
+        }
+      }
+    });
+
+    const syncHeaderState = () => {
+      this.querySelector('.site-header')?.classList.toggle(
+        'is-scrolled',
+        window.scrollY > 24,
+      );
+    };
+    syncHeaderState();
+    window.addEventListener('scroll', syncHeaderState, { passive: true });
   }
 }
 customElements.define('max-site-nav', MaxSiteNav);
@@ -1215,7 +1332,34 @@ customElements.define('max-social-follow', MaxSocialFollow);
 class MaxSiteFooter extends HTMLElement {
   connectedCallback() {
     const siteName = MWP_CONFIG?.siteName || 'Max Wilson Pereira';
-    this.innerHTML = `<footer class="site-footer">© 2026 ${siteName}</footer>`;
+    const links = [
+      { href: 'index.html', text: 'HOME', external: false },
+      ...(MWP_CONFIG?.links || []),
+    ];
+    const items = getVisibleNavigationLinks(links)
+      .map(
+        (link) => `<a href="${getPageHref(link.href)}" ${link.external ? 'target="_blank" rel="noopener noreferrer"' : ''}>${translatePhrase(link.text)}</a>`,
+      )
+      .join('');
+
+    this.innerHTML = `
+      <footer class="site-footer">
+        <div class="site-footer-main">
+          <div class="site-footer-identity">
+            <a class="site-footer-name" href="${getPageHref('index.html')}">${siteName}</a>
+            <p>${translatePhrase(MWP_CONFIG?.tagline || '')}</p>
+          </div>
+          <nav class="site-footer-nav" aria-label="${translatePhrase('Navegação principal')}">${items}</nav>
+          <div class="site-footer-socials" aria-label="${translatePhrase('Redes sociais')}">
+            ${renderSocialIconLinks('site-footer-social-link')}
+          </div>
+        </div>
+        <div class="site-footer-legal">
+          <span>© 2026 ${siteName}</span>
+          <span>Viena • Brasil</span>
+        </div>
+      </footer>
+    `;
   }
 }
 customElements.define('max-site-footer', MaxSiteFooter);

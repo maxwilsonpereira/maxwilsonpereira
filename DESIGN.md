@@ -1,9 +1,92 @@
 ---
 name: Max Wilson Pereira
-description: A cinematic, intimate visual world for an international tenor who brings the lyrical voice close to people.
+description: A cinematic, intimate visual system that brings an international tenor and his live voice close to people.
+colors:
+  concert-ink: "#10100f"
+  stage-charcoal: "#1b1b1a"
+  programme-ivory: "#f3eee4"
+  house-white: "#fffdf8"
+  aged-brass: "#b49a62"
+  bordeaux-note: "#6d2735"
+  warm-graphite: "#302e2b"
+  soft-mist: "#aaa69f"
+  line-dark: "rgba(255, 253, 248, 0.18)"
+  line-light: "rgba(48, 46, 43, 0.2)"
+typography:
+  display:
+    fontFamily: '"Italiana", "Times New Roman", serif'
+    fontSize: "clamp(3.8rem, 9vw, 6rem)"
+    fontWeight: 400
+    lineHeight: 0.88
+    letterSpacing: "-0.035em"
+  headline:
+    fontFamily: '"Italiana", "Times New Roman", serif'
+    fontSize: "clamp(2.7rem, 6vw, 5.4rem)"
+    fontWeight: 400
+    lineHeight: 0.98
+    letterSpacing: "-0.035em"
+  title:
+    fontFamily: '"Italiana", "Times New Roman", serif'
+    fontSize: "clamp(1.3rem, 3vw, 2.15rem)"
+    fontWeight: 400
+  body:
+    fontFamily: '"Albert Sans", Arial, sans-serif'
+    fontSize: "1rem"
+    fontWeight: 400
+    lineHeight: 1.7
+  label:
+    fontFamily: '"Albert Sans", Arial, sans-serif'
+    fontSize: "0.72rem"
+    fontWeight: 700
+    lineHeight: 1.1
+    letterSpacing: "0.12em"
+rounded:
+  control: "0.25rem"
+  md: "0.5rem"
+  lg: "0.75rem"
+  circle: "50%"
+spacing:
+  1: "0.25rem"
+  2: "0.5rem"
+  3: "0.75rem"
+  4: "1rem"
+  5: "1.5rem"
+  6: "2rem"
+  7: "3rem"
+  8: "4rem"
+  9: "6rem"
+  10: "8rem"
+  page-gutter: "clamp(1.25rem, 4vw, 4.5rem)"
+components:
+  button-primary:
+    backgroundColor: "{colors.aged-brass}"
+    textColor: "{colors.concert-ink}"
+    typography: "{typography.label}"
+    rounded: "{rounded.control}"
+    padding: "0.9rem 1.35rem"
+    height: "3.25rem"
+  button-primary-hover:
+    backgroundColor: "{colors.bordeaux-note}"
+    textColor: "{colors.house-white}"
+    typography: "{typography.label}"
+    rounded: "{rounded.control}"
+    padding: "0.9rem 1.35rem"
+    height: "3.25rem"
+  button-dark:
+    backgroundColor: "{colors.concert-ink}"
+    textColor: "{colors.house-white}"
+    typography: "{typography.label}"
+    rounded: "{rounded.control}"
+    padding: "0.9rem 1.35rem"
+    height: "3.25rem"
+  button-light:
+    backgroundColor: "{colors.programme-ivory}"
+    textColor: "{colors.concert-ink}"
+    typography: "{typography.label}"
+    rounded: "{rounded.control}"
+    padding: "0.9rem 1.35rem"
+    height: "3.25rem"
 ---
-
-<!-- SEED: established with the user before implementation; re-run $impeccable document once there's code to capture the actual tokens and components. -->
 
 # Design System: Max Wilson Pereira
 
@@ -11,117 +94,148 @@ description: A cinematic, intimate visual world for an international tenor who b
 
 **Creative North Star: "The Voice in the Room"**
 
-The visual world should feel like entering a concert hall moments before the first note: composed, expectant, and intimate despite the scale. Real performance photography is the principal material. The interface frames the artist and his work with the confidence of an international concert programme, then recedes.
+The shipped system feels like entering a concert hall moments before the first note: composed, expectant, and intimate despite its scale. Authentic performance photography is the principal material. The interface frames Max Wilson Pereira and his work with the confidence of an international concert programme, then recedes.
 
-The system moves between cinematic dark fields and quiet editorial light fields. This alternation gives the site musical pacing: intensity, breath, story, and return. It must communicate classical credibility without institutional distance and contemporary relevance without borrowing the visual language of social platforms.
+The visual rhythm alternates cinematic dark fields with quiet editorial ivory fields. Architectural edges, decisive typography, and restrained brass and bordeaux accents communicate classical credibility without institutional distance. Motion behaves like a stage transition: content remains available by default, then settles into place only when enhancement is supported.
 
-Motion follows the grammar of a stage transition. Content is visible by default, images settle gently into place, and grouped elements enter in a measured sequence. Motion must never compete with the performance or prevent immediate comprehension.
+This document is authoritative for the approved global foundation (tokens, typography, navigation, footer, focus behavior, and localization conventions) and the shipped homepage. Other routes retain their incumbent layouts and compatibility styles; they were deliberately not redesigned in this release.
 
 **Key Characteristics:**
 
-- Large, decisive use of authentic artist and performance imagery.
-- Dramatic scale balanced by generous editorial quiet.
-- Warm stage light against deep, natural darkness.
-- Restrained controls with strong typography and clear actions.
-- An emotional register that is elegant, open, and human.
-- Mobile compositions art-directed with the same care as desktop.
+- Authentic artist, performance, and album imagery at decisive scale.
+- Concert ink and programme ivory alternating as broad visual acts.
+- Italiana display type paired with disciplined Albert Sans support type.
+- Architectural, mostly square geometry with restrained physical depth.
+- Mobile compositions independently art-directed from desktop.
+- Concert discovery remains the homepage's clearest action.
 
 ## Colors
 
-The palette is restrained and physical: the colors of a darkened hall, warm paper, formal evening dress, aged brass, and a rare note of wine red.
+The palette uses the physical colors of a darkened hall, warm paper, formal evening dress, aged brass, and one rare wine-red note. The normative values live in the frontmatter and the matching CSS custom properties.
 
 ### Primary
 
-- **Concert Ink** (`#10100f`): The principal dark field and the visual equivalent of the unlit auditorium. Use for immersive sections, navigation, and high-impact transitions.
-- **Programme Ivory** (`#f3eee4`): The principal light field for biography, programme notes, and longer reading passages.
+- **Concert Ink:** Principal dark field for the page, navigation, footer, hero veils, and immersive sections.
+- **Programme Ivory:** Principal light field for concert invitation, career story, and social close.
 
 ### Secondary
 
-- **Aged Brass** (`#b49a62`): A restrained highlight for fine rules, active states, small labels, and moments that carry formal significance.
+- **Aged Brass:** Formal highlight for labels, active navigation, focus outlines, rules, and the primary action.
 
 ### Tertiary
 
-- **Bordeaux Note** (`#6d2735`): A rare emotional accent reserved for music, performance, and selected calls to action. It must not become a general-purpose decoration.
+- **Bordeaux Note:** Rare emotional and interaction accent for selected hover states and editorial links.
 
 ### Neutral
 
-- **Stage Charcoal** (`#1b1b1a`): Secondary dark surface used to distinguish adjacent dark regions without visible card shells.
-- **Soft Mist** (`#aaa69f`): Supporting text and metadata on dark fields.
-- **Warm Graphite** (`#302e2b`): Body text on ivory fields.
-- **House White** (`#fffdf8`): High-emphasis text and controls on dark imagery.
+- **Stage Charcoal:** Secondary dark passage, especially the welcome-film section and image placeholders.
+- **House White:** High-emphasis text and controls on dark fields.
+- **Warm Graphite:** Body text on ivory fields.
+- **Soft Mist:** Supporting copy, metadata, and footer text on dark fields.
+- **Dark and light rules:** Low-contrast dividers appropriate to their surrounding field.
 
 ### Named Rules
 
-**The Stage-Light Rule.** Color appears in broad, intentional fields or in one meaningful accent; it is never scattered as decorative confetti.
+**The Stage-Light Rule.** Color appears in broad, intentional fields or as one meaningful accent; it is never scattered as decoration.
 
-**The Rare Bordeaux Rule.** Bordeaux is used sparingly enough that its appearance signals an important musical or conversion moment.
+**The Rare Bordeaux Rule.** Bordeaux signals a musical or conversion moment and does not become a general-purpose accent.
 
 ## Typography
 
-The typography pairs an expressive, high-contrast editorial display face with a disciplined contemporary sans serif. Exact families will be resolved and tested during implementation against Portuguese, English, and German character coverage.
+**Display Font:** Italiana, falling back to Times New Roman and serif.
 
-**Character:** Display type carries theatrical scale and emotional phrasing; supporting type remains calm, highly legible, and modern. The pairing must feel commissioned for a performing artist, not borrowed from a luxury template.
+**Body and Label Font:** Albert Sans, falling back to Arial and sans-serif.
+
+**Character:** Italiana supplies theatrical scale and editorial phrasing; Albert Sans keeps navigation, actions, captions, and reading copy contemporary and highly legible. Both families are loaded from Google Fonts with the shipped weights and support the Portuguese, English, and German experience.
 
 ### Hierarchy
 
-- **Display:** Large, close-set, and responsive; used for the artist name and rare act-opening statements. Line breaks are art-directed at each major breakpoint.
-- **Headline:** Expressive but quieter than display; used for page and section openings.
-- **Title:** Compact and confident; used for albums, programme items, and media features.
-- **Body:** Comfortable reading size with open line height and a maximum measure of approximately 68 characters.
-- **Label:** Small sans serif with moderate tracking; used for dates, locations, media types, navigation, and section cues. Uppercase is reserved for short labels.
+- **Display:** The homepage artist name uses the frontmatter display token; below 48rem it changes to `clamp(3.45rem, 17vw, 5.4rem)` for an art-directed mobile composition and remains constrained to about eight characters per line.
+- **Headline:** Homepage section openings use the frontmatter headline token with balanced wrapping and short measures of roughly 11–12 characters where the composition calls for it.
+- **Title:** Album names use the frontmatter title role; the footer identity uses a related responsive display size.
+- **Body:** Reading copy is generally 1rem with 1.7–1.75 line-height, short 34–36rem measures, and a global reading ceiling of 68ch.
+- **Label:** Roles, buttons, navigation, captions, and metadata use bold Albert Sans, uppercase where brief labels benefit, with 0.08–0.18em tracking depending on scale.
 
 ### Named Rules
 
-**The One Aria Rule.** Each viewport has one dominant typographic voice. Secondary headings support it rather than competing at the same scale.
+**The One Aria Rule.** Each viewport has one dominant typographic voice; supporting headings do not compete at the same scale.
 
-**The Language-Coverage Rule.** No typeface is approved until its Portuguese diacritics and German glyphs match the quality of its basic Latin forms.
+**The Language-Coverage Rule.** Type, wrapping, and label spacing must remain usable in Portuguese, English, and German.
 
 ## Layout
 
-The system is mobile-first. Small screens use a single decisive visual axis, edge-aware imagery, comfortable text margins, and full-width actions where clarity benefits. Desktop expands into an editorial grid with asymmetric image/text relationships; it does not merely widen the mobile stack.
+The system is mobile-first. The shared page gutter is fluid, the principal stage is capped at 76rem, and long-form text is capped at 68ch. The header is 4.25rem below 48rem and 4.75rem above it. Full-bleed fields and images may extend to the viewport while their content returns to the shared stage.
 
-Sections are composed as acts rather than repeated containers. Full-bleed image fields, constrained reading columns, split editorial features, album-art stages, and quiet programme lists share one grid but vary in density. Section spacing follows musical phrasing: more space before a new thought than after its heading, with deliberate alternation between intensity and rest.
+The homepage is organized as distinct acts: a performance-led full-viewport hero; an ivory concert split; a charcoal welcome-film passage; an ivory career montage; an ink album stage; an ivory social close; and the shared ink footer. On small screens these become a decisive single axis, actions become full-width where needed, the career montage stacks, and social/footer links reduce to one column.
 
-Primary content should generally remain within an approximately 1200px stage while backgrounds and selected images may extend to the viewport edges. Long-form text remains narrow enough for comfortable reading. Exact spacing, grid, and breakpoint tokens will be extracted from the implementation in the scan-mode documentation pass.
+At 48rem, the career montage becomes a three-column editorial grid, music becomes a heading-plus-album split, album covers use a 1.35/0.8/0.8 composition, and the footer becomes three columns. At 60rem, navigation becomes an inline desktop bar, the hero reserves its right side for the performer, concert and welcome sections become asymmetric two-column layouts, and the hero scroll cue appears.
 
-**The No Card Parade Rule.** Do not turn consecutive sections into a vertical stack of rounded panels. Hierarchy comes from scale, fields, alignment, and spacing.
+Major imagery is cropped deliberately: the hero uses a 60% horizontal focal point on larger screens and 66% below 48rem, with a stronger bottom-to-top mobile veil. Concert, career, and album imagery preserve their own object-position and aspect treatments rather than accepting one universal crop.
 
-**The Art-Directed Mobile Rule.** Every major image requires a deliberate mobile crop and focal point; desktop framing is never accepted by default.
+**The No Card Parade Rule.** Hierarchy comes from scale, fields, alignment, and spacing, not a repeated stack of rounded panels.
+
+**The Art-Directed Mobile Rule.** Desktop framing is never accepted as the mobile crop by default.
 
 ## Elevation & Depth
 
-Depth comes primarily from photography, tonal layering, overlap, and controlled contrast. Surfaces are mostly flat. Shadows are soft, ambient, and limited to genuinely layered objects such as album artwork, an open navigation plane, or focused media—not applied to every section.
-
-Image overlays must protect text without turning photographs muddy. Use directional tonal veils that follow the composition and subject position instead of a generic uniform black layer.
-
-### Named Rules
+The system is flat by default. Depth comes from photography, tonal alternation, directional hero overlays, image cropping, and genuine object overlap. The welcome video uses a soft `0 2rem 5rem rgba(0, 0, 0, 0.28)` shadow. Album artwork uses `0 1.5rem 3rem rgba(0, 0, 0, 0.3)`, strengthening to `0 2rem 4rem rgba(0, 0, 0, 0.42)` as it lifts on hover or keyboard focus. Navigation and content sections do not use decorative elevation.
 
 **The Physical Depth Rule.** An element receives elevation only when it behaves like a physical object above another plane.
 
 ## Shapes
 
-The dominant geometry is architectural: straight edges, full-width fields, thin rules, and purposeful cropping. Corners are square or subtly softened. Circular treatment is reserved for familiar controls such as play icons when it improves recognition.
+The dominant geometry is architectural: straight section edges, square media, thin rules, and purposeful cropping. Buttons use a restrained 0.25rem corner. Compatibility radii of 0.5rem and 0.75rem remain available to older subpages but do not define the homepage composition. Social icon controls are circular because the shape aids recognition; text links, navigation planes, media, and section containers remain square.
 
-Album artwork keeps its original square object quality and may overlap another plane with restrained depth. Buttons and inputs should feel tailored and precise, with modest corner treatment rather than pill silhouettes.
+**The Programme Edge Rule.** Containers read like pages, stages, and image frames, not floating glass bubbles.
 
-**The Programme Edge Rule.** Containers read like pages, stages, and image frames—not floating glass bubbles.
+## Components
+
+### Buttons and Links
+
+- **Base button:** Inline-flex, minimum 3.25rem high, 0.9rem by 1.35rem padding, 0.25rem radius, uppercase Albert Sans label, and a 1px transparent border. Hover lifts by 2px over 180ms.
+- **Primary:** Brass on ink, changing to bordeaux with house-white text on hover and focus.
+- **Dark and light:** Ink or ivory fields respectively; both change to bordeaux with house-white text on hover and focus.
+- **Text action:** Transparent, square, and underlined by a subtle bottom border; brass supplies its hover/focus state.
+- **Editorial link:** Bordeaux with a current-color underline on ivory, changing to ink on hover/focus.
+
+### Navigation
+
+The fixed header uses the artist wordmark, real routes, language switcher, and social destinations. At the top of the homepage it is a transparent ink-to-clear veil; after 24px of scroll it resolves to an opaque ink plane with a low-contrast bottom rule. At 60rem and wider, navigation is centered, uppercase, and compact with a brass active/hover rule.
+
+Below 60rem, the 2.75rem menu toggle opens a full-viewport ink navigation plane. Links become large Italiana lines separated by subtle rules; language and social controls sit below. Opening locks body scroll, moves focus to the first link, traps Tab focus within the menu and toggle, supports Escape, restores focus to the toggle, and keeps `aria-expanded` and localized open/close labels synchronized.
+
+### Footer and Social Close
+
+The shared footer uses the 76rem stage, an Italiana identity, localized route list, real social icons, and a restrained uppercase legal row. The homepage social close is an ivory editorial list rather than a card grid: square rows, thin rules, graphite text, and bordeaux interaction states.
+
+### Homepage Sections and Image Treatment
+
+The hero, concert invitation, welcome film, career montage, music catalogue, and social close each use semantic landmarks and labelled headings. Images are authentic local assets with descriptive alternative text; supporting media uses lazy loading, while the first-viewport performance image loads immediately. Photography is slightly restrained through saturation/contrast adjustments, protected by directional overlays where text shares the frame, and allowed only subtle scale or lift interactions.
+
+### Motion, Accessibility, and Localization
+
+Stage easing is `cubic-bezier(0.16, 1, 0.3, 1)` with 180ms state transitions and 760ms section reveals. The hero settles over 1.4s and its copy enters over 980ms after a 120ms delay. Reveal content is visible by default; JavaScript adds the concealed ready state only when IntersectionObserver is available, and unsupported browsers immediately expose all items.
+
+Reduced-motion preference removes hero entrance animation, reveal transitions, image zooms, and album lift transitions. Keyboard focus uses a 2px aged-brass outline with a 4px offset on links, buttons, and inputs. Buttons provide at least 3.25rem height, the menu toggle is 2.75rem square, and social icon controls are 2.5rem square on mobile.
+
+Portuguese is the source language. Client-side translation updates visible text, alternative text, labels, titles, placeholders, document language, and localized SEO for English and German. Language links carry `lang` and `hreflang`, preserve the selected language in the URL and local storage, and unavailable support routes are omitted outside Portuguese. Layouts must tolerate all three languages without clipping or collapsing the established hierarchy.
 
 ## Do's and Don'ts
 
 ### Do:
 
-- **Do** let real photographs, album covers, recorded music, and career evidence carry the visual story.
-- **Do** alternate immersive dark passages with calm light reading passages.
-- **Do** use generous scale and whitespace to make the artist feel established and internationally presented.
-- **Do** preserve warmth and directness in calls to action, support messaging, and biography.
-- **Do** design all supported languages and reduced-motion behavior as first-class states.
-- **Do** keep the visual hierarchy strong when imagery is unavailable, slow to load, or cropped narrowly.
+- **Do** let real photographs, album covers, recorded music, and factual career evidence carry the story.
+- **Do** alternate immersive dark passages with calm ivory reading passages.
+- **Do** keep concert exploration the clearest homepage action without implying ticketing or booking.
+- **Do** preserve semantic headings, descriptive alt text, visible focus, useful no-motion states, and progressive enhancement.
+- **Do** validate every shared change in Portuguese, English, and German.
+- **Do** reuse the shared navigation, footer, token, button, spacing, and focus foundations when extending the site.
 
 ### Don't:
 
-- **Don't** use social-media gradients, neon glows, glassmorphism, or a link-in-bio visual language.
-- **Don't** create a generic corporate, SaaS, or luxury-fashion appearance.
-- **Don't** rely on repeated rounded cards, pills, or boxes to organize every content type.
-- **Don't** use decorative effects that compete with the artist's face, voice, album art, or performance.
-- **Don't** manufacture ticketing, press, reviews, tour dates, or booking claims that the product does not currently provide.
-- **Don't** imitate Il Divo or Il Volo compositionally; their standard of photographic confidence and campaign clarity is the influence.
+- **Don't** use social-media gradients, neon glows, glassmorphism, or a link-in-bio visual language in the approved system.
+- **Don't** turn sections into repeated rounded cards, pills, or floating shells.
+- **Don't** let decoration compete with the artist's face, voice, album art, or performance.
+- **Don't** manufacture tickets, bookings, dates, press, reviews, testimonials, or commercial claims.
+- **Don't** imitate Il Divo or Il Volo compositionally; only their standard of photographic confidence and campaign clarity informs the work.
+- **Don't** apply the homepage redesign to other pages by inference; those routes remain outside this approved scope.
