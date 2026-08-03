@@ -40,12 +40,30 @@ const MWP_TEXT_TRANSLATIONS = {
     'Tenor brasileiro': 'Brazilian Tenor',
     'Álbum digital': 'Digital album',
     'Álbum digital liberado': 'Digital album',
+    'Álbuns': 'Albums',
+    'Três momentos da minha trajetória em música gravada, reunidos para você conhecer cada projeto pelo clima, pela capa e pela história sonora.':
+      'Three moments from my recorded music journey, gathered so you can discover each project through its mood, cover, and musical story.',
+    'Coleção de álbuns': 'Album collection',
+    'Ir para o álbum': 'Go to Album',
+    'Botão do álbum SO IN LOVE': 'SO IN LOVE album button',
+    'Botão do álbum Tenori Amici': 'Tenori Amici album button',
+    'Botão do álbum QUATTRO': 'QUATTRO album button',
+    'Capas do álbum Tenori Amici': 'Album covers for Tenori Amici',
+    'Capa do álbum Tenori Amici': 'Front cover of Tenori Amici',
+    'Contracapa do álbum Tenori Amici': 'Back cover of Tenori Amici',
+    'Clássicos românticos, cinema, teatro musical e faixas bônus em uma seleção íntima e emocionante.':
+      'Romantic classics, cinema, musical theater, and bonus tracks in an intimate and moving selection.',
+    'Um encontro de vozes, amizade e repertório lírico em uma gravação especial.':
+      'A meeting of voices, friendship, and lyrical repertoire in a special recording.',
+    'Projeto crossover gravado com o grupo Quattro, unindo grandes canções internacionais e intensidade vocal.':
+      'A crossover project recorded with the group Quattro, bringing together great international songs and vocal intensity.',
     'Canto, paixão e entretenimento para alegrar o seu dia e tocar o seu coração':
       'Singing, passion, and entertainment to brighten your day and touch your heart',
     HOME: 'HOME',
     BIOGRAFIA: 'BIOGRAPHY',
     CONCERTO: 'CONCERT',
     ÁLBUM: 'ALBUM',
+    ÁLBUMS: 'ALBUMS',
     APOIO: 'SUPPORT',
     'Abrir menu': 'Open menu',
     'Fechar menu': 'Close menu',
@@ -215,6 +233,7 @@ const MWP_TEXT_TRANSLATIONS = {
       'Support My Journey | Max Wilson Pereira',
     'Álbum SO IN LOVE | Max Wilson Pereira':
       'SO IN LOVE Album | Max Wilson Pereira',
+    'Álbuns | Max Wilson Pereira': 'Albums | Max Wilson Pereira',
     'Baixar Álbum SO IN LOVE | Max Wilson Pereira':
       'Download SO IN LOVE Album | Max Wilson Pereira',
     'Baixar Álbum QUATTRO | Max Wilson Pereira':
@@ -225,6 +244,12 @@ const MWP_TEXT_TRANSLATIONS = {
       'Max Wilson Pereira — Brazilian tenor. Opera, pop, parodies, and street performances. Classical singing and entertainment to touch your heart.',
     'Tenor brasileiro. Ópera, pop, paródias e apresentações ao vivo. Conheça o álbum SO IN LOVE.':
       'Brazilian tenor. Opera, pop, parodies, and live performances. Support him and discover the SO IN LOVE album.',
+    'Conheça os álbuns de Max Wilson Pereira, incluindo SO IN LOVE, Tenori Amici e QUATTRO.':
+      'Discover Max Wilson Pereira’s albums, including SO IN LOVE, Tenori Amici, and QUATTRO.',
+    'Álbuns de Max Wilson Pereira: repertórios românticos, crossover clássico e gravações especiais.':
+      'Albums by Max Wilson Pereira: romantic repertoire, classical crossover, and special recordings.',
+    'Coleção de álbuns de Max Wilson Pereira, tenor brasileiro.':
+      'Album collection by Max Wilson Pereira, Brazilian tenor.',
     'Conheça a trajetória de Max Wilson Pereira, tenor brasileiro radicado em Viena, da formação lírica aos palcos, televisão e redes sociais.':
       'Discover the journey of Max Wilson Pereira, a Brazilian tenor based in Vienna, from classical training to stages, television, and social media.',
     'A história de Max Wilson Pereira: tenor brasileiro, artista de crossover, criador digital e intérprete que une ópera, pop, humor e emoção.':
@@ -323,12 +348,30 @@ const MWP_TEXT_TRANSLATIONS = {
     'Tenor brasileiro': 'Brasilianischer Tenor',
     'Álbum digital': 'Digitales Album',
     'Álbum digital liberado': 'Digitales Album',
+    'Álbuns': 'Alben',
+    'Três momentos da minha trajetória em música gravada, reunidos para você conhecer cada projeto pelo clima, pela capa e pela história sonora.':
+      'Drei Momente meiner Reise mit aufgenommener Musik, gesammelt, damit Sie jedes Projekt über Stimmung, Cover und Klanggeschichte entdecken können.',
+    'Coleção de álbuns': 'Albumkollektion',
+    'Ir para o álbum': 'Zum Album',
+    'Botão do álbum SO IN LOVE': 'Schaltfläche für das Album SO IN LOVE',
+    'Botão do álbum Tenori Amici': 'Schaltfläche für das Album Tenori Amici',
+    'Botão do álbum QUATTRO': 'Schaltfläche für das Album QUATTRO',
+    'Capas do álbum Tenori Amici': 'Albumcover von Tenori Amici',
+    'Capa do álbum Tenori Amici': 'Vorderseite des Albums Tenori Amici',
+    'Contracapa do álbum Tenori Amici': 'Rückseite des Albums Tenori Amici',
+    'Clássicos românticos, cinema, teatro musical e faixas bônus em uma seleção íntima e emocionante.':
+      'Romantische Klassiker, Film, Musicaltheater und Bonustracks in einer intimen und bewegenden Auswahl.',
+    'Um encontro de vozes, amizade e repertório lírico em uma gravação especial.':
+      'Eine Begegnung von Stimmen, Freundschaft und lyrischem Repertoire in einer besonderen Aufnahme.',
+    'Projeto crossover gravado com o grupo Quattro, unindo grandes canções internacionais e intensidade vocal.':
+      'Ein Crossover-Projekt, aufgenommen mit der Gruppe Quattro, das große internationale Songs und stimmliche Intensität verbindet.',
     'Canto, paixão e entretenimento para alegrar o seu dia e tocar o seu coração':
       'Gesang, Leidenschaft und Unterhaltung, um Ihren Tag zu erhellen und Ihr Herz zu berühren',
     HOME: 'HOME',
     BIOGRAFIA: 'BIOGRAFIE',
     CONCERTO: 'KONZERT',
     ÁLBUM: 'ALBUM',
+    ÁLBUMS: 'ALBEN',
     APOIO: 'UNTERSTÜTZUNG',
     'Abrir menu': 'Menü öffnen',
     'Fechar menu': 'Menü schließen',
@@ -502,6 +545,7 @@ const MWP_TEXT_TRANSLATIONS = {
       'Unterstützen Sie Meine Reise | Max Wilson Pereira',
     'Álbum SO IN LOVE | Max Wilson Pereira':
       'Album SO IN LOVE | Max Wilson Pereira',
+    'Álbuns | Max Wilson Pereira': 'Alben | Max Wilson Pereira',
     'Baixar Álbum SO IN LOVE | Max Wilson Pereira':
       'Album SO IN LOVE herunterladen | Max Wilson Pereira',
     'Baixar Álbum QUATTRO | Max Wilson Pereira':
@@ -512,6 +556,12 @@ const MWP_TEXT_TRANSLATIONS = {
       'Max Wilson Pereira — brasilianischer Tenor. Oper, Pop, Parodien und Straßenauftritte. Klassischer Gesang und Unterhaltung, die Ihr Herz berühren.',
     'Tenor brasileiro. Ópera, pop, paródias e apresentações ao vivo. Conheça o álbum SO IN LOVE.':
       'Brasilianischer Tenor. Oper, Pop, Parodien und Live-Auftritte. Unterstützen Sie ihn und entdecken Sie das Album SO IN LOVE.',
+    'Conheça os álbuns de Max Wilson Pereira, incluindo SO IN LOVE, Tenori Amici e QUATTRO.':
+      'Entdecken Sie die Alben von Max Wilson Pereira, darunter SO IN LOVE, Tenori Amici und QUATTRO.',
+    'Álbuns de Max Wilson Pereira: repertórios românticos, crossover clássico e gravações especiais.':
+      'Alben von Max Wilson Pereira: romantisches Repertoire, klassischer Crossover und besondere Aufnahmen.',
+    'Coleção de álbuns de Max Wilson Pereira, tenor brasileiro.':
+      'Albumkollektion von Max Wilson Pereira, brasilianischer Tenor.',
     'Conheça a trajetória de Max Wilson Pereira, tenor brasileiro radicado em Viena, da formação lírica aos palcos, televisão e redes sociais.':
       'Entdecken Sie den Weg von Max Wilson Pereira, einem brasilianischen Tenor mit Wohnsitz in Wien, von der klassischen Ausbildung bis zu Bühnen, Fernsehen und sozialen Medien.',
     'A história de Max Wilson Pereira: tenor brasileiro, artista de crossover, criador digital e intérprete que une ópera, pop, humor e emoção.':
@@ -676,8 +726,9 @@ function getLanguageHref(language) {
 }
 
 const MWP_SUPPORT_PAGE_PATH = 'pages/apoio-pix.html';
-const MWP_SO_IN_LOVE_PIX_PAGE_PATH = 'pages/so-in-love-pix.html';
+const MWP_SO_IN_LOVE_PIX_PAGE_PATH = 'pages/albums/so-in-love-pix.html';
 const MWP_SO_IN_LOVE_ALBUM_PAGE_PATH = 'pages/albums/so-in-love.html';
+const MWP_ALBUMS_PAGE_PATH = 'pages/albums.html';
 
 function isSoInLovePixPagePath(path) {
   const normalizedPath = normalizePath(path);
@@ -871,7 +922,17 @@ function normalizePath(path) {
 function isCurrentPage(href) {
   if (!href || href.startsWith('#') || /^https?:\/\//.test(href)) return false;
   const linkPath = new URL(getPageHref(href), window.location.href).pathname;
-  return normalizePath(linkPath) === normalizePath(window.location.pathname);
+  const normalizedLinkPath = normalizePath(linkPath);
+  const normalizedCurrentPath = normalizePath(window.location.pathname);
+
+  if (
+    normalizedLinkPath === MWP_ALBUMS_PAGE_PATH &&
+    normalizedCurrentPath.startsWith('pages/albums/')
+  ) {
+    return true;
+  }
+
+  return normalizedLinkPath === normalizedCurrentPath;
 }
 
 function getSocialLinks() {
@@ -1140,7 +1201,8 @@ function initPixContinueForm() {
     const sanitizedName = input.value.trim();
     if (sanitizedName.length < 3) return;
 
-    window.location.href = getPageHref('pages/albums/so-in-love.html');
+    window.location.href =
+      'https://maxwilsonpereira.com.br/pages/albums/so-in-love.html';
   });
 }
 

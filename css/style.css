@@ -1315,6 +1315,13 @@ h2.accent {
   letter-spacing: 0;
 }
 
+.album-hero-copy h2 {
+  margin: 0;
+  font-size: 4.2rem;
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
 .album-hero-copy p:not(.album-kicker) {
   max-width: 480px;
   color: var(--text-secondary);
@@ -1556,6 +1563,56 @@ h2.accent {
 
 .album-note-section {
   padding: 22px 24px;
+}
+
+/* Albums overview page */
+.albums-overview-page {
+  max-width: 1080px;
+  gap: 18px;
+}
+
+.albums-overview-intro {
+  width: 100%;
+  padding: 18px 4px 8px;
+  text-align: left;
+}
+
+.albums-overview-intro .badge {
+  display: flex;
+  width: max-content;
+  margin-bottom: 26px;
+}
+
+.albums-overview-intro h1 {
+  font-size: clamp(3.2rem, 8vw, 6.6rem);
+  line-height: 0.95;
+}
+
+.albums-overview-intro p {
+  max-width: 720px;
+  margin-top: 18px;
+  color: var(--text-secondary);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.albums-overview-list {
+  display: grid;
+  gap: 18px;
+  width: 100%;
+}
+
+.albums-overview-card {
+  min-height: 360px;
+  margin-top: 0;
+}
+
+.albums-overview-card .album-art-showcase {
+  min-height: 330px;
+}
+
+.albums-overview-card .album-download-all {
+  pointer-events: auto;
 }
 
 /* Biography page */
@@ -2232,8 +2289,32 @@ ul li::before {
     font-size: 2.65rem;
   }
 
+  .album-hero-copy h2 {
+    font-size: 2.45rem;
+  }
+
   .album-download-all {
     width: 100%;
+  }
+
+  .albums-overview-page {
+    max-width: 420px;
+  }
+
+  .albums-overview-intro {
+    padding: 8px 0 0;
+  }
+
+  .albums-overview-intro h1 {
+    font-size: 3.1rem;
+  }
+
+  .albums-overview-intro p {
+    font-size: 0.98rem;
+  }
+
+  .albums-overview-card .album-art-showcase {
+    min-height: 280px;
   }
 
   .album-player-section {

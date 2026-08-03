@@ -107,7 +107,7 @@ const MWP_CONFIG = {
       title: 'Álbum SO IN LOVE | Max Wilson Pereira',
       description:
         'Compre o álbum SO IN LOVE do tenor Max Wilson Pereira via PIX. Emoção, romantismo e clássicos como Tonight, Over the Rainbow, Nessun dorma. Inclui bônus exclusivos.',
-      path: '/pages/so-in-love-pix.html',
+      path: '/pages/albums/so-in-love-pix.html',
       ogDescription:
         'Álbum especial do tenor Max Wilson Pereira. Emoção, romantismo e interpretações de grandes clássicos. Compre via PIX e receba bônus exclusivos.',
       jsonLd: {
@@ -115,7 +115,23 @@ const MWP_CONFIG = {
         name: 'Álbum SO IN LOVE | Max Wilson Pereira',
         description:
           'Álbum SO IN LOVE do tenor Max Wilson Pereira. Compre via PIX com bônus exclusivos.',
-        url: 'https://maxwilsonpereira.com.br/pages/so-in-love-pix.html',
+        url: 'https://maxwilsonpereira.com.br/pages/albums/so-in-love-pix.html',
+        mainEntity: { '@type': 'Person', name: 'Max Wilson Pereira' },
+      },
+    },
+    albums: {
+      title: 'Álbuns | Max Wilson Pereira',
+      description:
+        'Conheça os álbuns de Max Wilson Pereira, incluindo SO IN LOVE, Tenori Amici e QUATTRO.',
+      path: '/pages/albums.html',
+      ogDescription:
+        'Álbuns de Max Wilson Pereira: repertórios românticos, crossover clássico e gravações especiais.',
+      jsonLd: {
+        '@type': 'CollectionPage',
+        name: 'Álbuns | Max Wilson Pereira',
+        description:
+          'Coleção de álbuns de Max Wilson Pereira, tenor brasileiro.',
+        url: 'https://maxwilsonpereira.com.br/pages/albums.html',
         mainEntity: { '@type': 'Person', name: 'Max Wilson Pereira' },
       },
     },
@@ -163,8 +179,8 @@ const MWP_CONFIG = {
       external: false,
     },
     {
-      href: 'pages/so-in-love-pix.html',
-      text: 'ÁLBUM',
+      href: 'pages/albums.html',
+      text: 'ÁLBUMS',
       external: false,
     },
     {
