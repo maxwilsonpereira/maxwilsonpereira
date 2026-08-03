@@ -73,7 +73,7 @@ const MWP_TEXT_TRANSLATIONS = {
     'Links principais': 'Main links',
     'Siga nas redes sociais': 'Follow on social media',
     'Bem-vindo': 'Welcome',
-    'Que alegria ter você aqui.': 'I am so happy you are here.',
+    'Que alegria ter você aqui': 'I am so happy you are here',
     'Este espaço reúne um pouco da minha voz, da minha história e da minha paixão pela música: da tradição lírica às canções que atravessam gerações, sempre com o desejo de tocar o coração de quem escuta.':
       'This space brings together a little of my voice, my story, and my passion for music: from the lyrical tradition to songs that cross generations, always with the desire to touch the heart of those who listen.',
     'Assista ao vídeo e seja muito bem-vindo ao meu mundo musical.':
@@ -412,7 +412,7 @@ const MWP_TEXT_TRANSLATIONS = {
     'Links principais': 'Hauptlinks',
     'Siga nas redes sociais': 'Folgen Sie mir in den sozialen Netzwerken',
     'Bem-vindo': 'Willkommen',
-    'Que alegria ter você aqui.': 'Wie schön, dass Sie hier sind.',
+    'Que alegria ter você aqui': 'Wie schön, dass Sie hier sind',
     'Este espaço reúne um pouco da minha voz, da minha história e da minha paixão pela música: da tradição lírica às canções que atravessam gerações, sempre com o desejo de tocar o coração de quem escuta.':
       'Dieser Raum vereint ein wenig von meiner Stimme, meiner Geschichte und meiner Leidenschaft für Musik: von der lyrischen Tradition bis zu Liedern, die Generationen verbinden, immer mit dem Wunsch, das Herz der Zuhörenden zu berühren.',
     'Assista ao vídeo e seja muito bem-vindo ao meu mundo musical.':
