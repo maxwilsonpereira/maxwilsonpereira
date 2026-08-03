@@ -7,6 +7,7 @@ const SITE_URL = 'https://maxwilsonpereira.com.br';
 const LANGUAGES = {
   en: { htmlLang: 'en-US', ogLocale: 'en_US' },
   de: { htmlLang: 'de-DE', ogLocale: 'de_DE' },
+  es: { htmlLang: 'es-ES', ogLocale: 'es_ES' },
 };
 const PUBLIC_PAGES = [
   'index.html',
@@ -20,6 +21,9 @@ const PORTUGUESE_ONLY_PAGES = [
   'pages/apoio-pix.html',
   'pages/albums/so-in-love-pix.html',
 ];
+const SITEMAP_EXCLUDED_PAGES = new Set([
+  'pages/albums/quattro-sony.html',
+]);
 const PUBLIC_PAGE_SET = new Set(PUBLIC_PAGES);
 const ALTERNATE_START = '<!-- localized-alternates:start -->';
 const ALTERNATE_END = '<!-- localized-alternates:end -->';
@@ -49,6 +53,13 @@ const LANGUAGE_LABELS = {
     socialImageAlt: 'Max Wilson Pereira bei einem Live-Auftritt mit Hebe Camargo',
     personDescription: 'Brasilianischer Tenor in Wien mit einer Laufbahn in Oper, klassischem Crossover, Fernsehen, Konzerten und Tonaufnahmen.',
   },
+  es: {
+    htmlLang: 'es-ES',
+    home: 'Inicio',
+    albums: 'Álbumes',
+    socialImageAlt: 'Max Wilson Pereira actuando en directo con Hebe Camargo',
+    personDescription: 'Tenor brasileño residente en Viena, con una trayectoria en ópera, crossover clásico, televisión, conciertos y música grabada.',
+  },
 };
 
 function toPosix(value) {
@@ -67,6 +78,7 @@ function alternateBlock(route) {
     `    <link rel="alternate" hreflang="pt-BR" href="${routeUrl(route)}" />`,
     `    <link rel="alternate" hreflang="en-US" href="${routeUrl(route, 'en')}" />`,
     `    <link rel="alternate" hreflang="de-DE" href="${routeUrl(route, 'de')}" />`,
+    `    <link rel="alternate" hreflang="es-ES" href="${routeUrl(route, 'es')}" />`,
     `    <link rel="alternate" hreflang="x-default" href="${routeUrl(route)}" />`,
     `    ${ALTERNATE_END}`,
   ].join('\n');
@@ -430,6 +442,49 @@ function rewriteLocalReferences(html, sourceRoute, targetRoute, language) {
   return output;
 }
 
+async function writeFileIfChanged(filePath, contents) {
+  const existing = await fs.readFile(filePath, 'utf8');
+  if (
+    existing.replaceAll('\r\n', '\n') === contents.replaceAll('\r\n', '\n')
+  ) return;
+  await fs.writeFile(filePath, contents, 'utf8');
+}
+
+async function generateSitemap() {
+  const lastModified = new Date().toISOString().slice(0, 10);
+  const alternates = (route) => [
+    ['pt-BR', routeUrl(route)],
+    ['en-US', routeUrl(route, 'en')],
+    ['de-DE', routeUrl(route, 'de')],
+    ['es-ES', routeUrl(route, 'es')],
+    ['x-default', routeUrl(route)],
+  ].map(([language, url]) => `    <xhtml:link rel="alternate" hreflang="${language}" href="${url}" />`);
+  const localizedUrls = PUBLIC_PAGES
+    .filter((route) => !SITEMAP_EXCLUDED_PAGES.has(route))
+    .flatMap((route) =>
+    ['pt', ...Object.keys(LANGUAGES)].map((language) => {
+      const url = routeUrl(route, language);
+      return ['  <url>', `    <loc>${url}</loc>`, `    <lastmod>${lastModified}</lastmod>`, ...alternates(route), '  </url>'].join('\n');
+    }),
+  );
+  const portugueseOnlyUrls = PORTUGUESE_ONLY_PAGES.map((route) => [
+    '  <url>',
+    `    <loc>${routeUrl(route)}</loc>`,
+    `    <lastmod>${lastModified}</lastmod>`,
+    '  </url>',
+  ].join('\n'));
+  const sitemap = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
+    '  xmlns:xhtml="http://www.w3.org/1999/xhtml">',
+    ...localizedUrls,
+    ...portugueseOnlyUrls,
+    '</urlset>',
+    '',
+  ].join('\n');
+  await fs.writeFile(path.join(ROOT, 'sitemap.xml'), sitemap, 'utf8');
+}
+
 async function generate() {
   const translations = await loadTranslations();
   for (const sourceRoute of PUBLIC_PAGES) {
@@ -438,7 +493,12 @@ async function generate() {
     source = upsertAlternateBlock(source, sourceRoute);
     source = upsertSocialImageDetails(source, 'pt');
     source = upsertStructuredData(source, sourceRoute, 'pt');
-    await fs.writeFile(sourcePath, source, 'utf8');
+    try {
+      await writeFileIfChanged(sourcePath, source);
+    } catch (error) {
+      if (error?.code !== 'EPERM') throw error;
+      console.warn(`Could not refresh localized metadata in ${sourceRoute}; continuing with generated locales.`);
+    }
 
     for (const language of Object.keys(LANGUAGES)) {
       const targetRoute = path.posix.join(language, sourceRoute);
@@ -465,16 +525,21 @@ async function generate() {
   for (const sourceRoute of PORTUGUESE_ONLY_PAGES) {
     const sourcePath = path.join(ROOT, ...sourceRoute.split('/'));
     const source = await fs.readFile(sourcePath, 'utf8');
-    await fs.writeFile(
-      sourcePath,
-      upsertStructuredData(
-        upsertSocialImageDetails(source, 'pt'),
-        sourceRoute,
-        'pt',
-      ),
-      'utf8',
-    );
+    try {
+      await writeFileIfChanged(
+        sourcePath,
+        upsertStructuredData(
+          upsertSocialImageDetails(source, 'pt'),
+          sourceRoute,
+          'pt',
+        ),
+      );
+    } catch (error) {
+      if (error?.code !== 'EPERM') throw error;
+      console.warn(`Could not refresh metadata in ${sourceRoute}.`);
+    }
   }
+  await generateSitemap();
   console.log(`Generated ${PUBLIC_PAGES.length * Object.keys(LANGUAGES).length} localized pages.`);
 }
 

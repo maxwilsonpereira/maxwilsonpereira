@@ -2966,6 +2966,15 @@ input:focus-visible {
   transform: translateY(0);
 }
 
+.language-switch-flag-es {
+  background: linear-gradient(
+    to bottom,
+    #aa151b 0 25%,
+    #f1bf00 25% 75%,
+    #aa151b 75% 100%
+  );
+}
+
 .site-nav-links {
   display: grid;
   align-content: start;
