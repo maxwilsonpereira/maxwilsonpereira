@@ -98,7 +98,7 @@ The shipped system feels like entering a concert hall moments before the first n
 
 The visual rhythm alternates cinematic dark fields with quiet editorial ivory fields. Architectural edges, decisive typography, and restrained brass and bordeaux accents communicate classical credibility without institutional distance. Motion behaves like a stage transition: content remains available by default, then settles into place only when enhancement is supported.
 
-This document is authoritative for the approved global foundation (tokens, typography, navigation, footer, focus behavior, and localization conventions) and the shipped homepage. Other routes retain their incumbent layouts and compatibility styles; they were deliberately not redesigned in this release.
+This document is authoritative for the approved global foundation (tokens, typography, navigation, footer, focus behavior, and localization conventions), the homepage, and the public biography, concert, album collection, album, and support routes. These routes share a full-bleed chapter system while preserving their page-specific content and interactions.
 
 **Key Characteristics:**
 
@@ -166,7 +166,7 @@ The palette uses the physical colors of a darkened hall, warm paper, formal even
 
 The system is mobile-first. The shared page gutter is fluid, the principal stage is capped at 76rem, and long-form text is capped at 68ch. The header is 4.25rem below 48rem and 4.75rem above it. Full-bleed fields and images may extend to the viewport while their content returns to the shared stage.
 
-The homepage is organized as distinct acts: a performance-led full-viewport hero; an ivory concert split; a charcoal welcome-film passage; an ivory career montage; an ink album stage; an ivory social close; and the shared ink footer. On small screens these become a decisive single axis, actions become full-width where needed, the career montage stacks, and social/footer links reduce to one column.
+The homepage is organized as distinct acts: a performance-led full-viewport hero; an ivory concert split; a charcoal welcome-film passage; an ivory career montage; an ink album stage; an ivory social close; and the shared ink footer. Public inner pages use the same sequence logic: full-bleed hero or opening field, alternating ivory and charcoal reading chapters, content held within the shared stage, and the shared ink footer meeting the viewport edge. The vintage microphone may appear as one restrained full-width interlude between major chapters, moving only slightly on capable devices and remaining still when reduced motion is preferred.
 
 At 48rem, the career montage becomes a three-column editorial grid, music becomes a heading-plus-album split, album covers use a 1.35/0.8/0.8 composition, and the footer becomes three columns. At 60rem, navigation becomes an inline desktop bar, the hero reserves its right side for the performer, concert and welcome sections become asymmetric two-column layouts, and the hero scroll cue appears.
 
@@ -229,7 +229,7 @@ Portuguese is the source language. Public English and German pages are generated
 - **Do** keep concert exploration the clearest homepage action without implying ticketing or booking.
 - **Do** preserve semantic headings, descriptive alt text, visible focus, useful no-motion states, and progressive enhancement.
 - **Do** validate every shared change in Portuguese, English, and German.
-- **Do** reuse the shared navigation, footer, token, button, spacing, and focus foundations when extending the site.
+- **Do** reuse the shared navigation, footer, token, button, spacing, focus, and full-bleed chapter foundations across the public site.
 
 ### Don't:
 
@@ -238,4 +238,4 @@ Portuguese is the source language. Public English and German pages are generated
 - **Don't** let decoration compete with the artist's face, voice, album art, or performance.
 - **Don't** manufacture tickets, bookings, dates, press, reviews, testimonials, or commercial claims.
 - **Don't** imitate Il Divo or Il Volo compositionally; only their standard of photographic confidence and campaign clarity informs the work.
-- **Don't** apply the homepage redesign to other pages by inference; those routes remain outside this approved scope.
+- **Don't** turn long-form page content into floating card stacks or reintroduce page-edge gaps around the shared footer.

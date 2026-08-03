@@ -1447,12 +1447,10 @@ h2.accent {
   width: auto;
   min-width: 230px;
   margin-top: 8px;
-  background: #1db954;
-  color: #07140b;
 }
 
 .album-download-all:hover:not(:disabled) {
-  box-shadow: 0 12px 32px rgba(29, 185, 84, 0.24);
+  box-shadow: none;
 }
 
 .album-player-section {
@@ -3141,6 +3139,581 @@ input:focus-visible {
   text-transform: uppercase;
 }
 
+/* ==========================================================
+   Cross-page expansion — full-bleed chapters beyond Home
+   ========================================================== */
+
+body.page-sub {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  text-align: left;
+}
+
+.page-sub .hero-bg,
+.page-sub::before {
+  display: none;
+}
+
+.page-sub .page-container,
+.page-sub .page-container.album-page,
+.page-sub .page-container.albums-overview-page,
+.page-sub .page-container.biography-page,
+.page-sub .page-container.concerto-page {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  max-width: none;
+  gap: 0;
+  margin: 0;
+  padding-top: var(--header-height);
+}
+
+.page-sub .content-section {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: clamp(3.5rem, 8vw, 7rem) max(var(--page-gutter), calc((100% - var(--content-max)) / 2));
+  color: var(--color-graphite);
+  background: var(--color-ivory);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.page-sub .content-section > * {
+  width: min(100%, var(--reading-max));
+}
+
+.page-sub .content-section h2,
+.page-sub .content-section .accent {
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+}
+
+.page-sub .content-section h1,
+.page-sub .content-section h2,
+.page-sub .content-section h3,
+.page-sub .content-section h4,
+.page-sub .content-section strong,
+.page-sub .content-section .concerto-song-list strong,
+.page-sub .content-section .concerto-duets h3,
+.page-sub .content-section .concerto-repertoire-note {
+  color: var(--color-ink);
+}
+
+.page-sub .content-section span,
+.page-sub .content-section .concerto-song-list span {
+  color: #5f5951;
+}
+
+.page-sub .content-section .concerto-song-list li {
+  border-bottom-color: var(--color-line-light);
+}
+
+.page-sub .content-section p {
+  color: var(--color-graphite);
+}
+
+.page-sub .content-section p + p {
+  margin-top: 1.25rem;
+}
+
+.page-sub .content-section:nth-of-type(even) {
+  color: var(--color-paper);
+  background: var(--color-stage);
+}
+
+.page-sub .content-section:nth-of-type(even) h2,
+.page-sub .content-section:nth-of-type(even) .accent,
+.page-sub .content-section:nth-of-type(even) h3,
+.page-sub .content-section:nth-of-type(even) h4,
+.page-sub .content-section:nth-of-type(even) strong,
+.page-sub .content-section:nth-of-type(even) p,
+.page-sub .content-section:nth-of-type(even) li {
+  color: var(--color-paper);
+}
+
+.page-sub .content-section:nth-of-type(even) p,
+.page-sub .content-section:nth-of-type(even) li,
+.page-sub .content-section:nth-of-type(even) span {
+  color: #d2ccc3;
+}
+
+.page-sub .content-section:nth-of-type(even) .concerto-song-list li {
+  border-bottom-color: var(--color-line-dark);
+}
+
+.page-sub .profile-section {
+  width: 100%;
+  min-height: min(44rem, 74vh);
+  padding: calc(var(--header-height) + 4rem) var(--page-gutter) 5rem;
+  margin: 0;
+  color: var(--color-paper);
+  text-align: left;
+  background:
+    linear-gradient(90deg, rgba(16, 16, 15, 0.94), rgba(16, 16, 15, 0.48)),
+    url("../assets/concerto.jpg") center / cover;
+  border: 0;
+  border-radius: 0;
+}
+
+.page-sub .profile-section > * {
+  width: min(100%, var(--content-max));
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.page-sub .profile-section .profile-img {
+  display: none;
+}
+
+.page-sub .profile-section h1 {
+  max-width: 10ch;
+  color: var(--color-paper);
+  font-size: clamp(3.2rem, 8vw, 6rem);
+  line-height: 0.92;
+}
+
+.page-sub .biography-hero,
+.page-sub .concerto-hero {
+  width: 100%;
+  min-height: clamp(34rem, 78vh, 52rem);
+  margin: 0;
+  border: 0;
+  box-shadow: none;
+}
+
+.biography-hero-copy,
+.concerto-hero-copy {
+  width: min(100% - (var(--page-gutter) * 2), var(--content-max));
+  padding-bottom: clamp(3.5rem, 8vw, 6.5rem);
+}
+
+.biography-hero-overlay,
+.concerto-hero-overlay {
+  background:
+    linear-gradient(90deg, rgba(16, 16, 15, 0.94) 0%, rgba(16, 16, 15, 0.58) 47%, rgba(16, 16, 15, 0.06) 78%),
+    linear-gradient(0deg, rgba(16, 16, 15, 0.92) 0%, transparent 55%);
+}
+
+.page-sub .biography-intro,
+.page-sub .biography-copy {
+  padding-right: max(var(--page-gutter), calc((100% - var(--reading-max)) / 2));
+  padding-left: max(var(--page-gutter), calc((100% - var(--reading-max)) / 2));
+}
+
+.page-sub .biography-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  width: 100%;
+  padding: 0 var(--page-gutter);
+  color: var(--color-paper);
+  background: var(--color-ink);
+}
+
+.page-sub .biography-highlight {
+  min-height: 14rem;
+  padding: clamp(2rem, 4vw, 4rem);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.page-sub .biography-highlight + .biography-highlight {
+  border-left: 1px solid var(--color-line-dark);
+}
+
+.page-sub .biography-highlight span,
+.page-sub .biography-highlight p {
+  color: var(--color-paper);
+}
+
+.page-sub .biography-highlight span {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 400;
+}
+
+.page-sub .albums-overview-intro {
+  width: 100%;
+  padding: clamp(4rem, 10vw, 8rem) max(var(--page-gutter), calc((100% - var(--content-max)) / 2));
+  color: var(--color-paper);
+  background: var(--color-ink);
+}
+
+.page-sub .albums-overview-intro h1,
+.page-sub .albums-overview-intro p {
+  color: var(--color-paper);
+}
+
+.page-sub .albums-overview-list {
+  gap: 0;
+}
+
+.page-sub .album-hero,
+.page-sub .albums-overview-card {
+  grid-template-columns: minmax(18rem, 0.9fr) minmax(0, 1.1fr);
+  width: 100%;
+  min-height: clamp(34rem, 68vh, 48rem);
+  padding: clamp(3rem, 7vw, 6rem) max(var(--page-gutter), calc((100% - var(--content-max)) / 2));
+  margin: 0;
+  color: var(--color-paper);
+  background: var(--color-stage);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+/* Remove the legacy Spotify-green glow that protruded below album chapters. */
+.page-sub .album-hero::before {
+  display: none;
+}
+
+.page-sub .album-hero:nth-child(even),
+.page-sub .albums-overview-card:nth-child(even) {
+  color: var(--color-graphite);
+  background: var(--color-ivory);
+}
+
+.page-sub .album-hero:nth-child(even) h1,
+.page-sub .album-hero:nth-child(even) h2,
+.page-sub .album-hero:nth-child(even) p,
+.page-sub .albums-overview-card:nth-child(even) h1,
+.page-sub .albums-overview-card:nth-child(even) h2,
+.page-sub .albums-overview-card:nth-child(even) p {
+  color: var(--color-graphite);
+}
+
+.page-sub .album-tenori-amici .badge {
+  color: var(--color-ink);
+  background: rgba(180, 154, 98, 0.18);
+  border-color: var(--color-brass);
+  font-weight: 700;
+}
+
+.page-sub .album-player-section,
+.page-sub .album-note-section {
+  width: 100%;
+  padding-right: max(var(--page-gutter), calc((100% - var(--content-max)) / 2));
+  padding-left: max(var(--page-gutter), calc((100% - var(--content-max)) / 2));
+  background: var(--color-ink);
+}
+
+.page-sub .concerto-rehearsal,
+.page-sub .concerto-repertoire {
+  width: 100%;
+  max-width: none;
+}
+
+.microphone-interlude {
+  position: relative;
+  min-height: clamp(18rem, 42vw, 34rem);
+  margin: 0;
+  overflow: hidden;
+  color: var(--color-paper);
+  background: var(--color-ink);
+}
+
+max-microphone-interlude {
+  display: block;
+  width: 100%;
+}
+
+.microphone-interlude-media {
+  position: absolute;
+  inset: -8%;
+  width: 116%;
+  height: 116%;
+  background:
+    linear-gradient(90deg, rgba(16, 16, 15, 0.88), rgba(16, 16, 15, 0.28)),
+    url("../assets/vintage-microphone.jpg") center / cover;
+  will-change: transform;
+}
+
+.microphone-interlude figcaption {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: end;
+  width: min(100% - (var(--page-gutter) * 2), var(--content-max));
+  min-height: inherit;
+  padding: clamp(2rem, 5vw, 4rem) 0;
+  margin: 0 auto;
+  color: var(--color-paper);
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 5vw, 4.4rem);
+  line-height: 0.98;
+}
+
+@media (max-width: 47.99rem) {
+  .page-sub .page-container,
+  .page-sub .page-container.album-page,
+  .page-sub .page-container.albums-overview-page,
+  .page-sub .page-container.biography-page,
+  .page-sub .page-container.concerto-page {
+    padding-top: var(--header-height);
+  }
+
+  .page-sub .content-section,
+  .page-sub .biography-intro,
+  .page-sub .biography-copy,
+  .page-sub .albums-overview-intro,
+  .page-sub .album-hero,
+  .page-sub .albums-overview-card,
+  .page-sub .album-player-section,
+  .page-sub .album-note-section {
+    padding-right: var(--page-gutter);
+    padding-left: var(--page-gutter);
+  }
+
+  .page-sub .biography-grid {
+    grid-template-columns: 1fr;
+    padding: 0 var(--page-gutter);
+  }
+
+  .page-sub .biography-highlight + .biography-highlight {
+    border-top: 1px solid var(--color-line-dark);
+    border-left: 0;
+  }
+
+  .page-sub .album-hero,
+  .page-sub .albums-overview-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    min-height: auto;
+  }
+
+  .page-sub .album-art-showcase,
+  .page-sub .albums-overview-card .album-art-showcase {
+    min-height: 18rem;
+  }
+
+  .microphone-interlude-media {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .microphone-interlude-media {
+    transform: none !important;
+  }
+}
+
+/* SO IN LOVE — Portuguese support banner */
+.album-support-modal {
+  width: min(calc(100vw - 2.5rem), 46rem);
+  max-height: min(88svh, 52rem);
+  color: var(--color-graphite);
+}
+
+.album-support-modal::backdrop {
+  background: rgba(16, 16, 15, 0.84);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.album-support-modal .modal-panel {
+  max-height: min(88svh, 52rem);
+  padding: clamp(2rem, 5vw, 4rem);
+  color: var(--color-graphite);
+  background: var(--color-ivory);
+  border: 1px solid var(--color-brass);
+  border-radius: 0;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.48);
+}
+
+.album-support-modal .modal-close {
+  top: clamp(1rem, 3vw, 1.5rem);
+  right: clamp(1rem, 3vw, 1.5rem);
+  width: 2.75rem;
+  height: 2.75rem;
+  color: var(--color-ink);
+  background: transparent;
+  border: 1px solid var(--color-line-light);
+  border-radius: 0;
+}
+
+.album-support-modal .modal-close:hover,
+.album-support-modal .modal-close:focus-visible {
+  color: var(--color-paper);
+  background: var(--color-bordeaux);
+  border-color: var(--color-bordeaux);
+  transform: none;
+}
+
+.album-support-modal .modal-header {
+  padding: 0 3.5rem 1.5rem 0;
+  margin: 0 0 1.75rem;
+  border-bottom: 1px solid var(--color-line-light);
+}
+
+.album-support-modal .modal-eyebrow {
+  display: block;
+  min-height: 0;
+  padding: 0;
+  margin: 0 0 0.75rem;
+  color: var(--color-bordeaux);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.album-support-modal .modal-header h2 {
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: clamp(2.3rem, 6vw, 4.25rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 0.94;
+}
+
+.album-support-modal .modal-body {
+  gap: 1.35rem;
+  padding-right: 0.75rem;
+  scrollbar-color: var(--color-brass) transparent;
+}
+
+.album-support-modal .modal-body p,
+.album-support-modal .modal-body strong {
+  color: var(--color-graphite);
+}
+
+.album-support-modal .modal-body p {
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.album-support-modal .modal-body strong {
+  font-weight: 700;
+}
+
+.album-support-modal .modal-quote-group {
+  gap: 0;
+  padding: 1.5rem;
+  background: #e8e0d3;
+  border: 0;
+  border-radius: 0;
+}
+
+.album-support-modal .modal-quote-group p {
+  margin-bottom: 1rem;
+  color: var(--color-bordeaux);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.album-support-modal .modal-quote-group blockquote {
+  padding: 1rem 0;
+  color: var(--color-ink);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.6vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.album-support-modal .modal-quote-group blockquote + blockquote {
+  border-top: 1px solid var(--color-line-light);
+}
+
+/* Centered reading stages for long-form album and support content. */
+.page-sub .album-player-section > * {
+  width: min(100%, 60rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.page-sub .album-player-section .album-audio {
+  display: block;
+  width: min(100%, 60rem);
+  margin: 0 auto 1.5rem;
+}
+
+.page-sub .content-section.album-player-section h2,
+.page-sub .content-section.album-player-section strong {
+  color: var(--color-paper);
+}
+
+.page-sub .content-section.album-player-section p,
+.page-sub .content-section.album-player-section span {
+  color: var(--color-mist);
+}
+
+.page-sub .profile-section + .content-section > * {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Concert reading chapters use one centered editorial measure on wide screens. */
+.page-sub .concerto-page .content-section:not(.concerto-rehearsal) > * {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Support page: keep the PIX detail compact and optically centered. */
+.page-sub .profile-section + .content-section h2.accent {
+  width: min(100%, 34rem);
+  margin: 2.5rem auto 0;
+  text-align: center;
+}
+
+.page-sub .profile-section + .content-section .pix-box {
+  width: min(100%, 20rem);
+  padding: 1rem 1.25rem;
+  margin: 1.25rem auto 2rem;
+  color: var(--color-paper);
+  background: var(--color-ink);
+  border: 1px solid var(--color-brass);
+  border-radius: 0;
+  box-shadow: none;
+  font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+  letter-spacing: 0.08em;
+}
+
+/* Biography chapter headings retain their brass editorial accent on every field. */
+.page-sub .biography-copy.content-section h2.accent {
+  color: var(--color-brass);
+}
+
+@media (min-width: 48rem) {
+  .page-sub .concerto-rehearsal {
+    grid-template-columns: minmax(0, 40rem) minmax(16rem, 20rem);
+    justify-content: center;
+  }
+}
+
+@media (max-width: 47.99rem) {
+  .album-support-modal {
+    width: calc(100vw - 1.5rem);
+    max-height: calc(100svh - 1.5rem);
+  }
+
+  .album-support-modal .modal-panel {
+    max-height: calc(100svh - 1.5rem);
+    padding: 1.5rem;
+  }
+
+  .album-support-modal .modal-header {
+    padding-right: 3rem;
+  }
+}
+
 /* Homepage */
 .page-home {
   display: block;
@@ -3217,6 +3790,15 @@ input:focus-visible {
   letter-spacing: -0.035em;
   line-height: 0.88;
   text-wrap: balance;
+}
+
+.home-hero h1 max-site-name {
+  display: block;
+}
+
+.home-name-line {
+  display: block;
+  white-space: nowrap;
 }
 
 .home-hero-role {
@@ -3745,7 +4327,13 @@ input:focus-visible {
   }
 
   .home-hero-copy {
-    padding-right: 45%;
+    /* Reserve room for the performer without collapsing the copy at desktop widths. */
+    padding-right: clamp(18rem, 30vw, 24rem);
+  }
+
+  .home-hero h1 {
+    width: max-content;
+    max-width: 100%;
   }
 
   .home-hero-scroll {

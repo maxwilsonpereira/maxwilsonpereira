@@ -367,7 +367,7 @@ function translateStaticMarkup(html, language, translations) {
     (_, before, value, after) => `${before}${translateExact(value)}${after}`,
   );
 
-  return html
+  const translated = html
     .split(/(<script\b[\s\S]*?<\/script>|<style\b[\s\S]*?<\/style>|<!--[\s\S]*?-->|<[^>]+>)/gi)
     .map((token) => {
       if (!token.startsWith('<')) return translateText(token);
@@ -375,6 +375,14 @@ function translateStaticMarkup(html, language, translations) {
       return translateAttributes(token);
     })
     .join('');
+
+  // A translated text fragment may replace leading punctuation with a word
+  // (for example, ", de" becomes "by"). Preserve a word boundary after
+  // inline elements so adjacent fragments never render as "titleby Author".
+  return translated.replace(
+    /(<\/(?:strong|em|a|span)>)(?=[\p{L}\p{N}])/gu,
+    '$1 ',
+  );
 }
 
 function splitUrl(value) {

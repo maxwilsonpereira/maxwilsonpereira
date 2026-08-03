@@ -21,6 +21,9 @@ const MWP_LANGUAGES = {
 
 const MWP_TEXT_TRANSLATIONS = {
   en: {
+    'A voz continua': 'The voice continues',
+    'Uma pausa antes da próxima canção': 'A pause before the next song',
+    'Canções que permanecem': 'Songs that remain',
     'Escolher idioma': 'Choose language',
     'Mudar idioma para': 'Change language to',
     'Seguir Max Wilson Pereira no': 'Follow Max Wilson Pereira on',
@@ -396,6 +399,9 @@ const MWP_TEXT_TRANSLATIONS = {
     'Viena • Brasil': 'Vienna • Brazil',
   },
   de: {
+    'A voz continua': 'Die Stimme klingt weiter',
+    'Uma pausa antes da próxima canção': 'Eine Pause vor dem nächsten Lied',
+    'Canções que permanecem': 'Lieder, die bleiben',
     'Escolher idioma': 'Sprache auswählen',
     'Mudar idioma para': 'Sprache wechseln zu',
     'Seguir Max Wilson Pereira no': 'Max Wilson Pereira folgen auf',
@@ -1335,6 +1341,42 @@ class MaxHeroBg extends HTMLElement {
 }
 customElements.define('max-hero-bg', MaxHeroBg);
 
+class MaxMicrophoneInterlude extends HTMLElement {
+  connectedCallback() {
+    const caption = this.getAttribute('caption') || 'A voz continua';
+    this.innerHTML = `
+      <figure class="microphone-interlude">
+        <div class="microphone-interlude-media" aria-hidden="true"></div>
+        <figcaption>${translatePhrase(caption)}</figcaption>
+      </figure>
+    `;
+
+    const media = this.querySelector('.microphone-interlude-media');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (!media || reduceMotion.matches) return;
+
+    let framePending = false;
+    const updateParallax = () => {
+      framePending = false;
+      const rect = this.getBoundingClientRect();
+      const viewportCenter = window.innerHeight / 2;
+      const distance = rect.top + rect.height / 2 - viewportCenter;
+      const offset = Math.max(-28, Math.min(28, distance * -0.08));
+      media.style.transform = `translate3d(0, ${offset}px, 0)`;
+    };
+    const requestUpdate = () => {
+      if (framePending) return;
+      framePending = true;
+      requestAnimationFrame(updateParallax);
+    };
+
+    updateParallax();
+    window.addEventListener('scroll', requestUpdate, { passive: true });
+    window.addEventListener('resize', requestUpdate, { passive: true });
+  }
+}
+customElements.define('max-microphone-interlude', MaxMicrophoneInterlude);
+
 /* ─── max-profile-img ─────────────────────────────────────────────────────── */
 class MaxProfileImg extends HTMLElement {
   connectedCallback() {
@@ -1477,8 +1519,7 @@ function initPixContinueForm() {
     const sanitizedName = input.value.trim();
     if (sanitizedName.length < 3) return;
 
-    window.location.href =
-      'https://maxwilsonpereira.com.br/pages/albums/so-in-love.html';
+    window.location.href = '/pages/albums/so-in-love.html';
   });
 }
 
@@ -1558,6 +1599,14 @@ class MaxSiteName extends HTMLElement {
   connectedCallback() {
     const text =
       this.getAttribute('text') || MWP_CONFIG?.siteName || 'Max Wilson Pereira';
+    if (this.closest('#home-title')) {
+      const nameParts = text.trim().split(/\s+/u);
+      const finalName = nameParts.pop() || text;
+      const leadingNames = nameParts.join(' ') || finalName;
+      this.innerHTML = `<span class="home-name-line">${leadingNames}</span><span class="home-name-line">${finalName}</span>`;
+      return;
+    }
+
     this.textContent = text;
   }
 }

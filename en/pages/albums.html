@@ -147,6 +147,8 @@
         </p>
       </section>
 
+      <max-microphone-interlude caption="Canções que permanecem"></max-microphone-interlude>
+
       <div class="albums-overview-list">
         <section class="album-hero albums-overview-card">
           <div
@@ -193,7 +195,7 @@
           </div>
         </section>
 
-        <section class="album-hero albums-overview-card">
+        <section class="album-hero albums-overview-card album-tenori-amici">
           <div
             class="album-art-showcase"
             aria-label="Album covers for Tenori Amici"
@@ -293,11 +295,11 @@
           const language = window.MWP_I18N?.getCurrentLanguage?.() || 'pt';
 
           if (language === 'pt') {
-            window.location.href = 'albums/so-in-love-pix.html';
+            window.location.href = '/pages/albums/so-in-love-pix.html';
             return;
           }
 
-          window.location.href = `albums/so-in-love.html?lang=${language}`;
+          window.location.href = `/pages/albums/so-in-love.html?lang=${language}`;
         });
 
       document
