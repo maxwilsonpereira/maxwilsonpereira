@@ -558,6 +558,72 @@ body::after {
   margin-top: 10px;
 }
 
+.home-welcome {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  margin-top: 50px;
+  padding: 34px 16px;
+  background:
+    linear-gradient(135deg, rgba(225, 48, 108, 0.14), transparent 42%),
+    linear-gradient(315deg, rgba(64, 93, 230, 0.12), transparent 48%),
+    rgba(12, 12, 14, 0.76);
+  border-bottom: 1px solid var(--border-glass);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.home-welcome-inner {
+  display: grid;
+  gap: 26px;
+  width: min(100%, 1120px);
+  margin: 0 auto;
+}
+
+.home-welcome-copy {
+  max-width: 660px;
+}
+
+.home-welcome-kicker {
+  margin: 0 0 10px;
+  color: #ff7aa8;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.home-welcome h2 {
+  max-width: 620px;
+  margin: 0 0 18px;
+  font-size: clamp(2.1rem, 10vw, 4.4rem);
+  font-weight: 800;
+  line-height: 0.98;
+}
+
+.home-welcome p:not(.home-welcome-kicker) {
+  max-width: 600px;
+  margin: 0 0 14px;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+.home-welcome p:last-child {
+  margin-bottom: 0;
+}
+
+.home-welcome-video {
+  align-self: center;
+  width: 100%;
+}
+
+.home-welcome-video .video-embed {
+  margin: 0;
+  border-radius: var(--radius-sm);
+}
+
 .social-follow {
   position: relative;
   z-index: 10;
@@ -2180,6 +2246,20 @@ ul li::before {
     margin-bottom: 80px;
   }
 
+  .home-welcome {
+    padding: 58px 24px;
+  }
+
+  .home-welcome-inner {
+    grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+    align-items: center;
+    gap: 44px;
+  }
+
+  .home-welcome p:not(.home-welcome-kicker) {
+    font-size: 1.06rem;
+  }
+
   .social-follow-inner {
     padding: 44px 34px;
   }
@@ -2256,6 +2336,18 @@ ul li::before {
 
   .home-hero-copy {
     width: calc(100% - 32px);
+  }
+
+  .home-welcome {
+    padding: 30px 16px;
+  }
+
+  .home-welcome-inner {
+    gap: 22px;
+  }
+
+  .home-welcome h2 {
+    font-size: 2.35rem;
   }
 
   .social-follow {
