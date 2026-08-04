@@ -1524,15 +1524,9 @@ class MaxSiteNav extends HTMLElement {
       },
     );
 
-    const closeMenu = () => {
-      nav?.classList.remove('is-open');
-      document.body.classList.remove('site-menu-open');
-      toggle?.setAttribute('aria-expanded', 'false');
-      toggle?.setAttribute('aria-label', translatePhrase('Abrir menu'));
-    };
-
-    toggle?.addEventListener('click', () => {
-      const isOpen = nav?.classList.toggle('is-open') || false;
+    const setMenuState = (isOpen) => {
+      if (!nav || !toggle) return;
+      nav.classList.toggle('is-open', isOpen);
       document.body.classList.toggle('site-menu-open', isOpen);
       toggle.setAttribute('aria-expanded', String(isOpen));
       toggle.setAttribute(
@@ -1540,8 +1534,15 @@ class MaxSiteNav extends HTMLElement {
         translatePhrase(isOpen ? 'Fechar menu' : 'Abrir menu'),
       );
       if (isOpen) {
-        requestAnimationFrame(() => nav?.querySelector('a')?.focus());
+        requestAnimationFrame(() => nav.querySelector('a')?.focus());
       }
+    };
+
+    const closeMenu = () => setMenuState(false);
+
+    toggle?.addEventListener('click', () => {
+      const isOpen = !(nav?.classList.contains('is-open'));
+      setMenuState(isOpen);
     });
 
     nav?.querySelectorAll('a').forEach((link) => {

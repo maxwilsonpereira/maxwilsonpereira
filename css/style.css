@@ -274,9 +274,9 @@ body::after {
   pointer-events: none;
   transform: translateY(-8px);
   transition:
-    max-height 0.36s ease,
-    opacity 0.24s ease,
-    transform 0.36s ease;
+    max-height var(--duration-menu-fade) ease,
+    opacity var(--duration-menu-fade) ease,
+    transform var(--duration-menu-slide) ease;
 }
 
 .site-nav.is-open {
@@ -2267,11 +2267,6 @@ ul li::before {
 }
 
 @media (max-width: 759px) {
-  /* Avoid animating the desktop navigation into its closed burger-menu state. */
-  .site-nav:not(.is-open) {
-    transition: none;
-  }
-
   .site-header-actions {
     margin-right: 14px;
   }
@@ -2669,6 +2664,9 @@ ul li::before {
   --ease-stage: cubic-bezier(0.16, 1, 0.3, 1);
   --duration-fast: 180ms;
   --duration-stage: 760ms;
+  --duration-menu-fade: 364ms;
+  --duration-menu-slide: 546ms;
+  --duration-menu-toggle: 364ms;
 
   /* Compatibility aliases for the existing subpages. */
   --accent-primary: var(--color-brass);
@@ -2918,7 +2916,7 @@ input:focus-visible {
   height: 1px;
   background: currentColor;
   border-radius: 0;
-  transition: transform 280ms var(--ease-stage), opacity 180ms ease;
+  transition: transform var(--duration-menu-toggle) var(--ease-stage), opacity var(--duration-menu-toggle) ease;
 }
 
 .site-nav-toggle span:nth-child(1) { transform: translateY(-0.38rem); }
@@ -2954,9 +2952,9 @@ input:focus-visible {
   pointer-events: none;
   transform: translateY(-1rem);
   transition:
-    opacity 280ms ease,
-    visibility 280ms ease,
-    transform 420ms var(--ease-stage);
+    opacity var(--duration-menu-fade) ease,
+    visibility var(--duration-menu-fade) ease,
+    transform var(--duration-menu-slide) var(--ease-stage);
 }
 
 .site-nav.is-open {
