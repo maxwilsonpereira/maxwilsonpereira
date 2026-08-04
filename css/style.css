@@ -2895,8 +2895,12 @@ input:focus-visible {
   }
 
   .site-header .site-nav-toggle {
-    margin-left: 0;
+    margin-left: auto;
     order: 3;
+  }
+
+  .site-header .site-header-mobile-english + .site-nav-toggle {
+    margin-left: 0;
   }
 
   .site-header-mobile-english .language-switch-flag {
