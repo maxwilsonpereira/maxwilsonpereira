@@ -2845,6 +2845,36 @@ input:focus-visible {
     border-color 260ms ease;
 }
 
+@media (min-width: 60rem) and (max-width: 1200px) {
+  .site-header .language-switcher {
+    gap: 14px;
+  }
+
+  .site-header .language-switch-link {
+    width: 20px;
+    height: 16px;
+  }
+
+  .site-header .language-switch-flag {
+    width: 16px;
+    height: 12px;
+  }
+
+  .site-header .site-nav-socials {
+    gap: 0rem;
+  }
+
+  .site-header .site-nav-social-link {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .site-header .site-nav-social-link svg {
+    width: 0.95rem;
+    height: 0.95rem;
+  }
+}
+
 .page-home .site-header:not(.is-scrolled) {
   background: linear-gradient(180deg, rgba(16, 16, 15, 0.78), transparent);
   border-bottom-color: transparent;
