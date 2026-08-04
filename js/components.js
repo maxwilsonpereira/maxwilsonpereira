@@ -1608,7 +1608,13 @@ customElements.define('max-site-nav', MaxSiteNav);
 /* ─── max-hero-bg ─────────────────────────────────────────────────────────── */
 class MaxHeroBg extends HTMLElement {
   connectedCallback() {
-    this.outerHTML = '<div class="hero-bg"></div>';
+    // Replace the custom element with a real div and preserve any classes
+    // applied to the `<max-hero-bg>` so utility classes like
+    // `hero--anchor-top` are carried through.
+    const div = document.createElement('div');
+    const extra = Array.from(this.classList).join(' ');
+    div.className = extra ? `hero-bg ${extra}` : 'hero-bg';
+    this.replaceWith(div);
   }
 }
 customElements.define('max-hero-bg', MaxHeroBg);

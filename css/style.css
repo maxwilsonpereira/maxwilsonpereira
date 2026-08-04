@@ -1765,6 +1765,19 @@ h2.accent {
   filter: saturate(1.04) contrast(1.04);
 }
 
+/* Hero anchor utilities — apply to hero <img> or background containers
+   Use `hero--anchor-top` to keep the top of the image fixed (crop bottom),
+   or `hero--anchor-bottom` to keep the bottom fixed (crop top). */
+.hero--anchor-top {
+  object-position: top center !important;
+  background-position: top center !important;
+}
+
+.hero--anchor-bottom {
+  object-position: bottom center !important;
+  background-position: bottom center !important;
+}
+
 .biography-hero-img {
   object-position: center 36%;
 }
