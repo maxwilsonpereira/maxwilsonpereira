@@ -131,11 +131,24 @@
     <max-hero-bg></max-hero-bg>
     <max-site-nav></max-site-nav>
 
-    <main class="page-container">
-      <section class="profile-section">
-        <max-badge></max-badge>
-        <max-profile-img></max-profile-img>
-        <h1>Apoie Minha Jornada</h1>
+    <main class="page-container support-page">
+      <section class="page-hero support-hero" aria-labelledby="support-title">
+        <img
+          src="../assets/concerto.jpg"
+          srcset="../assets/optimized/concerto-720.webp 720w, ../assets/optimized/concerto-1600.webp 1600w"
+          sizes="100vw"
+          width="3955"
+          height="2637"
+          alt="Max Wilson Pereira em imagem de divulgação do concerto"
+          class="page-hero-img support-hero-img"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <div class="page-hero-overlay support-hero-overlay"></div>
+        <div class="page-hero-copy support-hero-copy">
+          <max-badge></max-badge>
+          <h1 id="support-title">Apoie Minha Jornada</h1>
+        </div>
       </section>
 
       <section class="content-section">

@@ -1736,8 +1736,7 @@ h2.accent {
   gap: 18px;
 }
 
-.biography-hero,
-.concerto-hero {
+.page-hero {
   position: relative;
   display: grid;
   align-items: end;
@@ -1753,26 +1752,26 @@ h2.accent {
   box-shadow: 0 20px 70px rgba(0, 0, 0, 0.42);
 }
 
-.biography-hero-img,
-.biography-hero-overlay,
-.concerto-hero-img,
-.concerto-hero-overlay {
+.page-hero-img,
+.page-hero-overlay {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
 }
 
-.biography-hero-img {
+.page-hero-img {
   object-fit: cover;
-  object-position: center 36%;
   filter: saturate(1.04) contrast(1.04);
 }
 
-.concerto-hero-img {
-  object-fit: cover;
+.biography-hero-img {
+  object-position: center 36%;
+}
+
+.concerto-hero-img,
+.support-hero-img {
   object-position: 54% center;
-  filter: saturate(1.04) contrast(1.04);
 }
 
 .biography-hero-overlay {
@@ -1797,8 +1796,7 @@ h2.accent {
     );
 }
 
-.biography-hero-copy,
-.concerto-hero-copy {
+.page-hero-copy {
   position: relative;
   z-index: 1;
   width: min(100% - 48px, 1080px);
@@ -1806,21 +1804,18 @@ h2.accent {
   padding: 0 0 58px;
 }
 
-.biography-hero-copy .badge,
-.concerto-hero-copy .badge {
+.page-hero-copy .badge {
   margin-bottom: 16px;
 }
 
-.biography-hero-copy h1,
-.concerto-hero-copy h1 {
+.page-hero-copy h1 {
   max-width: 720px;
   font-size: clamp(3rem, 8vw, 6.6rem);
   line-height: 0.95;
   letter-spacing: var(--title-letter-spacing);
 }
 
-.biography-hero-copy p,
-.concerto-hero-copy p {
+.page-hero-copy p {
   max-width: 640px;
   margin-top: 18px;
   color: var(--text-secondary);
@@ -2550,8 +2545,7 @@ ul li::before {
     max-width: 420px;
   }
 
-  .biography-hero,
-  .concerto-hero {
+  .page-hero {
     min-height: 560px;
     margin-top: -16px;
   }
@@ -2560,23 +2554,21 @@ ul li::before {
     object-position: 55% center;
   }
 
-  .concerto-hero-img {
+  .concerto-hero-img,
+  .support-hero-img {
     object-position: 58% center;
   }
 
-  .biography-hero-copy,
-  .concerto-hero-copy {
+  .page-hero-copy {
     width: calc(100% - 32px);
     padding-bottom: 38px;
   }
 
-  .biography-hero-copy h1,
-  .concerto-hero-copy h1 {
+  .page-hero-copy h1 {
     font-size: 3.1rem;
   }
 
-  .biography-hero-copy p,
-  .concerto-hero-copy p {
+  .page-hero-copy p {
     font-size: 0.98rem;
   }
 
@@ -3355,8 +3347,7 @@ body.page-sub {
   line-height: 0.92;
 }
 
-.page-sub .biography-hero,
-.page-sub .concerto-hero {
+.page-sub .page-hero {
   width: 100%;
   min-height: clamp(34rem, 78vh, 52rem);
   margin: 0;
@@ -3364,14 +3355,12 @@ body.page-sub {
   box-shadow: none;
 }
 
-.biography-hero-copy,
-.concerto-hero-copy {
+.page-hero-copy {
   width: min(100% - (var(--page-gutter) * 2), var(--content-max));
   padding-bottom: clamp(3.5rem, 8vw, 6.5rem);
 }
 
-.biography-hero-overlay,
-.concerto-hero-overlay {
+.page-hero-overlay {
   background:
     linear-gradient(90deg, rgba(16, 16, 15, 0.94) 0%, rgba(16, 16, 15, 0.58) 47%, rgba(16, 16, 15, 0.06) 78%),
     linear-gradient(0deg, rgba(16, 16, 15, 0.92) 0%, transparent 55%);
@@ -3739,7 +3728,7 @@ max-microphone-interlude {
   color: var(--color-mist);
 }
 
-.page-sub .profile-section + .content-section > * {
+.page-sub .support-hero + .content-section > * {
   margin-right: auto;
   margin-left: auto;
 }
@@ -3751,13 +3740,13 @@ max-microphone-interlude {
 }
 
 /* Support page: keep the PIX detail compact and optically centered. */
-.page-sub .profile-section + .content-section h2.accent {
+.page-sub .support-hero + .content-section h2.accent {
   width: min(100%, 34rem);
   margin: 2.5rem auto 0;
   text-align: center;
 }
 
-.page-sub .profile-section + .content-section .pix-box {
+.page-sub .support-hero + .content-section .pix-box {
   width: min(100%, 20rem);
   padding: 1rem 1.25rem;
   margin: 1.25rem auto 2rem;
