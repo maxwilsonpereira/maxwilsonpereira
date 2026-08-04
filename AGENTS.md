@@ -10,6 +10,7 @@
 ## Frontend Standards
 
 - Always build mobile-first and fully responsive layouts.
+- Check breakpoint-specific styles and overrides whenever you modify navigation, overlays, animations, typography, layout, or other responsive elements.
 - Follow the existing visual design before introducing new styles.
 - Prefer reusable components over duplicated markup.
 - Prefer reusable utility/classes over one-off CSS.
