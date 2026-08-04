@@ -1656,7 +1656,7 @@ h2.accent {
   background: #1db954;
   border-color: #1db954;
   color: #07140b;
-  min-width: 90px;
+  min-width: 100px;
 }
 
 .content-section .play-track,
