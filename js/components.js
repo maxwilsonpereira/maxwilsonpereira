@@ -1252,6 +1252,30 @@ function renderLanguageSwitcher() {
   return `<div class="language-switcher" aria-label="${translatePhrase('Escolher idioma', currentLanguage)}">${buttons}</div>`;
 }
 
+function renderEnglishFlagLink() {
+  const currentLanguage = getCurrentLanguage();
+  if (isSupportPage()) return '';
+  if (currentLanguage === 'pt') {
+    const language = MWP_LANGUAGES.en;
+    return `
+      <a class="site-header-mobile-english language-switch-link" href="${getLanguageHref(language.code)}" data-language="${language.code}" lang="${language.htmlLang}" hreflang="${language.htmlLang}" aria-label="${translatePhrase('Mudar idioma para', currentLanguage)} ${language.name}" title="${language.name}">
+        <span class="language-switch-flag language-switch-flag-${language.code}" aria-hidden="true"></span>
+      </a>
+    `;
+  }
+
+  if (currentLanguage === 'en') {
+    const language = MWP_LANGUAGES.pt;
+    return `
+      <a class="site-header-mobile-english language-switch-link" href="${getLanguageHref(language.code)}" data-language="${language.code}" lang="${language.htmlLang}" hreflang="${language.htmlLang}" aria-label="${translatePhrase('Mudar idioma para', currentLanguage)} ${language.name}" title="${language.name}">
+        <span class="language-switch-flag language-switch-flag-${language.code}" aria-hidden="true"></span>
+      </a>
+    `;
+  }
+
+  return '';
+}
+
 function translateTextNode(node, language) {
   const value = node.nodeValue;
   const trimmed = value.replace(/\s+/g, ' ').trim();
@@ -1500,6 +1524,7 @@ class MaxSiteNav extends HTMLElement {
             </div>
           </div>
 
+          ${renderEnglishFlagLink()}
           <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="${navId}" aria-label="${translatePhrase('Abrir menu')}">
             <span></span>
             <span></span>

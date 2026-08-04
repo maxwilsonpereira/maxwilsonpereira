@@ -2875,6 +2875,33 @@ input:focus-visible {
   }
 }
 
+.site-header-mobile-english {
+  display: none;
+}
+
+@media (max-width: 59.9375rem) {
+  .site-header .site-header-mobile-english {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 1.75rem;
+    margin-left: auto;
+    margin-right: 0.75rem;
+    order: 2;
+  }
+
+  .site-header .site-nav-toggle {
+    margin-left: 0;
+    order: 3;
+  }
+
+  .site-header-mobile-english .language-switch-flag {
+    width: 1.44rem;
+    height: 1.08rem;
+  }
+}
+
 .page-home .site-header:not(.is-scrolled) {
   background: linear-gradient(180deg, rgba(16, 16, 15, 0.78), transparent);
   border-bottom-color: transparent;
