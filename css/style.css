@@ -3270,6 +3270,8 @@ body.page-sub {
 
 .page-sub .content-section > * {
   width: min(100%, var(--reading-max));
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .page-sub .content-section h2,
@@ -3760,6 +3762,10 @@ max-microphone-interlude {
 .page-sub .support-hero + .content-section h2.accent {
   width: min(100%, 34rem);
   margin: 2.5rem auto 0;
+  text-align: center;
+}
+
+.page-sub .page-container.pix-purchase-page .content-section > h2 {
   text-align: center;
 }
 
