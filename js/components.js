@@ -1255,25 +1255,14 @@ function renderLanguageSwitcher() {
 function renderEnglishFlagLink() {
   const currentLanguage = getCurrentLanguage();
   if (isSupportPage()) return '';
-  if (currentLanguage === 'pt') {
-    const language = MWP_LANGUAGES.en;
-    return `
-      <a class="site-header-mobile-english language-switch-link" href="${getLanguageHref(language.code)}" data-language="${language.code}" lang="${language.htmlLang}" hreflang="${language.htmlLang}" aria-label="${translatePhrase('Mudar idioma para', currentLanguage)} ${language.name}" title="${language.name}">
-        <span class="language-switch-flag language-switch-flag-${language.code}" aria-hidden="true"></span>
-      </a>
-    `;
-  }
 
-  if (currentLanguage === 'en') {
-    const language = MWP_LANGUAGES.pt;
-    return `
-      <a class="site-header-mobile-english language-switch-link" href="${getLanguageHref(language.code)}" data-language="${language.code}" lang="${language.htmlLang}" hreflang="${language.htmlLang}" aria-label="${translatePhrase('Mudar idioma para', currentLanguage)} ${language.name}" title="${language.name}">
-        <span class="language-switch-flag language-switch-flag-${language.code}" aria-hidden="true"></span>
-      </a>
-    `;
-  }
+  const language = currentLanguage === 'en' ? MWP_LANGUAGES.pt : MWP_LANGUAGES.en;
 
-  return '';
+  return `
+    <a class="site-header-mobile-english language-switch-link" href="${getLanguageHref(language.code)}" data-language="${language.code}" lang="${language.htmlLang}" hreflang="${language.htmlLang}" aria-label="${translatePhrase('Mudar idioma para', currentLanguage)} ${language.name}" title="${language.name}">
+      <span class="language-switch-flag language-switch-flag-${language.code}" aria-hidden="true"></span>
+    </a>
+  `;
 }
 
 function translateTextNode(node, language) {
