@@ -1594,6 +1594,10 @@ h2.accent {
     transform 0.2s ease;
 }
 
+.track-action:not(.play-track) {
+  min-width: 100px;
+}
+
 .content-section .track-action,
 .content-section .track-action:visited {
   color: var(--text-primary);
@@ -2493,6 +2497,7 @@ ul li::before {
 
   .track-item .track-action:not(.play-track) {
     grid-area: download;
+    min-width: 150px;
   }
 
   .track-action {
