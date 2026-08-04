@@ -165,21 +165,15 @@
           <button class="primary-button album-download-all" type="button">
             Baixar todas as músicas
           </button>
+          <aside class="album-international-note" data-international-only hidden>
+            <h2 data-gift-note-title>A note for listeners outside Brazil</h2>
+            <p data-gift-note-body>
+              This album can only be purchased in Brazil, but I am very glad to
+              offer some of the songs to you as a gift. I hope these tracks bring
+              you joy, and thank you for listening from afar.
+            </p>
+          </aside>
         </div>
-      </section>
-
-      <section
-        class="content-section album-international-note"
-        data-international-only
-        hidden
-      >
-        <p class="album-eyebrow" data-gift-note-kicker>Gift selection</p>
-        <h2 data-gift-note-title>A note for listeners outside Brazil</h2>
-        <p data-gift-note-body>
-          This album can only be purchased in Brazil, but I am very glad to
-          offer some of the songs to you as a gift. I hope these tracks bring
-          you joy, and thank you for listening from afar.
-        </p>
       </section>
 
       <section class="content-section album-player-section">
@@ -802,7 +796,6 @@
         const note = document.querySelector('[data-international-only]');
         const noteCopy = {
           en: {
-            kicker: 'Gift selection',
             title: 'A note for listeners outside Brazil',
             body:
               'This album can only be purchased in Brazil, but I am very glad to offer some of the songs to you as a gift. I hope these tracks bring you joy, and thank you for listening from afar.',
@@ -810,7 +803,6 @@
             unavailable: 'Unavailable outside Brazil',
           },
           de: {
-            kicker: 'Geschenkauswahl',
             title: 'Ein Hinweis fuer Hoerer ausserhalb Brasiliens',
             body:
               'Dieses Album kann nur in Brasilien gekauft werden, aber ich freue mich sehr, Ihnen einige der Lieder als Geschenk zu geben. Ich hoffe, diese Titel machen Ihnen Freude, und danke Ihnen fuers Zuhoeren aus der Ferne.',
@@ -822,8 +814,6 @@
 
         if (note) {
           note.hidden = false;
-          note.querySelector('[data-gift-note-kicker]').textContent =
-            copy.kicker;
           note.querySelector('[data-gift-note-title]').textContent =
             copy.title;
           note.querySelector('[data-gift-note-body]').textContent = copy.body;
