@@ -4123,6 +4123,10 @@ max-microphone-interlude {
   object-position: center 20%;
 }
 
+.home-career > .button {
+  margin-top: 2rem;
+}
+
 .home-career-link {
   display: inline-block;
   margin-top: 2rem;
