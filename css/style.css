@@ -2590,7 +2590,7 @@ ul li::before {
   }
 
   .biography-highlight {
-    min-height: auto;
+    min-height: auto; */
   }
 
   .concerto-page {
@@ -3553,6 +3553,13 @@ max-microphone-interlude {
   .page-sub .biography-grid {
     grid-template-columns: 1fr;
     padding: 0 var(--page-gutter);
+  }
+
+  .page-sub .biography-highlight {
+    padding: clamp(1.6rem, 3.5vw, 3rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .page-sub .biography-highlight + .biography-highlight {
