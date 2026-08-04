@@ -1984,6 +1984,10 @@ h2.accent {
   border-radius: 0;
 }
 
+.concerto-song-list li:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
 .concerto-song-list li::before {
   content: none;
 }
@@ -2017,10 +2021,10 @@ h2.accent {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.concerto-repertoire-note {
+.concerto-repertoire .concerto-repertoire-note {
   max-width: 760px;
-  margin-top: 24px;
-  color: var(--text-primary);
+  margin-top: 30px;
+  color: var(--text-secondary);
 }
 
 .concerto-closing {
