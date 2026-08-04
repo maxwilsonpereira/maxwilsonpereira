@@ -3083,13 +3083,14 @@ input:focus-visible {
   gap: 0.7rem;
 }
 
-.language-switch-link {
-  width: 2rem;
-  height: 1.75rem;
+.site-nav-mobile-languages .language-switch-link {
+  width: 3rem;
+  height: 2.625rem;
 }
 
-.language-switch-link::after {
-  bottom: -0.25rem;
+.site-nav-mobile-languages .language-switch-flag {
+  width: 2.25rem;
+  height: 1.6875rem;
 }
 
 .site-nav-social-link,
