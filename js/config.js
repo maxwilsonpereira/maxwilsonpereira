@@ -189,21 +189,26 @@ const MWP_CONFIG = {
       href: 'pages/biografia.html',
       text: 'BIOGRAFIA',
       external: false,
+      visible: true,
     },
     {
       href: 'pages/concerto.html',
       text: 'CONCERTO',
       external: false,
+      visible: true,
     },
     {
       href: 'pages/albums.html',
       text: 'ÁLBUMS',
       external: false,
+      visible: true,
     },
     {
       href: 'pages/apoio-pix.html',
       text: 'APOIO',
       external: false,
+      visible: false, // hidden from navigation by default
     },
   ],
+  // Note: visibility of links is controlled per-link via the `visible` property above.
 };

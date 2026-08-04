@@ -1228,8 +1228,13 @@ function isSupportLink(link) {
 }
 
 function getVisibleNavigationLinks(links) {
-  if (getCurrentLanguage() === 'pt') return links;
-  return links.filter((link) => !isSupportLink(link));
+  // Start with language-based filtering (support page hidden for non-PT locales)
+  let visible = getCurrentLanguage() === 'pt' ? links.slice() : links.filter((link) => !isSupportLink(link));
+
+  // Use per-link `visible` flag when present. Default is visible unless explicitly false.
+  visible = visible.filter((link) => (link?.visible === undefined ? true : Boolean(link.visible)));
+
+  return visible;
 }
 
 function renderLanguageSwitcher() {
