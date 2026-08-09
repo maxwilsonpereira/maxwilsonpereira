@@ -3054,6 +3054,12 @@ input:focus-visible {
   transform: translateY(0);
 }
 
+/* Prevent the mobile panel's close animation from playing when CSS switches
+   between the mobile and desktop navigation layouts at 60rem. */
+.site-nav.is-breakpoint-changing {
+  transition: none;
+}
+
 .language-switch-flag-es {
   background: linear-gradient(
     to bottom,

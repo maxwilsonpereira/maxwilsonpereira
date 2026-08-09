@@ -1569,6 +1569,21 @@ class MaxSiteNav extends HTMLElement {
 
     const closeMenu = () => setMenuState(false);
 
+    const desktopNavigation = window.matchMedia('(min-width: 60rem)');
+    let breakpointTransitionFrame;
+    const syncNavigationBreakpoint = () => {
+      closeMenu();
+      nav?.classList.add('is-breakpoint-changing');
+      cancelAnimationFrame(breakpointTransitionFrame);
+      breakpointTransitionFrame = requestAnimationFrame(() => {
+        breakpointTransitionFrame = requestAnimationFrame(() => {
+          nav?.classList.remove('is-breakpoint-changing');
+        });
+      });
+    };
+
+    desktopNavigation.addEventListener('change', syncNavigationBreakpoint);
+
     toggle?.addEventListener('click', () => {
       const isOpen = !(nav?.classList.contains('is-open'));
       setMenuState(isOpen);
