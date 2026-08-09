@@ -3411,6 +3411,45 @@ body.page-sub {
   padding-left: max(var(--page-gutter), calc((100% - var(--reading-max)) / 2));
 }
 
+/* Reusable editorial split: image first on mobile, media-and-copy side by side from tablet upward. */
+.page-sub .media-text-section {
+  display: grid;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+  padding-right: var(--page-gutter);
+  padding-left: var(--page-gutter);
+}
+
+.page-sub .media-text-section > * {
+  width: auto;
+  margin: 0;
+}
+
+.media-text-section-media {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--color-stage);
+}
+
+.media-text-section-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: saturate(0.9) contrast(1.04);
+}
+
+.media-text-section-copy {
+  max-width: 36rem;
+}
+
+.page-sub .media-text-section-copy p {
+  width: 100%;
+  margin: 0;
+  font-size: clamp(1.06rem, 1.35vw, 1.18rem);
+  line-height: 1.75;
+}
+
 .page-sub .biography-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
@@ -4367,6 +4406,16 @@ max-microphone-interlude {
 }
 
 @media (min-width: 48rem) {
+  .page-sub .media-text-section {
+    grid-template-columns: minmax(15rem, 26rem) minmax(0, 36rem);
+    justify-content: center;
+    min-height: 32.5rem;
+  }
+
+  .media-text-section-copy {
+    justify-self: start;
+  }
+
   .site-footer-main {
     grid-template-columns: minmax(0, 1.6fr) minmax(15rem, 0.75fr) auto;
     align-items: start;

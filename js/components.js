@@ -32,6 +32,8 @@ const MWP_TEXT_TRANSLATIONS = {
       'Max Wilson Pereira performing on Hebe Camargo’s DVD',
     'Max Wilson Pereira em apresentação de opereta':
       'Max Wilson Pereira performing operetta',
+    'Max Wilson Pereira em traje formal':
+      'Max Wilson Pereira in formal attire',
     'Destaques da carreira': 'Career highlights',
     'Max Wilson Pereira no Taneyevsky Festival 2017':
       'Max Wilson Pereira at the Taneyevsky Festival 2017',
@@ -414,6 +416,8 @@ const MWP_TEXT_TRANSLATIONS = {
       'Max Wilson Pereira bei einem Auftritt auf der DVD von Hebe Camargo',
     'Max Wilson Pereira em apresentação de opereta':
       'Max Wilson Pereira bei einer Operettenaufführung',
+    'Max Wilson Pereira em traje formal':
+      'Max Wilson Pereira in festlicher Abendgarderobe',
     'Destaques da carreira': 'Karrierehöhepunkte',
     'Max Wilson Pereira no Taneyevsky Festival 2017':
       'Max Wilson Pereira beim Taneyevsky Festival 2017',
@@ -798,6 +802,7 @@ const MWP_TEXT_TRANSLATIONS = {
       "Seguir Max Wilson Pereira no": "Sigue a Max Wilson Pereira en",
       "Max Wilson Pereira em apresentação no DVD de Hebe Camargo": "Max Wilson Pereira en presentación del DVD de Hebe Camargo",
       "Max Wilson Pereira em apresentação de opereta": "Max Wilson Pereira en representación de opereta",
+      "Max Wilson Pereira em traje formal": "Max Wilson Pereira con traje de gala",
       "Destaques da carreira": "Aspectos destacados de la carrera",
       "Max Wilson Pereira no Taneyevsky Festival 2017": "Max Wilson Pereira en el Festival Taneyevsky 2017",
       "Max Wilson Pereira em apresentação para redes sociais": "Max Wilson Pereira en presentación para redes sociales",
