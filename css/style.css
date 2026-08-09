@@ -3287,6 +3287,13 @@ body.page-sub {
   margin-left: auto;
 }
 
+/* The reusable video component renders its figure inside a display-contents host. */
+.page-sub .content-section .video-embed {
+  width: min(100%, var(--reading-max));
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .page-sub .content-section h2,
 .page-sub .content-section .accent {
   color: var(--color-ink);
@@ -3398,8 +3405,8 @@ body.page-sub {
     linear-gradient(0deg, rgba(16, 16, 15, 0.92) 0%, transparent 55%);
 }
 
-.page-sub .biography-intro,
-.page-sub .biography-copy {
+/* Shared reading chapters constrain their inner space before child typography lays out. */
+.page-sub .page-reading-section {
   padding-right: max(var(--page-gutter), calc((100% - var(--reading-max)) / 2));
   padding-left: max(var(--page-gutter), calc((100% - var(--reading-max)) / 2));
 }
