@@ -167,14 +167,26 @@
   </head>
 
   <body class="page-sub">
-    <max-hero-bg class="hero--anchor-top"></max-hero-bg>
     <max-site-nav></max-site-nav>
 
     <main class="page-container pix-purchase-page">
-      <section class="profile-section">
-        <max-badge></max-badge>
-        <max-profile-img></max-profile-img>
-        <h1>Álbum SO IN LOVE + Bônus</h1>
+      <section class="page-hero pix-purchase-hero" aria-labelledby="pix-purchase-title">
+        <img
+          src="../../assets/concerto.jpg"
+          srcset="../../assets/optimized/concerto-720.webp 720w, ../../assets/optimized/concerto-1600.webp 1600w"
+          sizes="100vw"
+          width="3955"
+          height="2637"
+          alt="Max Wilson Pereira em imagem de divulgação do concerto"
+          class="page-hero-img pix-purchase-hero-img hero--anchor-top"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <div class="page-hero-overlay pix-purchase-hero-overlay"></div>
+        <div class="page-hero-copy pix-purchase-hero-copy">
+          <max-badge></max-badge>
+          <h1 id="pix-purchase-title">Álbum SO IN LOVE + Bônus</h1>
+        </div>
       </section>
 
       <section class="content-section">
