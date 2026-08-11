@@ -3302,8 +3302,7 @@ body.page-sub {
 
 /* Videos: an editorial procession of performances, built from the shared video frame. */
 .videos-intro h2,
-.videos-youtube h2,
-.video-entry-copy h2 {
+.videos-youtube h2 {
   color: var(--color-brass);
   font-family: var(--font-display);
   font-weight: 600;
@@ -3321,10 +3320,7 @@ body.page-sub {
 .video-entry-dark { color: var(--color-paper); background: var(--color-ink); }
 .video-entry-media .video-embed { margin: 0; border-radius: 0; }
 .video-entry-copy { width: min(100%, 35rem); }
-.video-entry-copy h2 { margin: 0; font-size: clamp(2rem, 4vw, 3.5rem); }
 .video-entry-copy p { margin: 1.25rem 0 0; font-size: clamp(1rem, 1.35vw, 1.12rem); line-height: 1.75; }
-.video-entry-dark .video-entry-copy h2 { color: var(--color-brass); }
-.video-entry:not(.video-entry-dark) .video-entry-copy h2 { color: var(--color-ink); }
 .video-entry-dark .video-entry-copy p { color: var(--color-mist); }
 .videos-youtube { display: flex; flex-direction: column; align-items: flex-start; gap: 1.75rem; padding: clamp(4rem, 9vw, 8rem) max(var(--page-gutter), calc((100% - var(--content-max)) / 2)); color: var(--color-paper); background: var(--color-stage); }
 .videos-youtube > div { max-width: 38rem; }
@@ -3400,6 +3396,23 @@ body.page-sub {
 .page-sub .content-section:nth-of-type(even) li,
 .page-sub .content-section:nth-of-type(even) span {
   color: #d2ccc3;
+}
+
+/* Shared performance-title treatment: ink on light fields, brass on dark fields. */
+.video-entry-copy h2,
+.page-sub .content-section h2.video-entry-title {
+  color: var(--color-ink);
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 600;
+  letter-spacing: var(--title-letter-spacing);
+  line-height: 0.98;
+}
+
+.video-entry-dark .video-entry-copy h2,
+.page-sub .content-section:nth-of-type(even) h2.video-entry-title {
+  color: var(--color-brass);
 }
 
 .page-sub .content-section:nth-of-type(even) .concerto-song-list li {
@@ -4193,6 +4206,12 @@ max-microphone-interlude {
 
 .home-welcome h2 {
   color: var(--color-paper);
+}
+
+/* Homepage dark fields use the shared performance-title class. */
+.home-welcome h2.video-entry-title,
+.home-music h2.video-entry-title {
+  color: var(--color-brass);
 }
 
 .home-welcome-copy p {
