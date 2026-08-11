@@ -1841,19 +1841,48 @@ class MaxSiteFooter extends HTMLElement {
 }
 customElements.define('max-site-footer', MaxSiteFooter);
 
+let youtubeIframeApiPromise;
+let maxVideoPlayerId = 0;
+
+function loadYouTubeIframeApi() {
+  if (window.YT?.Player) return Promise.resolve(window.YT);
+  if (youtubeIframeApiPromise) return youtubeIframeApiPromise;
+
+  youtubeIframeApiPromise = new Promise((resolve) => {
+    const previousReadyHandler = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = () => {
+      previousReadyHandler?.();
+      resolve(window.YT);
+    };
+
+    const script = document.createElement('script');
+    script.src = 'https://www.youtube.com/iframe_api';
+    script.async = true;
+    document.head.append(script);
+  });
+
+  return youtubeIframeApiPromise;
+}
+
 class MaxVideoEmbed extends HTMLElement {
   connectedCallback() {
     const videoId = this.getAttribute('video-id');
     const title = translatePhrase(
       this.getAttribute('title') || 'Vídeo de Max Wilson Pereira',
     );
+    const origin = window.location.origin === 'null'
+      ? ''
+      : `&origin=${encodeURIComponent(window.location.origin)}`;
 
     if (!videoId) return;
+
+    const iframeId = `max-video-player-${maxVideoPlayerId += 1}`;
 
     this.innerHTML = `
       <figure class="video-embed" aria-label="${title}">
         <iframe
-          src="https://www.youtube.com/embed/${videoId}"
+          id="${iframeId}"
+          src="https://www.youtube.com/embed/${videoId}?enablejsapi=1${origin}"
           title="${title}"
           loading="lazy"
           referrerpolicy="strict-origin-when-cross-origin"
@@ -1862,9 +1891,49 @@ class MaxVideoEmbed extends HTMLElement {
         ></iframe>
       </figure>
     `;
+
+    if (document.body.classList.contains('page-videos')) {
+      this.initializeGalleryPlayer(iframeId);
+    }
+  }
+
+  async initializeGalleryPlayer(iframeId) {
+    const YT = await loadYouTubeIframeApi();
+    if (!this.isConnected) return;
+
+    this.player = new YT.Player(iframeId, {
+      events: {
+        onStateChange: (event) => {
+          if (event.data === YT.PlayerState.PLAYING) {
+            pauseOtherGalleryVideos(this);
+          }
+        },
+      },
+    });
+  }
+
+  pause() {
+    if (this.player?.pauseVideo) {
+      this.player.pauseVideo();
+      return;
+    }
+
+    const iframe = this.querySelector('iframe');
+    iframe?.contentWindow?.postMessage(
+      JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }),
+      '*',
+    );
   }
 }
 customElements.define('max-video-embed', MaxVideoEmbed);
+
+function pauseOtherGalleryVideos(activeEmbed) {
+  if (!document.body.classList.contains('page-videos')) return;
+
+  document.querySelectorAll('.videos-gallery max-video-embed').forEach((embed) => {
+    if (embed !== activeEmbed) embed.pause();
+  });
+}
 
 /* ─── PIX continue form behavior ──────────────────────────────────────────── */
 function initPixContinueForm() {
