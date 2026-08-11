@@ -14,6 +14,7 @@ const PUBLIC_PAGES = [
   'pages/biografia.html',
   'pages/concerto.html',
   'pages/albums.html',
+  'pages/videos.html',
   'pages/albums/tenori-amici.html',
   'pages/albums/quattro-sony.html',
 ];
@@ -61,6 +62,78 @@ const LANGUAGE_LABELS = {
     personDescription: 'Tenor brasileño residente en Viena, con una trayectoria en ópera, crossover clásico, televisión, conciertos y música grabada.',
   },
 };
+
+// Videos is an editorial page: its performance notes need route-level translations
+// rather than falling back to the Portuguese source copy.
+const VIDEO_DESCRIPTIONS = {
+  en: {
+    'video-hebe': 'In 2010, at Credicard Hall in São Paulo, I had the honour of sharing this Italian classic with the unforgettable Hebe Camargo. It recalls a radiant evening — and an artist whose joy, generosity and love of music remain alive.',
+    'video-russia': 'A record of my Russia-1 interview and of the emotion of representing Brazil as a guest tenor at the Taneyevsky Festival. With Maestro Artiom Markin and the Vladimir Governor Symphony Orchestra, I shared opera, operetta and musical theatre with an open-hearted audience.',
+    'video-phantom': 'One of musical theatre’s great declarations of love, recorded at Blue Studio with Marina Elali and the late producer Guto Graça Mello. A duet that lets the melody speak first: delicate, intense and fully present.',
+    'video-evidencias': 'A Brazilian classic, reinvented for three voices and three countries. With soprano Nataliya Stepanska and tenor Fernando Hernández, I celebrate the universal power of a song everyone recognises before the first line.',
+    'video-flamengo': 'Passion, voice and supporters meet in this recording of Clube de Regatas do Flamengo’s anthem with the beloved Sandra de Sá. A vibrant Brazilian celebration made to sing along to.',
+    'video-enchanted': 'Live in São Paulo, I sing Rodgers and Hammerstein’s unforgettable song from South Pacific. Some melodies seem to suspend time; this is one of them.',
+    'video-she-rio': 'At the Fairmont Rio in Copacabana, Charles Aznavour’s elegance meets Tibí’s sensitive piano and Rio’s landscape. A romantic classic where every note seems to breathe the sea air.',
+    'video-conte': 'An evening among friends in Vienna’s Boteco Larica grew into a grand duet. With Italian soprano Francesca Caforio, I sing this farewell which, paradoxically, always brings us closer.',
+    'video-mae': 'Before leaving Brazil to return to Vienna, I sang with my mother, Sylvia Massari, beside the sea in São Paulo. It is a song of permanence and affection — a farewell becoming an embrace.',
+    'video-sorrento': 'Singing this Neapolitan song in Sorrento lets the city itself enter the interpretation: a small film of travel, longing and Italy, carried by a melody that crosses generations.',
+    'video-notting': 'On the streets of Notting Hill, where cinema immortalised this song, I revisit a piece I love deeply. London becomes both setting and memory for this affectionate cover of a contemporary classic.',
+    'video-awake': 'A tribute to an artist I admire and to a beautifully delicate pop song. In Awake, I look for the melody’s intimacy and the quiet hope it leaves behind.',
+  },
+  de: {
+    'video-hebe': '2010 in der Credicard Hall in São Paulo durfte ich diesen italienischen Klassiker mit der unvergesslichen Hebe Camargo teilen. Die Aufnahme erinnert an einen strahlenden Abend und an eine Künstlerin, deren Freude, Großzügigkeit und Liebe zur Musik weiterleben.',
+    'video-russia': 'Ein Dokument meines Interviews für Russia-1 und der großen Ehre, Brasilien als Gasttenor beim Taneyevsky Festival zu vertreten. Mit Maestro Artiom Markin und dem Vladimir Governor Symphony Orchestra sang ich Oper, Operette und Musical für ein herzliches Publikum.',
+    'video-phantom': 'Eine der großen Liebeserklärungen des Musiktheaters, aufgenommen im Blue Studio mit Marina Elali und dem verstorbenen Produzenten Guto Graça Mello: ein Duett, das die Melodie zuerst sprechen lässt — zart, intensiv und ganz im Moment.',
+    'video-evidencias': 'Ein brasilianischer Klassiker, neu gestaltet für drei Stimmen und drei Länder. Mit Sopranistin Nataliya Stepanska und Tenor Fernando Hernández feiere ich die universelle Kraft eines Liedes, das alle schon vor der ersten Zeile erkennen.',
+    'video-flamengo': 'Leidenschaft, Stimme und Fankultur treffen in dieser Aufnahme der Hymne des Clube de Regatas do Flamengo mit der beliebten Sandra de Sá zusammen — eine lebendige brasilianische Feier zum Mitsingen.',
+    'video-enchanted': 'Live in São Paulo singe ich Rodgers und Hammersteins unvergessliches Lied aus South Pacific. Manche Melodien scheinen die Zeit anzuhalten; diese gehört dazu.',
+    'video-she-rio': 'Im Fairmont Rio in Copacabana begegnen sich die Eleganz von Charles Aznavour, Tibís sensibles Klavier und die Landschaft Rios. Ein romantischer Klassiker, in dem jede Note Meeresluft zu atmen scheint.',
+    'video-conte': 'Ein Abend unter Freunden im Wiener Boteco Larica wurde zu einem großen Duett. Mit der italienischen Sopranistin Francesca Caforio singe ich diesen Abschied, der uns paradoxerweise immer näherbringt.',
+    'video-mae': 'Bevor ich Brasilien in Richtung Wien verließ, sang ich mit meiner Mutter Sylvia Massari am Meer. Es ist ein Lied über Beständigkeit und Zuneigung — ein Abschied, der zur Umarmung wird.',
+    'video-sorrento': 'Dieses neapolitanische Lied in Sorrent zu singen heißt, die Stadt selbst in die Interpretation einzuladen: ein kleiner Film von Reise, Sehnsucht und Italien.',
+    'video-notting': 'In den Straßen von Notting Hill, wo das Kino dieses Lied verewigte, begegne ich einem Stück wieder, das ich sehr liebe. London wird zur Kulisse und Erinnerung dieses Covers eines modernen Klassikers.',
+    'video-awake': 'Eine Hommage an einen Künstler, den ich bewundere, und an ein besonders zartes Popsong. In Awake suche ich die Intimität der Melodie und die stille Hoffnung, die sie hinterlässt.',
+  },
+  es: {
+    'video-hebe': 'En 2010, en el Credicard Hall de São Paulo, tuve el honor de compartir este clásico italiano con la inolvidable Hebe Camargo. Es el recuerdo de una noche luminosa y de una artista cuya alegría, generosidad y pasión por la música siguen vivas.',
+    'video-russia': 'Un registro de mi entrevista para Russia-1 y de la emoción de representar a Brasil como tenor invitado en el Festival Taneyevsky. Junto al maestro Artiom Markin y la Orquesta Sinfónica del Gobernador de Vladimir, compartí ópera, opereta y teatro musical con un público de corazón abierto.',
+    'video-phantom': 'Una de las grandes declaraciones de amor del teatro musical, grabada en Blue Studio con Marina Elali y el recordado productor Guto Graça Mello. Un dúo que deja hablar primero a la melodía: delicada, intensa y plenamente presente.',
+    'video-evidencias': 'Un clásico brasileño reinventado para tres voces y tres países. Junto a la soprano Nataliya Stepanska y al tenor Fernando Hernández, celebro la fuerza universal de una canción que todos reconocen antes del primer verso.',
+    'video-flamengo': 'Pasión, voz y afición se encuentran en esta grabación del himno del Clube de Regatas do Flamengo con la querida Sandra de Sá. Una celebración brasileña vibrante, hecha para cantar juntos.',
+    'video-enchanted': 'En vivo en São Paulo, canto la inolvidable canción de Rodgers y Hammerstein para South Pacific. Hay melodías que parecen detener el tiempo; esta es una de ellas.',
+    'video-she-rio': 'En el Fairmont Rio de Copacabana, la elegancia de Charles Aznavour se encuentra con el sensible piano de Tibí y el paisaje carioca. Un clásico romántico en el que cada nota parece respirar el mar.',
+    'video-conte': 'Una noche entre amigos en el Boteco Larica de Viena se convirtió en un gran dúo. Junto a la soprano italiana Francesca Caforio, canto esta despedida que, paradójicamente, siempre nos acerca.',
+    'video-mae': 'Antes de dejar Brasil para volver a Viena, canté con mi madre, Sylvia Massari, frente al mar. Es una canción de permanencia y afecto: una despedida que se transforma en abrazo.',
+    'video-sorrento': 'Cantar esta canción napolitana en Sorrento permite que la propia ciudad entre en la interpretación: una pequeña película de viaje, nostalgia e Italia.',
+    'video-notting': 'En las calles de Notting Hill, donde el cine inmortalizó esta canción, vuelvo a una música que amo profundamente. Londres se vuelve escenario y memoria para este cover de un clásico contemporáneo.',
+    'video-awake': 'Un homenaje a un artista que admiro y a una canción pop de gran delicadeza. En Awake busco la intimidad de la melodía y la esperanza serena que deja al terminar.',
+  },
+};
+
+function localizeVideoDescriptions(html, language) {
+  const descriptions = VIDEO_DESCRIPTIONS[language];
+  if (!descriptions) return html;
+  const sectionCopy = {
+    en: [
+      'From Rio de Janeiro to Vienna, through stages around the world and live encounters, these videos hold songs, friendships, and chapters in a journey still being written.',
+      'This selection is only part of the journey. On YouTube, there are more performances, behind-the-scenes moments, and encounters to enjoy whenever you wish.',
+    ],
+    de: [
+      'Von Rio de Janeiro bis Wien, über Bühnen in aller Welt und bei Live-Begegnungen: Diese Videos bewahren Lieder, Freundschaften und Kapitel eines Weges, der weitergeschrieben wird.',
+      'Diese Auswahl ist nur ein Teil der Reise. Auf YouTube warten weitere Auftritte, Einblicke hinter die Kulissen und Begegnungen zum Entdecken.',
+    ],
+    es: [
+      'De Río de Janeiro a Viena, pasando por escenarios del mundo y encuentros en vivo, estos videos guardan canciones, amistades y capítulos de una trayectoria que sigue escribiéndose.',
+      'Esta selección es solo una parte del viaje. En YouTube hay más actuaciones, momentos detrás de escena y encuentros para disfrutar cuando quieras.',
+    ],
+  }[language];
+  let output = Object.entries(descriptions).reduce((value, [id, copy]) => value.replace(
+    new RegExp(`(<h2 id="${id}">[\\s\\S]*?</h2><p>)[\\s\\S]*?(</p>)`),
+    `$1${copy}$2`,
+  ), html);
+  output = output.replace(/(<h2 id="videos-intro-title">[\s\S]*?<\/h2>\s*<p>)[\s\S]*?(<\/p>)/, `$1${sectionCopy[0]}$2`);
+  return output.replace(/(<h2 id="youtube-title">[\s\S]*?<\/h2>\s*<p>)[\s\S]*?(<\/p>)/, `$1${sectionCopy[1]}$2`);
+}
 
 function toPosix(value) {
   return value.replaceAll('\\', '/');
@@ -505,6 +578,9 @@ async function generate() {
       const targetPath = path.join(ROOT, ...targetRoute.split('/'));
       let localized = replaceMetadata(source, sourceRoute, language, translations);
       localized = translateStaticMarkup(localized, language, translations);
+      if (sourceRoute === 'pages/videos.html') {
+        localized = localizeVideoDescriptions(localized, language);
+      }
       localized = rewriteLocalReferences(
         localized,
         sourceRoute,

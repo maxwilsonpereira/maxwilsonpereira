@@ -3300,6 +3300,51 @@ body.page-sub {
   margin-left: auto;
 }
 
+/* Videos: an editorial procession of performances, built from the shared video frame. */
+.videos-intro h2,
+.videos-youtube h2,
+.video-entry-copy h2 {
+  color: var(--color-brass);
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: var(--title-letter-spacing);
+  line-height: 0.98;
+}
+
+.videos-intro h2 { margin-top: 0; font-size: clamp(2.4rem, 5vw, 4.5rem); }
+.page-sub .videos-intro.content-section h2 { color: var(--color-brass); }
+.videos-intro .editorial-link { display: inline-block; margin-top: 1.75rem; }
+.videos-page { align-items: stretch; }
+.videos-page > * { width: 100%; }
+.videos-gallery { width: 100%; }
+.video-entry { display: grid; gap: clamp(2rem, 5vw, 5rem); align-items: center; padding: clamp(3.5rem, 8vw, 7rem) max(var(--page-gutter), calc((100% - var(--content-max)) / 2)); color: var(--color-graphite); background: var(--color-ivory); }
+.video-entry-dark { color: var(--color-paper); background: var(--color-ink); }
+.video-entry-media .video-embed { margin: 0; border-radius: 0; }
+.video-entry-copy { width: min(100%, 35rem); }
+.video-entry-copy h2 { margin: 0; font-size: clamp(2rem, 4vw, 3.5rem); }
+.video-entry-copy p { margin: 1.25rem 0 0; font-size: clamp(1rem, 1.35vw, 1.12rem); line-height: 1.75; }
+.video-entry-dark .video-entry-copy h2 { color: var(--color-brass); }
+.video-entry:not(.video-entry-dark) .video-entry-copy h2 { color: var(--color-ink); }
+.video-entry-dark .video-entry-copy p { color: var(--color-mist); }
+.videos-youtube { display: flex; flex-direction: column; align-items: flex-start; gap: 1.75rem; padding: clamp(4rem, 9vw, 8rem) max(var(--page-gutter), calc((100% - var(--content-max)) / 2)); color: var(--color-paper); background: var(--color-stage); }
+.videos-youtube > div { max-width: 38rem; }
+.videos-youtube h2 { color: var(--color-brass); font-size: clamp(2.6rem, 5vw, 4.6rem); }
+.videos-youtube p { margin: 1.25rem 0 0; color: var(--color-mist); }
+.videos-youtube .button { min-height: 3.5rem; padding: 1rem 1.6rem; font-size: 0.84rem; font-weight: 700; }
+@media (min-width: 48rem) {
+  .videos-intro h2 { width: max-content; max-width: 100%; white-space: nowrap; }
+  .video-entry { grid-template-columns: minmax(0, 1.25fr) minmax(16rem, 0.75fr); }
+  .video-entry:not(.video-entry-dark) { grid-template-columns: minmax(16rem, 0.75fr) minmax(0, 1.25fr); }
+  .video-entry:not(.video-entry-dark) .video-entry-media { order: 2; }
+  .video-entry:not(.video-entry-dark) .video-entry-copy { justify-self: end; }
+}
+
+@media (min-width: 60rem) {
+  .videos-youtube > div { max-width: none; }
+  .videos-youtube h2 { width: max-content; max-width: 100%; white-space: nowrap; }
+  .videos-youtube p { max-width: 38rem; }
+}
+
 .page-sub .content-section h2,
 .page-sub .content-section .accent {
   color: var(--color-ink);
@@ -3855,6 +3900,12 @@ max-microphone-interlude {
   letter-spacing: var(--title-letter-spacing);
   line-height: 1.08;
 }
+
+/* Video introduction: retain the biography chapter's brass title treatment. */
+.page-sub .videos-intro.content-section h2 {
+  color: var(--color-brass) !important;
+}
+
 
 /* Separate biography chapters clearly from the preceding reading passage or film. */
 .page-sub .biography-copy.content-section p + h2.accent,

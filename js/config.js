@@ -204,6 +204,12 @@ const MWP_CONFIG = {
       visible: true,
     },
     {
+      href: 'pages/videos.html',
+      text: 'VÍDEOS',
+      external: false,
+      visible: true,
+    },
+    {
       href: 'pages/apoio-pix.html',
       text: 'APOIO',
       external: false,
