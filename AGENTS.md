@@ -34,11 +34,14 @@ Before making a CSS change:
 
 * Find where the affected class/style is originally defined and how it is inherited or composed.
 * Check all relevant components and pages that depend on it.
+* **Check all available languages/localized versions of the website and ensure the change is applied consistently across every language.**
+* Verify that translated/localized pages reuse the same shared styles and components whenever possible instead of maintaining separate language-specific styling.
+* When a styling change is intended to be global, confirm that it works correctly in **all supported languages**, not only the currently tested language.
 * Prefer fixing the shared/root implementation when the desired behavior should be consistent across usages.
 * Avoid duplicate declarations, unnecessary overrides, `!important`, or increasingly specific selectors unless there is a clear architectural reason.
-* Only introduce a page-specific or component-specific override when the behavior is intentionally different for that context.
+* Only introduce a page-specific, component-specific, or language-specific override when the behavior is intentionally different for that context.
 
-The goal is to make **structural, maintainable CSS fixes rather than local patches that hide the underlying problem**.
+The goal is to make **structural, maintainable CSS fixes rather than local patches that hide the underlying problem**, while ensuring that global design changes remain consistent across **all pages, components, and available languages of the website**.
 
 ## Localization and SEO Workflow
 

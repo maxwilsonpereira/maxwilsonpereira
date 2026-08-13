@@ -4165,12 +4165,16 @@ max-microphone-interlude {
   color: var(--color-ink);
 }
 
-.home-concert-copy p {
+.home-feature-copy {
   max-width: 34rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.home-concert-copy p {
   margin: 1.5rem 0 0;
   color: #56514a;
-  font-size: 1rem;
-  line-height: 1.7;
 }
 
 .home-concert-copy .button {
@@ -4221,8 +4225,6 @@ max-microphone-interlude {
 .home-welcome-copy p {
   margin: 1.5rem 0 0;
   color: #d2ccc3;
-  font-size: 1rem;
-  line-height: 1.75;
 }
 
 .home-welcome-text {
@@ -4259,8 +4261,6 @@ max-microphone-interlude {
   max-width: 34rem;
   margin: 0;
   color: #5f5951;
-  font-size: 1rem;
-  line-height: 1.7;
 }
 
 .home-career-gallery {
@@ -4328,7 +4328,7 @@ max-microphone-interlude {
 }
 
 .home-music-heading h2 {
-  color: var(--color-paper);
+  color: var(--color-brass);
 }
 
 .home-music-heading p {
