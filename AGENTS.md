@@ -24,6 +24,22 @@
 - Keep accessibility in mind: labels, alt text, focus states, contrast.
 - Update and improve SEO whenever necessary and possible, including localized SEO metadata where relevant.
 
+## CSS & Styling Changes
+
+When modifying CSS, styles, or class behavior, **avoid adding overrides at the bottom of the file or introducing higher-specificity rules just to force the desired result**.
+
+Always investigate the existing styling hierarchy and identify the **root cause** of the issue first. Prefer changing the original/shared style, component, selector, variable, or design rule responsible for the behavior so that the fix is applied consistently everywhere that style or class is used.
+
+Before making a CSS change:
+
+* Find where the affected class/style is originally defined and how it is inherited or composed.
+* Check all relevant components and pages that depend on it.
+* Prefer fixing the shared/root implementation when the desired behavior should be consistent across usages.
+* Avoid duplicate declarations, unnecessary overrides, `!important`, or increasingly specific selectors unless there is a clear architectural reason.
+* Only introduce a page-specific or component-specific override when the behavior is intentionally different for that context.
+
+The goal is to make **structural, maintainable CSS fixes rather than local patches that hide the underlying problem**.
+
 ## Localization and SEO Workflow
 
 - Portuguese files at the project root and under `pages/` are the editable source pages.

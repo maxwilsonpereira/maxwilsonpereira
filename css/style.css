@@ -3400,7 +3400,7 @@ body.page-sub {
 
 /* Shared performance-title treatment: ink on light fields, brass on dark fields. */
 .video-entry-copy h2,
-.page-sub .content-section h2.video-entry-title {
+.page-sub .concerto-page .content-section h2 {
   color: var(--color-ink);
   margin: 0;
   font-family: var(--font-display);
@@ -3411,8 +3411,14 @@ body.page-sub {
 }
 
 .video-entry-dark .video-entry-copy h2,
-.page-sub .content-section:nth-of-type(even) h2.video-entry-title {
+.page-sub .concerto-page .content-section:nth-of-type(even) h2 {
   color: var(--color-brass);
+}
+
+/* Concert chapter titles share one structural treatment across all language builds. */
+.page-sub .concerto-page .content-section h2 {
+  margin-bottom: 1.25rem;
+  font-weight: 900;
 }
 
 .page-sub .content-section:nth-of-type(even) .concerto-song-list li {
@@ -4027,7 +4033,7 @@ max-microphone-interlude {
   color: var(--color-paper);
   font-family: var(--font-display);
   font-size: clamp(3.8rem, 9vw, 6rem);
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: var(--title-letter-spacing);
   line-height: 0.88;
   text-wrap: balance;
@@ -4148,14 +4154,14 @@ max-microphone-interlude {
   margin: 0;
   font-family: var(--font-display);
   font-size: clamp(2.7rem, 6vw, 5.4rem);
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: var(--title-letter-spacing);
   line-height: 0.98;
   text-wrap: balance;
 }
 
 .home-concert-copy h2 {
-  max-width: 11ch;
+  max-width: 100%;
   color: var(--color-ink);
 }
 
@@ -4205,12 +4211,10 @@ max-microphone-interlude {
 }
 
 .home-welcome h2 {
-  color: var(--color-paper);
+  color: var(--color-brass);
 }
 
-/* Homepage dark fields use the shared performance-title class. */
-.home-welcome h2.video-entry-title,
-.home-music h2.video-entry-title {
+.home-music h2 {
   color: var(--color-brass);
 }
 
@@ -4386,7 +4390,7 @@ max-microphone-interlude {
 .home-album strong {
   font-family: var(--font-display);
   font-size: clamp(1.3rem, 3vw, 2.15rem);
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .home-album small {
@@ -4420,7 +4424,7 @@ max-microphone-interlude {
   color: var(--color-ink);
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: var(--title-letter-spacing);
   line-height: 1;
   text-transform: none;
