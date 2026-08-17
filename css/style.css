@@ -2607,6 +2607,8 @@ ul li::before {
   --content-max: 76rem;
   --reading-max: 68ch;
   --editorial-heading-max: 51.25rem;
+  --editorial-prose-size: 1.2rem;
+  --editorial-prose-weight: 500;
   --header-height: 4.75rem;
   --radius-control: 0.25rem;
   --ease-stage: cubic-bezier(0.16, 1, 0.3, 1);
@@ -3293,6 +3295,14 @@ body.page-sub {
 
 .page-sub .content-section p + p {
   margin-top: 1.25rem;
+}
+
+/* Shared long-form prose for the Biography and Concert editorial pages.
+   Titles, section labels, and list treatments retain their own type roles. */
+.page-sub .editorial-prose .content-section p:not(.editorial-eyebrow) {
+  font-size: var(--editorial-prose-size);
+  font-weight: var(--editorial-prose-weight);
+  line-height: 1.7;
 }
 
 .page-sub .content-section:nth-of-type(even) {
