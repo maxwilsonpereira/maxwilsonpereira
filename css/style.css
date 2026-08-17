@@ -1743,8 +1743,8 @@ h2.accent {
   pointer-events: auto;
 }
 
-/* Biography page */
-.biography-page {
+/* Shared editorial pages */
+.editorial-page {
   max-width: 1080px;
   gap: 18px;
 }
@@ -1849,16 +1849,6 @@ h2.accent {
   line-height: 1.7;
 }
 
-.biography-intro,
-.biography-copy {
-  padding: 30px;
-}
-
-.biography-intro p {
-  color: var(--text-primary);
-  font-size: 1.12rem;
-}
-
 .biography-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1894,16 +1884,6 @@ h2.accent {
   line-height: 1.55;
 }
 
-.biography-copy h2:first-child {
-  margin-top: 0;
-}
-
-/* Concerto page */
-.concerto-page {
-  max-width: 1080px;
-  gap: 18px;
-}
-
 .concerto-hero-button {
   width: auto;
   min-width: 190px;
@@ -1912,15 +1892,7 @@ h2.accent {
   padding-left: 22px;
 }
 
-.concerto-intro,
-.concerto-journey,
-.concerto-rehearsal,
-.concerto-repertoire,
-.concerto-closing {
-  padding: 30px;
-}
-
-.concerto-eyebrow {
+.editorial-eyebrow {
   margin: 0 0 8px;
   color: var(--instagram-pink);
   font-size: 0.78rem;
@@ -1930,27 +1902,10 @@ h2.accent {
   text-transform: uppercase;
 }
 
-.content-section .concerto-eyebrow {
+.content-section .editorial-eyebrow {
   color: var(--instagram-pink);
   font-size: 0.78rem;
   line-height: 1.2;
-}
-
-.concerto-intro h2,
-.concerto-journey h2,
-.concerto-rehearsal h2,
-.concerto-repertoire h2,
-.concerto-closing h2 {
-  max-width: 760px;
-  margin: 0 0 18px;
-  font-size: clamp(1.8rem, 4vw, 3.2rem);
-  line-height: 1.08;
-}
-
-.concerto-intro p:not(.concerto-eyebrow),
-.concerto-journey p:not(.concerto-eyebrow),
-.concerto-rehearsal p:not(.concerto-eyebrow) {
-  max-width: 840px;
 }
 
 .concerto-rehearsal {
@@ -2128,8 +2083,7 @@ ul li::before {
   margin-top: 8px;
 }
 
-.page-sub .biography-page,
-.page-sub .concerto-page {
+.page-sub .editorial-page {
   margin-top: 0;
 }
 
@@ -2232,8 +2186,7 @@ ul li::before {
     margin-top: 96px;
   }
 
-  .page-sub .biography-page,
-  .page-sub .concerto-page {
+  .page-sub .editorial-page {
     margin-top: 0;
   }
 
@@ -2567,10 +2520,6 @@ ul li::before {
     font-size: 0.9rem;
   }
 
-  .biography-page {
-    max-width: 420px;
-  }
-
   .page-hero {
     min-height: 560px;
     margin-top: -16px;
@@ -2598,11 +2547,6 @@ ul li::before {
     font-size: 0.98rem;
   }
 
-  .biography-intro,
-  .biography-copy {
-    padding: 22px;
-  }
-
   .biography-grid {
     grid-template-columns: 1fr;
   }
@@ -2611,21 +2555,9 @@ ul li::before {
     min-height: auto; */
   }
 
-  .concerto-page {
-    max-width: 420px;
-  }
-
   .concerto-hero-button,
   .concerto-closing-button {
     width: 100%;
-  }
-
-  .concerto-intro,
-  .concerto-journey,
-  .concerto-rehearsal,
-  .concerto-repertoire,
-  .concerto-closing {
-    padding: 22px;
   }
 
   .concerto-song-list,
@@ -3263,8 +3195,7 @@ body.page-sub {
 .page-sub .page-container,
 .page-sub .page-container.album-page,
 .page-sub .page-container.albums-overview-page,
-.page-sub .page-container.biography-page,
-.page-sub .page-container.concerto-page {
+.page-sub .page-container.editorial-page {
   display: flex;
   align-items: stretch;
   width: 100%;
@@ -3398,9 +3329,9 @@ body.page-sub {
   color: #d2ccc3;
 }
 
-/* Shared performance-title treatment: ink on light fields, brass on dark fields. */
+/* Shared editorial-title treatment: ink on light fields, brass on dark fields. */
 .video-entry-copy h2,
-.page-sub .concerto-page .content-section h2 {
+.page-sub .editorial-page .content-section .editorial-section-title {
   color: var(--color-ink);
   margin: 0;
   font-family: var(--font-display);
@@ -3411,12 +3342,12 @@ body.page-sub {
 }
 
 .video-entry-dark .video-entry-copy h2,
-.page-sub .concerto-page .content-section:nth-of-type(even) h2 {
+.page-sub .editorial-page .content-section:nth-of-type(even) .editorial-section-title {
   color: var(--color-brass);
 }
 
-/* Concert chapter titles share one structural treatment across all language builds. */
-.page-sub .concerto-page .content-section h2 {
+/* One title rule is shared by Biography and Concert across all language builds. */
+.page-sub .editorial-page .content-section .editorial-section-title {
   margin-bottom: 1.25rem;
   font-weight: 900;
 }
@@ -3670,14 +3601,11 @@ max-microphone-interlude {
   .page-sub .page-container,
   .page-sub .page-container.album-page,
   .page-sub .page-container.albums-overview-page,
-  .page-sub .page-container.biography-page,
-  .page-sub .page-container.concerto-page {
+  .page-sub .page-container.editorial-page {
     padding-top: var(--header-height);
   }
 
   .page-sub .content-section,
-  .page-sub .biography-intro,
-  .page-sub .biography-copy,
   .page-sub .albums-overview-intro,
   .page-sub .album-hero,
   .page-sub .albums-overview-card,
@@ -3881,12 +3809,6 @@ max-microphone-interlude {
   margin-left: auto;
 }
 
-/* Concert reading chapters use one centered editorial measure on wide screens. */
-.page-sub .concerto-page .content-section:not(.concerto-rehearsal) > * {
-  margin-right: auto;
-  margin-left: auto;
-}
-
 /* Support page: keep the PIX detail compact and optically centered. */
 .page-sub .support-hero + .content-section h2.accent {
   width: min(100%, 34rem);
@@ -3911,24 +3833,15 @@ max-microphone-interlude {
   letter-spacing: 0.08em;
 }
 
-/* Biography chapter headings retain their brass editorial accent on every field. */
-.page-sub .biography-copy.content-section h2.accent {
-  color: var(--color-brass);
-  font-weight: 700;
-  font-size: 1.625rem;
-  letter-spacing: var(--title-letter-spacing);
-  line-height: 1.08;
-}
-
 /* Video introduction: retain the biography chapter's brass title treatment. */
 .page-sub .videos-intro.content-section h2 {
   color: var(--color-brass) !important;
 }
 
 
-/* Separate biography chapters clearly from the preceding reading passage or film. */
-.page-sub .biography-copy.content-section p + h2.accent,
-.page-sub .biography-copy.content-section max-video-embed + h2.accent {
+/* Long-form chapters use the same pause before a subsequent editorial title. */
+.page-sub .page-reading-section p + .editorial-section-title,
+.page-sub .page-reading-section max-video-embed + .editorial-section-title {
   margin-top: 3.9rem;
 }
 
