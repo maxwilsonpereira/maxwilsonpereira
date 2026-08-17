@@ -1894,18 +1894,12 @@ h2.accent {
 
 .editorial-eyebrow {
   margin: 0 0 8px;
-  color: var(--instagram-pink);
+  color: var(--color-bordeaux);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.12em;
   line-height: 1.2;
   text-transform: uppercase;
-}
-
-.content-section .editorial-eyebrow {
-  color: var(--instagram-pink);
-  font-size: 0.78rem;
-  line-height: 1.2;
 }
 
 .concerto-rehearsal {
@@ -1938,12 +1932,12 @@ h2.accent {
   border: 0;
 }
 
-.concerto-section-heading {
-  max-width: 820px;
+.editorial-section-heading {
+  max-width: var(--editorial-heading-max);
   margin-bottom: 24px;
 }
 
-.concerto-section-heading p:last-child {
+.editorial-section-heading p:last-child {
   margin-bottom: 0;
 }
 
@@ -2011,14 +2005,6 @@ h2.accent {
 
 .concerto-closing {
   scroll-margin-top: 108px;
-  text-align: center;
-}
-
-.concerto-closing h2,
-.concerto-closing p {
-  max-width: 720px;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 .concerto-closing-button {
@@ -2620,6 +2606,7 @@ ul li::before {
   --page-gutter: clamp(1.25rem, 4vw, 4.5rem);
   --content-max: 76rem;
   --reading-max: 68ch;
+  --editorial-heading-max: 51.25rem;
   --header-height: 4.75rem;
   --radius-control: 0.25rem;
   --ease-stage: cubic-bezier(0.16, 1, 0.3, 1);
@@ -3346,10 +3333,29 @@ body.page-sub {
   color: var(--color-brass);
 }
 
+.page-sub .editorial-page .content-section:nth-of-type(even) .editorial-eyebrow {
+  color: var(--color-brass);
+}
+
 /* One title rule is shared by Biography and Concert across all language builds. */
 .page-sub .editorial-page .content-section .editorial-section-title {
   margin-bottom: 1.25rem;
   font-weight: 900;
+}
+
+/* Reusable centered editorial treatment for an intentional closing or callout. */
+.page-sub .editorial-page .content-section.editorial-section--centered {
+  text-align: center;
+}
+
+.page-sub .editorial-page .content-section.editorial-section--centered > * {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.page-sub .editorial-page .content-section.editorial-section--centered > .editorial-section-title,
+.page-sub .editorial-page .content-section.editorial-section--centered > p {
+  max-width: 45rem;
 }
 
 .page-sub .content-section:nth-of-type(even) .concerto-song-list li {
@@ -3406,10 +3412,14 @@ body.page-sub {
     linear-gradient(0deg, rgba(16, 16, 15, 0.92) 0%, transparent 55%);
 }
 
-/* Shared reading chapters constrain their inner space before child typography lays out. */
+/* Shared reading chapters establish one stage, so labels, titles, and copy share an edge. */
 .page-sub .page-reading-section {
   padding-right: max(var(--page-gutter), calc((100% - var(--reading-max)) / 2));
   padding-left: max(var(--page-gutter), calc((100% - var(--reading-max)) / 2));
+}
+
+.page-sub .page-reading-section > * {
+  width: 100%;
 }
 
 /* Reusable editorial split: image first on mobile, media-and-copy side by side from tablet upward. */
@@ -3852,6 +3862,13 @@ max-microphone-interlude {
 }
 
 @media (min-width: 48rem) {
+  /* Keep editorial headings aligned to the reading column, while display titles
+     may use the available desktop space instead of wrapping prematurely. */
+  .page-sub .editorial-section-heading > .editorial-section-title {
+    width: max-content;
+    max-width: var(--editorial-heading-max);
+  }
+
   .page-sub .concerto-rehearsal {
     grid-template-columns: minmax(0, 40rem) minmax(16rem, 20rem);
     justify-content: center;
