@@ -1824,7 +1824,7 @@ class MaxSiteFooter extends HTMLElement {
         <div class="site-footer-main">
           <div class="site-footer-identity">
             <a class="site-footer-name" href="${getPageHref('index.html')}">${siteName}</a>
-            <p>${translatePhrase(MWP_CONFIG?.tagline || '')}</p>
+            <p class="editorial-prose-copy">${translatePhrase(MWP_CONFIG?.tagline || '')}</p>
           </div>
           <nav class="site-footer-nav" aria-label="${translatePhrase('Navegação principal')}">${items}</nav>
           <div class="site-footer-socials" aria-label="${translatePhrase('Redes sociais')}">

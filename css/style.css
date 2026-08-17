@@ -597,14 +597,6 @@ body::after {
   line-height: 0.98;
 }
 
-.home-welcome p:not(.home-welcome-kicker) {
-  max-width: 600px;
-  margin: 0 0 14px;
-  color: var(--text-secondary);
-  font-size: 1rem;
-  line-height: 1.72;
-}
-
 .home-welcome p:last-child {
   margin-bottom: 0;
 }
@@ -2217,10 +2209,6 @@ ul li::before {
     gap: 44px;
   }
 
-  .home-welcome p:not(.home-welcome-kicker) {
-    font-size: 1.06rem;
-  }
-
   .social-follow-inner {
     padding: 44px 34px;
   }
@@ -2609,6 +2597,7 @@ ul li::before {
   --editorial-heading-max: 51.25rem;
   --editorial-prose-size: 1.2rem;
   --editorial-prose-weight: 500;
+  --editorial-prose-line-height: 1.19;
   --header-height: 4.75rem;
   --radius-control: 0.25rem;
   --ease-stage: cubic-bezier(0.16, 1, 0.3, 1);
@@ -3121,8 +3110,6 @@ input:focus-visible {
   max-width: 34rem;
   margin: 1.25rem 0 0;
   color: var(--color-mist);
-  font-size: 0.94rem;
-  line-height: 1.65;
 }
 
 .site-footer-nav {
@@ -3297,12 +3284,17 @@ body.page-sub {
   margin-top: 1.25rem;
 }
 
-/* Shared long-form prose for the Biography and Concert editorial pages.
-   Titles, section labels, and list treatments retain their own type roles. */
-.page-sub .editorial-prose .content-section p:not(.editorial-eyebrow) {
+/* Shared editorial prose across Biography, Concert, Albums, and Videos.
+   Titles, labels, and surface colors retain their own type and color roles. */
+.page-sub .editorial-prose .content-section p:not(.editorial-eyebrow),
+.page-sub .editorial-prose .albums-overview-intro > p,
+.page-sub .editorial-prose .album-hero-copy > p:not(.album-kicker),
+.page-sub .editorial-prose .video-entry-copy > p,
+.page-sub .editorial-prose .videos-youtube p,
+.editorial-prose-copy {
   font-size: var(--editorial-prose-size);
   font-weight: var(--editorial-prose-weight);
-  line-height: 1.7;
+  line-height: var(--editorial-prose-line-height);
 }
 
 .page-sub .content-section:nth-of-type(even) {
@@ -4109,7 +4101,7 @@ max-microphone-interlude {
   max-width: 34rem;
   font-size: 1.3rem;
   font-weight: 500;
-  line-height: 1.7;
+  line-height: 1.19;
 }
 
 .home-concert-copy p {
@@ -4274,7 +4266,6 @@ max-microphone-interlude {
 .home-music-heading p {
   margin: 1.5rem 0 0;
   color: var(--color-mist);
-  line-height: 1.7;
 }
 
 .home-music-heading .button {
