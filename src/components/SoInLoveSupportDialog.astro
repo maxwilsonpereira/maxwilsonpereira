@@ -1,0 +1,59 @@
+<dialog
+  class="so-in-love-support-dialog"
+  id="payment-thank-you-modal"
+  aria-labelledby="payment-thank-you-title"
+  open
+>
+  <div class="support-dialog-panel">
+    <button
+      class="support-dialog-close"
+      type="button"
+      aria-label="Fechar aviso"
+      data-support-dialog-close
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M18 6 6 18M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <header class="support-dialog-header">
+      <span class="support-dialog-kicker">SO IN LOVE</span>
+      <h2 id="payment-thank-you-title">Obrigado pelo seu apoio</h2>
+    </header>
+
+    <div class="support-dialog-body">
+      <p>Se você efetuou o <strong>PIX</strong>, muito obrigado! Seu interesse e seu apoio ao meu trabalho <strong>significam muito para mim</strong>. ❤️❤️❤️</p>
+      <p>Quero te dizer algo com toda sinceridade: eu optei por <strong>não bloquear o download</strong>, mesmo antes de conferir o pagamento. Eu escolho <strong>confiar em você</strong>, que me acompanha e apoia minha jornada com carinho e respeito.</p>
+      <p>Se ainda não fez o pagamento, peço com todo respeito que <strong>só faça o download depois de ter efetuado o pagamento</strong>.</p>
+      <p>Vou ficar muito feliz se escolher uma das músicas e <strong>compartilhar um story no Instagram me marcando</strong>.</p>
+
+      <div class="support-dialog-quotes" aria-label="Sugestões para story">
+        <p>Você pode escrever algo simples como:</p>
+        <blockquote>“Comprei o álbum SO IN LOVE do @maxwilsonpereira e estou adorando! 🎶”</blockquote>
+        <blockquote>“Estou ouvindo SO IN LOVE do tenor @maxwilsonpereira e estou adorando! 🎶”</blockquote>
+      </div>
+
+      <p>Isso ajuda <strong>muito mais pessoas</strong> a descobrirem minha música.</p>
+    </div>
+  </div>
+</dialog>
+
+<!-- Keep this parser-blocking script immediately after the initially open dialog.
+     It upgrades the banner to a true modal before the page's first paint. -->
+<script is:inline>
+  const supportDialog = document.querySelector('#payment-thank-you-modal');
+
+  if (supportDialog) {
+    supportDialog.querySelectorAll('[data-support-dialog-close]').forEach((button) => {
+      button.addEventListener('click', () => supportDialog.close());
+    });
+    supportDialog.addEventListener('click', (event) => {
+      if (event.target === supportDialog) supportDialog.close();
+    });
+
+    if (typeof supportDialog.showModal === 'function') {
+      supportDialog.close();
+      supportDialog.showModal();
+    }
+  }
+</script>

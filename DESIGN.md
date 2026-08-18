@@ -86,6 +86,12 @@ components:
     rounded: "{rounded.control}"
     padding: "0.9rem 1.35rem"
     height: "3.25rem"
+  support-dialog:
+    backgroundColor: "{colors.programme-ivory}"
+    textColor: "{colors.warm-graphite}"
+    borderColor: "{colors.aged-brass}"
+    rounded: "0"
+    shadow: "0 2rem 5rem rgba(0, 0, 0, 0.48)"
 ---
 
 # Design System: Max Wilson Pereira
@@ -98,7 +104,7 @@ The shipped system feels like entering a concert hall moments before the first n
 
 The visual rhythm alternates cinematic dark fields with quiet editorial ivory fields. Architectural edges, decisive typography, and restrained brass and bordeaux accents communicate classical credibility without institutional distance. Motion behaves like a stage transition: content remains available by default, then settles into place only when enhancement is supported.
 
-This document is authoritative for the approved global foundation (tokens, typography, navigation, footer, focus behavior, and localization conventions), the homepage, and the public biography, concert, album collection, album, and support routes. These routes share a full-bleed chapter system while preserving their page-specific content and interactions.
+This document is authoritative for the approved global foundation (tokens, typography, navigation, footer, focus behavior, and localization conventions) across the site and for the homepage composition. Migrated inner pages use that shared foundation, but their page-specific layouts, content, and interactions must be preserved unless a page-specific redesign is approved.
 
 **Key Characteristics:**
 
@@ -146,7 +152,7 @@ The palette uses the physical colors of a darkened hall, warm paper, formal even
 
 **Body and Label Font:** Albert Sans, falling back to Arial and sans-serif.
 
-**Character:** Italiana supplies theatrical scale and editorial phrasing; Albert Sans keeps navigation, actions, captions, and reading copy contemporary and highly legible. Both families are loaded from Google Fonts with the shipped weights and support the Portuguese, English, and German experience.
+**Character:** Italiana supplies theatrical scale and editorial phrasing; Albert Sans keeps navigation, actions, captions, and reading copy contemporary and highly legible. Both families are loaded from Google Fonts with the shipped weights and support the Portuguese, English, Spanish, and German experience.
 
 ### Hierarchy
 
@@ -160,7 +166,7 @@ The palette uses the physical colors of a darkened hall, warm paper, formal even
 
 **The One Aria Rule.** Each viewport has one dominant typographic voice; supporting headings do not compete at the same scale.
 
-**The Language-Coverage Rule.** Type, wrapping, and label spacing must remain usable in Portuguese, English, and German.
+**The Language-Coverage Rule.** Type, wrapping, and label spacing must remain usable in Portuguese, English, Spanish, and German.
 
 ## Layout
 
@@ -202,7 +208,7 @@ The dominant geometry is architectural: straight section edges, square media, th
 
 The fixed header uses the artist wordmark, real routes, language switcher, and social destinations. At the top of the homepage it is a transparent ink-to-clear veil; after 24px of scroll it resolves to an opaque ink plane with a low-contrast bottom rule. At 60rem and wider, navigation is centered, uppercase, and compact with a brass active/hover rule.
 
-Below 60rem, the 2.75rem menu toggle opens a full-viewport ink navigation plane. Links become large Italiana lines separated by subtle rules; language and social controls sit below. Opening locks body scroll, moves focus to the first link, traps Tab focus within the menu and toggle, supports Escape, restores focus to the toggle, and keeps `aria-expanded` and localized open/close labels synchronized.
+Below 60rem, the 2.75rem menu toggle opens a full-viewport ink navigation plane. Portuguese and English quick-switch flags remain visible beside the toggle, while the complete four-language switcher stays inside the menu. Links become large Italiana lines separated by subtle rules; language and social controls sit below. Opening locks body scroll, moves focus to the first link, traps Tab focus within the menu and toggle, supports Escape, restores focus to the toggle, and keeps `aria-expanded` and localized open/close labels synchronized.
 
 ### Footer and Social Close
 
@@ -212,13 +218,17 @@ The shared footer uses the 76rem stage, an Italiana identity, localized route li
 
 The hero, concert invitation, welcome film, career montage, music catalogue, and social close each use semantic landmarks and labelled headings. Images are authentic local assets with descriptive alternative text; supporting media uses lazy loading, while the first-viewport performance image loads immediately. Photography is slightly restrained through saturation/contrast adjustments, protected by directional overlays where text shares the frame, and allowed only subtle scale or lift interactions.
 
+### SO IN LOVE Support Dialog
+
+The Portuguese post-PIX message is a dedicated Astro component rendered before the download page's main content. It uses an ivory programme surface, brass rule, bordeaux interaction accent, square geometry, and a single physical shadow. The dialog is present in the initial HTML and is promoted immediately to a native modal before first paint, preventing the protected page from flashing underneath. It supports Escape, backdrop dismissal, a labelled close control, keyboard focus containment through the native dialog, responsive scrolling, and reduced-motion behavior.
+
 ### Motion, Accessibility, and Localization
 
 Stage easing is `cubic-bezier(0.16, 1, 0.3, 1)` with 180ms state transitions and 760ms section reveals. The hero settles over 1.4s and its copy enters over 980ms after a 120ms delay. Reveal content is visible by default; JavaScript adds the concealed ready state only when IntersectionObserver is available, and unsupported browsers immediately expose all items.
 
 Reduced-motion preference removes hero entrance animation, reveal transitions, image zooms, and album lift transitions. Keyboard focus uses a 2px aged-brass outline with a 4px offset on links, buttons, and inputs. Buttons provide at least 3.25rem height, the menu toggle is 2.75rem square, and social icon controls are 2.5rem square on mobile.
 
-Portuguese is the source language. Public English and German pages are generated as crawlable `/en/` and `/de/` routes with self-canonical metadata, reciprocal `hreflang`, localized JSON-LD, and statically translated primary content. Client-side translation remains as progressive enhancement for shared components and legacy download flows. Language links use real localized routes, preserve the selection in local storage, and omit unavailable support routes outside Portuguese. Layouts must tolerate all three languages without clipping or collapsing the established hierarchy.
+Portuguese is the default language. Public English, Spanish, and German pages are generated as crawlable `/en/`, `/es/`, and `/de/` routes from the shared Astro implementations in `src/pages-content/`, with self-canonical metadata, reciprocal `hreflang`, localized JSON-LD, and statically translated primary content. Language controls link to real localized routes; unavailable PIX purchase and support routes remain Portuguese-only, while the SO IN LOVE listening/download page has localized static routes. Layouts must tolerate all four languages without clipping or collapsing the established hierarchy.
 
 ## Do's and Don'ts
 
@@ -228,7 +238,7 @@ Portuguese is the source language. Public English and German pages are generated
 - **Do** alternate immersive dark passages with calm ivory reading passages.
 - **Do** keep concert exploration the clearest homepage action without implying ticketing or booking.
 - **Do** preserve semantic headings, descriptive alt text, visible focus, useful no-motion states, and progressive enhancement.
-- **Do** validate every shared change in Portuguese, English, and German.
+- **Do** validate every shared change in Portuguese, English, Spanish, and German.
 - **Do** reuse the shared navigation, footer, token, button, spacing, focus, and full-bleed chapter foundations across the public site.
 
 ### Don't:

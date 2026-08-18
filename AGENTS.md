@@ -4,8 +4,16 @@
 
 - Treat [`PRODUCT.md`](PRODUCT.md) as the source of truth for product goals, artist positioning, content priorities, and redesign scope.
 - Treat [`DESIGN.md`](DESIGN.md) as the source of truth for approved colors, typography, spacing, components, responsive behavior, motion, accessibility, and visual rules.
-- For homepage-specific decisions, also consult [`.impeccable/surfaces/index-html.md`](.impeccable/surfaces/index-html.md).
+- For homepage-specific decisions, also consult [`.impeccable/surfaces/home-page.md`](.impeccable/surfaces/home-page.md).
 - The approved redesign currently covers the global foundation and homepage. Do not redesign other page layouts by inference; preserve their content and behavior until their page-specific direction is approved.
+
+## Astro Architecture
+
+- This is an Astro 7 static-output site. It has no backend, database, server-side session, SPA runtime, or client-side router.
+- Keep reusable UI in `src/components/`, the shared document shell in `src/layouts/`, and shared localized implementations in `src/pages-content/`.
+- Route entry files in `src/pages/` should stay thin and delegate presentation to shared page implementations.
+- Treat `public/` as pass-through static assets only. Never edit generated files in `dist/`; rebuild them from source.
+- Use the Node 24 toolchain and project npm scripts. Run `npm run build` for the complete type, route, SEO, reference, sitemap, and output validation pipeline.
 
 ## Frontend Standards
 

@@ -24,9 +24,11 @@ Visitors often arrive from short-form social video, YouTube, Instagram, search, 
 
 ## Capabilities and Constraints
 
-- Static HTML, CSS, and vanilla JavaScript with shared custom elements.
-- Portuguese is the source language; English and German are supported through client-side UI/content translations.
+- Astro 7 statically renders the site from shared Astro components, TypeScript configuration/data, shared CSS, and limited client-side JavaScript.
+- Portuguese is the default language; English, Spanish, and German are generated as crawlable localized routes from the same implementations in `src/pages-content/`.
+- Preserve the established `.html` public URL map. The site has no backend, database, server-side session, or client-side router.
 - Preserve all existing routes, media, downloads, Spotify links, YouTube embeds, PIX payment/support instructions, social links, and localized SEO behavior.
+- PIX support and purchase flows remain client-side and trust-based; the site does not verify payments on a server.
 - Do not add ticketing, contact, availability, dates, testimonials, or commercial claims that are not supported by the current site.
 - Homepage priority confirmed by the user: concert interest.
 
@@ -39,12 +41,13 @@ Visitors often arrive from short-form social video, YouTube, Instagram, search, 
 
 ## Evidence on Hand
 
-- Full biography and embedded performances: `pages/biografia.html`.
-- Concert concept, rehearsal video, repertoire, and stated future context: `pages/concerto.html`.
-- Album collection and listening/purchase/download flows: `pages/albums.html` and `pages/albums/`.
+- Full biography and embedded performances: `src/pages-content/BiographyPage.astro`.
+- Concert concept, rehearsal video, repertoire, and stated future context: `src/pages-content/ConcertPage.astro`.
+- Album collection and listening/purchase/download flows: `src/pages-content/AlbumsPage.astro`, the album page implementations, and `src/data/media.ts`.
 - Local photography: optimized concert, operetta, television, orchestra, costume, and artist imagery under `public/assets/optimized/`.
-- Album artwork and audio: `assets/so-in-love/`, `assets/tenori-amici/`, `assets/quattro-sony/`.
-- Existing metadata, canonical URLs, JSON-LD, translations, and links: `js/config.js`, `js/components.js`.
+- Album artwork and audio: `public/assets/so-in-love/`, `public/assets/tenori-amici/`, and `public/assets/quattro-sony/`.
+- Routes and locale behavior: `src/config/site.ts` and `src/i18n/translations.json`.
+- Metadata and JSON-LD: `src/data/seo.ts` and `src/utils/structured-data.ts`.
 
 ## Product Principles
 

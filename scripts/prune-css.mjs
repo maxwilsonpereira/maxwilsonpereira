@@ -10,7 +10,6 @@ const dynamicClasses = new Set([
   'is-open',
   'is-scrolled',
   'is-visible',
-  'modal-open',
   'reveal-ready',
   'site-menu-open',
 ]);

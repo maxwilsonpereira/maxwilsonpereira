@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-03T00:00:00+02:00",
+  "generatedAt": "2026-08-18T00:00:00+02:00",
   "title": "Design System: Max Wilson Pereira",
   "implementation": {
     "approvedSeed": "ff292b8d",
@@ -8,16 +8,19 @@
     "composition": "Proscenium",
     "scope": {
       "globalFoundation": true,
-      "homepage": "index.html",
+      "homepage": "src/pages-content/HomePage.astro",
       "otherPagesRedesigned": false
     },
     "sources": [
       "PRODUCT.md",
-      ".impeccable/surfaces/index-html.md",
+      "DESIGN.md",
+      ".impeccable/surfaces/home-page.md",
       ".impeccable/mocks/homepage-proscenium.json",
-      "index.html",
-      "css/style.css",
-      "js/components.js"
+      "src/styles/tokens.css",
+      "src/styles/global.css",
+      "src/components/Header.astro",
+      "src/components/Footer.astro",
+      "src/components/SoInLoveSupportDialog.astro"
     ],
     "finalReview": {
       "verdict": "resolved"
@@ -46,7 +49,8 @@
     "shadows": [
       { "name": "video-ambient", "value": "0 2rem 5rem rgba(0, 0, 0, 0.28)", "purpose": "Physical depth beneath the embedded welcome film." },
       { "name": "album-rest", "value": "0 1.5rem 3rem rgba(0, 0, 0, 0.3)", "purpose": "Resting album-cover depth." },
-      { "name": "album-lift", "value": "0 2rem 4rem rgba(0, 0, 0, 0.42)", "purpose": "Album-cover hover and keyboard-focus depth." }
+      { "name": "album-lift", "value": "0 2rem 4rem rgba(0, 0, 0, 0.42)", "purpose": "Album-cover hover and keyboard-focus depth." },
+      { "name": "support-dialog", "value": "0 2rem 5rem rgba(0, 0, 0, 0.48)", "purpose": "Physical depth beneath the Portuguese post-PIX dialog." }
     ],
     "motion": [
       { "name": "ease-stage", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Stage-like entrances, transforms, and menu movement." },
@@ -56,6 +60,7 @@
       { "name": "hero-copy-in", "value": "980ms 120ms", "purpose": "First-viewport copy entrance and delay." }
     ],
     "breakpoints": [
+      { "name": "narrow-header", "value": "22.5rem" },
       { "name": "editorial-grid", "value": "48rem" },
       { "name": "desktop-navigation", "value": "60rem" }
     ]
@@ -96,6 +101,14 @@
       "description": "Circular social destination used in shared navigation and footer.",
       "html": "<a class=\"ds-social\" href=\"#\" aria-label=\"Instagram\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"/><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"5\"/><circle cx=\"17.5\" cy=\"6.5\" r=\"1\" fill=\"currentColor\" stroke=\"none\"/></svg></a>",
       "css": ".ds-social{display:inline-flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;color:var(--color-paper);background:transparent;border:1px solid var(--color-line-dark);border-radius:50%;transition:color var(--duration-fast) ease,border-color var(--duration-fast) ease}.ds-social svg{width:1.05rem;height:1.05rem;fill:none;stroke:currentColor;stroke-width:1.7}.ds-social:hover,.ds-social:focus-visible{color:var(--color-brass);border-color:var(--color-brass)}.ds-social:focus-visible{outline:2px solid var(--color-brass);outline-offset:4px}"
+    },
+    {
+      "name": "SO IN LOVE Support Dialog",
+      "kind": "dialog",
+      "refersTo": "support-dialog",
+      "description": "Portuguese post-PIX acknowledgement rendered before the protected page and promoted to a native modal before first paint.",
+      "html": "<dialog class=\"so-in-love-support-dialog\" open><div class=\"support-dialog-panel\"><button class=\"support-dialog-close\" aria-label=\"Fechar aviso\"></button><h2>Obrigado pelo seu apoio</h2></div></dialog>",
+      "css": ".so-in-love-support-dialog{color:var(--color-graphite);background:transparent;border:0}.support-dialog-panel{color:var(--color-graphite);background:var(--color-ivory);border:1px solid var(--color-brass);box-shadow:0 2rem 5rem rgba(0,0,0,.48)}"
     }
   ],
   "narrative": {

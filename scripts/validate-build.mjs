@@ -79,6 +79,21 @@ for (const route of expected) {
     }
   }
 
+  if (route === 'pages/albums/so-in-love.html') {
+    const dialogTag = html.match(/<dialog\b[^>]*id="payment-thank-you-modal"[^>]*>/iu)?.[0] ?? '';
+    const dialogIndex = html.indexOf('id="payment-thank-you-modal"');
+    const upgradeIndex = html.indexOf('supportDialog.showModal()');
+    const mainIndex = html.indexOf('<main');
+    if (!/\bopen\b/iu.test(dialogTag)) issues.push(`${route}: support dialog must be present and initially open`);
+    if (dialogIndex < 0 || upgradeIndex < 0 || mainIndex < 0 || dialogIndex > upgradeIndex || upgradeIndex > mainIndex) {
+      issues.push(`${route}: support dialog and modal upgrade must render before main content`);
+    }
+  }
+
+  if (/^(?:en|es|de)\/pages\/albums\/so-in-love\.html$/u.test(route) && html.includes('payment-thank-you-modal')) {
+    issues.push(`${route}: Portuguese support dialog must not render on international download routes`);
+  }
+
   for (const match of html.matchAll(/\s(?:href|src)="([^"]+)"/giu)) {
     const value = match[1].split(/[?#]/u, 1)[0];
     if (!value || /^(?:[a-z]+:|\/\/|#)/iu.test(value)) continue;

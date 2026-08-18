@@ -8,9 +8,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Web Components — participate in parent layout without creating an extra box */
-
-
 body {
   font-family:
     "Plus Jakarta Sans",
@@ -27,10 +24,6 @@ body {
   padding: 24px;
   position: relative;
   overflow-x: hidden;
-}
-
-body.modal-open {
-  overflow: hidden;
 }
 
 .page-home {
@@ -932,191 +925,6 @@ h2.accent {
 }
 
 
-
-/* Reusable modal */
-.modal {
-  width: min(92vw, 660px);
-  max-height: min(86vh, 760px);
-  margin: auto;
-  padding: 0;
-  overflow: visible;
-  color: var(--text-primary);
-  background: transparent;
-  border: 0;
-}
-
-.modal::backdrop {
-  background:
-    radial-gradient(
-      circle at 50% 10%,
-      rgba(225, 48, 108, 0.22),
-      transparent 38%
-    ),
-    rgba(5, 5, 7, 0.78);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.modal-panel {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  min-width: 0;
-  max-height: min(86vh, 760px);
-  overflow: hidden;
-  padding: 30px;
-  text-align: left;
-  background:
-    linear-gradient(135deg, rgba(225, 48, 108, 0.17), transparent 42%),
-    linear-gradient(160deg, rgba(29, 185, 84, 0.12), rgba(12, 12, 14, 0.98));
-  border: 1px solid var(--border-glass);
-  border-radius: var(--radius-lg);
-  box-shadow:
-    0 24px 80px rgba(0, 0, 0, 0.55),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-}
-
-.modal-close {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 46px;
-  height: 46px;
-  padding: 0;
-  color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: 50%;
-  cursor: pointer;
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.modal-close:hover,
-.modal-close:focus-visible {
-  background: rgba(225, 48, 108, 0.28);
-  border-color: rgba(225, 48, 108, 0.62);
-  transform: scale(1.04);
-}
-
-.modal-close svg {
-  width: 24px;
-  height: 24px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2.6;
-  stroke-linecap: round;
-}
-
-.modal-header {
-  flex-shrink: 0;
-  min-width: 0;
-  padding-right: 56px;
-  margin-bottom: 20px;
-}
-
-.modal-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  min-height: 30px;
-  padding: 6px 12px;
-  margin-bottom: 12px;
-  color: #71e69a;
-  background: rgba(29, 185, 84, 0.12);
-  border: 1px solid rgba(29, 185, 84, 0.34);
-  border-radius: var(--radius-full);
-  font-size: 0.76rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-}
-
-.modal-header h2 {
-  margin: 0;
-  font-size: 1.75rem;
-  line-height: 1.2;
-}
-
-.modal-body {
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
-  gap: 16px;
-  min-height: 0;
-  min-width: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  padding-right: 8px;
-  scrollbar-color: rgba(225, 48, 108, 0.72) rgba(255, 255, 255, 0.08);
-  scrollbar-width: thin;
-}
-
-.modal-body::-webkit-scrollbar {
-  width: 8px;
-}
-
-.modal-body::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: var(--radius-full);
-}
-
-.modal-body::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #e1306c, #833ab4);
-  border: 2px solid rgba(12, 12, 14, 0.9);
-  border-radius: var(--radius-full);
-}
-
-.modal-body::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #ff4f87, #9d58ce);
-}
-
-.modal-body > * {
-  max-width: 100%;
-  min-width: 0;
-}
-
-.modal-body p {
-  margin: 0;
-  color: var(--text-secondary);
-  font-size: 1rem;
-  line-height: 1.7;
-  overflow-wrap: anywhere;
-  word-break: break-word;
-}
-
-.modal-body strong {
-  color: var(--text-primary);
-  font-weight: 800;
-}
-
-.modal-quote-group {
-  display: grid;
-  gap: 12px;
-  padding: 18px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--border-glass);
-  border-radius: var(--radius-md);
-}
-
-.modal-quote-group blockquote {
-  margin: 0;
-  padding: 14px 16px;
-  color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid var(--border-glass);
-  border-radius: 8px;
-  font-size: 0.96rem;
-  font-weight: 700;
-  line-height: 1.55;
-  overflow-wrap: anywhere;
-  word-break: break-word;
-}
 
 /* SO IN LOVE album download page */
 .album-page {
@@ -2286,45 +2094,6 @@ ul li::before {
     font-size: 0.76rem;
   }
 
-  .modal {
-    width: calc(100vw - 24px);
-    max-height: calc(100vh - 24px);
-  }
-
-  .modal-panel {
-    max-height: calc(100vh - 24px);
-    padding: 24px 18px 22px;
-    border-radius: var(--radius-md);
-  }
-
-  .modal-close {
-    top: 12px;
-    right: 12px;
-    width: 42px;
-    height: 42px;
-  }
-
-  .modal-header {
-    padding-right: 50px;
-  }
-
-  .modal-header h2 {
-    font-size: 1.35rem;
-  }
-
-  .modal-body p {
-    font-size: 0.94rem;
-  }
-
-  .modal-quote-group {
-    padding: 14px;
-  }
-
-  .modal-quote-group blockquote {
-    padding: 12px 13px;
-    font-size: 0.9rem;
-  }
-
   .page-hero {
     min-height: 560px;
     margin-top: -16px;
@@ -2381,7 +2150,7 @@ ul li::before {
   .link-button a,
   .back-button,
   .primary-button,
-  .modal-close {
+  .support-dialog-close {
     transition: none;
   }
 
@@ -3430,69 +3199,96 @@ body.page-sub {
   }
 }
 
-/* SO IN LOVE — Portuguese support banner */
-.album-support-modal {
+/* SO IN LOVE — Portuguese support dialog */
+.so-in-love-support-dialog {
   width: min(calc(100vw - 2.5rem), 46rem);
   max-height: min(88svh, 52rem);
+  margin: auto;
+  padding: 0;
+  overflow: visible;
   color: var(--color-graphite);
+  background: transparent;
+  border: 0;
 }
 
-.album-support-modal::backdrop {
+.so-in-love-support-dialog::backdrop {
   background: rgba(16, 16, 15, 0.84);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 }
 
-.album-support-modal .modal-panel {
+.support-dialog-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
   max-height: min(88svh, 52rem);
+  overflow: hidden;
   padding: clamp(2rem, 5vw, 4rem);
   color: var(--color-graphite);
   background: var(--color-ivory);
   border: 1px solid var(--color-brass);
-  border-radius: 0;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.48);
+  text-align: left;
 }
 
-.album-support-modal .modal-close {
+.support-dialog-close {
+  position: absolute;
   top: clamp(1rem, 3vw, 1.5rem);
   right: clamp(1rem, 3vw, 1.5rem);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 2.75rem;
   height: 2.75rem;
+  padding: 0;
   color: var(--color-ink);
   background: transparent;
   border: 1px solid var(--color-line-light);
-  border-radius: 0;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
 }
 
-.album-support-modal .modal-close:hover,
-.album-support-modal .modal-close:focus-visible {
+.support-dialog-close:hover,
+.support-dialog-close:focus-visible {
   color: var(--color-paper);
   background: var(--color-bordeaux);
   border-color: var(--color-bordeaux);
-  transform: none;
 }
 
-.album-support-modal .modal-header {
+.support-dialog-close svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+}
+
+.support-dialog-header {
+  flex-shrink: 0;
+  min-width: 0;
   padding: 0 3.5rem 1.5rem 0;
   margin: 0 0 1.75rem;
   border-bottom: 1px solid var(--color-line-light);
 }
 
-.album-support-modal .modal-eyebrow {
+.support-dialog-kicker {
   display: block;
-  min-height: 0;
-  padding: 0;
   margin: 0 0 0.75rem;
   color: var(--color-bordeaux);
-  background: transparent;
-  border: 0;
-  border-radius: 0;
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.16em;
 }
 
-.album-support-modal .modal-header h2 {
+.support-dialog-header h2 {
+  margin: 0;
   color: var(--color-ink);
   font-family: var(--font-display);
   font-size: clamp(2.3rem, 6vw, 4.25rem);
@@ -3501,35 +3297,63 @@ body.page-sub {
   line-height: 0.94;
 }
 
-.album-support-modal .modal-body {
+.support-dialog-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
   gap: 1.35rem;
+  min-width: 0;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
   padding-right: 0.75rem;
   scrollbar-color: var(--color-brass) transparent;
+  scrollbar-width: thin;
 }
 
-.album-support-modal .modal-body p,
-.album-support-modal .modal-body strong {
+.support-dialog-body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.support-dialog-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.support-dialog-body::-webkit-scrollbar-thumb {
+  background: var(--color-brass);
+  border: 2px solid var(--color-ivory);
+}
+
+.support-dialog-body::-webkit-scrollbar-thumb:hover {
+  background: var(--color-bordeaux);
+}
+
+.support-dialog-body > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.support-dialog-body p {
+  margin: 0;
   color: var(--color-graphite);
-}
-
-.album-support-modal .modal-body p {
   font-size: 0.98rem;
   line-height: 1.7;
+  overflow-wrap: anywhere;
 }
 
-.album-support-modal .modal-body strong {
+.support-dialog-body strong {
+  color: var(--color-graphite);
   font-weight: 700;
 }
 
-.album-support-modal .modal-quote-group {
+.support-dialog-quotes {
+  display: grid;
   gap: 0;
   padding: 1.5rem;
   background: #e8e0d3;
-  border: 0;
-  border-radius: 0;
 }
 
-.album-support-modal .modal-quote-group p {
+.support-dialog-quotes p {
   margin-bottom: 1rem;
   color: var(--color-bordeaux);
   font-size: 0.72rem;
@@ -3538,19 +3362,18 @@ body.page-sub {
   text-transform: uppercase;
 }
 
-.album-support-modal .modal-quote-group blockquote {
+.support-dialog-quotes blockquote {
+  margin: 0;
   padding: 1rem 0;
   color: var(--color-ink);
-  background: transparent;
-  border: 0;
-  border-radius: 0;
   font-family: var(--font-display);
   font-size: clamp(1.15rem, 2.6vw, 1.5rem);
   font-weight: 400;
   line-height: 1.2;
+  overflow-wrap: anywhere;
 }
 
-.album-support-modal .modal-quote-group blockquote + blockquote {
+.support-dialog-quotes blockquote + blockquote {
   border-top: 1px solid var(--color-line-light);
 }
 
@@ -3632,17 +3455,17 @@ body.page-sub {
 }
 
 @media (max-width: 47.99rem) {
-  .album-support-modal {
+  .so-in-love-support-dialog {
     width: calc(100vw - 1.5rem);
     max-height: calc(100svh - 1.5rem);
   }
 
-  .album-support-modal .modal-panel {
+  .support-dialog-panel {
     max-height: calc(100svh - 1.5rem);
     padding: 1.5rem;
   }
 
-  .album-support-modal .modal-header {
+  .support-dialog-header {
     padding-right: 3rem;
   }
 }
