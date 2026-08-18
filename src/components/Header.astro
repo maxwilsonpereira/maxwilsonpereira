@@ -11,6 +11,7 @@ const hasSoInLoveLanguageFlow = route === 'soInLovePurchase' || route === 'soInL
 const showLanguageSwitcher = hasTranslations || hasSoInLoveLanguageFlow;
 const albumSectionRoutes = new Set<RouteKey>(['albums', 'tenoriAmici', 'quattro', 'soInLovePurchase', 'soInLoveDownload']);
 const activeNavigationRoute: RouteKey = albumSectionRoutes.has(route) ? 'albums' : route;
+const mobileHeaderLocales = ['pt', 'en'] as const satisfies readonly Locale[];
 const navId = 'site-navigation';
 ---
 <header class="site-header" data-site-header>
@@ -46,6 +47,7 @@ const navId = 'site-navigation';
         <SocialLinks {locale} className="site-nav-social-link" />
       </div>
     </div>
+    {showLanguageSwitcher && <div class="site-header-mobile-languages"><LanguageSwitcher {locale} {route} specialFlow={hasSoInLoveLanguageFlow ? 'soInLove' : undefined} visibleLocales={mobileHeaderLocales} /></div>}
     <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls={navId} aria-label={t(locale, 'Abrir menu')} data-menu-toggle data-open-label={t(locale, 'Abrir menu')} data-close-label={t(locale, 'Fechar menu')}>
       <span></span><span></span><span></span>
     </button>

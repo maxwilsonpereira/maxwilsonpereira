@@ -6,13 +6,14 @@ interface Props {
   locale: Locale;
   route: RouteKey;
   specialFlow?: 'soInLove';
+  visibleLocales?: readonly Locale[];
 }
 
-const { locale, route, specialFlow } = Astro.props;
+const { locale, route, specialFlow, visibleLocales } = Astro.props;
+const languageOptions = visibleLocales ?? (Object.keys(locales) as Locale[]);
 ---
-<div class="language-switcher" aria-label={t(locale, 'Escolher idioma')}>
-  {Object.keys(locales).map((code) => {
-    const targetLocale = code as Locale;
+<div class="language-switcher" role="group" aria-label={t(locale, 'Escolher idioma')}>
+  {languageOptions.map((targetLocale) => {
     const language = locales[targetLocale];
     const accessibleLabel = `${t(locale, 'Mudar idioma para')} ${language.label}`;
     const isCurrent = targetLocale === locale;
