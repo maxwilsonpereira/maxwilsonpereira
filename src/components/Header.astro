@@ -59,18 +59,34 @@ const navId = 'site-navigation';
   const nav = document.querySelector<HTMLElement>('[data-site-nav]');
   const toggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
   if (header && nav && toggle) {
-    const setOpen = (open: boolean) => {
+    let menuTransitionTimer: ReturnType<typeof setTimeout> | undefined;
+    let menuToggleUsesKeyboard = false;
+    const setOpen = (open: boolean, shouldAnimate = false, shouldFocusFirstLink = false) => {
+      clearTimeout(menuTransitionTimer);
+      nav.classList.toggle('is-menu-transitioning', shouldAnimate);
       nav.classList.toggle('is-open', open);
       document.body.classList.toggle('site-menu-open', open);
       toggle.setAttribute('aria-expanded', String(open));
       toggle.setAttribute('aria-label', open ? toggle.dataset.closeLabel ?? '' : toggle.dataset.openLabel ?? '');
-      if (open) requestAnimationFrame(() => nav.querySelector<HTMLAnchorElement>('a')?.focus());
+      if (open && shouldFocusFirstLink) {
+        requestAnimationFrame(() => nav.querySelector<HTMLAnchorElement>('a')?.focus());
+      }
+      if (shouldAnimate) {
+        menuTransitionTimer = setTimeout(() => nav.classList.remove('is-menu-transitioning'), 600);
+      }
     };
-    toggle.addEventListener('click', () => setOpen(!nav.classList.contains('is-open')));
-    nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setOpen(false)));
+    toggle.addEventListener('keydown', (event) => {
+      menuToggleUsesKeyboard = event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar';
+    });
+    toggle.addEventListener('click', (event) => {
+      const shouldFocusFirstLink = menuToggleUsesKeyboard || event.detail === 0;
+      menuToggleUsesKeyboard = false;
+      setOpen(!nav.classList.contains('is-open'), true, shouldFocusFirstLink);
+    });
+    nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setOpen(false, true)));
     document.addEventListener('keydown', (event) => {
       if (!nav.classList.contains('is-open')) return;
-      if (event.key === 'Escape') { setOpen(false); toggle.focus(); return; }
+      if (event.key === 'Escape') { setOpen(false, true); toggle.focus(); return; }
       if (event.key !== 'Tab') return;
       const focusable = [...nav.querySelectorAll<HTMLElement>('a[href], button:not([disabled])'), toggle];
       const first = focusable[0];

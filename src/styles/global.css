@@ -2516,6 +2516,12 @@ input:focus-visible {
   visibility: hidden;
   pointer-events: none;
   transform: translateY(-1rem);
+  transition: none;
+}
+
+/* Only user-initiated opens and closes animate. A viewport breakpoint change
+   must swap navigation layouts immediately, without flashing the drawer. */
+.site-nav.is-menu-transitioning {
   transition:
     opacity var(--duration-menu-fade) ease,
     visibility var(--duration-menu-fade) ease,
@@ -2528,12 +2534,6 @@ input:focus-visible {
   pointer-events: auto;
   transform: translateY(0);
 }
-
-/* Prevent the mobile panel's close animation from playing when CSS switches
-   between the mobile and desktop navigation layouts at 60rem. */
-
-
-
 
 .site-nav-links {
   display: grid;
