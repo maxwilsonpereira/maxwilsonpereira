@@ -63,6 +63,7 @@ export const translatedRouteKeys = [
   'videos',
   'tenoriAmici',
   'quattro',
+  'soInLoveDownload',
 ] as const satisfies readonly RouteKey[];
 
 export function pathFor(route: RouteKey, locale: Locale = defaultLocale): string {

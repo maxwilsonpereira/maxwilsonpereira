@@ -17,7 +17,7 @@ export function getStaticPaths() {
       definitions.push({ locale, route, pathname: pathFor(route, locale) });
     }
   }
-  for (const route of ['support', 'soInLovePurchase', 'soInLoveDownload'] as const satisfies readonly RouteKey[]) {
+  for (const route of ['support', 'soInLovePurchase'] as const satisfies readonly RouteKey[]) {
     definitions.push({ locale: 'pt', route, pathname: pathFor(route, 'pt') });
   }
   return definitions.map((definition) => ({

@@ -8,20 +8,35 @@ interface Props {
   downloadable?: boolean;
   downloadLabel?: string;
   previewSeconds?: number;
+  enabledLimit?: number;
+  unavailableLabel?: string;
 }
-const { tracks, playLabel, pauseLabel, audioFallback, downloadable = false, downloadLabel = 'Baixar', previewSeconds } = Astro.props;
+const {
+  tracks,
+  playLabel,
+  pauseLabel,
+  audioFallback,
+  downloadable = false,
+  downloadLabel = 'Baixar',
+  previewSeconds,
+  enabledLimit,
+  unavailableLabel = 'Indisponível',
+} = Astro.props;
 ---
 <div class="audio-track-list" data-audio-player data-play-label={playLabel} data-pause-label={pauseLabel} data-preview-seconds={previewSeconds}>
   <audio class="album-audio" controls preload="none">{audioFallback}</audio>
   <ol class="track-list">
-    {tracks.map((track) => (
-      <li class="track-item">
+    {tracks.map((track, index) => {
+      const unavailable = enabledLimit !== undefined && index >= enabledLimit;
+      return (
+      <li class:list={['track-item', { 'is-disabled': unavailable }]}>
         <span class="track-number">{track.number}</span>
         <div class="track-meta"><strong>{track.title}</strong><span>{track.artist}</span></div>
-        <button class="track-action play-track" type="button" data-src={track.src} aria-label={`${playLabel}: ${track.title}`}>{playLabel}</button>
-        {downloadable && <a class="track-action" href={track.src} download aria-label={`${downloadLabel}: ${track.title}`}>{downloadLabel}</a>}
+        <button class="track-action play-track" type="button" data-src={unavailable ? undefined : track.src} aria-label={`${unavailable ? unavailableLabel : playLabel}: ${track.title}`} disabled={unavailable} title={unavailable ? unavailableLabel : undefined}>{playLabel}</button>
+        {downloadable && <a class="track-action" href={unavailable ? undefined : track.src} download={unavailable ? undefined : true} aria-label={`${unavailable ? unavailableLabel : downloadLabel}: ${track.title}`} aria-disabled={unavailable ? 'true' : undefined} tabindex={unavailable ? '-1' : undefined} title={unavailable ? unavailableLabel : undefined}>{downloadLabel}</a>}
       </li>
-    ))}
+      );
+    })}
   </ol>
 </div>
 

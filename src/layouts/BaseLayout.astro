@@ -28,6 +28,14 @@ const schema = buildStructuredData(route, locale, seo);
 <html lang={localeInfo.htmlLang}>
   <head>
     <meta charset="UTF-8" />
+    {route === 'soInLoveDownload' && locale === 'pt' && (
+      <script is:inline>
+        const requestedLocale = new URLSearchParams(location.search).get('lang');
+        if (requestedLocale && ['en', 'es', 'de'].includes(requestedLocale)) {
+          location.replace(`/${requestedLocale}${location.pathname}${location.hash}`);
+        }
+      </script>
+    )}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{seo.title}</title>
     <meta name="description" content={seo.description} />

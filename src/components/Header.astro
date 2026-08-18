@@ -9,6 +9,8 @@ const { locale, route } = Astro.props;
 const hasTranslations = (translatedRouteKeys as readonly RouteKey[]).includes(route);
 const hasSoInLoveLanguageFlow = route === 'soInLovePurchase' || route === 'soInLoveDownload';
 const showLanguageSwitcher = hasTranslations || hasSoInLoveLanguageFlow;
+const albumSectionRoutes = new Set<RouteKey>(['albums', 'tenoriAmici', 'quattro', 'soInLovePurchase', 'soInLoveDownload']);
+const activeNavigationRoute: RouteKey = albumSectionRoutes.has(route) ? 'albums' : route;
 const navId = 'site-navigation';
 ---
 <header class="site-header" data-site-header>
@@ -21,11 +23,15 @@ const navId = 'site-navigation';
     </a>
     <nav class="site-nav" id={navId} aria-label={t(locale, 'Navegação principal')} data-site-nav>
       <div class="site-nav-links">
-        {navigation.map((item) => (
-          <a class:list={['site-nav-link', { 'is-active': route === item.route }]} href={pathFor(item.route, locale)} aria-current={route === item.route ? 'page' : undefined}>
-            {t(locale, item.label)}
-          </a>
-        ))}
+        {navigation.map((item) => {
+          const isActive = activeNavigationRoute === item.route;
+          const currentState = route === item.route ? 'page' : isActive ? 'location' : undefined;
+          return (
+            <a class:list={['site-nav-link', { 'is-active': isActive }]} href={pathFor(item.route, locale)} aria-current={currentState}>
+              {t(locale, item.label)}
+            </a>
+          );
+        })}
       </div>
       <div class="site-nav-mobile-meta">
         {showLanguageSwitcher && <div class="site-nav-mobile-languages"><LanguageSwitcher {locale} {route} specialFlow={hasSoInLoveLanguageFlow ? 'soInLove' : undefined} /></div>}

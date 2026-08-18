@@ -22,4 +22,4 @@ const { locale, route } = Astro.props;
 {route === 'quattro' && <AlbumSamplesPage {locale} album="quattro" />}
 {route === 'support' && <SupportPage />}
 {route === 'soInLovePurchase' && <SoInLovePurchasePage />}
-{route === 'soInLoveDownload' && <SoInLoveDownloadPage />}
+{route === 'soInLoveDownload' && <SoInLoveDownloadPage {locale} />}

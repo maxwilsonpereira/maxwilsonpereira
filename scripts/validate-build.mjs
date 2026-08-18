@@ -11,12 +11,13 @@ const translated = [
   'pages/videos.html',
   'pages/albums/tenori-amici.html',
   'pages/albums/quattro-sony.html',
+  'pages/albums/so-in-love.html',
 ];
 const portugueseOnly = [
   'pages/apoio-pix.html',
   'pages/albums/so-in-love-pix.html',
-  'pages/albums/so-in-love.html',
 ];
+const indexableTranslated = translated.filter((route) => route !== 'pages/albums/so-in-love.html');
 const expected = [...locales.flatMap((locale) => translated.map((route) => `${locale}${route}`)), ...portugueseOnly, '404.html'];
 const issues = [];
 const canonicalOwners = new Map();
@@ -54,7 +55,7 @@ for (const route of expected) {
     const ogUrl = html.match(/<meta\s+property="og:url"\s+content="([^"]+)"/iu)?.[1];
     if (ogUrl !== canonical) issues.push(`${route}: og:url must match canonical`);
     const robots = html.match(/<meta\s+name="robots"\s+content="([^"]+)"/iu)?.[1] ?? '';
-    const shouldNoindex = route === 'pages/albums/so-in-love.html';
+    const shouldNoindex = route.endsWith('pages/albums/so-in-love.html');
     if (shouldNoindex ? !robots.includes('noindex') : !robots.includes('index')) issues.push(`${route}: incorrect robots directive`);
     const isTranslated = translated.some((candidate) => route.endsWith(candidate));
     if (isTranslated && count(/<link\s+rel="alternate"\s+hreflang=/giu) !== 5) issues.push(`${route}: expected five hreflang links`);
@@ -66,6 +67,17 @@ for (const route of expected) {
     }
   }
   if (/<img\b(?![^>]*\balt=)[^>]*>/giu.test(html)) issues.push(`${route}: image missing alt text`);
+
+  const isAlbumSection = /(?:^|\/)pages\/albums(?:\/[^/]+)?\.html$/u.test(route);
+  if (isAlbumSection) {
+    const localePrefix = route.match(/^(en|es|de)\//u)?.[1];
+    const expectedAlbumsHref = `${localePrefix ? `/${localePrefix}` : ''}/pages/albums.html`;
+    const activeNav = html.match(/<a\s+class="site-nav-link is-active"\s+href="([^"]+)"\s+aria-current="([^"]+)"/iu);
+    const expectedCurrentState = route.endsWith('pages/albums.html') ? 'page' : 'location';
+    if (activeNav?.[1] !== expectedAlbumsHref || activeNav?.[2] !== expectedCurrentState) {
+      issues.push(`${route}: Albums navigation item must be active with aria-current="${expectedCurrentState}"`);
+    }
+  }
 
   for (const match of html.matchAll(/\s(?:href|src)="([^"]+)"/giu)) {
     const value = match[1].split(/[?#]/u, 1)[0];
@@ -82,7 +94,7 @@ for (const required of ['CNAME', 'robots.txt', 'llms.txt', 'sitemap.xml']) {
 }
 
 const sitemap = await fs.readFile(path.join(output, 'sitemap.xml'), 'utf8');
-for (const route of [...locales.flatMap((locale) => translated.map((item) => `${locale}${item}`)), ...portugueseOnly.slice(0, 2)]) {
+for (const route of [...locales.flatMap((locale) => indexableTranslated.map((item) => `${locale}${item}`)), ...portugueseOnly]) {
   const publicRoute = route.replace(/index\.html$/u, '');
   if (!sitemap.includes(`https://maxwilsonpereira.com.br/${publicRoute}`)) issues.push(`Sitemap missing /${publicRoute}`);
 }

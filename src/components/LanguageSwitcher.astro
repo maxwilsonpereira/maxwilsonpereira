@@ -10,7 +10,7 @@ interface Props {
 
 const { locale, route, specialFlow } = Astro.props;
 ---
-<div class="language-switcher" aria-label={t(locale, 'Escolher idioma')} data-language-query-switcher={specialFlow ? 'so-in-love' : undefined}>
+<div class="language-switcher" aria-label={t(locale, 'Escolher idioma')}>
   {Object.keys(locales).map((code) => {
     const targetLocale = code as Locale;
     const language = locales[targetLocale];
@@ -19,10 +19,10 @@ const { locale, route, specialFlow } = Astro.props;
     const targetHref = specialFlow === 'soInLove'
       ? targetLocale === 'pt'
         ? pathFor('soInLovePurchase')
-        : `${pathFor('soInLoveDownload')}?lang=${targetLocale}`
+        : pathFor('soInLoveDownload', targetLocale)
       : pathFor(route, targetLocale);
     return (
-      isCurrent && !specialFlow ? (
+      isCurrent ? (
         <span
           class="language-switch-link is-active"
           role="img"
@@ -51,29 +51,3 @@ const { locale, route, specialFlow } = Astro.props;
     );
   })}
 </div>
-
-<script>
-  const supportedLocales = new Set(['pt', 'en', 'es', 'de']);
-
-  document.querySelectorAll<HTMLElement>('[data-language-query-switcher="so-in-love"]').forEach((switcher) => {
-    const queryLocale = new URLSearchParams(window.location.search).get('lang');
-    const currentLocale = queryLocale && supportedLocales.has(queryLocale) ? queryLocale : 'pt';
-
-    switcher.querySelectorAll<HTMLAnchorElement>('[data-language-locale]').forEach((link) => {
-      const isCurrent = link.dataset.languageLocale === currentLocale;
-      link.classList.toggle('is-active', isCurrent);
-      if (isCurrent) {
-        link.setAttribute('aria-current', 'page');
-        link.setAttribute('aria-disabled', 'true');
-        link.setAttribute('tabindex', '-1');
-      } else {
-        link.removeAttribute('aria-current');
-        link.removeAttribute('aria-disabled');
-        link.removeAttribute('tabindex');
-      }
-      link.addEventListener('click', (event) => {
-        if (link.getAttribute('aria-disabled') === 'true') event.preventDefault();
-      });
-    });
-  });
-</script>

@@ -9,7 +9,7 @@ interface Props { locale: Locale; }
 const { locale } = Astro.props;
 const tr = (source: string) => t(locale, source);
 const albums = [
-  { slug: 'so-in-love' as const, title: 'SO IN LOVE', copy: 'Clássicos românticos, cinema, teatro musical e faixas bônus em uma seleção íntima e emocionante.', href: locale === 'pt' ? pathFor('soInLovePurchase') : `${pathFor('soInLoveDownload')}?lang=${locale}` },
+  { slug: 'so-in-love' as const, title: 'SO IN LOVE', copy: 'Clássicos românticos, cinema, teatro musical e faixas bônus em uma seleção íntima e emocionante.', href: locale === 'pt' ? pathFor('soInLovePurchase') : pathFor('soInLoveDownload', locale) },
   { slug: 'tenori-amici' as const, title: 'TENORI AMICI', copy: 'Álbum lançado pela gravadora Biscoito Fino, reunindo repertório clássico e popular em formato crossover vocal.', href: pathFor('tenoriAmici', locale) },
   { slug: 'quattro-sony' as const, title: 'QUATTRO', copy: 'Projeto da Sony Music Entertainment Brasil lançado em 2011, com o Grupo Quattro revisitando grandes canções internacionais em formato crossover vocal.', href: pathFor('quattro', locale) },
 ];
