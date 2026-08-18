@@ -1,0 +1,26 @@
+---
+import Icon from './Icon.astro';
+import { socialProfiles, type Locale } from '@/config/site';
+import { t } from '@/i18n';
+
+interface Props {
+  locale: Locale;
+  className: string;
+  showLabel?: boolean;
+}
+
+const { locale, className, showLabel = false } = Astro.props;
+---
+{socialProfiles.map((social) => (
+  <a
+    class:list={[className, `${className}-${social.id}`]}
+    href={social.href}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={`${t(locale, 'Seguir Max Wilson Pereira no')} ${social.label}`}
+    title={social.label}
+  >
+    <Icon name={social.id} />
+    {showLabel && <span>{social.label}</span>}
+  </a>
+))}

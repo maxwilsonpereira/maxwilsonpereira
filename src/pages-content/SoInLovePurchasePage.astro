@@ -1,0 +1,32 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Badge from '@/components/Badge.astro';
+---
+<BaseLayout locale="pt" route="soInLovePurchase" preloadImage={{ src: '/assets/optimized/concerto-1600.webp', srcset: '/assets/optimized/concerto-720.webp 720w, /assets/optimized/concerto-1600.webp 1600w', sizes: '100vw', type: 'image/webp' }}>
+  <main class="page-container pix-purchase-page" id="main-content">
+    <section class="page-hero pix-purchase-hero" aria-labelledby="pix-purchase-title"><img src="/assets/optimized/concerto-1600.webp" srcset="/assets/optimized/concerto-720.webp 720w, /assets/optimized/concerto-1600.webp 1600w" sizes="100vw" width="1600" height="1066" alt="Max Wilson Pereira em imagem de divulgação do concerto" class="page-hero-img pix-purchase-hero-img hero--anchor-top" fetchpriority="high" decoding="async" /><div class="page-hero-overlay pix-purchase-hero-overlay"></div><div class="page-hero-copy pix-purchase-hero-copy"><Badge text="Tenor • Ópera & Entretenimento" /><h1 id="pix-purchase-title">Álbum SO IN LOVE + Bônus</h1></div></section>
+    <section class="content-section">
+      <p><strong>SO IN LOVE</strong> - álbum digital</p><p>Muito obrigado pelo seu interesse no meu trabalho! ❤️❤️❤️</p><p><strong>Álbum digital em formato MP3</strong> do tenor brasileiro Max Wilson Pereira, trazendo emoção, romantismo e interpretações marcantes de grandes clássicos.</p><p><strong>Atenção: este é um produto digital. Você não receberá um CD físico, apenas arquivos para download.</strong></p>
+      <h2 class="accent">Como comprar via PIX</h2>
+      <div class="step"><span class="step-num">1</span><span>Faça um PIX de <span class="highlight">R$ 60</span> para: <span class="highlight">08511512721</span></span></div>
+      <div class="step"><span class="step-num">2</span><span>Depois de fazer o PIX, digite abaixo o nome que aparece no pagamento (nome do titular da conta que fez o PIX) e clique no botão para continuar.</span></div>
+      <div class="pix-continue-form"><label class="input-label" for="pix-nome">Digite aqui o nome usado no PIX</label><input id="pix-nome" class="pix-input" type="text" placeholder="Digite aqui o nome usado no PIX" autocomplete="name" /><button class="primary-button" type="button" disabled>CONTINUAR</button><p class="form-error" role="status" aria-live="polite"></p></div>
+      <h2>Repertório</h2><p>Músicas eternas, entre elas:</p><ul><li>"Tonight" - West Side Story</li><li>"Where Do I Begin" - Love Story</li><li>"Over the Rainbow"</li><li>"Smile"</li><li>"The Way You Look Tonight"</li><li>"So in Love"</li></ul>
+      <h2>Bônus Exclusivo</h2><p>Além do álbum, você recebe clássicos cantados com toda a alma:</p><ul><li>Volta ao Meu Mundo (música inédita)</li><li>Primadonna (música inédita)</li><li>Nessun dorma - Turandot (Puccini)</li><li>E lucevan le stelle - Tosca (Puccini)</li><li>Una furtiva lagrima - L'elisir d'amore (Donizetti)</li><li>Vesti la giubba - I Pagliacci (Leoncavallo)</li><li>Vision Fugitive - Hérodiade (Massenet)</li><li>Wolgalied - Der Zarewitsch (Lehár)</li><li>Non ti scordar di me</li><li>Empty Chairs at Empty Tables - Les Misérables</li><li>Stars - Les Misérables</li></ul>
+    </section>
+  </main>
+</BaseLayout>
+<script>
+  const form = document.querySelector<HTMLElement>('.pix-continue-form');
+  const input = form?.querySelector<HTMLInputElement>('.pix-input');
+  const button = form?.querySelector<HTMLButtonElement>('.primary-button');
+  const status = form?.querySelector<HTMLElement>('.form-error');
+  const validate = () => {
+    if (!input || !button) return;
+    const valid = input.value.trim().length >= 3;
+    button.disabled = !valid;
+    if (status) status.textContent = valid || !input.value ? '' : 'Digite pelo menos 3 caracteres.';
+  };
+  input?.addEventListener('input', validate);
+  button?.addEventListener('click', () => { if (input && input.value.trim().length >= 3) location.href = '/pages/albums/so-in-love.html'; });
+</script>

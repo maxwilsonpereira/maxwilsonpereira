@@ -1,0 +1,14 @@
+---
+interface Props {
+  slug: 'so-in-love' | 'tenori-amici' | 'quattro-sony';
+  label: string;
+  frontAlt: string;
+  backAlt: string;
+}
+const { slug, label, frontAlt, backAlt } = Astro.props;
+const optimizedSlug = slug === 'quattro-sony' ? 'quattro' : slug;
+---
+<div class="album-art-showcase" aria-label={label}>
+  <img class="album-cover album-cover-back" src={`/assets/${slug}/cover-back.jpg`} srcset={`/assets/optimized/${optimizedSlug}-back-600.webp 600w`} width={slug === 'so-in-love' ? 1417 : slug === 'tenori-amici' ? 1636 : 785} height={slug === 'so-in-love' ? 1417 : slug === 'tenori-amici' ? 1486 : 715} alt={backAlt} loading="lazy" decoding="async" />
+  <img class="album-cover album-cover-front" src={`/assets/${slug}/cover-front.jpg`} srcset={`/assets/optimized/${optimizedSlug}-cover-480.webp 480w, /assets/optimized/${optimizedSlug}-cover-900.webp 900w`} sizes="285px" width={slug === 'so-in-love' ? 1414 : slug === 'tenori-amici' ? 3000 : 787} height={slug === 'so-in-love' ? 1417 : slug === 'tenori-amici' ? 3000 : 714} alt={frontAlt} loading="lazy" decoding="async" />
+</div>

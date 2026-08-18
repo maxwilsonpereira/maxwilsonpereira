@@ -1,0 +1,7 @@
+---
+interface Props { videoId: string; title: string; class?: string; }
+const { videoId, title, class: className } = Astro.props;
+---
+<figure class:list={['video-embed', className]} aria-label={title} data-video-embed>
+  <iframe src={`https://www.youtube-nocookie.com/embed/${videoId}?enablejsapi=1`} title={title} loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</figure>

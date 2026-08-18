@@ -1,0 +1,83 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SocialFollow from '@/components/SocialFollow.astro';
+import VideoEmbed from '@/components/VideoEmbed.astro';
+import Icon from '@/components/Icon.astro';
+import { pathFor, type Locale } from '@/config/site';
+import { t } from '@/i18n';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const translate = (source: string) => t(locale, source);
+---
+<BaseLayout locale={locale} route="home" bodyClass="page-home" preloadImage={{ src: '/assets/optimized/hebe-camargo-1280.webp', srcset: '/assets/optimized/hebe-camargo-720.webp 720w, /assets/optimized/hebe-camargo-1280.webp 1280w', sizes: '100vw', type: 'image/webp' }}>
+  <main class="home-main" id="main-content">
+    <section class="home-hero" aria-labelledby="home-title">
+      <img src="/assets/optimized/hebe-camargo-1280.webp" srcset="/assets/optimized/hebe-camargo-720.webp 720w, /assets/optimized/hebe-camargo-1280.webp 1280w" sizes="100vw" width="1280" height="696" alt={translate('Max Wilson Pereira em apresentação no DVD de Hebe Camargo')} class="home-hero-img hero--anchor-top" fetchpriority="high" decoding="async" />
+      <div class="home-hero-overlay" aria-hidden="true"></div>
+      <div class="home-hero-copy">
+        <h1 id="home-title"><span class="home-name-line">Max Wilson</span><span class="home-name-line">Pereira</span></h1>
+        <p class="home-hero-role">{translate('Tenor brasileiro')} <span aria-hidden="true">•</span> Viena</p>
+        <p class="tagline">{translate('Canto, paixão e entretenimento para alegrar o seu dia e tocar o seu coração')}</p>
+        <div class="home-hero-actions"><a class="button button-primary" href={pathFor('concert', locale)}>{translate('Conheça o concerto')}<Icon name="arrow" /></a></div>
+      </div>
+      <a class="home-hero-scroll" href="#concerto-em-destaque" aria-label={translate('Ir para o destaque do concerto')}><span>{translate('Explore')}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M6 14l6 6 6-6" /></svg></a>
+    </section>
+
+    <section class="home-concert" id="concerto-em-destaque" aria-labelledby="home-concert-title">
+      <div class="home-concert-image-wrap" data-reveal>
+        <img class="home-concert-image" src="/assets/optimized/cachoeiro-orchestra-1440.webp" srcset="/assets/optimized/cachoeiro-orchestra-720.webp 720w, /assets/optimized/cachoeiro-orchestra-1440.webp 1440w" sizes="(min-width: 64rem) 50vw, 100vw" width="1440" height="1080" alt={translate('Max Wilson Pereira cantando com uma orquestra em Cachoeiro de Itapemirim')} loading="lazy" decoding="async" />
+        <span class="home-concert-image-caption">Orquestra Mariuccia Iacovino</span>
+      </div>
+      <div class="home-concert-copy" data-reveal>
+        <h2 id="home-concert-title">{translate('Uma experiência próxima, elegante e emocionante')}</h2>
+        <p class="home-feature-copy">{translate('Uma noite emocionante com grandes melodias, entre o teatro musical, a ópera e o crossover clássico.')}</p>
+        <p class="home-feature-copy">{translate('Um encontro íntimo entre voz, palavra e melodia, com repertórios que atravessam gerações e continuam encontrando novos sentidos ao vivo.')}</p>
+        <a class="button button-dark" href={pathFor('concert', locale)}>{translate('Conheça o concerto')}<Icon name="arrow" /></a>
+      </div>
+    </section>
+
+    <section class="home-welcome" aria-labelledby="home-welcome-title"><div class="home-welcome-inner">
+      <div class="home-welcome-video" data-reveal><VideoEmbed videoId="V8hl9V5tCFM" title={translate('Mensagem em vídeo de Max Wilson Pereira')} /></div>
+      <div class="home-welcome-copy" data-reveal>
+        <h2 id="home-welcome-title">{translate('Que alegria ter você aqui')}</h2>
+        <div class="home-welcome-text">
+          <p class="home-feature-copy">{translate('Este espaço reúne um pouco da minha voz, da minha história e da minha paixão pela música: da tradição lírica às canções que atravessam gerações, sempre com o desejo de tocar o coração de quem escuta.')}</p>
+          <p class="home-feature-copy">{translate('Assista ao vídeo e seja muito bem-vindo ao meu mundo musical.')}</p>
+        </div>
+        <a class="button button-light" href={pathFor('albums', locale)}>{translate('Ouça minha música')}<Icon name="arrow" /></a>
+      </div>
+    </div></section>
+
+    <section class="home-career" aria-labelledby="home-career-title">
+      <div class="home-career-heading" data-reveal><h2 id="home-career-title">{translate('Uma trajetória entre palcos e encontros')}</h2><p class="home-feature-copy">{translate('Ópera, televisão, crossover e redes sociais, levando a força do canto lírico para cada vez mais pessoas.')}</p></div>
+      <div class="home-career-gallery">
+        <figure class="home-career-image home-career-image-wide" data-reveal><img src="/assets/optimized/max-wilson-hebe-camargo-duet-1080.webp" srcset="/assets/optimized/max-wilson-hebe-camargo-duet-720.webp 720w, /assets/optimized/max-wilson-hebe-camargo-duet-1080.webp 1080w" sizes="(min-width: 48rem) 42vw, 100vw" width="1626" height="967" alt={translate('Max Wilson Pereira e Hebe Camargo durante apresentação no Credicard Hall')} loading="lazy" decoding="async" /><figcaption>DVD Hebe Camargo, Credicard Hall</figcaption></figure>
+        <figure class="home-career-image" data-reveal><img src="/assets/optimized/fedra-e-hipolito-curtain-call-750.webp" width="750" height="500" alt={translate('Cena da ópera Fedra e Hipólito em um palco de grandes dimensões')} loading="lazy" decoding="async" /><figcaption>Fedra e Hipólito, Palácio das Artes</figcaption></figure>
+      </div>
+      <a class="button button-dark" href={pathFor('biography', locale)}>{translate('Conheça minha trajetória')}<Icon name="arrow" /></a>
+    </section>
+
+    <section class="home-music" aria-labelledby="home-music-title">
+      <div class="home-music-heading" data-reveal><h2 id="home-music-title">{translate('Álbuns')}</h2><p class="home-feature-copy">{translate('Três momentos de uma trajetória entre romantismo, repertório lírico e crossover.')}</p><a class="button button-dark" href={pathFor('albums', locale)}>{translate('Explore os álbuns')}</a></div>
+      <div class="home-album-list">
+        <a class="home-album home-album-featured" href={locale === 'pt' ? pathFor('soInLovePurchase') : `${pathFor('soInLoveDownload')}?lang=${locale}`} data-reveal><img src="/assets/so-in-love/cover-front.jpg" srcset="/assets/optimized/so-in-love-cover-480.webp 480w, /assets/optimized/so-in-love-cover-900.webp 900w" sizes="(min-width: 64rem) 28vw, 100vw" width="1414" height="1417" alt={translate('Capa do álbum SO IN LOVE')} loading="lazy" decoding="async" /><span><strong>SO IN LOVE</strong><small>Max Wilson Pereira</small></span></a>
+        <a class="home-album" href={pathFor('tenoriAmici', locale)} data-reveal><img src="/assets/tenori-amici/cover-front.jpg" srcset="/assets/optimized/tenori-amici-cover-480.webp 480w, /assets/optimized/tenori-amici-cover-900.webp 900w" sizes="(min-width: 64rem) 28vw, 50vw" width="3000" height="3000" alt={translate('Capa do álbum Tenori Amici')} loading="lazy" decoding="async" /><span><strong>TENORI AMICI</strong><small>Con Amore</small></span></a>
+        <a class="home-album" href={pathFor('quattro', locale)} data-reveal><img src="/assets/quattro-sony/cover-front.jpg" srcset="/assets/optimized/quattro-cover-480.webp 480w, /assets/optimized/quattro-cover-900.webp 900w" sizes="(min-width: 64rem) 28vw, 50vw" width="787" height="714" alt={translate('Capa do álbum QUATTRO')} loading="lazy" decoding="async" /><span><strong>QUATTRO</strong><small>Sony Music Brasil</small></span></a>
+      </div>
+    </section>
+    <SocialFollow {locale} />
+  </main>
+</BaseLayout>
+
+<script>
+  const revealItems = [...document.querySelectorAll<HTMLElement>('[data-reveal]')];
+  if ('IntersectionObserver' in window) {
+    document.documentElement.classList.add('reveal-ready');
+    const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    }), { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    revealItems.forEach((item) => observer.observe(item));
+  }
+</script>

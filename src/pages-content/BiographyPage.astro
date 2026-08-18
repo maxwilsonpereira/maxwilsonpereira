@@ -1,0 +1,62 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Badge from '@/components/Badge.astro';
+import MicrophoneInterlude from '@/components/MicrophoneInterlude.astro';
+import VideoEmbed from '@/components/VideoEmbed.astro';
+import { type Locale } from '@/config/site';
+import { t } from '@/i18n';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const tr = (source: string) => t(locale, source);
+---
+<BaseLayout locale={locale} route="biography" bodyClass="page-sub page-biography" preloadImage={{ src: '/assets/optimized/russia-operetta-1600.webp', srcset: '/assets/optimized/russia-operetta-720.webp 720w, /assets/optimized/russia-operetta-1600.webp 1600w', sizes: '100vw', type: 'image/webp' }}>
+  <main class="page-container editorial-page editorial-prose biography-page" id="main-content">
+    <section class="page-hero biography-hero" aria-labelledby="biography-title">
+      <img src="/assets/optimized/russia-operetta-1600.webp" srcset="/assets/optimized/russia-operetta-720.webp 720w, /assets/optimized/russia-operetta-1600.webp 1600w" sizes="100vw" width="1600" height="1066" alt={tr('Max Wilson Pereira em apresentação de opereta')} class="page-hero-img biography-hero-img" fetchpriority="high" decoding="async" />
+      <div class="page-hero-overlay biography-hero-overlay"></div>
+      <div class="page-hero-copy biography-hero-copy"><Badge text={tr('Tenor brasileiro')} /><h1 id="biography-title">{tr('Biografia')}</h1><p>{tr('Uma trajetória entre ópera, televisão, crossover e redes sociais, levando a força do canto lírico para cada vez mais pessoas.')}</p></div>
+    </section>
+
+    <section class="content-section biography-intro media-text-section" aria-label={tr('Apresentação de Max Wilson Pereira')}>
+      <figure class="media-text-section-media"><img src="/assets/optimized/max-wilson-frack-852.webp" srcset="/assets/optimized/max-wilson-frack-720.webp 720w, /assets/optimized/max-wilson-frack-852.webp 852w" sizes="(min-width: 48rem) 38vw, 100vw" width="852" height="1239" alt={tr('Max Wilson Pereira em traje formal')} loading="lazy" decoding="async" /></figure>
+      <div class="media-text-section-copy"><p><strong class="biography-intro-name">Max Wilson Pereira</strong> {tr('é um tenor brasileiro radicado em Viena, artista de presença cênica marcante e voz construída entre a tradição lírica e a comunicação direta com o público. Além da técnica operística, dedicou anos ao estudo do canto musical, desenvolvendo também o domínio de uma emissão mais suave, íntima e expressiva. Nascido em São Paulo e criado no Rio de Janeiro, descobriu a paixão pelo canto aos 18 anos, ao ouvir Luciano Pavarotti, e desde então transformou essa inspiração em uma carreira que atravessa palcos, televisão, gravações e plataformas digitais.')}</p></div>
+    </section>
+
+    <section class="biography-grid" aria-label={tr('Destaques da carreira')}>
+      <article class="biography-highlight"><span>20+</span><p>{tr('anos de trajetória artística entre Brasil, Estados Unidos e Europa')}</p></article>
+      <article class="biography-highlight"><span>200 mil</span><p>{tr('seguidores no Instagram acompanhando sua arte e seu humor')}</p></article>
+      <article class="biography-highlight"><span>Viena</span><p>{tr('base artística e musical de uma carreira internacional')}</p></article>
+    </section>
+
+    <MicrophoneInterlude caption={tr('A voz continua')} />
+
+    <section class="content-section biography-copy page-reading-section">
+      <h2 class="editorial-section-title">{tr('Formação e Primeiros Passos')}</h2>
+      <p>{tr('Ainda jovem, Max iniciou seus estudos com o tenor Eduardo Alvares enquanto cursava a CAL, Casa das Artes de Laranjeiras, onde concluiu o Curso Profissionalizante de Ator. A formação teatral se tornou uma parte essencial de sua identidade artística: não apenas cantar, mas contar uma história, ocupar o palco e criar uma conexão viva com quem assiste.')}</p>
+      <p>{tr('Após anos de estudo em canto lírico, teoria musical e piano, seguiu para Nova York em 2005, onde estudou com Evelyn La Quaif. No ano seguinte, foi convidado pelo professor Sebastian Vittucci para estudar em Viena, na Áustria, frequentando a Konservatorium Wien Privatuniversität em canto lírico e opereta. Também estudou na Vienna Konservatorium com o tenor Agim Hushi, instituição onde obteve seu bacharelado como solista de ópera.')}</p>
+    </section>
+
+    <section class="content-section biography-copy page-reading-section">
+      <h2 class="editorial-section-title" id="palcos-opera-televisao">{tr('Palcos, Ópera e Televisão')}</h2>
+      <p>{tr('Na Áustria, Max participou de concertos, óperas e operetas, destacando-se em papéis como Nemorino, em')} <strong>L'Elisir d'Amore</strong> {tr(', de Donizetti, e Herzog von Urbino, em')} <strong>Eine Nacht in Venedig</strong> {tr(', de Johann Strauss. Em 2007, cantou no Gran Concerto Lírico di Ferragosto, interpretando árias italianas diante de um público exigente.')}</p>
+      <p>{tr('Entre os momentos importantes de sua trajetória internacional, foi convidado a cantar na Rússia em duas ocasiões. Uma dessas apresentações aconteceu no')} <strong>Taneyevsky Festival 2017</strong> {tr(', com a Vladimir Governor Symphony Orchestra sob regência do maestro Artiom Markin.')}</p>
+      <VideoEmbed videoId="DQpRr9dLBHI" title={tr('Max Wilson Pereira no Taneyevsky Festival 2017')} />
+      <p>{tr('Depois de três anos em Viena, retornou ao Brasil a convite da Sony Music para integrar o grupo Quattro e gravar um CD. Em 2009, apresentou-se no oratório')} <strong>Colombo</strong>{tr(', de Carlos Gomes, no Theatro Municipal do Rio de Janeiro. Em 2010, participou da gravação do DVD de Hebe Camargo, interpretando')} <strong>Dio come ti amo</strong> {tr('no Credicard Hall, em São Paulo, e também apareceu na novela')} <strong>Tempos Modernos</strong>{tr(', em uma cena de')} <strong>Tosca</strong> {tr('ao lado de Alessandra Maestrini.')}</p>
+      <p>{tr('Sua trajetória inclui ainda trabalhos com nomes como Bibi Ferreira, participação na minissérie')} <strong>Aline</strong>{tr(', estreia mundial da ópera')} <strong>Fedra e Hipólito</strong>{tr(', no Palácio das Artes, e atuação como preparador vocal no')} <strong>Domingão do Faustão</strong>{tr(', auxiliando Jonatas Faro no quadro Artista Completão.')}</p>
+    </section>
+
+    <section class="content-section biography-copy page-reading-section">
+      <h2 class="editorial-section-title" id="crossover-humor-publico-digital">{tr('Crossover, Humor e Público Digital')}</h2>
+      <p>{tr('Nos últimos anos, Max passou a levar sua voz para um público ainda maior nas redes sociais. Misturando técnica lírica, música pop, paródias criativas e performances de rua, criou uma linguagem própria: sofisticada sem ser distante, divertida sem perder a emoção, popular sem abandonar a excelência vocal.')}</p>
+      <p>{tr('Seus vídeos já ultrapassaram a marca de 1 milhão de visualizações, e sua comunidade digital reúne mais de 200 mil seguidores no Instagram e milhares de inscritos no YouTube. Com carisma, humor e uma voz de formação clássica, Max aproxima a ópera de quem talvez nunca tivesse imaginado se emocionar com ela.')}</p>
+      <VideoEmbed videoId="kgffebvfn7I" title={tr('Max Wilson Pereira em apresentação para redes sociais')} />
+    </section>
+
+    <section class="content-section biography-copy page-reading-section">
+      <h2 class="editorial-section-title" id="momento-atual">{tr('O Momento Atual')}</h2>
+      <p>{tr('Hoje, Max Wilson Pereira dedica grande parte de sua energia à construção de uma presença digital cada vez mais forte, criando vídeos que aproximam a ópera, o canto lírico e o crossover de públicos que talvez nunca tivessem imaginado se emocionar com esse repertório. Radicado em Viena e profundamente conectado ao Brasil, ele transforma ruas, praias, estações, casas e situações cotidianas em pequenos palcos, onde a técnica vocal encontra a surpresa, a emoção e o humor.')}</p>
+      <p>{tr('Seu trabalho nas redes nasce do desejo de mostrar que a voz lírica não precisa viver distante das pessoas. Em performances emocionantes, paródias musicais, interações com desconhecidos e vídeos bem-humorados, Max leva a ópera para novos contextos, despertando curiosidade, risadas e reações espontâneas. É nesse encontro entre excelência artística e comunicação direta que ele segue criando novos caminhos para compartilhar sua arte com quem já o acompanha e com quem ainda vai descobri-lo.')}</p>
+      <VideoEmbed videoId="gX3dox_Ihgg" title={tr('Max Wilson Pereira levando o canto lírico para novos públicos')} />
+    </section>
+  </main>
+</BaseLayout>

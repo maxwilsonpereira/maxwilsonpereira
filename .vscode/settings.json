@@ -1,5 +1,4 @@
 {
-  "liveServer.settings.port": 5501,
   "editor.formatOnSave": false,
   "prettier.enable": true,
   "prettier.requireConfig": false,
@@ -11,6 +10,9 @@
     "editor.formatOnSave": false
   },
   "[html]": {
+    "editor.formatOnSave": false
+  },
+  "[astro]": {
     "editor.formatOnSave": false
   },
   "[markdown]": {

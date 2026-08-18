@@ -1,0 +1,27 @@
+# Max Wilson Pereira
+
+Official website of Max Wilson Pereira, a Brazilian tenor based in Vienna.
+
+## Main pages
+
+- Home: https://maxwilsonpereira.com.br/
+- Biography: https://maxwilsonpereira.com.br/pages/biografia.html
+- Concert project: https://maxwilsonpereira.com.br/pages/concerto.html
+- Albums: https://maxwilsonpereira.com.br/pages/albums.html
+- Videos: https://maxwilsonpereira.com.br/pages/videos.html
+
+## Languages
+
+- Portuguese (default): https://maxwilsonpereira.com.br/
+- English: https://maxwilsonpereira.com.br/en/
+- Spanish: https://maxwilsonpereira.com.br/es/
+- German: https://maxwilsonpereira.com.br/de/
+
+## Official profiles
+
+- Instagram: https://www.instagram.com/maxwilsonpereira/
+- YouTube: https://www.youtube.com/maxwilsonpereira
+- TikTok: https://www.tiktok.com/discover/maxwilsonpereira
+- Facebook: https://www.facebook.com/maxwilsonpereira/
+
+Canonical URLs, reciprocal hreflang links, visible page content, and JSON-LD structured data are authoritative. This file is a supplemental discovery guide.

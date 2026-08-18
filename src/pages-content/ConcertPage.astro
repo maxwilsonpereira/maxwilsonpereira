@@ -1,0 +1,55 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Badge from '@/components/Badge.astro';
+import MicrophoneInterlude from '@/components/MicrophoneInterlude.astro';
+import VideoEmbed from '@/components/VideoEmbed.astro';
+import { type Locale } from '@/config/site';
+import { t } from '@/i18n';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const tr = (source: string) => t(locale, source);
+const repertoire = [
+  ['Some Enchanted Evening', 'South Pacific'], ['Empty Chairs at Empty Tables', 'Les Misérables'], ['Stars', 'Les Misérables'], ['If I Loved You', 'Carousel'], ['Memory', 'Cats'], ['The Impossible Dream', 'Man of La Mancha'], ['This Is the Moment', 'Jekyll & Hyde'], ['So In Love', 'Kiss Me, Kate'], ['The Way You Look Tonight', 'clássico popular'],
+];
+---
+<BaseLayout locale={locale} route="concert" bodyClass="page-sub page-concerto" preloadImage={{ src: '/assets/optimized/concerto-1600.webp', srcset: '/assets/optimized/concerto-720.webp 720w, /assets/optimized/concerto-1600.webp 1600w', sizes: '100vw', type: 'image/webp' }}>
+  <main class="page-container editorial-page editorial-prose concerto-page" id="main-content">
+    <section class="page-hero concerto-hero" aria-labelledby="concerto-title">
+      <img src="/assets/optimized/cachoeiro-2010-soprano-1600.jpg" srcset="/assets/optimized/cachoeiro-2010-soprano-720.webp 720w, /assets/optimized/cachoeiro-2010-soprano-1600.webp 1600w" sizes="100vw" width="1600" height="1071" alt={tr('Max Wilson Pereira no palco com uma soprano e orquestra em Cachoeiro, 2010')} class="page-hero-img concerto-hero-img hero--anchor-top" fetchpriority="high" decoding="async" />
+      <div class="page-hero-overlay concerto-hero-overlay"></div>
+      <div class="page-hero-copy concerto-hero-copy"><Badge text={tr('Concerto ao vivo')} /><h1 id="concerto-title">{tr('Concerto')}</h1><p>{tr('Uma noite emocionante com grandes melodias, entre o teatro musical, a ópera e o crossover clássico.')}</p><a class="primary-button concerto-hero-button" href="#convite">{tr('Quero assistir')}</a></div>
+    </section>
+
+    <section class="content-section concerto-intro page-reading-section" aria-labelledby="sobre-concerto">
+      <p class="editorial-eyebrow">{tr('Sobre o concerto')}</p><h2 class="editorial-section-title" id="sobre-concerto">{tr('Uma experiência próxima, elegante e emocionante')}</h2>
+      <p>{tr('Este concerto nasce do desejo de cantar repertórios que atravessam gerações e continuam encontrando novos sentidos quando são vividos ao vivo. Ao lado de um pianista, com a presença de uma soprano convidada e, muito provavelmente, também de um violinista, a noite propõe um encontro íntimo entre voz, palavra e melodia.')}</p>
+      <p>{tr('O público ouvirá canções eternas da Broadway, dos musicais, da ópera e de clássicos populares interpretadas com acompanhamento ao piano, convidados especiais e uma atmosfera de teatro próximo. Mais do que uma sequência de músicas, o concerto procura contar pequenas histórias: amores possíveis, despedidas, sonhos, lembranças e momentos em que uma melodia parece dizer aquilo que as palavras sozinhas não alcançam.')}</p>
+      <VideoEmbed videoId="upaS60ZjLOA" title={tr('Max Wilson Pereira em apresentação ao vivo')} />
+    </section>
+
+    <section class="content-section concerto-journey page-reading-section" aria-labelledby="nova-jornada">
+      <p class="editorial-eyebrow">{tr('Uma nova jornada')}</p><h2 class="editorial-section-title" id="nova-jornada">{tr('O início de uma nova fase artística')}</h2>
+      <p>{tr('Este projeto marca o começo de uma nova fase na minha carreira. Depois de tantos caminhos entre ópera, televisão, gravações, redes sociais e repertório crossover, sinto que este concerto reúne de forma muito verdadeira aquilo que mais me move: cantar com emoção, contar histórias e estar perto do público.')}</p>
+      <p>{tr('As primeiras apresentações acontecerão na')} <strong>{tr('Áustria')}</strong>{tr(', país que há muitos anos faz parte da minha vida musical. No fim do ano, em')} <strong>{tr('dezembro')}</strong>{tr(', o concerto também será apresentado no')} <strong>{tr('Brasil')}</strong>{tr(', em um retorno muito especial a esse repertório diante do meu público brasileiro.')}</p>
+      <p>{tr('Minha esperança é que, a partir de')} <strong>2027</strong>{tr(', este projeto cresça e se transforme em uma turnê pelo Brasil, levando essas canções a plateias de diferentes cidades. Ainda é um caminho sendo construído, mas ele nasce com sinceridade, cuidado e muita vontade de compartilhar beleza.')}</p>
+    </section>
+
+    <MicrophoneInterlude caption={tr('Uma pausa antes da próxima canção')} />
+
+    <section class="content-section concerto-rehearsal" aria-labelledby="ensaio-concerto">
+      <div class="concerto-rehearsal-copy"><p class="editorial-eyebrow">{tr('Ensaio')}</p><h2 class="editorial-section-title" id="ensaio-concerto">{tr('Preparando o concerto ao piano')}</h2><p>{tr('Este vídeo mostra um momento simples de ensaio ao piano, preparando uma das canções que farão parte do concerto.')}</p></div>
+      <VideoEmbed class="concerto-rehearsal-video" videoId="k-azMr4hEvU" title={tr('Max Wilson Pereira ensaiando ao piano para o concerto')} />
+    </section>
+
+    <section class="content-section concerto-repertoire" aria-labelledby="repertorio-concerto">
+      <div class="editorial-section-heading"><p class="editorial-eyebrow">{tr('Repertório')}</p><h2 class="editorial-section-title" id="repertorio-concerto">{tr('Melodias que permanecem')}</h2><p>{tr('O repertório pode variar a cada apresentação, preservando a liberdade do momento e o encontro com cada plateia. Entre as obras previstas estão:')}</p></div>
+      <ul class="concerto-song-list">{repertoire.map(([song, source]) => <li><strong>{song}</strong><span>{tr(source)}</span></li>)}</ul>
+      <div class="concerto-duets"><h3>{tr('Duetos')}</h3><ul class="concerto-song-list concerto-duet-list"><li><strong>All I Ask of You</strong><span>The Phantom of the Opera</span></li><li><strong>Somewhere</strong><span>West Side Story</span></li></ul></div>
+      <p class="concerto-repertoire-note">{tr('Muitas outras canções bonitas também poderão fazer parte de cada apresentação.')}</p>
+    </section>
+
+    <section class="content-section concerto-closing editorial-section--centered" id="convite" aria-labelledby="convite-concerto">
+      <p class="editorial-eyebrow">{tr('Convite')}</p><h2 class="editorial-section-title" id="convite-concerto">{tr('Viva este concerto ao vivo')}</h2><p>{tr('Algumas músicas revelam sua força de modo especial quando acontecem no mesmo instante em que respiramos juntos: artista, convidados e plateia. Este concerto é um convite para esse encontro.')}</p><button class="primary-button concerto-closing-button" type="button" disabled>{tr('Informações em breve')}</button>
+    </section>
+  </main>
+</BaseLayout>

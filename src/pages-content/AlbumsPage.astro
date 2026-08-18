@@ -1,0 +1,30 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Badge from '@/components/Badge.astro';
+import AlbumArtwork from '@/components/AlbumArtwork.astro';
+import MicrophoneInterlude from '@/components/MicrophoneInterlude.astro';
+import { pathFor, type Locale } from '@/config/site';
+import { t } from '@/i18n';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const tr = (source: string) => t(locale, source);
+const albums = [
+  { slug: 'so-in-love' as const, title: 'SO IN LOVE', copy: 'Clássicos românticos, cinema, teatro musical e faixas bônus em uma seleção íntima e emocionante.', href: locale === 'pt' ? pathFor('soInLovePurchase') : `${pathFor('soInLoveDownload')}?lang=${locale}` },
+  { slug: 'tenori-amici' as const, title: 'TENORI AMICI', copy: 'Álbum lançado pela gravadora Biscoito Fino, reunindo repertório clássico e popular em formato crossover vocal.', href: pathFor('tenoriAmici', locale) },
+  { slug: 'quattro-sony' as const, title: 'QUATTRO', copy: 'Projeto da Sony Music Entertainment Brasil lançado em 2011, com o Grupo Quattro revisitando grandes canções internacionais em formato crossover vocal.', href: pathFor('quattro', locale) },
+];
+---
+<BaseLayout locale={locale} route="albums">
+  <main class="page-container albums-overview-page editorial-prose" id="main-content">
+    <section class="albums-overview-intro" aria-labelledby="albums-title"><Badge text={tr('Coleção de álbuns')} /><h1 id="albums-title">{tr('Álbuns')}</h1><p>{tr('Três momentos da minha trajetória em música gravada, reunidos para você conhecer cada projeto pelo clima, pela capa e pela história sonora.')}</p></section>
+    <MicrophoneInterlude caption={tr('Canções que permanecem')} />
+    <div class="albums-overview-list">
+      {albums.map((album) => (
+        <section class:list={['album-hero albums-overview-card', { 'album-tenori-amici': album.slug === 'tenori-amici' }]}>
+          <AlbumArtwork slug={album.slug} label={tr(`Capas do álbum ${album.title === 'TENORI AMICI' ? 'Tenori Amici' : album.title}`)} frontAlt={tr(`Capa do álbum ${album.title === 'TENORI AMICI' ? 'Tenori Amici' : album.title}`)} backAlt={tr(`Contracapa do álbum ${album.title === 'TENORI AMICI' ? 'Tenori Amici' : album.title}`)} />
+          <div class="album-hero-copy"><Badge text={tr('Álbum digital')} /><p class="album-kicker">Max Wilson Pereira</p><h2>{album.title}</h2><p>{tr(album.copy)}</p><a class="primary-button album-download-all" href={album.href}>{tr('Ir para o álbum')}</a></div>
+        </section>
+      ))}
+    </div>
+  </main>
+</BaseLayout>

@@ -1,0 +1,27 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import VideoEmbed from '@/components/VideoEmbed.astro';
+import { socialLinks, type Locale } from '@/config/site';
+import { videosFor } from '@/data/media';
+import { t } from '@/i18n';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const tr = (source: string) => t(locale, source);
+const videos = videosFor(locale);
+const intros = {
+  pt: ['Do Rio de Janeiro a Viena, passando por palcos do mundo e encontros ao vivo, estes vídeos guardam canções, amizades e capítulos de uma trajetória que continua a ser escrita.', 'Esta seleção é apenas uma parte da jornada. No YouTube, há ainda mais performances, bastidores e encontros para assistir quando quiser.'],
+  en: ['From Rio de Janeiro to Vienna, through stages around the world and live encounters, these videos hold songs, friendships, and chapters in a journey still being written.', 'This selection is only part of the journey. On YouTube, there are more performances, behind-the-scenes moments, and encounters to enjoy whenever you wish.'],
+  de: ['Von Rio de Janeiro bis Wien, über Bühnen in aller Welt und bei Live-Begegnungen: Diese Videos bewahren Lieder, Freundschaften und Kapitel eines Weges, der weitergeschrieben wird.', 'Diese Auswahl ist nur ein Teil der Reise. Auf YouTube warten weitere Auftritte, Einblicke hinter die Kulissen und Begegnungen zum Entdecken.'],
+  es: ['De Río de Janeiro a Viena, pasando por escenarios del mundo y encuentros en vivo, estos videos guardan canciones, amistades y capítulos de una trayectoria que sigue escribiéndose.', 'Esta selección es solo una parte del viaje. En YouTube hay más actuaciones, momentos detrás de escena y encuentros para disfrutar cuando quieras.'],
+} as const;
+---
+<BaseLayout locale={locale} route="videos" bodyClass="page-sub page-videos" preloadImage={{ src: '/assets/optimized/fedra-e-hipolito-hipolito-kneeling-1600.webp', srcset: '/assets/optimized/fedra-e-hipolito-hipolito-kneeling-720.webp 720w, /assets/optimized/fedra-e-hipolito-hipolito-kneeling-1600.webp 1600w', sizes: '100vw', type: 'image/webp' }}>
+  <main class="page-container videos-page editorial-prose" id="main-content">
+    <section class="page-hero videos-hero" aria-labelledby="videos-title"><img src="/assets/optimized/fedra-e-hipolito-hipolito-kneeling-1600.webp" srcset="/assets/optimized/fedra-e-hipolito-hipolito-kneeling-720.webp 720w, /assets/optimized/fedra-e-hipolito-hipolito-kneeling-1600.webp 1600w" sizes="100vw" width="1373" height="867" alt={tr('Max Wilson Pereira em cena de Fedra e Hipólito')} class="page-hero-img hero--anchor-bottom" fetchpriority="high" decoding="async" /><div class="page-hero-overlay"></div><div class="page-hero-copy"><h1 id="videos-title">{tr('Vídeos')}</h1><p>{tr('Momentos de palco, encontros e canções que seguem encontrando novas pessoas.')}</p></div></section>
+    <section class="videos-intro content-section page-reading-section" aria-labelledby="videos-intro-title"><h2 id="videos-intro-title">{tr('A voz em movimento')}</h2><p>{intros[locale][0]}</p></section>
+    <section class="videos-gallery" aria-label={tr('Seleção de vídeos')}>
+      {videos.map((video, index) => <article class:list={['video-entry', { 'video-entry-dark': index % 2 === 0 }]} aria-labelledby={video.id}><div class="video-entry-media"><VideoEmbed videoId={video.videoId} title={video.title} /></div><div class="video-entry-copy"><h2 id={video.id}>{tr(video.title)}</h2><p>{video.description}</p></div></article>)}
+    </section>
+    <section class="videos-youtube" aria-labelledby="youtube-title"><div><h2 id="youtube-title">{tr('A próxima canção começa lá')}</h2><p>{intros[locale][1]}</p></div><a class="button button-primary" href={socialLinks.youtubeChannel} target="_blank" rel="noopener noreferrer">{tr('Visitar o canal no YouTube')}</a></section>
+  </main>
+</BaseLayout>

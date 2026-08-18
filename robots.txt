@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://maxwilsonpereira.com.br/sitemap.xml

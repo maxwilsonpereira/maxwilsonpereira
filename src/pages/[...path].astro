@@ -1,0 +1,31 @@
+---
+import PageRenderer from '@/components/PageRenderer.astro';
+import { localeCodes, pathFor, translatedRouteKeys, type Locale, type RouteKey } from '@/config/site';
+import type { PageDefinition } from '@/types';
+
+export function getStaticPaths() {
+  const routeParam = (pathname: string): string | undefined => {
+    if (pathname === '/') return undefined;
+    const clean = pathname.replace(/^\//u, '').replace(/\/$/u, '');
+    return clean.replace(/\.html$/u, '');
+  };
+
+  const definitions: PageDefinition[] = [];
+  for (const route of translatedRouteKeys) {
+    for (const locale of localeCodes) {
+      if (route === 'home' && locale !== 'pt') continue;
+      definitions.push({ locale, route, pathname: pathFor(route, locale) });
+    }
+  }
+  for (const route of ['support', 'soInLovePurchase', 'soInLoveDownload'] as const satisfies readonly RouteKey[]) {
+    definitions.push({ locale: 'pt', route, pathname: pathFor(route, 'pt') });
+  }
+  return definitions.map((definition) => ({
+    params: { path: routeParam(definition.pathname) },
+    props: definition,
+  }));
+}
+
+const { locale, route } = Astro.props;
+---
+<PageRenderer locale={locale as Locale} route={route as RouteKey} />

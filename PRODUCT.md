@@ -42,7 +42,7 @@ Visitors often arrive from short-form social video, YouTube, Instagram, search, 
 - Full biography and embedded performances: `pages/biografia.html`.
 - Concert concept, rehearsal video, repertoire, and stated future context: `pages/concerto.html`.
 - Album collection and listening/purchase/download flows: `pages/albums.html` and `pages/albums/`.
-- Local photography: `assets/concerto.jpg`, `assets/russia-operetta.jpg`, `assets/hebe-camargo.jpg`, `assets/favicon-img.jpg`, `assets/max-gigga.jpg`.
+- Local photography: optimized concert, operetta, television, orchestra, costume, and artist imagery under `public/assets/optimized/`.
 - Album artwork and audio: `assets/so-in-love/`, `assets/tenori-amici/`, `assets/quattro-sony/`.
 - Existing metadata, canonical URLs, JSON-LD, translations, and links: `js/config.js`, `js/components.js`.
 

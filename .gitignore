@@ -1,6 +1,8 @@
-_MAX_ABOUT_LOCAL
 .tmp-chrome-*/
 debug.log
+node_modules/
+dist/
+.astro/
 
 # Local Codex / Impeccable tooling
 .agents/

@@ -1,0 +1,78 @@
+---
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import SocialLinks from './SocialLinks.astro';
+import { SITE_NAME, navigation, pathFor, translatedRouteKeys, type Locale, type RouteKey } from '@/config/site';
+import { t } from '@/i18n';
+
+interface Props { locale: Locale; route: RouteKey; }
+const { locale, route } = Astro.props;
+const hasTranslations = (translatedRouteKeys as readonly RouteKey[]).includes(route);
+const hasSoInLoveLanguageFlow = route === 'soInLovePurchase' || route === 'soInLoveDownload';
+const showLanguageSwitcher = hasTranslations || hasSoInLoveLanguageFlow;
+const navId = 'site-navigation';
+---
+<header class="site-header" data-site-header>
+  <div class="site-header-inner">
+    <a class="site-brand" href={pathFor('home', locale)} aria-label={`${SITE_NAME} - Home`}>
+      <span class="site-brand-wordmark" aria-hidden="true">
+        <span class="site-brand-primary">Max Wilson</span>
+        <span class="site-brand-secondary">Pereira</span>
+      </span>
+    </a>
+    <nav class="site-nav" id={navId} aria-label={t(locale, 'Navegação principal')} data-site-nav>
+      <div class="site-nav-links">
+        {navigation.map((item) => (
+          <a class:list={['site-nav-link', { 'is-active': route === item.route }]} href={pathFor(item.route, locale)} aria-current={route === item.route ? 'page' : undefined}>
+            {t(locale, item.label)}
+          </a>
+        ))}
+      </div>
+      <div class="site-nav-mobile-meta">
+        {showLanguageSwitcher && <div class="site-nav-mobile-languages"><LanguageSwitcher {locale} {route} specialFlow={hasSoInLoveLanguageFlow ? 'soInLove' : undefined} /></div>}
+        <div class="site-nav-mobile-socials" aria-label={t(locale, 'Redes sociais')}>
+          <SocialLinks {locale} className="site-nav-social-link" />
+        </div>
+      </div>
+    </nav>
+    <div class="site-header-actions">
+      {showLanguageSwitcher && <LanguageSwitcher {locale} {route} specialFlow={hasSoInLoveLanguageFlow ? 'soInLove' : undefined} />}
+      <div class="site-nav-socials" aria-label={t(locale, 'Redes sociais')}>
+        <SocialLinks {locale} className="site-nav-social-link" />
+      </div>
+    </div>
+    <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls={navId} aria-label={t(locale, 'Abrir menu')} data-menu-toggle data-open-label={t(locale, 'Abrir menu')} data-close-label={t(locale, 'Fechar menu')}>
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector<HTMLElement>('[data-site-header]');
+  const nav = document.querySelector<HTMLElement>('[data-site-nav]');
+  const toggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+  if (header && nav && toggle) {
+    const setOpen = (open: boolean) => {
+      nav.classList.toggle('is-open', open);
+      document.body.classList.toggle('site-menu-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? toggle.dataset.closeLabel ?? '' : toggle.dataset.openLabel ?? '');
+      if (open) requestAnimationFrame(() => nav.querySelector<HTMLAnchorElement>('a')?.focus());
+    };
+    toggle.addEventListener('click', () => setOpen(!nav.classList.contains('is-open')));
+    nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', (event) => {
+      if (!nav.classList.contains('is-open')) return;
+      if (event.key === 'Escape') { setOpen(false); toggle.focus(); return; }
+      if (event.key !== 'Tab') return;
+      const focusable = [...nav.querySelectorAll<HTMLElement>('a[href], button:not([disabled])'), toggle];
+      const first = focusable[0];
+      const last = focusable.at(-1);
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+    });
+    matchMedia('(min-width: 60rem)').addEventListener('change', () => setOpen(false));
+    const syncHeader = () => header.classList.toggle('is-scrolled', scrollY > 24);
+    syncHeader();
+    addEventListener('scroll', syncHeader, { passive: true });
+  }
+</script>

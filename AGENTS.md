@@ -45,7 +45,8 @@ The goal is to make **structural, maintainable CSS fixes rather than local patch
 
 ## Localization and SEO Workflow
 
-- Portuguese files at the project root and under `pages/` are the editable source pages.
-- English and German public pages under `en/` and `de/` are generated files; do not edit them directly.
-- After changing public-page content, metadata, images, or local links, run `node scripts/generate-localized-pages.mjs` and then `node scripts/validate-site.mjs`.
-- Keep canonical URLs, reciprocal `hreflang` declarations, JSON-LD, and `sitemap.xml` aligned with the generated routes.
+- All languages use the shared page implementations in `src/pages-content/`; never create locale-specific presentation copies.
+- Locale and route configuration lives in `src/config/site.ts`, translations in `src/i18n/translations.json`, and localized metadata in `src/data/seo.ts`.
+- Portuguese is the default locale at the site root. Preserve the public URL map documented in `ARCHITECTURE.md`.
+- After changing public content, metadata, images, routes, or local links, run `npm run build`.
+- Keep canonical URLs, reciprocal `hreflang`, JSON-LD, and the generated sitemap aligned across Portuguese, English, Spanish, and German.

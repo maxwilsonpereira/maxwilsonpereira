@@ -1,0 +1,26 @@
+{
+  "name": "max-wilson-pereira",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "node scripts/validate-i18n.mjs && astro check && astro build && node scripts/postbuild.mjs && node scripts/validate-build.mjs",
+    "preview": "astro preview",
+    "check": "astro check",
+    "validate": "node scripts/validate-i18n.mjs && node scripts/validate-build.mjs",
+    "audit:assets": "node scripts/audit-assets.mjs",
+    "prune:css": "node scripts/prune-css.mjs --write"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "3.7.3",
+    "astro": "7.2.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "typescript": "6.0.3"
+  }
+}

@@ -1,0 +1,51 @@
+---
+import type { Track } from '@/types';
+interface Props {
+  tracks: Track[];
+  playLabel: string;
+  pauseLabel: string;
+  audioFallback: string;
+  downloadable?: boolean;
+  downloadLabel?: string;
+  previewSeconds?: number;
+}
+const { tracks, playLabel, pauseLabel, audioFallback, downloadable = false, downloadLabel = 'Baixar', previewSeconds } = Astro.props;
+---
+<div class="audio-track-list" data-audio-player data-play-label={playLabel} data-pause-label={pauseLabel} data-preview-seconds={previewSeconds}>
+  <audio class="album-audio" controls preload="none">{audioFallback}</audio>
+  <ol class="track-list">
+    {tracks.map((track) => (
+      <li class="track-item">
+        <span class="track-number">{track.number}</span>
+        <div class="track-meta"><strong>{track.title}</strong><span>{track.artist}</span></div>
+        <button class="track-action play-track" type="button" data-src={track.src} aria-label={`${playLabel}: ${track.title}`}>{playLabel}</button>
+        {downloadable && <a class="track-action" href={track.src} download aria-label={`${downloadLabel}: ${track.title}`}>{downloadLabel}</a>}
+      </li>
+    ))}
+  </ol>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-audio-player]').forEach((player) => {
+    const audio = player.querySelector<HTMLAudioElement>('audio');
+    if (!audio || player.dataset.initialized) return;
+    player.dataset.initialized = 'true';
+    const buttons = [...player.querySelectorAll<HTMLButtonElement>('.play-track')];
+    const playLabel = player.dataset.playLabel ?? 'Play';
+    const pauseLabel = player.dataset.pauseLabel ?? 'Pause';
+    const previewSeconds = Number(player.dataset.previewSeconds || 0);
+    let active: HTMLButtonElement | undefined;
+    const reset = () => { buttons.forEach((button) => button.textContent = playLabel); active = undefined; };
+    buttons.forEach((button) => button.addEventListener('click', async () => {
+      if (active === button && !audio.paused) { audio.pause(); button.textContent = playLabel; return; }
+      if (audio.src !== new URL(button.dataset.src ?? '', location.href).href) { audio.src = button.dataset.src ?? ''; }
+      reset(); active = button; button.textContent = pauseLabel;
+      document.querySelectorAll<HTMLAudioElement>('audio').forEach((other) => { if (other !== audio) other.pause(); });
+      try { await audio.play(); } catch { reset(); }
+    }));
+    audio.addEventListener('pause', () => { if (active) active.textContent = playLabel; });
+    audio.addEventListener('play', () => { if (active) active.textContent = pauseLabel; });
+    audio.addEventListener('ended', reset);
+    if (previewSeconds > 0) audio.addEventListener('timeupdate', () => { if (audio.currentTime >= previewSeconds) { audio.pause(); audio.currentTime = 0; reset(); } });
+  });
+</script>

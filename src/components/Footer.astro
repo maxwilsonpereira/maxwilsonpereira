@@ -1,0 +1,22 @@
+---
+import SocialLinks from './SocialLinks.astro';
+import { SITE_NAME, navigation, pathFor, type Locale, type RouteKey } from '@/config/site';
+import { t } from '@/i18n';
+interface Props { locale: Locale; route: RouteKey; }
+const { locale } = Astro.props;
+---
+<footer class="site-footer">
+  <div class="site-footer-main">
+    <div class="site-footer-identity">
+      <a class="site-footer-name" href={pathFor('home', locale)}>{SITE_NAME}</a>
+      <p class="editorial-prose-copy">{t(locale, 'Canto, paixão e entretenimento para alegrar o seu dia e tocar o seu coração')}</p>
+    </div>
+    <nav class="site-footer-nav" aria-label={t(locale, 'Navegação principal')}>
+      {navigation.map((item) => <a href={pathFor(item.route, locale)}>{t(locale, item.label)}</a>)}
+    </nav>
+    <div class="site-footer-socials" aria-label={t(locale, 'Redes sociais')}>
+      <SocialLinks {locale} className="site-footer-social-link" />
+    </div>
+  </div>
+  <div class="site-footer-legal"><span>© {new Date().getFullYear()} {SITE_NAME}</span><span>Viena • Brasil</span></div>
+</footer>

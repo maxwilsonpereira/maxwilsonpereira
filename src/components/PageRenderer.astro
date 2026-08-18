@@ -1,0 +1,25 @@
+---
+import type { Locale, RouteKey } from '@/config/site';
+import HomePage from '@/pages-content/HomePage.astro';
+import BiographyPage from '@/pages-content/BiographyPage.astro';
+import ConcertPage from '@/pages-content/ConcertPage.astro';
+import AlbumsPage from '@/pages-content/AlbumsPage.astro';
+import VideosPage from '@/pages-content/VideosPage.astro';
+import AlbumSamplesPage from '@/pages-content/AlbumSamplesPage.astro';
+import SupportPage from '@/pages-content/SupportPage.astro';
+import SoInLovePurchasePage from '@/pages-content/SoInLovePurchasePage.astro';
+import SoInLoveDownloadPage from '@/pages-content/SoInLoveDownloadPage.astro';
+
+interface Props { locale: Locale; route: RouteKey; }
+const { locale, route } = Astro.props;
+---
+{route === 'home' && <HomePage {locale} />}
+{route === 'biography' && <BiographyPage {locale} />}
+{route === 'concert' && <ConcertPage {locale} />}
+{route === 'albums' && <AlbumsPage {locale} />}
+{route === 'videos' && <VideosPage {locale} />}
+{route === 'tenoriAmici' && <AlbumSamplesPage {locale} album="tenoriAmici" />}
+{route === 'quattro' && <AlbumSamplesPage {locale} album="quattro" />}
+{route === 'support' && <SupportPage />}
+{route === 'soInLovePurchase' && <SoInLovePurchasePage />}
+{route === 'soInLoveDownload' && <SoInLoveDownloadPage />}

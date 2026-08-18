@@ -1,0 +1,65 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Badge from '@/components/Badge.astro';
+import AlbumArtwork from '@/components/AlbumArtwork.astro';
+import AudioTrackList from '@/components/AudioTrackList.astro';
+import { bonusTracks, soInLoveTracks } from '@/data/media';
+
+const internationalCopy = {
+  en: { title: 'A note for listeners outside Brazil', body: 'This album can only be purchased in Brazil, but I am very glad to offer some of the songs to you as a gift. I hope these tracks bring you joy, and thank you for listening from afar.', badge: 'Digital album', intro: 'Listen online or download the available gift tracks.', downloadAll: 'Download gift songs', unavailable: 'Unavailable outside Brazil', tracks: 'Your songs', bonus: 'Bonus tracks', play: 'Play', pause: 'Pause', download: 'Download' },
+  de: { title: 'Ein Hinweis für Hörer außerhalb Brasiliens', body: 'Dieses Album kann nur in Brasilien gekauft werden, aber ich freue mich sehr, Ihnen einige der Lieder als Geschenk zu geben. Ich hoffe, diese Titel machen Ihnen Freude, und danke Ihnen fürs Zuhören aus der Ferne.', badge: 'Digitales Album', intro: 'Hören Sie online oder laden Sie die verfügbaren Geschenktitel herunter.', downloadAll: 'Geschenkte Lieder herunterladen', unavailable: 'Außerhalb Brasiliens nicht verfügbar', tracks: 'Ihre Lieder', bonus: 'Bonustitel', play: 'Abspielen', pause: 'Pause', download: 'Herunterladen' },
+  es: { title: 'Una nota para quienes escuchan fuera de Brasil', body: 'Este álbum solo se puede comprar en Brasil, pero me alegra mucho ofrecerte algunas canciones como regalo. Espero que te traigan alegría y gracias por escucharme desde lejos.', badge: 'Álbum digital', intro: 'Escucha en línea o descarga las canciones de regalo disponibles.', downloadAll: 'Descargar canciones de regalo', unavailable: 'No disponible fuera de Brasil', tracks: 'Tus canciones', bonus: 'Canciones extra', play: 'Reproducir', pause: 'Pausar', download: 'Descargar' },
+};
+---
+<BaseLayout locale="pt" route="soInLoveDownload">
+  <dialog class="modal album-support-modal" id="payment-thank-you-modal" aria-labelledby="payment-thank-you-title" data-open-on-load>
+    <div class="modal-panel"><button class="modal-close" type="button" aria-label="Fechar aviso" data-modal-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" /></svg></button><div class="modal-header"><span class="modal-eyebrow">SO IN LOVE</span><h2 id="payment-thank-you-title">Obrigado pelo seu apoio</h2></div><div class="modal-body"><p>Se você efetuou o <strong>PIX</strong>, muito obrigado! Seu interesse e seu apoio ao meu trabalho <strong>significam muito para mim</strong>. ❤️❤️❤️</p><p>Quero te dizer algo com toda sinceridade: eu optei por <strong>não bloquear o download</strong>, mesmo antes de conferir o pagamento. Eu escolho <strong>confiar em você</strong>, que me acompanha e apoia minha jornada com carinho e respeito.</p><p>Se ainda não fez o pagamento, peço com todo respeito que <strong>só faça o download depois de ter efetuado o pagamento</strong>.</p><p>Vou ficar muito feliz se escolher uma das músicas e <strong>compartilhar um story no Instagram me marcando</strong>.</p><div class="modal-quote-group" aria-label="Sugestões para story"><p>Você pode escrever algo simples como:</p><blockquote>"Comprei o álbum SO IN LOVE do @maxwilsonpereira e estou adorando! 🎶"</blockquote><blockquote>"Estou ouvindo SO IN LOVE do tenor @maxwilsonpereira e estou adorando! 🎶"</blockquote></div><p>Isso ajuda <strong>muito mais pessoas</strong> a descobrirem minha música.</p></div></div>
+  </dialog>
+  <main class="page-container album-page" id="main-content">
+    <section class="album-hero"><AlbumArtwork slug="so-in-love" label="Capas do álbum SO IN LOVE" frontAlt="Capa do álbum SO IN LOVE" backAlt="Contracapa do álbum SO IN LOVE" /><div class="album-hero-copy"><Badge text="Álbum digital liberado" /><p class="album-kicker">Max Wilson Pereira</p><h1>SO IN LOVE</h1><p data-client-copy="intro">Ouça online, baixe faixa por faixa ou salve o álbum completo em um arquivo único.</p><button class="primary-button album-download-all" type="button" data-client-copy="downloadAll">Baixar todas as músicas</button><aside class="album-international-note" data-international-only hidden><h2 data-client-copy="title"></h2><p data-client-copy="body"></p></aside></div></section>
+    <section class="content-section album-player-section"><div class="album-section-heading"><div><p class="album-eyebrow">13 faixas</p><h2 data-client-copy="tracks">Suas músicas</h2></div><span class="album-format">MP3</span></div><AudioTrackList tracks={soInLoveTracks} playLabel="Play" pauseLabel="Pausar" audioFallback="Seu navegador não suporta reprodução de áudio." downloadable downloadLabel="Baixar" /></section>
+    <section class="content-section album-player-section"><div class="album-section-heading"><div><p class="album-eyebrow" data-client-copy="bonus">Faixas Bônus</p><h2 data-client-copy="tracks">Suas músicas</h2></div><span class="album-format">MP3</span></div><AudioTrackList tracks={bonusTracks} playLabel="Play" pauseLabel="Pausar" audioFallback="Seu navegador não suporta reprodução de áudio." downloadable downloadLabel="Baixar" /></section>
+  </main>
+</BaseLayout>
+
+<script id="international-copy" type="application/json" is:inline set:html={JSON.stringify(internationalCopy)}></script>
+<script is:inline>
+  (() => {
+    const params = new URLSearchParams(location.search);
+    const language = params.get('lang');
+    const international = language === 'en' || language === 'de' || language === 'es';
+    const modal = document.querySelector('#payment-thank-you-modal');
+    if (modal && !international) {
+      modal.querySelectorAll('[data-modal-close]').forEach((button) => button.addEventListener('click', () => modal.close()));
+      modal.addEventListener('click', (event) => { if (event.target === modal) modal.close(); });
+      if (typeof modal.showModal === 'function') modal.showModal(); else modal.setAttribute('open', '');
+    } else modal?.remove();
+
+    const downloadAll = document.querySelector('.album-download-all');
+    if (international) {
+      const copyData = document.querySelector('#international-copy');
+      const internationalCopy = JSON.parse(copyData?.textContent || '{}');
+      const copy = internationalCopy[language];
+      document.documentElement.lang = language === 'en' ? 'en-US' : language === 'de' ? 'de-DE' : 'es-ES';
+      document.querySelector('.badge').textContent = copy.badge;
+      document.querySelector('[data-international-only]').hidden = false;
+      document.querySelectorAll('[data-client-copy]').forEach((element) => { const key = element.dataset.clientCopy; if (copy[key]) element.textContent = copy[key]; });
+      document.querySelectorAll('.album-player-section').forEach((section, sectionIndex) => section.querySelectorAll('.track-item').forEach((item, index) => {
+        item.querySelector('.play-track').textContent = copy.play;
+        const link = item.querySelector('a[download]'); if (link) link.textContent = copy.download;
+        const enabledLimit = sectionIndex === 0 ? 5 : 4;
+        if (index < enabledLimit) return;
+        item.classList.add('is-disabled');
+        const button = item.querySelector('.play-track'); button.disabled = true; button.title = copy.unavailable;
+        if (link) { link.removeAttribute('href'); link.removeAttribute('download'); link.setAttribute('aria-disabled', 'true'); link.setAttribute('tabindex', '-1'); link.title = copy.unavailable; }
+      }));
+      downloadAll.disabled = true; downloadAll.title = copy.unavailable; downloadAll.setAttribute('aria-label', copy.unavailable);
+    } else {
+      downloadAll?.addEventListener('click', () => {
+        const links = [...document.querySelectorAll('.track-item a[download]')];
+        downloadAll.disabled = true; const original = downloadAll.textContent; downloadAll.textContent = 'Preparando downloads...';
+        links.forEach((link, index) => setTimeout(() => { link.click(); if (index === links.length - 1) setTimeout(() => { downloadAll.disabled = false; downloadAll.textContent = original; }, 800); }, index * 250));
+      });
+    }
+  })();
+</script>

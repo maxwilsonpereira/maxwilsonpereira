@@ -1,0 +1,8 @@
+---
+interface Props { caption: string; }
+const { caption } = Astro.props;
+---
+<figure class="microphone-interlude">
+  <div class="microphone-interlude-media" aria-hidden="true"></div>
+  <figcaption>{caption}</figcaption>
+</figure>

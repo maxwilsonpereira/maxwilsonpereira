@@ -1,0 +1,29 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Badge from '@/components/Badge.astro';
+import AlbumArtwork from '@/components/AlbumArtwork.astro';
+import AudioTrackList from '@/components/AudioTrackList.astro';
+import { quattroTracks, tenoriAmiciTracks } from '@/data/media';
+import { type Locale } from '@/config/site';
+import { t } from '@/i18n';
+interface Props { locale: Locale; album: 'tenoriAmici' | 'quattro'; }
+const { locale, album } = Astro.props;
+const tr = (source: string) => t(locale, source);
+const isTenori = album === 'tenoriAmici';
+const title = isTenori ? 'Tenori Amici' : 'QUATTRO';
+const slug = isTenori ? 'tenori-amici' : 'quattro-sony';
+const tracks = isTenori ? tenoriAmiciTracks : quattroTracks;
+const description = isTenori
+  ? 'Lançado pela gravadora Biscoito Fino em 2017, Con Amore reúne o Tenori Amici em repertório clássico e popular com espírito crossover.'
+  : 'Projeto de 2011 da Sony Music Entertainment Brasil com o Grupo Quattro, revisitando grandes canções internacionais em formato crossover vocal.';
+const spotify = isTenori ? 'https://open.spotify.com/artist/6HoEZhLeLiwaohqBCnCWVo' : 'https://open.spotify.com/track/0D2oxUN92C8Ky7bJ4HCotg';
+---
+<BaseLayout locale={locale} route={album}>
+  <main class="page-container album-page" id="main-content">
+    <section class="album-hero">
+      <AlbumArtwork slug={slug} label={tr(`Capas do álbum ${title}`)} frontAlt={tr(`Capa do álbum ${title}`)} backAlt={tr(`Contracapa do álbum ${title}`)} />
+      <div class="album-hero-copy"><Badge text={tr('Álbum digital')} /><p class="album-kicker">Max Wilson Pereira</p><h1>{title}</h1><p>{tr(description)}</p><div class="album-streaming-cta"><p>{tr('O álbum completo está disponível no Spotify.')}</p><a class="spotify-button" href={spotify} target="_blank" rel="noopener noreferrer" aria-label={tr(`Ouvir ${isTenori ? 'Tenori Amici' : 'o álbum QUATTRO completo'} no Spotify`)}><svg aria-hidden="true" viewBox="0 0 24 24" class="spotify-button-icon"><path fill="currentColor" d="M12 1.5C6.2 1.5 1.5 6.2 1.5 12S6.2 22.5 12 22.5 22.5 17.8 22.5 12 17.8 1.5 12 1.5Zm4.82 15.14a.79.79 0 0 1-1.09.27c-2.98-1.82-6.72-2.23-11.13-1.22a.8.8 0 0 1-.36-1.55c4.83-1.1 8.98-.62 12.31 1.42.38.23.5.72.27 1.08Zm1.29-2.86a.98.98 0 0 1-1.35.32c-3.41-2.1-8.61-2.7-12.64-1.48a.99.99 0 0 1-.57-1.89c4.6-1.39 10.33-.72 14.24 1.68.46.28.61.89.32 1.37Zm.11-2.98C14.13 8.37 7.39 8.15 3.48 9.38a1.18 1.18 0 1 1-.71-2.25c4.48-1.41 11.91-1.15 16.65 1.66a1.18 1.18 0 0 1-1.2 2.01Z" /></svg>{tr('Ouvir no Spotify')}</a></div></div>
+    </section>
+    <section class="content-section album-player-section"><div class="album-section-heading"><div><p class="album-eyebrow">11 {tr('amostras')}</p><h2>{tr('Amostras')}</h2></div><span class="album-format">{tr('Prévia MP3')}</span></div><AudioTrackList {tracks} playLabel={tr('Ouvir amostra')} pauseLabel={tr('Pausar')} audioFallback={tr('Seu navegador não suporta reprodução de áudio.')} previewSeconds={60} /></section>
+  </main>
+</BaseLayout>
