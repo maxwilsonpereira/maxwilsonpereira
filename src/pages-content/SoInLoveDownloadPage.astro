@@ -75,9 +75,22 @@ const copy = copyByLocale[locale];
 ---
 <BaseLayout {locale} route="soInLoveDownload">
   {!isInternational && (
-    <dialog class="modal album-support-modal" id="payment-thank-you-modal" aria-labelledby="payment-thank-you-title" data-open-on-load>
-      <div class="modal-panel"><button class="modal-close" type="button" aria-label="Fechar aviso" data-modal-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" /></svg></button><div class="modal-header"><span class="modal-eyebrow">SO IN LOVE</span><h2 id="payment-thank-you-title">Obrigado pelo seu apoio</h2></div><div class="modal-body"><p>Se você efetuou o <strong>PIX</strong>, muito obrigado! Seu interesse e seu apoio ao meu trabalho <strong>significam muito para mim</strong>. ❤️❤️❤️</p><p>Quero te dizer algo com toda sinceridade: eu optei por <strong>não bloquear o download</strong>, mesmo antes de conferir o pagamento. Eu escolho <strong>confiar em você</strong>, que me acompanha e apoia minha jornada com carinho e respeito.</p><p>Se ainda não fez o pagamento, peço com todo respeito que <strong>só faça o download depois de ter efetuado o pagamento</strong>.</p><p>Vou ficar muito feliz se escolher uma das músicas e <strong>compartilhar um story no Instagram me marcando</strong>.</p><div class="modal-quote-group" aria-label="Sugestões para story"><p>Você pode escrever algo simples como:</p><blockquote>"Comprei o álbum SO IN LOVE do @maxwilsonpereira e estou adorando! 🎶"</blockquote><blockquote>"Estou ouvindo SO IN LOVE do tenor @maxwilsonpereira e estou adorando! 🎶"</blockquote></div><p>Isso ajuda <strong>muito mais pessoas</strong> a descobrirem minha música.</p></div></div>
-    </dialog>
+    <>
+      <dialog class="modal album-support-modal" id="payment-thank-you-modal" aria-labelledby="payment-thank-you-title" open>
+        <div class="modal-panel"><button class="modal-close" type="button" aria-label="Fechar aviso" data-modal-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" /></svg></button><div class="modal-header"><span class="modal-eyebrow">SO IN LOVE</span><h2 id="payment-thank-you-title">Obrigado pelo seu apoio</h2></div><div class="modal-body"><p>Se você efetuou o <strong>PIX</strong>, muito obrigado! Seu interesse e seu apoio ao meu trabalho <strong>significam muito para mim</strong>. ❤️❤️❤️</p><p>Quero te dizer algo com toda sinceridade: eu optei por <strong>não bloquear o download</strong>, mesmo antes de conferir o pagamento. Eu escolho <strong>confiar em você</strong>, que me acompanha e apoia minha jornada com carinho e respeito.</p><p>Se ainda não fez o pagamento, peço com todo respeito que <strong>só faça o download depois de ter efetuado o pagamento</strong>.</p><p>Vou ficar muito feliz se escolher uma das músicas e <strong>compartilhar um story no Instagram me marcando</strong>.</p><div class="modal-quote-group" aria-label="Sugestões para story"><p>Você pode escrever algo simples como:</p><blockquote>"Comprei o álbum SO IN LOVE do @maxwilsonpereira e estou adorando! 🎶"</blockquote><blockquote>"Estou ouvindo SO IN LOVE do tenor @maxwilsonpereira e estou adorando! 🎶"</blockquote></div><p>Isso ajuda <strong>muito mais pessoas</strong> a descobrirem minha música.</p></div></div>
+      </dialog>
+      <script is:inline>
+        const supportModal = document.querySelector('#payment-thank-you-modal');
+        if (supportModal) {
+          supportModal.querySelectorAll('[data-modal-close]').forEach((button) => button.addEventListener('click', () => supportModal.close()));
+          supportModal.addEventListener('click', (event) => { if (event.target === supportModal) supportModal.close(); });
+          if (typeof supportModal.showModal === 'function') {
+            supportModal.close();
+            supportModal.showModal();
+          }
+        }
+      </script>
+    </>
   )}
   <main class="page-container album-page" id="main-content">
     <section class="album-hero"><AlbumArtwork slug="so-in-love" label="Capas do álbum SO IN LOVE" frontAlt="Capa do álbum SO IN LOVE" backAlt="Contracapa do álbum SO IN LOVE" /><div class="album-hero-copy"><Badge text={copy.badge} /><p class="album-kicker">Max Wilson Pereira</p><h1>SO IN LOVE</h1><p>{copy.intro}</p><button class="primary-button album-download-all" type="button" disabled={isInternational} title={isInternational ? copy.unavailable : undefined} aria-label={isInternational ? copy.unavailable : undefined}>{copy.downloadAll}</button>{isInternational && <aside class="album-international-note"><h2>{copy.noteTitle}</h2><p>{copy.noteBody}</p></aside>}</div></section>
@@ -87,13 +100,6 @@ const copy = copyByLocale[locale];
 </BaseLayout>
 
 <script>
-  const modal = document.querySelector<HTMLDialogElement>('#payment-thank-you-modal');
-  if (modal) {
-    modal.querySelectorAll('[data-modal-close]').forEach((button) => button.addEventListener('click', () => modal.close()));
-    modal.addEventListener('click', (event) => { if (event.target === modal) modal.close(); });
-    if (typeof modal.showModal === 'function') modal.showModal(); else modal.setAttribute('open', '');
-  }
-
   const downloadAll = document.querySelector<HTMLButtonElement>('.album-download-all');
   if (downloadAll && !downloadAll.disabled) {
     downloadAll.addEventListener('click', () => {
