@@ -29,4 +29,6 @@ Before adding a dependency, ask whether Astro, semantic HTML, native browser API
 
 Use semantic headings, descriptive alt text, direct crawlable links, and verified facts. Update localized metadata and structured data when relevant. Never fabricate schema claims or create language alternates for pages that do not exist.
 
+Optimize every newly added image for web delivery before committing it, using an appropriate modern format, dimensions, and compression level for its intended display size.
+
 Finish every public-page change with `npm run build`. The build is the required cross-route SEO and link regression check.
