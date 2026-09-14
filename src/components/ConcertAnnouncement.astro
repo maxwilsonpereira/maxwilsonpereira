@@ -41,10 +41,22 @@ const tr = (source: string) => t(locale, source);
 </aside>
 
 <script>
+  const announcementSessionKey = 'concert-announcement-shown';
   const announcement = document.querySelector<HTMLElement>('[data-concert-announcement]');
   const closeButton = announcement?.querySelector<HTMLButtonElement>('[data-concert-announcement-close]');
+  const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming | undefined;
+  const isPageReload = navigation?.type === 'reload';
+  let shouldShowAnnouncement = true;
 
-  if (announcement && closeButton) {
+  try {
+    if (isPageReload) sessionStorage.removeItem(announcementSessionKey);
+    shouldShowAnnouncement = sessionStorage.getItem(announcementSessionKey) !== 'true';
+    if (shouldShowAnnouncement) sessionStorage.setItem(announcementSessionKey, 'true');
+  } catch {
+    // Keep the announcement available if storage is disabled by the browser.
+  }
+
+  if (announcement && closeButton && shouldShowAnnouncement) {
     requestAnimationFrame(() => {
       announcement.hidden = false;
       requestAnimationFrame(() => announcement.classList.add('is-visible'));
