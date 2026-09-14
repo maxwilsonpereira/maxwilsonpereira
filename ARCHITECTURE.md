@@ -31,18 +31,18 @@ To add a fifth language, add its locale configuration, translation dictionary, m
 
 ## Preserved URL map
 
-| Page type | Portuguese | Localized equivalents | Action |
-| --- | --- | --- | --- |
-| Home | `/` | `/en/`, `/es/`, `/de/` | Preserved |
-| Biography | `/pages/biografia.html` | `/{locale}/pages/biografia.html` | Preserved |
-| Concert | `/pages/concerto.html` | `/{locale}/pages/concerto.html` | Preserved |
-| Albums | `/pages/albums.html` | `/{locale}/pages/albums.html` | Preserved |
-| Videos | `/pages/videos.html` | `/{locale}/pages/videos.html` | Preserved |
-| Tenori Amici | `/pages/albums/tenori-amici.html` | `/{locale}/pages/albums/tenori-amici.html` | Preserved |
-| QUATTRO | `/pages/albums/quattro-sony.html` | `/{locale}/pages/albums/quattro-sony.html` | Preserved |
-| Support | `/pages/apoio-pix.html` | Portuguese only | Preserved |
-| SO IN LOVE purchase | `/pages/albums/so-in-love-pix.html` | Portuguese only | Preserved |
-| SO IN LOVE download | `/pages/albums/so-in-love.html` | `/{locale}/pages/albums/so-in-love.html` | Protected/noindex |
+| Page type           | Portuguese                          | Localized equivalents                      | Action            |
+| ------------------- | ----------------------------------- | ------------------------------------------ | ----------------- |
+| Home                | `/`                                 | `/en/`, `/es/`, `/de/`                     | Preserved         |
+| Biography           | `/pages/biografia.html`             | `/{locale}/pages/biografia.html`           | Preserved         |
+| Concert             | `/pages/concerto.html`              | `/{locale}/pages/concerto.html`            | Preserved         |
+| Albums              | `/pages/albums.html`                | `/{locale}/pages/albums.html`              | Preserved         |
+| Videos              | `/pages/videos.html`                | `/{locale}/pages/videos.html`              | Preserved         |
+| Tenori Amici        | `/pages/albums/tenori-amici.html`   | `/{locale}/pages/albums/tenori-amici.html` | Preserved         |
+| QUATTRO             | `/pages/albums/quattro-sony.html`   | `/{locale}/pages/albums/quattro-sony.html` | Preserved         |
+| Support             | `/pages/apoio-pix.html`             | Portuguese only                            | Preserved         |
+| SO IN LOVE purchase | `/pages/albums/so-in-love-pix.html` | Portuguese only                            | Preserved         |
+| SO IN LOVE download | `/pages/albums/so-in-love.html`     | `/{locale}/pages/albums/so-in-love.html`   | Protected/noindex |
 
 Astro's file output keeps the legacy `.html` pages. `scripts/postbuild.mjs` places localized homepages at `/{locale}/index.html` and creates the exact canonical sitemap.
 

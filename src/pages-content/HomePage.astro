@@ -9,10 +9,10 @@ interface Props { locale: Locale; }
 const { locale } = Astro.props;
 const translate = (source: string) => t(locale, source);
 ---
-<BaseLayout locale={locale} route="home" bodyClass="page-home" preloadImage={{ src: '/assets/optimized/hebe-camargo-1280.webp', srcset: '/assets/optimized/hebe-camargo-720.webp 720w, /assets/optimized/hebe-camargo-1280.webp 1280w', sizes: '100vw', type: 'image/webp' }}>
+<BaseLayout locale={locale} route="home" bodyClass="page-home" preloadImage={{ src: '/assets/optimized/max-wilson-hebe-solo-1280.webp', srcset: '/assets/optimized/max-wilson-hebe-solo-720.webp 720w, /assets/optimized/max-wilson-hebe-solo-1280.webp 1280w', sizes: '100vw', type: 'image/webp' }}>
   <main class="home-main" id="main-content">
     <section class="home-hero" aria-labelledby="home-title">
-      <img src="/assets/optimized/hebe-camargo-1280.webp" srcset="/assets/optimized/hebe-camargo-720.webp 720w, /assets/optimized/hebe-camargo-1280.webp 1280w" sizes="100vw" width="1280" height="696" alt={translate('Max Wilson Pereira em apresentação no DVD de Hebe Camargo')} class="home-hero-img hero--anchor-top" fetchpriority="high" decoding="async" />
+      <img src="/assets/optimized/max-wilson-hebe-solo-1280.webp" srcset="/assets/optimized/max-wilson-hebe-solo-720.webp 720w, /assets/optimized/max-wilson-hebe-solo-1280.webp 1280w" sizes="100vw" width="1280" height="720" alt={translate('Max Wilson Pereira cantando com orquestra em um palco iluminado')} class="home-hero-img hero--anchor-top" fetchpriority="high" decoding="async" />
       <div class="home-hero-overlay" aria-hidden="true"></div>
       <div class="home-hero-copy">
         <h1 id="home-title"><span class="home-name-line">Max Wilson</span><span class="home-name-line">Pereira</span></h1>
