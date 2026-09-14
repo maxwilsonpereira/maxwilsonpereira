@@ -20,7 +20,7 @@ Max Wilson Pereira is a Brazilian tenor based in Vienna whose work joins rigorou
 
 ## Operating Context
 
-Visitors often arrive from short-form social video, YouTube, Instagram, search, or a shared link. They need a mobile-first path into concert information, recorded music, biography, and support. The concert currently has no published booking or ticket destination; it communicates planned presentations in Austria and Brazil and an intended Brazilian tour from 2027.
+Visitors often arrive from short-form social video, YouTube, Instagram, search, or a shared link. They need a mobile-first path into concert information, recorded music, biography, and support. Tickets are now on sale through Sympla for the single Rio de Janeiro presentation of “Eternas Canções” on 21 December 2026 at 20:00, at Teatro Vannucci, Shopping da Gávea. The project also communicates planned presentations in Austria and an intended Brazilian tour from 2027.
 
 ## Capabilities and Constraints
 
@@ -29,7 +29,7 @@ Visitors often arrive from short-form social video, YouTube, Instagram, search, 
 - Preserve the established `.html` public URL map. The site has no backend, database, server-side session, or client-side router.
 - Preserve all existing routes, media, downloads, Spotify links, YouTube embeds, PIX payment/support instructions, social links, and localized SEO behavior.
 - PIX support and purchase flows remain client-side and trust-based; the site does not verify payments on a server.
-- Do not add ticketing, contact, availability, dates, testimonials, or commercial claims that are not supported by the current site.
+- The verified ticket destination is `https://bileto.sympla.com.br/event/126522`; do not invent additional dates, availability, prices, testimonials, or commercial claims.
 - Homepage priority confirmed by the user: concert interest.
 
 ## Brand Commitments
@@ -55,7 +55,7 @@ Visitors often arrive from short-form social video, YouTube, Instagram, search, 
 2. Make concert interest the clearest next step while retaining music discovery and support paths.
 3. Treat opera and crossover as connected, welcoming parts of one artistic identity.
 4. Preserve the artist's factual story and make it easier to explore.
-5. Deliver a polished international experience without inventing career claims or ticketing details.
+5. Deliver a polished international experience while keeping event and ticket details factual and current.
 
 ## Accessibility & Inclusion
 

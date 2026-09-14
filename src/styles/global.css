@@ -776,15 +776,15 @@ h2.accent {
   font-weight: 600;
 }
 
-.content-section a {
+.content-section a:not(.primary-button):not(.button) {
   color: #ff7aa8;
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-.content-section a:hover,
-.content-section a:focus-visible {
+.content-section a:not(.primary-button):not(.button):hover,
+.content-section a:not(.primary-button):not(.button):focus-visible {
   color: #ffffff;
 }
 
@@ -2951,6 +2951,37 @@ body.page-sub {
     linear-gradient(0deg, rgba(16, 16, 15, 0.92) 0%, transparent 55%);
 }
 
+/* The campaign poster follows the hero as one decisive, unabridged visual. */
+.page-sub .concert-event {
+  width: 100%;
+  padding: clamp(1.5rem, 5vw, 5rem) var(--page-gutter);
+  background: var(--color-ink);
+}
+
+.concert-event-art {
+  display: block;
+  width: min(100%, 70.5rem);
+  margin: 0 auto;
+  overflow: hidden;
+  color: inherit;
+  background: var(--color-stage);
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.34);
+  text-decoration: none;
+}
+
+.concert-event-art:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: 4px;
+}
+
+.concert-event-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1128 / 634;
+  object-fit: cover;
+}
+
 /* Shared reading chapters establish one stage, so labels, titles, and copy share an edge. */
 .page-sub .page-reading-section {
   padding-right: max(var(--page-gutter), calc((100% - var(--reading-max)) / 2));
@@ -3483,6 +3514,156 @@ body.page-sub {
   text-align: left;
 }
 
+/* A non-blocking stage announcement: prominent on arrival, never a focus trap. */
+.concert-announcement {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 1200;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(17rem, 0.7fr);
+  width: min(56rem, calc(100vw - 3rem));
+  max-height: calc(100svh - 3rem);
+  overflow: auto;
+  color: var(--color-paper);
+  background: var(--color-ink);
+  border: 1px solid var(--color-brass);
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  clip-path: inset(100% 0 0 0);
+  transform: translateY(1.5rem);
+  transition:
+    opacity 240ms ease,
+    clip-path 520ms var(--ease-stage),
+    transform 520ms var(--ease-stage);
+}
+
+.concert-announcement[hidden] {
+  display: none;
+}
+
+.concert-announcement.is-visible {
+  opacity: 1;
+  clip-path: inset(0);
+  transform: translateY(0);
+}
+
+.concert-announcement-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  color: var(--color-paper);
+  background: rgba(16, 16, 15, 0.9);
+  border: 1px solid var(--color-line-dark);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+.concert-announcement-close:hover,
+.concert-announcement-close:focus-visible {
+  color: var(--color-brass);
+  border-color: var(--color-brass);
+}
+
+.concert-announcement-close svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 1.5;
+}
+
+.concert-announcement-art {
+  min-height: 100%;
+  overflow: hidden;
+  background: var(--color-stage);
+}
+
+.concert-announcement-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.concert-announcement-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2.25rem 1.75rem 1.75rem;
+}
+
+.concert-announcement-copy h2 {
+  margin: 0;
+  color: var(--color-brass);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  letter-spacing: var(--title-letter-spacing);
+  line-height: 0.95;
+}
+
+.concert-announcement-date {
+  margin: 1rem 0 0;
+  color: var(--color-paper);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.concert-announcement-venue {
+  margin: 0.45rem 0 0;
+  color: var(--color-mist);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.concert-announcement-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 1.35rem;
+}
+
+.concert-announcement-actions .button {
+  width: 100%;
+}
+
+.concert-announcement-detail,
+.home-hero-detail {
+  color: var(--color-paper);
+  border-bottom: 1px solid var(--color-line-dark);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.6;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+.concert-announcement-detail:hover,
+.concert-announcement-detail:focus-visible,
+.home-hero-detail:hover,
+.home-hero-detail:focus-visible {
+  color: var(--color-brass);
+  border-color: var(--color-brass);
+}
+
 .page-home::before,
 .page-home::after,
 .page-home > .hero-bg {
@@ -3521,6 +3702,18 @@ body.page-sub {
   object-position: 60% center;
   filter: saturate(0.9) contrast(1.05);
   animation: hero-settle 1.4s var(--ease-stage) both;
+}
+
+@media (min-width: 75rem) and (min-aspect-ratio: 2 / 1) {
+  .home-hero-img {
+    object-position: 60% 42%;
+  }
+}
+
+@media (min-width: 100rem) and (min-aspect-ratio: 5 / 2) {
+  .home-hero-img {
+    object-position: 60% 28%;
+  }
 }
 
 .home-hero-overlay {
@@ -3577,10 +3770,36 @@ body.page-sub {
   line-height: 1.55;
 }
 
+.home-hero-event {
+  display: grid;
+  gap: 0.35rem;
+  width: min(100%, 35rem);
+  padding-top: 1.25rem;
+  margin: 1.35rem 0 0;
+  border-top: 1px solid var(--color-line-dark);
+  color: #e6e0d7;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.home-hero-event strong {
+  color: var(--color-brass);
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 400;
+  letter-spacing: var(--title-letter-spacing);
+  line-height: 1;
+  text-transform: none;
+}
+
 .home-hero-actions {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem 1.5rem;
   margin-top: 2rem;
 }
@@ -4159,7 +4378,7 @@ body.page-sub {
   }
 
   .home-hero-img {
-    object-position: 66% center;
+    object-position: 48% center;
   }
 
   .home-hero-overlay {
@@ -4180,6 +4399,39 @@ body.page-sub {
   .home-hero-actions,
   .home-hero-actions .button {
     width: 100%;
+  }
+
+  .home-hero-detail {
+    width: 100%;
+    text-align: center;
+  }
+
+  .concert-announcement {
+    right: 0;
+    bottom: 0;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-height: calc(100svh - var(--header-height) - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+  }
+
+  .concert-announcement-art {
+    min-height: 0;
+  }
+
+  .concert-announcement-art img {
+    height: auto;
+    aspect-ratio: 1128 / 634;
+  }
+
+  .concert-announcement-copy {
+    padding: 1.4rem var(--page-gutter) max(1.5rem, env(safe-area-inset-bottom));
+  }
+
+  .concert-announcement-copy h2 {
+    font-size: clamp(1.9rem, 9vw, 2.6rem);
   }
 
   
@@ -4230,6 +4482,10 @@ body.page-sub {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .concert-announcement {
+    transition: none;
+  }
+
   .home-hero-img,
   .home-hero-copy {
     animation: none;

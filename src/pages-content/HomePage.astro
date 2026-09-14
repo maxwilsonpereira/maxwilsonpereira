@@ -3,22 +3,28 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import SocialFollow from '@/components/SocialFollow.astro';
 import VideoEmbed from '@/components/VideoEmbed.astro';
 import Icon from '@/components/Icon.astro';
-import { pathFor, type Locale } from '@/config/site';
+import ConcertAnnouncement from '@/components/ConcertAnnouncement.astro';
+import { concertEvent, pathFor, type Locale } from '@/config/site';
 import { t } from '@/i18n';
 interface Props { locale: Locale; }
 const { locale } = Astro.props;
 const translate = (source: string) => t(locale, source);
 ---
-<BaseLayout locale={locale} route="home" bodyClass="page-home" preloadImage={{ src: '/assets/optimized/max-wilson-hebe-solo-1280.webp', srcset: '/assets/optimized/max-wilson-hebe-solo-720.webp 720w, /assets/optimized/max-wilson-hebe-solo-1280.webp 1280w', sizes: '100vw', type: 'image/webp' }}>
+<BaseLayout locale={locale} route="home" bodyClass="page-home" preloadImage={{ src: '/assets/optimized/max-wilson-hebe-solo-crop-1280.webp', srcset: '/assets/optimized/max-wilson-hebe-solo-crop-720.webp 720w, /assets/optimized/max-wilson-hebe-solo-crop-1280.webp 1280w', sizes: '100vw', type: 'image/webp' }}>
+  <ConcertAnnouncement {locale} />
   <main class="home-main" id="main-content">
     <section class="home-hero" aria-labelledby="home-title">
-      <img src="/assets/optimized/max-wilson-hebe-solo-1280.webp" srcset="/assets/optimized/max-wilson-hebe-solo-720.webp 720w, /assets/optimized/max-wilson-hebe-solo-1280.webp 1280w" sizes="100vw" width="1280" height="720" alt={translate('Max Wilson Pereira cantando com orquestra em um palco iluminado')} class="home-hero-img hero--anchor-top" fetchpriority="high" decoding="async" />
+      <img src="/assets/optimized/max-wilson-hebe-solo-crop-1280.webp" srcset="/assets/optimized/max-wilson-hebe-solo-crop-720.webp 720w, /assets/optimized/max-wilson-hebe-solo-crop-1280.webp 1280w" sizes="100vw" width="1280" height="828" alt={translate('Max Wilson Pereira cantando com orquestra em um palco iluminado')} class="home-hero-img" fetchpriority="high" decoding="async" />
       <div class="home-hero-overlay" aria-hidden="true"></div>
       <div class="home-hero-copy">
         <h1 id="home-title"><span class="home-name-line">Max Wilson</span><span class="home-name-line">Pereira</span></h1>
         <p class="home-hero-role">{translate('Tenor brasileiro')} <span aria-hidden="true">•</span> Viena</p>
         <p class="tagline">{translate('Canto, paixão e entretenimento para alegrar o seu dia e tocar o seu coração')}</p>
-        <div class="home-hero-actions"><a class="button button-primary" href={pathFor('concert', locale)}>{translate('Conheça o concerto')}<Icon name="arrow" /></a></div>
+        <p class="home-hero-event"><strong>{translate('Eternas Canções')}</strong><span><time datetime={concertEvent.startDate}>{translate('21 de dezembro de 2026')} <span aria-hidden="true">·</span> {translate('20h')}</time></span><span>{concertEvent.venue} <span aria-hidden="true">·</span> {concertEvent.city}</span></p>
+        <div class="home-hero-actions">
+          <a class="button button-primary" href={concertEvent.ticketUrl} target="_blank" rel="noopener external">{translate('Compre seu ingresso aqui')}<Icon name="arrow" /></a>
+          <a class="home-hero-detail" href={pathFor('concert', locale)}>{translate('Ver detalhes do concerto')}</a>
+        </div>
       </div>
       <a class="home-hero-scroll" href="#concerto-em-destaque" aria-label={translate('Ir para o destaque do concerto')}><span>{translate('Explore')}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M6 14l6 6 6-6" /></svg></a>
     </section>

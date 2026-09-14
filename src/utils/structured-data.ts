@@ -1,4 +1,4 @@
-import { SITE_NAME, SITE_URL, routes, socialLinks, urlFor, type Locale, type RouteKey } from '@/config/site';
+import { SITE_NAME, SITE_URL, concertEvent, routes, socialLinks, urlFor, type Locale, type RouteKey } from '@/config/site';
 import { t } from '@/i18n';
 import type { SeoData } from '@/types';
 
@@ -74,6 +74,38 @@ export function buildStructuredData(route: RouteKey, locale: Locale, seo: SeoDat
       item: pageUrl,
     });
     graph.push({ '@type': 'BreadcrumbList', '@id': breadcrumbId, itemListElement: items });
+  }
+
+  if (route === 'concert') {
+    const eventId = `${pageUrl}#music-event`;
+    graph.push({
+      '@type': 'MusicEvent',
+      '@id': eventId,
+      name: t(locale, 'Max Wilson Pereira — Eternas Canções'),
+      startDate: concertEvent.startDate,
+      eventStatus: 'https://schema.org/EventScheduled',
+      eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+      url: pageUrl,
+      image: [imageUrl],
+      description: seo.description,
+      performer: { '@id': personId },
+      location: {
+        '@type': 'Place',
+        name: `${concertEvent.venue} — ${concertEvent.venueDetail}`,
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: concertEvent.streetAddress,
+          addressLocality: concertEvent.city,
+          addressRegion: concertEvent.region,
+          addressCountry: concertEvent.country,
+        },
+      },
+      offers: {
+        '@type': 'Offer',
+        url: concertEvent.ticketUrl,
+      },
+    });
+    graph[2].mainEntity = { '@id': eventId };
   }
 
   const albumSchemas: Partial<Record<RouteKey, SchemaNode>> = {

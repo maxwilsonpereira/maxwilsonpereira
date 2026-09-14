@@ -91,6 +91,22 @@ export const socialProfiles = [
   { id: 'facebook', label: 'Facebook', href: socialLinks.facebook },
 ] as const;
 
+export const concertEvent = {
+  id: 'eternas-cancoes-2026-rio',
+  name: 'Max Wilson Pereira — Eternas Canções',
+  startDate: '2026-12-21T20:00:00-03:00',
+  dateLabel: '21 de dezembro de 2026',
+  timeLabel: '20h',
+  venue: 'Teatro Vannucci',
+  venueDetail: 'Shopping da Gávea',
+  streetAddress: 'Rua Marquês de São Vicente, 52',
+  city: 'Rio de Janeiro',
+  region: 'RJ',
+  country: 'BR',
+  ticketUrl: 'https://bileto.sympla.com.br/event/126522',
+  artwork: '/assets/optimized/eternas-cancoes-1128.webp',
+} as const;
+
 export const defaultSocialImage = '/assets/optimized/og-max-wilson.jpg';
 
 export const navigation = [

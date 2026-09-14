@@ -1,0 +1,75 @@
+---
+import Icon from '@/components/Icon.astro';
+import { concertEvent, pathFor, type Locale } from '@/config/site';
+import { t } from '@/i18n';
+
+interface Props { locale: Locale; }
+
+const { locale } = Astro.props;
+const tr = (source: string) => t(locale, source);
+---
+
+<aside
+  class="concert-announcement"
+  data-concert-announcement
+  aria-labelledby="concert-announcement-title"
+  hidden
+>
+  <button class="concert-announcement-close" type="button" data-concert-announcement-close aria-label={tr('Fechar anúncio do concerto')}>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+  </button>
+
+  <a class="concert-announcement-art" href={concertEvent.ticketUrl} target="_blank" rel="noopener external" aria-label={tr('Compre seu ingresso aqui')}>
+    <img
+      src={concertEvent.artwork}
+      width="1128"
+      height="634"
+      alt={tr('Cartaz do concerto Eternas Canções com Max Wilson Pereira e convidados')}
+      decoding="async"
+    />
+  </a>
+
+  <div class="concert-announcement-copy">
+    <h2 id="concert-announcement-title">{tr('Eternas Canções')}</h2>
+    <p class="concert-announcement-date"><time datetime={concertEvent.startDate}>{tr('21 de dezembro de 2026')} <span aria-hidden="true">·</span> {tr('20h')}</time></p>
+    <p class="concert-announcement-venue">{concertEvent.venue} <span aria-hidden="true">·</span> {concertEvent.city}</p>
+    <div class="concert-announcement-actions">
+      <a class="button button-primary" href={concertEvent.ticketUrl} target="_blank" rel="noopener external">{tr('Compre seu ingresso aqui')}<Icon name="arrow" /></a>
+      <a class="concert-announcement-detail" href={pathFor('concert', locale)}>{tr('Ver detalhes do concerto')}</a>
+    </div>
+  </div>
+</aside>
+
+<script>
+  const announcement = document.querySelector<HTMLElement>('[data-concert-announcement]');
+  const closeButton = announcement?.querySelector<HTMLButtonElement>('[data-concert-announcement-close]');
+
+  if (announcement && closeButton) {
+    requestAnimationFrame(() => {
+      announcement.hidden = false;
+      requestAnimationFrame(() => announcement.classList.add('is-visible'));
+    });
+
+    closeButton.addEventListener('click', () => {
+      announcement.classList.remove('is-visible');
+
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        announcement.hidden = true;
+        return;
+      }
+
+      const finishExit = (event: TransitionEvent) => {
+        if (event.target !== announcement || event.propertyName !== 'transform') return;
+        announcement.removeEventListener('transitionend', finishExit);
+        window.clearTimeout(exitFallback);
+        announcement.hidden = true;
+      };
+      const exitFallback = window.setTimeout(() => {
+        announcement.removeEventListener('transitionend', finishExit);
+        announcement.hidden = true;
+      }, 600);
+
+      announcement.addEventListener('transitionend', finishExit);
+    });
+  }
+</script>

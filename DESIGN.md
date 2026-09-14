@@ -236,7 +236,7 @@ Portuguese is the default language. Public English, Spanish, and German pages ar
 
 - **Do** let real photographs, album covers, recorded music, and factual career evidence carry the story.
 - **Do** alternate immersive dark passages with calm ivory reading passages.
-- **Do** keep concert exploration the clearest homepage action without implying ticketing or booking.
+- **Do** keep the verified concert ticket action as the clearest homepage conversion while tickets are on sale.
 - **Do** preserve semantic headings, descriptive alt text, visible focus, useful no-motion states, and progressive enhancement.
 - **Do** validate every shared change in Portuguese, English, Spanish, and German.
 - **Do** reuse the shared navigation, footer, token, button, spacing, focus, and full-bleed chapter foundations across the public site.
@@ -246,6 +246,6 @@ Portuguese is the default language. Public English, Spanish, and German pages ar
 - **Don't** use social-media gradients, neon glows, glassmorphism, or a link-in-bio visual language in the approved system.
 - **Don't** turn sections into repeated rounded cards, pills, or floating shells.
 - **Don't** let decoration compete with the artist's face, voice, album art, or performance.
-- **Don't** manufacture tickets, bookings, dates, press, reviews, testimonials, or commercial claims.
+- **Don't** manufacture additional tickets, bookings, dates, press, reviews, testimonials, or commercial claims beyond verified event information.
 - **Don't** imitate Il Divo or Il Volo compositionally; only their standard of photographic confidence and campaign clarity informs the work.
 - **Don't** turn long-form page content into floating card stacks or reintroduce page-edge gaps around the shared footer.

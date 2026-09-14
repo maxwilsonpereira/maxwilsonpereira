@@ -3,7 +3,8 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import Badge from '@/components/Badge.astro';
 import MicrophoneInterlude from '@/components/MicrophoneInterlude.astro';
 import VideoEmbed from '@/components/VideoEmbed.astro';
-import { type Locale } from '@/config/site';
+import Icon from '@/components/Icon.astro';
+import { concertEvent, type Locale } from '@/config/site';
 import { t } from '@/i18n';
 interface Props { locale: Locale; }
 const { locale } = Astro.props;
@@ -17,8 +18,14 @@ const repertoire = [
     <section class="page-hero concerto-hero" aria-labelledby="concerto-title">
       <img src="/assets/optimized/cachoeiro-2010-soprano-1600.jpg" srcset="/assets/optimized/cachoeiro-2010-soprano-720.webp 720w, /assets/optimized/cachoeiro-2010-soprano-1600.webp 1600w" sizes="100vw" width="1600" height="1071" alt={tr('Max Wilson Pereira no palco com uma soprano e orquestra em Cachoeiro, 2010')} class="page-hero-img concerto-hero-img hero--anchor-top" fetchpriority="high" decoding="async" />
       <div class="page-hero-overlay concerto-hero-overlay"></div>
-      <div class="page-hero-copy concerto-hero-copy"><Badge text={tr('Concerto ao vivo')} /><h1 id="concerto-title">{tr('Concerto')}</h1><p>{tr('Uma noite emocionante com grandes melodias, entre o teatro musical, a ópera e o crossover clássico.')}</p><a class="primary-button concerto-hero-button" href="#convite">{tr('Quero assistir')}</a></div>
+      <div class="page-hero-copy concerto-hero-copy"><Badge text={tr('Única apresentação')} /><h1 id="concerto-title">{tr('Eternas Canções')}</h1><p>{tr('Uma noite emocionante com grandes melodias, entre o teatro musical, a ópera e o crossover clássico.')}</p><a class="primary-button concerto-hero-button" href={concertEvent.ticketUrl} target="_blank" rel="noopener external">{tr('Compre seu ingresso aqui')}<Icon name="arrow" /></a></div>
     </section>
+
+    <div class="concert-event" id="concert-event">
+      <a class="concert-event-art" href={concertEvent.ticketUrl} target="_blank" rel="noopener external" aria-label={tr('Compre seu ingresso aqui')}>
+        <img src={concertEvent.artwork} width="1128" height="634" alt={tr('Cartaz do concerto Eternas Canções com Max Wilson Pereira e convidados')} decoding="async" />
+      </a>
+    </div>
 
     <section class="content-section concerto-intro page-reading-section" aria-labelledby="sobre-concerto">
       <p class="editorial-eyebrow">{tr('Sobre o concerto')}</p><h2 class="editorial-section-title" id="sobre-concerto">{tr('Uma experiência próxima, elegante e emocionante')}</h2>
@@ -49,7 +56,7 @@ const repertoire = [
     </section>
 
     <section class="content-section concerto-closing editorial-section--centered" id="convite" aria-labelledby="convite-concerto">
-      <p class="editorial-eyebrow">{tr('Convite')}</p><h2 class="editorial-section-title" id="convite-concerto">{tr('Viva este concerto ao vivo')}</h2><p>{tr('Algumas músicas revelam sua força de modo especial quando acontecem no mesmo instante em que respiramos juntos: artista, convidados e plateia. Este concerto é um convite para esse encontro.')}</p><button class="primary-button concerto-closing-button" type="button" disabled>{tr('Informações em breve')}</button>
+      <p class="editorial-eyebrow">{tr('Convite')}</p><h2 class="editorial-section-title" id="convite-concerto">{tr('Viva este concerto ao vivo')}</h2><p>{tr('Algumas músicas revelam sua força de modo especial quando acontecem no mesmo instante em que respiramos juntos: artista, convidados e plateia. Este concerto é um convite para esse encontro.')}</p><a class="primary-button concerto-closing-button" href={concertEvent.ticketUrl} target="_blank" rel="noopener external">{tr('Compre seu ingresso aqui')}<Icon name="arrow" /></a>
     </section>
   </main>
 </BaseLayout>
