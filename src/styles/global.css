@@ -3643,24 +3643,6 @@ body.page-sub {
   width: 100%;
 }
 
-.concert-announcement-detail {
-  color: var(--color-paper);
-  border-bottom: 1px solid var(--color-line-dark);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  line-height: 1.6;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: color var(--duration-fast) ease, border-color var(--duration-fast) ease;
-}
-
-.concert-announcement-detail:hover,
-.concert-announcement-detail:focus-visible {
-  color: var(--color-brass);
-  border-color: var(--color-brass);
-}
-
 .page-home::before,
 .page-home::after,
 .page-home > .hero-bg {
@@ -4430,10 +4412,25 @@ body.page-sub {
   }
 
   .concert-announcement-copy h2 {
-    font-size: clamp(1.9rem, 9vw, 2.6rem);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
 
-  
+  .concert-announcement-date,
+  .concert-announcement-venue {
+    display: none;
+  }
+
+  .concert-announcement-actions {
+    transform: translateY(-22px);
+  }
 
   .home-concert-image-wrap {
     min-height: 25rem;

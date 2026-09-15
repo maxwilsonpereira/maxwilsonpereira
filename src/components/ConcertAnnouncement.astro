@@ -35,7 +35,7 @@ const tr = (source: string) => t(locale, source);
     <p class="concert-announcement-venue">{concertEvent.venue} <span aria-hidden="true">·</span> {concertEvent.city}</p>
     <div class="concert-announcement-actions">
       <a class="button button-primary" href={concertEvent.ticketUrl} target="_blank" rel="noopener external">{tr('Compre seu ingresso aqui')}<Icon name="arrow" /></a>
-      <a class="concert-announcement-detail" href={pathFor('concert', locale)}>{tr('Ver detalhes do concerto')}</a>
+      <a class="button button-light" href={pathFor('concert', locale)}>{tr('Ver detalhes do concerto')}</a>
     </div>
   </div>
 </aside>
