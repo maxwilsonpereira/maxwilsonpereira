@@ -4369,8 +4369,20 @@ body.page-sub {
   }
 
   .home-hero-img {
-    --home-hero-image-x: calc(48% - 15px);
-    --home-hero-image-y: calc(50% - 30px);
+    --home-hero-image-x: calc(48% - 25px);
+    --home-hero-image-y: calc(50% - 65px);
+  }
+
+  .home-hero::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    height: 32%;
+    pointer-events: none;
+    content: '';
+    background: linear-gradient(to bottom, transparent, var(--color-ink));
   }
 
   .home-hero-overlay {
