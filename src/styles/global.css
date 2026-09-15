@@ -3656,6 +3656,12 @@ body.page-sub {
   transition: color var(--duration-fast) ease, border-color var(--duration-fast) ease;
 }
 
+.home-hero-detail {
+  border-bottom-color: transparent;
+  font-size: 1.008rem;
+  padding-top: 15px;
+}
+
 .concert-announcement-detail:hover,
 .concert-announcement-detail:focus-visible,
 .home-hero-detail:hover,
@@ -3755,7 +3761,7 @@ body.page-sub {
 .home-hero-role {
   margin: 1.5rem 0 0;
   color: var(--color-brass);
-  font-size: 0.72rem;
+  font-size: 0.936rem;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -3789,7 +3795,7 @@ body.page-sub {
   color: var(--color-brass);
   font-family: var(--font-display);
   font-size: clamp(1.6rem, 4vw, 2.2rem);
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: var(--title-letter-spacing);
   line-height: 1;
   text-transform: none;
@@ -4402,8 +4408,7 @@ body.page-sub {
   }
 
   .home-hero-detail {
-    width: 100%;
-    text-align: center;
+    width: fit-content;
   }
 
   .concert-announcement {

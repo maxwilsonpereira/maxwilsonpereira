@@ -1,3 +1,11 @@
+### HOW TO START THE APPLICATION
+
+- On Cursor Console:
+  & "C:\Users\maxwp\AppData\Roaming\nvm\v24.19.0\node.exe" ".\node_modules\astro\bin\astro.mjs" dev
+- On the root folder, run (exactly like it is):
+
+  "C:\Users\maxwp\AppData\Roaming\nvm\v24.19.0\node.exe" "node_modules\astro\bin\astro.mjs" dev
+
 # Max Wilson Pereira
 
 Static multilingual artist website built with Astro, TypeScript, shared Astro components, and vanilla CSS. Portuguese is the default language; English, Spanish, and German use the same components and styling.

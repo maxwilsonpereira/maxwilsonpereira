@@ -6,6 +6,15 @@ const site = 'https://maxwilsonpereira.com.br';
 export default defineConfig({
   site,
   output: 'static',
+  vite: {
+    server: {
+      open: {
+        app: {
+          name: 'chrome',
+        },
+      },
+    },
+  },
   build: {
     format: 'file',
   },
