@@ -23,7 +23,10 @@ const repertoire = [
 
     <div class="concert-event" id="concert-event">
       <a class="concert-event-art" href={concertEvent.ticketUrl} target="_blank" rel="noopener external" aria-label={tr('Compre seu ingresso aqui')}>
-        <img src={concertEvent.artwork} width="1128" height="634" alt={tr('Cartaz do concerto Eternas Canções com Max Wilson Pereira e convidados')} decoding="async" />
+        <picture>
+          <source media="(max-width: 47.99rem)" srcset="/assets/optimized/concert-mobile-banner-720.webp 720w, /assets/optimized/concert-mobile-banner-1080.webp 1080w" sizes="100vw" type="image/webp" />
+          <img src={concertEvent.artwork} width="1128" height="634" alt={tr('Cartaz do concerto Eternas Canções com Max Wilson Pereira e convidados')} decoding="async" />
+        </picture>
       </a>
     </div>
 

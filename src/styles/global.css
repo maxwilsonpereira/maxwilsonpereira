@@ -4432,6 +4432,10 @@ body.page-sub {
     transform: translateY(-22px);
   }
 
+  .concert-event-art img {
+    aspect-ratio: 1 / 2;
+  }
+
   .home-concert-image-wrap {
     min-height: 25rem;
   }
