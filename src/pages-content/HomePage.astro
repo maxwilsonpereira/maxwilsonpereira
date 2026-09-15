@@ -23,7 +23,7 @@ const translate = (source: string) => t(locale, source);
         <p class="home-hero-event"><strong>{translate('Eternas Canções')}</strong><span><time datetime={concertEvent.startDate}>{translate('21 de dezembro de 2026')} <span aria-hidden="true">·</span> {translate('20h')}</time></span><span>{concertEvent.venue} <span aria-hidden="true">·</span> {concertEvent.city}</span></p>
         <div class="home-hero-actions">
           <a class="button button-primary" href={concertEvent.ticketUrl} target="_blank" rel="noopener external">{translate('Compre seu ingresso aqui')}<Icon name="arrow" /></a>
-          <a class="home-hero-detail" href={pathFor('concert', locale)}>{translate('Ver detalhes do concerto')}</a>
+          <a class="button button-light" href={pathFor('concert', locale)}>{translate('Ver detalhes do concerto')}</a>
         </div>
       </div>
       <a class="home-hero-scroll" href="#concerto-em-destaque" aria-label={translate('Ir para o destaque do concerto')}><span>{translate('Explore')}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M6 14l6 6 6-6" /></svg></a>
@@ -64,7 +64,7 @@ const translate = (source: string) => t(locale, source);
     </section>
 
     <section class="home-music" aria-labelledby="home-music-title">
-      <div class="home-music-heading" data-reveal><h2 id="home-music-title">{translate('Álbuns')}</h2><p class="home-feature-copy">{translate('Três momentos de uma trajetória entre romantismo, repertório lírico e crossover.')}</p><a class="button button-dark" href={pathFor('albums', locale)}>{translate('Explore os álbuns')}</a></div>
+      <div class="home-music-heading" data-reveal><h2 id="home-music-title">{translate('Álbuns')}</h2><p class="home-feature-copy">{translate('Três momentos de uma trajetória entre romantismo, repertório lírico e crossover.')}</p><a class="button button-light" href={pathFor('albums', locale)}>{translate('Explore os álbuns')}</a></div>
       <div class="home-album-list">
         <a class="home-album home-album-featured" href={locale === 'pt' ? pathFor('soInLovePurchase') : pathFor('soInLoveDownload', locale)} data-reveal><img src="/assets/so-in-love/cover-front.jpg" srcset="/assets/optimized/so-in-love-cover-480.webp 480w, /assets/optimized/so-in-love-cover-900.webp 900w" sizes="(min-width: 64rem) 28vw, 100vw" width="1414" height="1417" alt={translate('Capa do álbum SO IN LOVE')} loading="lazy" decoding="async" /><span><strong>SO IN LOVE</strong><small>Max Wilson Pereira</small></span></a>
         <a class="home-album" href={pathFor('tenoriAmici', locale)} data-reveal><img src="/assets/tenori-amici/cover-front.jpg" srcset="/assets/optimized/tenori-amici-cover-480.webp 480w, /assets/optimized/tenori-amici-cover-900.webp 900w" sizes="(min-width: 64rem) 28vw, 50vw" width="3000" height="3000" alt={translate('Capa do álbum Tenori Amici')} loading="lazy" decoding="async" /><span><strong>TENORI AMICI</strong><small>Con Amore</small></span></a>

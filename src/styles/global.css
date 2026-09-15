@@ -3643,8 +3643,7 @@ body.page-sub {
   width: 100%;
 }
 
-.concert-announcement-detail,
-.home-hero-detail {
+.concert-announcement-detail {
   color: var(--color-paper);
   border-bottom: 1px solid var(--color-line-dark);
   font-size: 0.72rem;
@@ -3656,16 +3655,8 @@ body.page-sub {
   transition: color var(--duration-fast) ease, border-color var(--duration-fast) ease;
 }
 
-.home-hero-detail {
-  border-bottom-color: transparent;
-  font-size: 1.008rem;
-  padding-top: 15px;
-}
-
 .concert-announcement-detail:hover,
-.concert-announcement-detail:focus-visible,
-.home-hero-detail:hover,
-.home-hero-detail:focus-visible {
+.concert-announcement-detail:focus-visible {
   color: var(--color-brass);
   border-color: var(--color-brass);
 }
@@ -3703,22 +3694,24 @@ body.page-sub {
 }
 
 .home-hero-img {
+  --home-hero-image-x: 60%;
+  --home-hero-image-y: 50%;
   z-index: -2;
   object-fit: cover;
-  object-position: 60% center;
+  object-position: var(--home-hero-image-x) var(--home-hero-image-y);
   filter: saturate(0.9) contrast(1.05);
   animation: hero-settle 1.4s var(--ease-stage) both;
 }
 
 @media (min-width: 75rem) and (min-aspect-ratio: 2 / 1) {
   .home-hero-img {
-    object-position: 60% 42%;
+    --home-hero-image-y: 42%;
   }
 }
 
 @media (min-width: 100rem) and (min-aspect-ratio: 5 / 2) {
   .home-hero-img {
-    object-position: 60% 28%;
+    --home-hero-image-y: 28%;
   }
 }
 
@@ -3802,11 +3795,10 @@ body.page-sub {
 }
 
 .home-hero-actions {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1rem 1.5rem;
+  width: fit-content;
   margin-top: 2rem;
 }
 
@@ -4059,14 +4051,6 @@ body.page-sub {
 
 .home-music-heading .button {
   margin-top: 2rem;
-  color: var(--color-ink);
-  background: var(--color-ivory);
-}
-
-.home-music-heading .button:hover,
-.home-music-heading .button:focus-visible {
-  color: var(--color-paper);
-  background: var(--color-bordeaux);
 }
 
 .home-album-list {
@@ -4384,7 +4368,8 @@ body.page-sub {
   }
 
   .home-hero-img {
-    object-position: 48% center;
+    --home-hero-image-x: calc(48% - 15px);
+    --home-hero-image-y: calc(50% - 30px);
   }
 
   .home-hero-overlay {
@@ -4405,10 +4390,6 @@ body.page-sub {
   .home-hero-actions,
   .home-hero-actions .button {
     width: 100%;
-  }
-
-  .home-hero-detail {
-    width: fit-content;
   }
 
   .concert-announcement {
